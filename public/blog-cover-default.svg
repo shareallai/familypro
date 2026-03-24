@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F5F7FB"/>
+  <rect x="64" y="64" width="1472" height="772" rx="36" fill="url(#paint0_linear)"/>
+  <circle cx="1332" cy="198" r="118" fill="#99F6E4" fill-opacity=".65"/>
+  <circle cx="1226" cy="694" r="172" fill="#BFDBFE" fill-opacity=".7"/>
+  <circle cx="318" cy="190" r="148" fill="#FEF3C7" fill-opacity=".8"/>
+  <rect x="154" y="160" width="548" height="46" rx="23" fill="#0F766E" fill-opacity=".12"/>
+  <rect x="154" y="236" width="812" height="142" rx="24" fill="#ffffff" fill-opacity=".78"/>
+  <rect x="154" y="418" width="608" height="26" rx="13" fill="#334155" fill-opacity=".16"/>
+  <rect x="154" y="466" width="694" height="26" rx="13" fill="#334155" fill-opacity=".11"/>
+  <rect x="154" y="514" width="582" height="26" rx="13" fill="#334155" fill-opacity=".11"/>
+  <rect x="154" y="620" width="352" height="138" rx="28" fill="#ffffff" fill-opacity=".72"/>
+  <rect x="534" y="620" width="352" height="138" rx="28" fill="#ffffff" fill-opacity=".72"/>
+  <rect x="914" y="620" width="352" height="138" rx="28" fill="#ffffff" fill-opacity=".72"/>
+  <text x="154" y="193" fill="#0F766E" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="3">SUBSCRIPTION SAVINGS LAB</text>
+  <text x="154" y="300" fill="#0F172A" font-family="Arial, sans-serif" font-size="64" font-weight="700">AI and Streaming Guides</text>
+  <text x="154" y="356" fill="#0F172A" font-family="Arial, sans-serif" font-size="64" font-weight="700">Pricing, usage, and updates</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="64" y1="64" x2="1536" y2="836" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E0F2FE"/>
+      <stop offset="1" stop-color="#ECFDF5"/>
+    </linearGradient>
+  </defs>
+</svg>

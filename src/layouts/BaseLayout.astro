@@ -17,6 +17,7 @@ interface Props {
   languageLabel: string;
   languageLinks: Array<{ label: string; href: string; active?: boolean }>;
   alternates?: Array<{ hrefLang: string; href: string }>;
+  image?: string;
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -39,6 +40,7 @@ const {
   languageLabel,
   languageLinks,
   alternates = [],
+  image,
   type = 'website',
   publishedTime,
   modifiedTime,
@@ -60,6 +62,7 @@ const sitemapHref = `${baseUrl}sitemap-index.xml`;
       canonical={canonical}
       siteName={siteName}
       locale={localeCode}
+      image={image}
       alternates={alternates}
       type={type}
       publishedTime={publishedTime}

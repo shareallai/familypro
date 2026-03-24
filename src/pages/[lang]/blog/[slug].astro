@@ -57,6 +57,11 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 const siteBase = Astro.site ?? new URL(Astro.url.origin);
 const currentSlug = getPostSlug(post.id);
 const canonical = new URL(`${baseUrl}${currentLang}/blog/${currentSlug}/`, siteBase).toString();
+const coverImageSrc = post.data.coverImage
+  ? /^https?:\/\//.test(post.data.coverImage)
+    ? post.data.coverImage
+    : `${baseUrl}${post.data.coverImage.replace(/^\/+/, '')}`
+  : undefined;
 
 const alternates = translations.map((item) => ({
   hrefLang: getLocaleCode(item.lang),
@@ -111,6 +116,7 @@ const jsonLd = {
   languageLabel={ui.languageSwitch}
   languageLinks={languageLinks}
   alternates={alternates}
+  image={coverImageSrc}
   type="article"
   publishedTime={post.data.pubDate.toISOString()}
   modifiedTime={(post.data.updatedDate ?? post.data.pubDate).toISOString()}
@@ -119,39 +125,15 @@ const jsonLd = {
 >
   <article>
     <header class="article-header">
+      <p class="category">{post.data.category}</p>
       <p class="meta">
         {post.data.pubDate.toISOString().slice(0, 10)} · {post.data.service} · {ui.articleBy} {post.data.author}
       </p>
       <h1>{post.data.title}</h1>
-      <p class="desc">{post.data.description}</p>
+      <p class="desc">{post.data.summary}</p>
     </header>
 
-    <section class="price-table-wrap">
-      <h2>{post.data.tableLabels.title}</h2>
-      <p class="muted">{post.data.exchangeRateNote}</p>
-      <table>
-        <thead>
-          <tr>
-            <th>{post.data.tableLabels.country}</th>
-            <th>{post.data.tableLabels.currency}</th>
-            <th>{post.data.tableLabels.price}</th>
-            <th>{post.data.tableLabels.usd}</th>
-            <th>{post.data.tableLabels.notes}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {post.data.priceRows.map((row) => (
-            <tr>
-              <td>{row.country}</td>
-              <td>{row.currency}</td>
-              <td>{row.officialMonthly}</td>
-              <td>${row.usdApprox.toFixed(2)}</td>
-              <td>{row.notes ?? '-'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </section>
+    {coverImageSrc && <img class="cover-image" src={coverImageSrc} alt={post.data.title} />}
 
     <section class="markdown-body">
       <Content />
@@ -174,22 +156,29 @@ const jsonLd = {
     font-size: 0.92rem;
   }
 
+  .category {
+    margin: 0 0 0.35rem;
+    color: #0f766e;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
   .desc {
     margin-bottom: 0;
     color: #334155;
   }
 
-  .price-table-wrap {
-    background: #ffffff;
+  .cover-image {
+    display: block;
+    width: 100%;
+    max-height: 420px;
     border: 1px solid #dbe5ef;
     border-radius: 1rem;
-    padding: 1rem;
+    background: #ffffff;
     margin-bottom: 1.2rem;
-  }
-
-  .muted {
-    color: #64748b;
-    margin-top: -0.3rem;
+    object-fit: cover;
   }
 
   .markdown-body {
