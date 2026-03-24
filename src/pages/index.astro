@@ -1,12 +1,24 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { DEFAULT_LANG, LANGS, LANG_LABEL, LOCALE_BY_LANG, SITE_NAME_BY_LANG, UI } from '../lib/i18n';
+import {
+  DEFAULT_LANG,
+  buildHomeTitle,
+  collectSiteLangs,
+  getLangLabel,
+  getLocaleCode,
+  getSiteName,
+  getUi,
+} from '../lib/i18n';
 
 const lang = DEFAULT_LANG;
-const ui = UI[lang];
+const ui = getUi(lang);
+const siteName = getSiteName(lang);
+const localeCode = getLocaleCode(lang);
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft && data.locale === lang)).sort(
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const siteLangs = collectSiteLangs(allPosts.map((post) => post.data.locale));
+const posts = allPosts.filter((post) => post.data.locale === lang).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
 
@@ -15,27 +27,27 @@ const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
 const siteBase = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(baseUrl, siteBase).toString();
 
-const alternates = LANGS.map((code) => ({
-  hrefLang: LOCALE_BY_LANG[code],
+const alternates = siteLangs.map((code) => ({
+  hrefLang: getLocaleCode(code),
   href: new URL(code === lang ? baseUrl : `${baseUrl}${code}/`, siteBase).toString(),
 }));
 alternates.push({ hrefLang: 'x-default', href: canonical });
 
-const languageLinks = LANGS.map((code) => ({
-  label: LANG_LABEL[code],
+const languageLinks = siteLangs.map((code) => ({
+  label: getLangLabel(code),
   href: code === lang ? baseUrl : `${baseUrl}${code}/`,
   active: code === lang,
 }));
 
-const title = `${SITE_NAME_BY_LANG[lang]} | AI & Streaming Subscription Guides`;
+const title = buildHomeTitle(lang, siteName);
 const description = ui.heroDesc;
 
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: SITE_NAME_BY_LANG[lang],
+  name: siteName,
   url: canonical,
-  inLanguage: LOCALE_BY_LANG[lang],
+  inLanguage: localeCode,
   description,
 };
 
@@ -47,8 +59,8 @@ const getPostSlug = (id: string) => id.split('/').pop() ?? id;
   description={description}
   canonical={canonical}
   lang={lang}
-  localeCode={LOCALE_BY_LANG[lang]}
-  siteName={SITE_NAME_BY_LANG[lang]}
+  localeCode={localeCode}
+  siteName={siteName}
   homeLabel={ui.home}
   blogLabel={ui.blog}
   footerText={ui.footer}

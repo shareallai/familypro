@@ -3,7 +3,8 @@ import { DEFAULT_LANG } from '../../lib/i18n';
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
-const target = `${baseUrl}${DEFAULT_LANG}/blog/`;
+const siteBase = Astro.site ?? new URL(Astro.url.origin);
+const target = new URL(`${baseUrl}${DEFAULT_LANG}/blog/`, siteBase).toString();
 ---
 
 <!doctype html>
@@ -12,6 +13,8 @@ const target = `${baseUrl}${DEFAULT_LANG}/blog/`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redirecting...</title>
+    <meta name="description" content="Redirecting to the default language blog listing." />
+    <meta name="robots" content="noindex,nofollow" />
     <link rel="canonical" href={target} />
     <meta http-equiv="refresh" content={`0; url=${target}`} />
   </head>

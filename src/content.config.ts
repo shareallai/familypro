@@ -1,9 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
-import { LANGS, type Lang } from './lib/i18n';
-
-const CONTENT_LANGS = [...LANGS] as [Lang, ...Lang[]];
+const localePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 const blog = defineCollection({
   loader: glob({
@@ -11,7 +9,7 @@ const blog = defineCollection({
     pattern: '**/*.{md,mdx}',
   }),
   schema: z.object({
-    locale: z.enum(CONTENT_LANGS),
+    locale: z.string().regex(localePattern, 'locale must use lowercase letters/numbers and optional hyphens'),
     translationKey: z.string(),
     title: z.string(),
     description: z.string(),

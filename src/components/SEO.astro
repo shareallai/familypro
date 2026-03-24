@@ -31,7 +31,11 @@ const {
   jsonLd,
 } = Astro.props;
 
-const socialImage = image ?? `${new URL(canonical).origin}/favicon.svg`;
+const canonicalUrl = new URL(canonical);
+const rawBaseUrl = import.meta.env.BASE_URL;
+const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+const fallbackSocialImage = new URL(`${baseUrl}favicon.svg`, canonicalUrl.origin).toString();
+const socialImage = image ? new URL(image, canonical).toString() : fallbackSocialImage;
 ---
 
 <meta charset="utf-8" />

@@ -2,7 +2,7 @@
 locale: zh
 translationKey: chatgpt-plus-country-price-compare-2026
 title: ChatGPT Plus 各国家/地区价格对比（2026 版）
-description: 先看一篇可落地的示例文章，演示 ChatGPT Plus 在不同国家/地区的月费差异、汇率口径与更省钱的订阅策略。
+description: 这是一篇可直接落地的对比文章，按统一口径展示 ChatGPT Plus 在不同国家/地区的月费、税费与汇率影响，并给出可持续执行的省钱策略。
 pubDate: 2026-03-20
 updatedDate: 2026-03-20
 author: Mark

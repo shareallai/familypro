@@ -1,13 +1,22 @@
 ---
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { DEFAULT_LANG, LANGS, LANG_LABEL, LOCALE_BY_LANG, SITE_NAME_BY_LANG, UI, isLang, type Lang } from '../../../lib/i18n';
+import {
+  DEFAULT_LANG,
+  collectSiteLangs,
+  getLangLabel,
+  getLocaleCode,
+  getSiteName,
+  getUi,
+  type Lang,
+} from '../../../lib/i18n';
 
 type TranslationRef = { lang: Lang; slug: string };
 
 export async function getStaticPaths() {
   const getPostSlug = (id: string) => id.split('/').pop() ?? id;
   const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const siteLangs = collectSiteLangs(posts.map((post) => post.data.locale));
   const byTranslation = new Map<string, CollectionEntry<'blog'>[]>();
 
   for (const post of posts) {
@@ -23,7 +32,7 @@ export async function getStaticPaths() {
 
     return {
       params: { lang: post.data.locale, slug: getPostSlug(post.id) },
-      props: { post, translations },
+      props: { post, translations, siteLangs },
     };
   });
 }
@@ -31,15 +40,15 @@ export async function getStaticPaths() {
 interface Props {
   post: CollectionEntry<'blog'>;
   translations: TranslationRef[];
+  siteLangs: Lang[];
 }
 
-const { post, translations } = Astro.props;
+const { post, translations, siteLangs } = Astro.props as Props;
 const currentLang = post.data.locale;
-if (!isLang(currentLang)) {
-  throw new Error(`Unsupported language in post: ${currentLang}`);
-}
-
-const ui = UI[currentLang];
+const ui = getUi(currentLang);
+const localeCode = getLocaleCode(currentLang);
+const siteName = getSiteName(currentLang);
+const activeLangs = collectSiteLangs(siteLangs);
 const { Content } = await render(post);
 const getPostSlug = (id: string) => id.split('/').pop() ?? id;
 
@@ -50,7 +59,7 @@ const currentSlug = getPostSlug(post.id);
 const canonical = new URL(`${baseUrl}${currentLang}/blog/${currentSlug}/`, siteBase).toString();
 
 const alternates = translations.map((item) => ({
-  hrefLang: LOCALE_BY_LANG[item.lang],
+  hrefLang: getLocaleCode(item.lang),
   href: new URL(`${baseUrl}${item.lang}/blog/${item.slug}/`, siteBase).toString(),
 }));
 
@@ -62,10 +71,10 @@ if (defaultTranslation) {
   });
 }
 
-const languageLinks = LANGS.map((lang) => {
+const languageLinks = activeLangs.map((lang) => {
   const hit = translations.find((item) => item.lang === lang);
   return {
-    label: LANG_LABEL[lang],
+    label: getLangLabel(lang),
     href: hit ? `${baseUrl}${lang}/blog/${hit.slug}/` : `${baseUrl}${lang}/blog/`,
     active: lang === currentLang,
   };
@@ -78,7 +87,7 @@ const jsonLd = {
   description: post.data.description,
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
-  inLanguage: LOCALE_BY_LANG[currentLang],
+  inLanguage: localeCode,
   author: {
     '@type': 'Person',
     name: post.data.author,
@@ -88,12 +97,12 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title={`${post.data.title} | ${SITE_NAME_BY_LANG[currentLang]}`}
+  title={post.data.title}
   description={post.data.description}
   canonical={canonical}
   lang={currentLang}
-  localeCode={LOCALE_BY_LANG[currentLang]}
-  siteName={SITE_NAME_BY_LANG[currentLang]}
+  localeCode={localeCode}
+  siteName={siteName}
   homeLabel={ui.home}
   blogLabel={ui.blog}
   footerText={ui.footer}
