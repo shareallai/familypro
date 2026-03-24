@@ -2,6 +2,7 @@
 locale: en
 translationKey: openclaw-mac-codex-install-guide
 title: "OpenClaw on Mac: Install It and Connect Codex"
+headline: How to install OpenClaw on Mac and connect it to Codex
 description: A practical Mac setup guide for OpenClaw with Codex OAuth, covering install steps, config structure, model checks, callback fixes, and embeddings caveats.
 summary: A developer-focused walkthrough for installing OpenClaw on macOS and wiring Codex in as the default model with the supported OAuth flow.
 category: AI Tooling
@@ -24,25 +25,27 @@ Codex is a common first choice in that setup for an equally practical reason: if
 
 This guide is based on the OpenClaw docs available on March 24, 2026. The goal here is not to throw every CLI command at you. It is to clarify the parts that usually get blurred together: what OpenClaw is responsible for, how `openai-codex` differs from `openai`, when to use onboarding versus direct auth login, what the config file actually controls, and how to verify that the install is genuinely working instead of merely looking plausible.
 
-## Why people pair OpenClaw with Codex
+## 1. Understand what OpenClaw does and what Codex does
 
-[OpenClaw](https://github.com/openclaw/openclaw) works best when you think of it as an agent runtime rather than a model picker. It sits above providers, auth, gateway state, agent defaults, memory, and tooling. You do not need to use every layer on day one, but that layered structure is why it scales from “just get me a model” to “run tasks in a controlled workspace.”
+[OpenClaw](https://github.com/openclaw/openclaw) makes more sense as an agent runtime than as a simple model switcher. It sits above providers, auth, gateway state, workspaces, tools, memory, and automation. You do not need every layer on day one, but that structure is exactly why it can grow from “call a model” into “run work reliably.”
 
-Inside OpenClaw, Codex lives under the `openai-codex` provider. That is important because people often blur it together with the plain `openai` provider. They are related, but not interchangeable:
+### 1.1 `openai-codex` is not the same thing as `openai`
+
+Inside OpenClaw, Codex lives under the `openai-codex` provider. That matters because people often blur it together with the plain `openai` provider, but they support different entry points:
 
 - `openai-codex/*` is the lane for ChatGPT or Codex subscription OAuth.
 - `openai/*` is the lane for OpenAI Platform API-key usage.
 
-So if your plan is “sign in with my ChatGPT account,” you want `openai-codex`. If your plan is “pay per request with `OPENAI_API_KEY`,” you are usually looking at `openai`, not `openai-codex`.
+So if your plan is “sign in with my ChatGPT account,” you want `openai-codex`. If your plan is “use `OPENAI_API_KEY` and pay per API usage,” you are usually looking at `openai`.
 
 Docs:
 
 - [OpenAI / Codex provider](https://docs.openclaw.ai/providers/openai)
 - [Model Providers](https://docs.openclaw.ai/concepts/model-providers)
 
-## The shortest working path
+## 2. Start with the shortest working path
 
-For a first-time Mac setup, this is still the most reliable path:
+For a first-time Mac setup, this is still the cleanest place to begin:
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
@@ -59,21 +62,29 @@ openclaw status --deep
 openclaw models status
 ```
 
-If those commands look healthy, install, gateway, auth, and default model resolution are usually all in place.
+If those commands look healthy, install, gateway, auth, and default model resolution are usually all in place. Run this path first; then add nuance only where you actually need it.
 
-## Three things to check before you start
+## 3. Check these three things before you start
 
-First, do not come in with an ancient Node install. OpenClaw currently recommends Node 24 and supports Node 22.16 or newer. The installer can help, but it is still useful to know what the baseline is.
+### 3.1 Your Node version
 
-Second, expect to use a browser. Codex on this path uses OAuth, not copy-pasted API keys, so browser-based sign-in is part of the normal flow.
+OpenClaw currently recommends Node 24 and supports Node 22.16 or newer. The installer can help you, but it still helps to know the floor before you begin.
 
-Third, keep a shell PATH issue in mind. A surprising number of “the install failed” reports are really “the install worked, but the shell cannot find `openclaw`.”
+### 3.2 Browser-based auth is part of the normal flow
+
+Codex on this path uses OAuth, not copy-pasted API keys. That means a browser step is expected, not a weird detour.
+
+### 3.3 Keep shell PATH issues in mind
+
+A surprising number of “the install failed” reports are really “the install worked, but the shell cannot find `openclaw`.” Knowing that up front saves time.
 
 Install doc:
 
 - [OpenClaw Install](https://docs.openclaw.ai/install)
 
-## Installing OpenClaw on macOS
+## 4. Install OpenClaw on macOS
+
+### 4.1 The official script is still the default choice
 
 The recommended install method is still the official script:
 
@@ -81,13 +92,15 @@ The recommended install method is still the official script:
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-That does more than download a CLI. According to the docs, it detects the host environment, prepares Node when necessary, installs OpenClaw, and launches onboarding.
+That does more than download a CLI. According to the docs, it detects the environment, prepares Node when necessary, installs OpenClaw, and launches onboarding.
 
 If you want the binary in place before doing setup, use:
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash -s -- --no-onboard
 ```
+
+### 4.2 The npm route is for people who want tighter control
 
 There is also a manual npm route:
 
@@ -96,11 +109,11 @@ npm install -g openclaw@latest
 openclaw onboard --install-daemon
 ```
 
-That is fine if you prefer managing global packages yourself, but the official script is usually the better first pass because it reduces environment drift.
+That works, but the official script is usually the better first pass because it reduces environment drift and keeps setup more predictable.
 
-## Onboarding versus direct provider login
+## 5. Connect Codex to OpenClaw
 
-This is one of the easiest places for older setup guides to go stale.
+### 5.1 Use onboarding for a first-time setup
 
 As of the current OpenClaw docs, both of these are valid Codex login commands:
 
@@ -112,32 +125,33 @@ openclaw onboard --auth-choice openai-codex
 openclaw models auth login --provider openai-codex
 ```
 
-The difference is not which one is “real.” The difference is where you are in the setup:
+If you are starting from scratch, I would still choose onboarding first. It keeps initialization, auth, and default model setup in one flow, which means fewer places to miss a step.
 
-- `openclaw onboard --auth-choice openai-codex` is the better first-time path because it keeps initialization, auth, and default model setup in one flow.
-- `openclaw models auth login --provider openai-codex` is better when OpenClaw is already installed and you just need to add, refresh, or repair Codex auth.
+### 5.2 Use direct login when auth is the only thing you need
 
-If you are starting fresh, I would still use onboarding first. It is simply harder to miss a step.
+`openclaw models auth login --provider openai-codex` is the better fit when OpenClaw is already installed and you only need to add, refresh, or repair Codex auth.
 
-## What actually happens during OAuth
+So the difference is not which command is “real.” The difference is whether you are doing a first setup or maintaining an existing install.
 
-Codex auth in OpenClaw uses standard PKCE OAuth. In practice, the CLI opens an authorization URL, you sign in through OpenAI, and the browser attempts to return to a local callback, commonly:
+### 5.3 A broken callback page does not always mean the login failed
+
+Codex auth in OpenClaw uses standard PKCE OAuth. In practice, the CLI opens an authorization URL, you sign in through OpenAI, and the browser tries to return to a local callback, commonly:
 
 ```text
 http://127.0.0.1:1455/auth/callback
 ```
 
-Two details matter more than most setup guides admit.
+Two details matter here. First, a broken-looking callback page does not automatically mean failure. The OAuth docs explicitly note that if the CLI cannot capture the redirect cleanly, you can paste the final redirect URL back into the terminal and continue.
 
-First, a broken-looking browser callback page does not automatically mean the login failed. The OpenClaw OAuth docs explicitly note that if the CLI cannot capture the redirect cleanly, you can paste the final redirect URL back into the terminal and continue.
-
-Second, after a successful login, OpenClaw stores OAuth state in local auth profiles and handles refresh for you. In other words, your real job is verifying that auth was stored correctly, not hand-editing token files.
+Second, after login succeeds, OpenClaw stores OAuth state in local auth profiles and handles refresh for you. The real question is whether the auth profile was saved correctly, not whether you should be editing token files yourself.
 
 Doc:
 
 - [OAuth](https://docs.openclaw.ai/concepts/oauth)
 
-## Do not edit config before you check state
+## 6. Verify the install before you touch config
+
+### 6.1 Start with CLI-reported health
 
 A lot of people open `~/.openclaw/openclaw.json` too early. The better order is to inspect the CLI-reported state first:
 
@@ -157,14 +171,14 @@ Each command answers a different question:
 - `openclaw status --deep` performs a deeper runtime probe.
 - `openclaw models status` shows the resolved default model, provider auth state, and whether OAuth is missing, expiring, or broken.
 
-Two extra commands are useful when you want more signal:
+If you want more signal, add these:
 
 ```bash
 openclaw models list --provider openai-codex
 openclaw models status --check
 ```
 
-The first shows what Codex models your current account can actually see. The second is useful in scripts or automation because it returns exit codes for missing, expired, or soon-to-expire credentials.
+The first shows which Codex models the current account can actually see. The second is useful in automation because it returns exit codes for missing, expired, or soon-to-expire credentials.
 
 Related docs:
 
@@ -172,7 +186,7 @@ Related docs:
 - [Troubleshooting](https://docs.openclaw.ai/help/troubleshooting)
 - [Health Checks](https://docs.openclaw.ai/health)
 
-## If `openclaw` is not found after install
+### 6.2 If `openclaw` is not found after install
 
 That is usually a PATH problem, not a failed install. Check the npm global prefix first:
 
@@ -188,7 +202,7 @@ export PATH="$(npm prefix -g)/bin:$PATH"
 
 Restart the terminal and run `openclaw --version` again.
 
-## Where the default model lives
+### 6.3 Where the default model and config usually live
 
 The current OpenClaw docs use `openai-codex/gpt-5.4` as the default Codex example. If onboarding completed cleanly, that may already be written for you. To confirm manually, inspect `~/.openclaw/openclaw.json`.
 
@@ -206,33 +220,41 @@ The minimal shape looks like this:
 }
 ```
 
-If you want to understand the config structure instead of just copying one field, these are the sections worth noticing:
+If you want to understand the config structure instead of copying one field, these are the key sections to notice:
 
 - `agents.defaults` for default agent behavior such as primary model, fallbacks, and workspace.
 - `models.providers` for explicit provider configuration.
 - auth profiles for OAuth or API-key-backed provider state.
 
-That means future changes like adding OpenAI API access, adding OpenRouter, or defining fallbacks still fit into the same config model rather than introducing a separate system.
+That means later changes like adding OpenAI API access, adding OpenRouter, or defining fallbacks still fit into the same config model.
 
 Config doc:
 
 - [Configuration](https://docs.openclaw.ai/gateway/configuration)
 
-## Codex auth does not solve embeddings
+## 7. Two things to confirm before you treat the setup as complete
 
-This is one of the most common hidden assumptions in real-world setups.
+### 7.1 Codex OAuth handles reasoning access, not embeddings
 
-Codex OAuth gives you access to the reasoning model path. It does not automatically give you an embeddings strategy. The OpenClaw FAQ is explicit on this point: if you want semantic memory search with OpenAI embeddings, you still need a real API key. Codex OAuth alone is not enough.
+This is one of the most common hidden assumptions in real-world setups. Codex OAuth gives you a working reasoning-model path. It does not automatically give you an embeddings strategy.
 
-So if your only goal is “make the agent run on Codex,” you may already be done. But if you also want retrieval, memory search, or knowledge-base workflows, check embeddings separately before you assume the stack is complete.
+The OpenClaw FAQ is explicit on this point: if you want semantic memory search with OpenAI embeddings, you still need a real API key. Codex OAuth alone is not enough.
+
+So if your goal is only “make the agent run on Codex,” you may already be done. But if you also want retrieval, memory search, or knowledge-base workflows, check embeddings separately.
 
 FAQ:
 
 - [FAQ](https://docs.openclaw.ai/faq)
 
-## A better troubleshooting ladder
+### 7.2 You probably do not need to touch transport on day one
 
-When setup goes sideways, guessing is slower than walking the stack in order. A practical local troubleshooting ladder looks like this:
+The provider docs note that both `openai/*` and `openai-codex/*` default to `auto` transport, which means WebSocket first and SSE fallback.
+
+That is useful to know, but not something you should rush to customize unless you have a real compatibility or network reason. For a first install, leaving transport alone is usually the right call.
+
+## 8. When something breaks, walk the stack instead of guessing
+
+A practical local troubleshooting ladder looks like this:
 
 ```bash
 openclaw status
@@ -245,15 +267,9 @@ openclaw health --verbose
 openclaw logs --follow
 ```
 
-That sequence helps separate local config issues, gateway service failures, auth problems, and runtime health issues instead of mashing them into one vague “it does not work.”
+That sequence helps separate local config issues, gateway service failures, auth problems, and runtime health issues instead of collapsing them into one vague “it does not work.”
 
-## One advanced detail you probably do not need on day one
-
-The provider docs note that both `openai/*` and `openai-codex/*` default to `auto` transport, which means WebSocket first and SSE fallback. That is useful to know, but not something you should rush to customize unless you have a real network or compatibility reason.
-
-For a first install, leaving transport alone is usually the right call.
-
-## The setup order I would actually use
+## 9. The setup order I would actually use
 
 If I were writing this into a personal runbook, I would use this order:
 
@@ -264,9 +280,9 @@ If I were writing this into a personal runbook, I would use this order:
 5. Verify gateway and runtime health with `openclaw gateway status` and `openclaw status --deep`.
 6. Only then add embeddings providers, fallbacks, or more detailed provider config if the workflow actually needs them.
 
-That order keeps the debugging surface small. When something breaks, you know whether it belongs to install, auth, service, or model config.
+That order keeps the debugging surface small. When something breaks, you can usually tell whether it belongs to install, auth, service, or model config.
 
-## Copy-paste command block
+## 10. Copy-paste command block
 
 ```bash
 # Install
@@ -289,8 +305,8 @@ openclaw models auth login --provider openai-codex
 openclaw models list --provider openai-codex
 ```
 
-## Final note
+## 11. Final note
 
-The Mac setup is much clearer now than it was in earlier OpenClaw releases, but the important part is still the same: do not treat install, gateway health, auth, and embeddings as one problem. They are related, but they fail differently.
+The Mac setup is much clearer now than it was in earlier OpenClaw releases, but the key idea is still the same: do not treat install, gateway health, auth, and embeddings as one problem. They are related, but they fail differently.
 
-If this is your first pass, use onboarding. If you are repairing an existing install, direct provider login is a perfectly valid path now. Both are supported in the current docs. The main difference is simply when to use them.
+If this is your first pass, use onboarding. If you are repairing an existing install, direct provider login is a perfectly valid path now. Both are supported in the current docs. The difference is simply when to use them.

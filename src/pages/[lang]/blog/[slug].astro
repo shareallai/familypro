@@ -48,6 +48,7 @@ const currentLang = post.data.locale;
 const ui = getUi(currentLang);
 const localeCode = getLocaleCode(currentLang);
 const siteName = getSiteName(currentLang);
+const visibleHeadline = post.data.headline ?? post.data.title;
 const activeLangs = collectSiteLangs(siteLangs);
 const { Content } = await render(post);
 const getPostSlug = (id: string) => id.split('/').pop() ?? id;
@@ -88,7 +89,7 @@ const languageLinks = activeLangs.map((lang) => {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: post.data.title,
+  headline: visibleHeadline,
   description: post.data.description,
   datePublished: post.data.pubDate.toISOString(),
   dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
@@ -129,7 +130,7 @@ const jsonLd = {
       <p class="meta">
         {post.data.pubDate.toISOString().slice(0, 10)} · {post.data.service} · {ui.articleBy} {post.data.author}
       </p>
-      <h1>{post.data.title}</h1>
+      <h1>{visibleHeadline}</h1>
       <p class="desc">{post.data.summary}</p>
     </header>
 

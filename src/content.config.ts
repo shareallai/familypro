@@ -12,6 +12,7 @@ const blog = defineCollection({
     locale: z.string().regex(localePattern, 'locale must use lowercase letters/numbers and optional hyphens'),
     translationKey: z.string(),
     title: z.string(),
+    headline: z.string().optional(),
     description: z.string(),
     summary: z.string(),
     category: z.string(),
