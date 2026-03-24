@@ -1,10 +1,7 @@
 ---
 const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID?.trim();
-const gscVerification = import.meta.env.PUBLIC_GSC_VERIFICATION?.trim();
 const hasGa = Boolean(gaMeasurementId);
 ---
-
-{gscVerification && <meta name="google-site-verification" content={gscVerification} />}
 
 {hasGa && (
   <>

@@ -45,8 +45,7 @@ cp .env.example .env
 ```
 
 - `GITHUB_REPOSITORY=shareallai/familypro`
-- `PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`（可选，用于 GA 与 GSC 的 Analytics 验证）
-- `PUBLIC_GSC_VERIFICATION=your-google-site-verification-token`（可选，GSC HTML 标签验证）
+- `PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX`（可选，用于 GA 验证）
 
 ## 部署前需要修改
 
