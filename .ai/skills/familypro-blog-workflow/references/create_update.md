@@ -25,6 +25,8 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - Improve flow, transitions, and section boundaries when the original structure is weak.
    - Remove fluff, repeated summaries, and generic “AI-sounding” filler.
 6. If the article contains commands, links, pricing, versions, or operational steps, verify them.
+   - External links should default to `rel="nofollow"`.
+   - If you write raw HTML anchors instead of Markdown links, keep `rel="nofollow"` explicit.
 7. Build and inspect.
 
 ## When rewriting an existing article

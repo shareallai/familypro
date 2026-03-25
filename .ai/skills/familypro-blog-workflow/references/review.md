@@ -26,6 +26,7 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
 5. SEO basics
    - `title` / `headline` relation
    - clarity and uniqueness of `description`
+   - external links defaulting to `rel="nofollow"`
    - likely canonical/hreflang/structured-data implications if relevant to the change
 
 ## Findings format

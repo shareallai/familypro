@@ -28,6 +28,8 @@ Use this reference when adjusting `title`, `headline`, `description`, `summary`,
 - Markdown body should begin at `h2`.
 - Aim for a clear `h1 -> h2 -> h3` structure, but only when the article logic supports it.
 - Numbered `h2` / `h3` headings are fine when the article is tutorial-like and the numbering reflects the true structure.
+- External links in the article body should default to `rel="nofollow"`.
+- If the article uses raw HTML `<a>` tags, keep `rel="nofollow"` explicit instead of assuming the renderer will add it later.
 
 ## Validation triggers
 
