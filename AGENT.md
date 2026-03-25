@@ -68,14 +68,14 @@
 - `robots.txt` 和 `sitemap-index.xml` 必须可访问；不得引入明显内部死链。
 
 ## 7) Skill Usage
-- 仓库内博客工作流文档的 source of truth 位于 `.ai/skills/familypro-blog-workflow/`。
-- 当任务属于博客创建、重写、扩写、翻译、本地化、事实刷新、SEO 调整、frontmatter 调整或博客 review 时，必须先打开并阅读 `.ai/skills/familypro-blog-workflow/SKILL.md`，再开始实质性分析、review、写作或修改。
-- 命中上述博客任务时，还必须根据任务类型继续读取 `.ai/skills/familypro-blog-workflow/references/` 下对应参考：
+- 仓库内博客工作流文档的 source of truth 位于 `.agents/skills/familypro-blog-workflow/`。
+- 当任务属于博客创建、重写、扩写、翻译、本地化、事实刷新、SEO 调整、frontmatter 调整或博客 review 时，必须先打开并阅读 `.agents/skills/familypro-blog-workflow/SKILL.md`，再开始实质性分析、review、写作或修改。
+- 命中上述博客任务时，还必须根据任务类型继续读取 `.agents/skills/familypro-blog-workflow/references/` 下对应参考：
   - 创建 / 重写 / 扩写 / 刷新：`create_update.md`
   - 翻译 / 本地化：`translate_localize.md`
   - review-only：`review.md`
   - frontmatter / title / headline / description / SEO：`seo_frontmatter.md`
-- 这一要求不依赖 `~/.codex/skills` 是否已安装、是否已在当前会话暴露为可用 skill；即使 runtime 没有注册该 skill，也必须手动读取仓库内这套 workflow 并按其执行。
+- 这一要求不依赖 `~/.codex/skills` 是否已安装、是否已在当前会话暴露为可用 skill；repo-local auto-discovery 与手动读取都以仓库内这套 workflow 为准。
 - 不依赖 `~/.codex/skills`、软链接或其他本机私有安装；工作流配置默认随代码走。
 - `AGENT.md` 负责仓库级硬约束；具体博客工作流、review 流程、创建流程、翻译流程与检查顺序由 skill 承载。
 

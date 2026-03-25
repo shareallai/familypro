@@ -4,7 +4,7 @@ Start with [AGENT.md](./AGENT.md) for repository-wide constraints.
 
 For blog-content work, use the repo-local workflow skill at:
 
-- [`.ai/skills/familypro-blog-workflow/SKILL.md`](./.ai/skills/familypro-blog-workflow/SKILL.md)
+- [`.agents/skills/familypro-blog-workflow/SKILL.md`](./.agents/skills/familypro-blog-workflow/SKILL.md)
 
 Apply that workflow when the task involves any of the following:
 
