@@ -15,6 +15,7 @@ Use this reference when adjusting `title`, `headline`, `description`, `summary`,
 - `title` and `headline` should share the same core keywords and meaning.
 - Prefer “same core terms, slightly different wording” over total separation.
 - `headline` should improve page readability, not represent a different promise.
+- Keep `title` unique per indexable URL; avoid micro-boilerplate titles that differ only by tiny suffixes.
 
 ## Length guidance
 
@@ -25,6 +26,12 @@ Use this reference when adjusting `title`, `headline`, `description`, `summary`,
 
 Hard caps are mandatory. Treat anything over the cap as a bug that must be rewritten, not as an acceptable tradeoff.
 
+## Description and snippet rules
+
+- Write `description` for users first: specific, concrete, and matching the page's actual scope.
+- Assume Google may rewrite snippets; keep the opening paragraph aligned with `title` and user intent.
+- Do not promise outcomes the article body does not actually deliver.
+
 ## Structure guidance
 
 - The page has one template-level `h1`.
@@ -33,6 +40,13 @@ Hard caps are mandatory. Treat anything over the cap as a bug that must be rewri
 - Numbered `h2` / `h3` headings are fine when the article is tutorial-like and the numbering reflects the true structure.
 - External links in the article body should default to `rel="nofollow"`.
 - If the article uses raw HTML `<a>` tags, keep `rel="nofollow"` explicit instead of assuming the renderer will add it later.
+
+## Canonical / hreflang / indexing notes
+
+- Each indexable page should have one self-referencing canonical absolute URL.
+- In multilingual variants, keep canonical within the same language page and use `hreflang` to connect alternates.
+- `hreflang` sets should include reciprocal return links and `x-default`.
+- Do not treat `robots.txt` as a `noindex` mechanism; use robots meta or `X-Robots-Tag` when deindexing is needed.
 
 ## Validation triggers
 
@@ -46,3 +60,8 @@ Inspect built output when changing any of the following:
 - canonical-sensitive page logic
 - hreflang-sensitive content availability
 - structured-data-relevant article metadata
+
+If available, validate these post-build with Search Console:
+
+- URL Inspection (selected canonical, crawl/index status)
+- Page Indexing report (`noindex` and crawl-blocking anomalies)

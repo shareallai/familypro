@@ -26,9 +26,12 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
    - locale-specific `title` / `description` length limits, including hard caps
    - Cross-language consistency without literal translation artifacts
 5. SEO basics
-   - `title` / `headline` relation
+   - `title` / `headline` relation and single-intent consistency
    - clarity and uniqueness of `description`
    - hard-cap violations on `title` or `description` are findings, not style nits
+   - first-screen content matches the search promise (no bait-and-switch)
+   - links are crawlable (`<a href>`) and anchor text is descriptive
+   - image alt text is meaningful where images carry information
    - external links defaulting to `rel="nofollow"`
    - likely canonical/hreflang/structured-data implications if relevant to the change
 6. Reference links section integrity
@@ -50,7 +53,9 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
 - Reader is sent to the wrong config or auth file
 - A command path is outdated or no longer canonical
 - The article treats a conditional fact as universal
+- The post adds keyword-heavy filler that does not help the intended reader
 - Multilingual variants drift in meaning or over-translate
 - `title` and `h1` no longer describe the same page
 - English or Japanese `title` exceeds 70 characters, or `description` exceeds 160 characters
 - The article cites external references but does not end with localized final references (`## References` / `## 官方参考`)
+- Canonical/hreflang is internally inconsistent or missing `x-default` where expected

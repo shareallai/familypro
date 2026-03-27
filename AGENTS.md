@@ -52,7 +52,10 @@
 - 每个可索引 URL 必须有唯一 `title` 和 `description`。
 - 对文章页，`title` 与可见 `h1` 应保持高语义重叠与核心关键词一致；默认优先“核心词一致、写法略区分”。
 - 若使用 `headline`，应让 `title` 更偏搜索结果表达，`headline` 更偏页面阅读体验；两者都必须准确概括内容，且不得互相矛盾。
+- 内容必须以读者问题解决为首要目的；禁止仅为搜索流量堆砌关键词、段落或批量同质页面。
+- 标题与首屏内容必须承诺一致，禁止“标题承诺 A、正文只覆盖 B”的诱导式写法。
 - 文章正文中的站外链接默认必须输出 `rel="nofollow"`；若作者使用原生 HTML `<a>`，也必须保持该属性。
+- 站内内链应使用可抓取的 `<a href>`，并使用可读、具体的锚文本；避免仅用 `click here` 一类泛化文案。
 - `title` 长度建议：
   - 中文页：20-32 个汉字（硬上限 40 汉字）。
   - 英文/日文页：45-65 个字符（硬上限 70 字符）。
@@ -61,6 +64,7 @@
   - 英文/日文页：120-160 个字符（硬上限 160 字符）。
 - 每个可索引页必须有且仅有 1 个绝对 URL canonical，且自指向当前语言页面。
 - 首页/列表页 `hreflang` 基于站内已发布语种；文章页 `hreflang` 基于同一 `translationKey` 的可用翻译语种；都必须包含 `x-default`。
+- 需要去索引时，只允许使用 robots meta 或 `X-Robots-Tag`；禁止把 `noindex` 写在 `robots.txt` 中。
 - 文章详情页必须输出完整的 OG/Twitter 元信息，且 `og:url` 必须等于 canonical。
 - 文章页必须保持 `Article` JSON-LD，至少包含 `headline`、`description`、`datePublished`、`dateModified`、`inLanguage`、`author`、`mainEntityOfPage`。
 - 每页仅一个 `h1`；标题层级按 `h1 -> h2 -> h3` 合理递进，不跳级滥用。
@@ -84,6 +88,7 @@
 - 默认验证命令：`npm run build`。
 - 若改了页面渲染或样式：`npm run preview` 并人工抽查关键页面。
 - 若改了 SEO 逻辑或 `title` / `headline` / `description` / hreflang / canonical：检查页面源码中的 meta/link/json-ld 输出。
+- 若可访问 Search Console，SEO 相关改动后应补做 URL Inspection（索引状态、Google 选定 canonical）抽查。
 - 提交前至少抽查：首页、一个文章列表页、一个文章详情页（含非默认语言至少 1 页）。
 
 ## 9) Done Definition

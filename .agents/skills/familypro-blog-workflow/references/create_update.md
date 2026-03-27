@@ -16,6 +16,7 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - `headline`: optional visible `h1` when wording should differ slightly from `title`
    - `description` and `summary`: concise, readable, and aligned with the actual article
    - `updatedDate`: every blog edit must sync `updatedDate` to today's date (`YYYY-MM-DD`)
+   - Keep `title`/`headline` semantically aligned with the same core keyword so the search promise and page promise match.
 4. Outline before drafting.
    - Decide the article argument/order first.
    - Aim for a clear `h1 -> h2 -> h3` shape, but only add `h3` where true substructure exists.
@@ -25,8 +26,12 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - Improve flow, transitions, and section boundaries when the original structure is weak.
    - Remove fluff, repeated summaries, and generic “AI-sounding” filler.
 6. If the article contains commands, links, pricing, versions, or operational steps, verify them.
+   - Google-facing baseline: write for an intended audience first, not for search-engine-first filler.
+   - Make the first screen explicit about what problem is solved, for whom, and what readers can do after finishing.
    - External links should default to `rel="nofollow"`.
    - If you write raw HTML anchors instead of Markdown links, keep `rel="nofollow"` explicit.
+   - Prefer descriptive anchor text over generic text like "click here".
+   - If adding images, ensure they use meaningful alt text and are near relevant paragraph context.
    - If the post includes reference links, add a final reference section that lists those references:
      - non-Chinese: `## References`
      - Chinese: `## 官方参考`
@@ -34,6 +39,10 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - Run `npm run sync:updated-date` after blog edits.
    - Run `npm run check:references` when the post cites references.
    - Run `npm run build` before finishing.
+8. Post-publish SEO sanity check (when Search Console is available).
+   - Use URL Inspection to confirm the page is crawlable, indexable, and canonicalized as expected.
+   - Verify that `noindex` is not accidentally applied to indexable blog pages.
+   - Check Performance report for query drift and low-CTR pages with high impressions.
 
 ## When rewriting an existing article
 
@@ -47,3 +56,4 @@ Use this reference when creating a new post, rewriting an existing one, expandin
 - Commands should be copyable.
 - The intro should tell the reader what problem the post solves and who it is for.
 - The conclusion should close the loop instead of restating the entire article.
+- Avoid "SEO-only" padding text, synthetic FAQs, or topic stuffing that does not help the target reader complete a task.
