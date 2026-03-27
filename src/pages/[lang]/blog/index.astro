@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCardList from '../../../components/PostCardList.astro';
 import {
   DEFAULT_LANG,
   buildBlogIndexDescription,
@@ -77,6 +78,14 @@ const websiteJsonLd = {
 };
 
 const getPostSlug = (id: string) => id.split('/').pop() ?? id;
+const listItems = postCards.map(({ post, publishedDateText, modifiedDateText, showUpdatedDate }) => ({
+  href: `${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`,
+  title: post.data.title,
+  summary: post.data.summary,
+  category: post.data.category,
+  coverImageSrc: getCoverImageSrc(post.data.coverImage),
+  meta: `${ui.publishedLabel} ${publishedDateText}${showUpdatedDate ? ` · ${ui.updatedLabel} ${modifiedDateText}` : ''} · ${post.data.service} · ${post.data.tags.join(' / ')}`,
+}));
 ---
 
 <BaseLayout
@@ -98,76 +107,9 @@ const getPostSlug = (id: string) => id.split('/').pop() ?? id;
 >
   <h1>{ui.allPosts}</h1>
 
-  {postCards.length === 0 ? (
+  {listItems.length === 0 ? (
     <p>{ui.noPosts}</p>
   ) : (
-    <ul class="post-list">
-      {postCards.map(({ post, publishedDateText, modifiedDateText, showUpdatedDate }) => (
-        <li class="card">
-          <a href={`${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`}>
-            {getCoverImageSrc(post.data.coverImage) && (
-              <img class="card-cover" src={getCoverImageSrc(post.data.coverImage)} alt={post.data.title} />
-            )}
-            <p class="card-category">{post.data.category}</p>
-            <h2>{post.data.title}</h2>
-          </a>
-          <p>{post.data.summary}</p>
-          <p class="meta">
-            {ui.publishedLabel} {publishedDateText}
-            {showUpdatedDate && ` · ${ui.updatedLabel} ${modifiedDateText}`} · {post.data.service} · {post.data.tags.join(' / ')}
-          </p>
-        </li>
-      ))}
-    </ul>
+    <PostCardList items={listItems} />
   )}
 </BaseLayout>
-
-<style>
-  .post-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-  }
-
-  .card {
-    background: #ffffff;
-    border: 1px solid #dbe5ef;
-    border-radius: 0.9rem;
-    padding: 1rem;
-  }
-
-  .card-cover {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    max-height: 180px;
-    border-radius: 0.7rem;
-    border: 1px solid #dbe5ef;
-    margin-bottom: 0.85rem;
-    object-fit: cover;
-  }
-
-  .card-category {
-    margin: 0 0 0.25rem;
-    color: #0f766e;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .card h2 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-
-  .card p {
-    margin: 0.4rem 0;
-  }
-
-  .meta {
-    color: #64748b;
-    font-size: 0.92rem;
-  }
-</style>

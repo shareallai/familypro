@@ -79,6 +79,8 @@
   - 翻译 / 本地化：`translate_localize.md`
   - review-only：`review.md`
   - frontmatter / title / headline / description / SEO：`seo_frontmatter.md`
+- 仓库内 UI 布局与响应式改动工作流的 source of truth 位于 `.agents/skills/familypro-ui-layout-guardrails/`。
+- 当任务涉及页面布局/样式结构调整（如 article-header 与 article-main 对齐、目录侧栏/悬浮、PC 与移动端分流、sticky 与目录高亮、表格溢出处理）时，必须先阅读 `.agents/skills/familypro-ui-layout-guardrails/SKILL.md`，并按其要求继续读取 `references/layout-checklist.md` 后再动手修改。
 - 这一要求不依赖 `~/.codex/skills` 是否已安装、是否已在当前会话暴露为可用 skill；repo-local auto-discovery 与手动读取都以仓库内这套 workflow 为准。
 - 不依赖 `~/.codex/skills`、软链接或其他本机私有安装；工作流配置默认随代码走。
 - `AGENT.md` 负责仓库级硬约束；具体博客工作流、review 流程、创建流程、翻译流程与检查顺序由 skill 承载。

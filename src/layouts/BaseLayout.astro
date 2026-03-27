@@ -108,6 +108,8 @@ const sitemapHref = `${baseUrl}sitemap-index.xml`;
 
 <style>
   :root {
+    --container-max: 920px;
+    --container-vw: 92vw;
     --bg: #f5f7fb;
     --card: #ffffff;
     --text: #1f2937;
@@ -130,7 +132,7 @@ const sitemapHref = `${baseUrl}sitemap-index.xml`;
   }
 
   .container {
-    width: min(920px, 92vw);
+    width: min(var(--container-max), var(--container-vw));
     margin: 0 auto;
   }
 

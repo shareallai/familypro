@@ -153,7 +153,7 @@ const jsonLd = {
         {coverImageSrc && <img class="cover-image" src={coverImageSrc} alt={post.data.title} />}
 
         {shouldShowToc && (
-          <details class="toc-mobile">
+          <details class="toc-mobile toc-mobile-only">
             <summary class="toc-mobile-summary">{ui.tableOfContents}</summary>
             <nav aria-label={ui.tableOfContents}>
               <ul class="toc-list">
@@ -175,7 +175,7 @@ const jsonLd = {
       </div>
 
       {shouldShowToc && (
-        <aside class="toc-card toc-desktop" aria-labelledby="toc-title-desktop">
+        <aside class="toc-card toc-desktop toc-desktop-only" aria-labelledby="toc-title-desktop">
           <p id="toc-title-desktop" class="toc-title">{ui.tableOfContents}</p>
           <nav aria-label={ui.tableOfContents}>
             <ul class="toc-list">
@@ -196,66 +196,84 @@ const jsonLd = {
 
 <script is:inline>
   (() => {
-    const headingNodes = Array.from(document.querySelectorAll('.article-main h2[id]'));
-    const tocLinks = Array.from(document.querySelectorAll('[data-toc-link]'));
-    if (!headingNodes.length || !tocLinks.length) return;
+    const run = () => {
+      const tableNodes = Array.from(document.querySelectorAll('.article-main table'));
+      for (const table of tableNodes) {
+        const parent = table.parentElement;
+        if (parent && parent.classList.contains('table-scroll')) continue;
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-scroll';
+        table.before(wrapper);
+        wrapper.appendChild(table);
+      }
 
-    const linksById = new Map();
-    for (const link of tocLinks) {
-      const id = link.getAttribute('data-target');
-      if (!id) continue;
-      const group = linksById.get(id) ?? [];
-      group.push(link);
-      linksById.set(id, group);
-    }
+      const headingNodes = Array.from(document.querySelectorAll('.article-main h2[id]'));
+      const tocLinks = Array.from(document.querySelectorAll('[data-toc-link]'));
+      if (!headingNodes.length || !tocLinks.length) return;
 
-    const setActive = (activeId) => {
+      const linksById = new Map();
       for (const link of tocLinks) {
-        const target = link.getAttribute('data-target');
-        const isActive = Boolean(activeId && target === activeId);
-        link.classList.toggle('is-active', isActive);
-        if (isActive) {
-          link.setAttribute('aria-current', 'true');
-        } else {
-          link.removeAttribute('aria-current');
+        const id = link.getAttribute('data-target');
+        if (!id) continue;
+        const group = linksById.get(id) ?? [];
+        group.push(link);
+        linksById.set(id, group);
+      }
+
+      const setActive = (activeId) => {
+        for (const link of tocLinks) {
+          const target = link.getAttribute('data-target');
+          const isActive = Boolean(activeId && target === activeId);
+          link.classList.toggle('is-active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'true');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        }
+      };
+
+      const hashId = decodeURIComponent(window.location.hash.replace('#', ''));
+      if (hashId && linksById.has(hashId)) {
+        setActive(hashId);
+      } else if (headingNodes[0]) {
+        setActive(headingNodes[0].id);
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            const visible = entries
+              .filter((entry) => entry.isIntersecting)
+              .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+            if (visible[0]) {
+              setActive(visible[0].target.id);
+            }
+          },
+          {
+            rootMargin: '-24% 0px -62% 0px',
+            threshold: [0, 1],
+          },
+        );
+
+        for (const heading of headingNodes) {
+          observer.observe(heading);
         }
       }
+
+      window.addEventListener('hashchange', () => {
+        const nextId = decodeURIComponent(window.location.hash.replace('#', ''));
+        if (nextId && linksById.has(nextId)) {
+          setActive(nextId);
+        }
+      });
     };
 
-    const hashId = decodeURIComponent(window.location.hash.replace('#', ''));
-    if (hashId && linksById.has(hashId)) {
-      setActive(hashId);
-    } else if (headingNodes[0]) {
-      setActive(headingNodes[0].id);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run, { once: true });
+    } else {
+      run();
     }
-
-    if (!('IntersectionObserver' in window)) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        if (visible[0]) {
-          setActive(visible[0].target.id);
-        }
-      },
-      {
-        rootMargin: '-24% 0px -62% 0px',
-        threshold: [0, 1],
-      },
-    );
-
-    for (const heading of headingNodes) {
-      observer.observe(heading);
-    }
-
-    window.addEventListener('hashchange', () => {
-      const nextId = decodeURIComponent(window.location.hash.replace('#', ''));
-      if (nextId && linksById.has(nextId)) {
-        setActive(nextId);
-      }
-    });
   })();
 </script>
 
@@ -324,23 +342,42 @@ const jsonLd = {
     padding: 1rem;
   }
 
-  :global(.markdown-body table) {
-    display: block;
-    max-width: 100%;
+  :global(.markdown-body .table-scroll) {
+    width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  :global(.markdown-body table) {
+    width: 100%;
+    table-layout: auto;
+  }
+
+  :global(.markdown-body .table-scroll > table) {
+    width: max-content;
+    min-width: 100%;
   }
 
   :global(.markdown-body th),
   :global(.markdown-body td) {
     white-space: normal;
     overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  :global(.markdown-body th + th),
+  :global(.markdown-body td + td) {
+    border-left: 1px solid #e2e8f0;
   }
 
   .toc-mobile {
     background: #f8fafc;
     border: 1px solid #dbe5ef;
     border-radius: 1rem;
+  }
+
+  :global(.toc-mobile-only) {
+    display: block;
   }
 
   .toc-mobile-summary {
@@ -364,7 +401,7 @@ const jsonLd = {
   }
 
   .toc-mobile[open] .toc-mobile-summary::after {
-    content: '−';
+    content: '-';
   }
 
   .toc-mobile nav {
@@ -380,6 +417,10 @@ const jsonLd = {
   }
 
   .toc-desktop {
+    width: 100%;
+  }
+
+  :global(.toc-desktop-only) {
     display: none;
   }
 
@@ -443,14 +484,40 @@ const jsonLd = {
     }
   }
 
+  @media (max-width: 980px) {
+    :global(.markdown-body table) {
+      display: block;
+      width: max-content;
+      min-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    :global(.markdown-body .table-scroll > table) {
+      display: table;
+      width: max-content;
+      min-width: 100%;
+    }
+
+    :global(.markdown-body th),
+    :global(.markdown-body td) {
+      white-space: nowrap;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+  }
+
   @media (min-width: 980px) {
     :global(main.container.content) {
-      width: min(1240px, 94vw);
+      --container-max: 1240px;
+      --container-vw: 94vw;
     }
 
     .article-layout-with-toc {
-      grid-template-columns: minmax(0, 1fr) 290px;
-      column-gap: 1.5rem;
+      --article-toc-width: 290px;
+      --article-toc-gap: 1.5rem;
+      grid-template-columns: minmax(0, 1fr) var(--article-toc-width);
+      column-gap: var(--article-toc-gap);
     }
 
     .article-layout-with-toc > .article-content {
@@ -458,15 +525,15 @@ const jsonLd = {
       min-width: 0;
     }
 
-    .toc-mobile {
-      display: none;
+    :global(.toc-mobile-only) {
+      display: none !important;
     }
 
-    .article-layout-with-toc > .toc-desktop {
+    .article-layout-with-toc > .toc-desktop-only {
       grid-column: 2;
       align-self: start;
       width: 100%;
-      display: block;
+      display: block !important;
       position: sticky;
       top: 6.4rem;
       max-height: calc(100vh - 7.2rem);
