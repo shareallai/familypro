@@ -58,6 +58,7 @@ const faviconPng96Href = new URL(`${baseUrl}favicon-96x96.png`, canonicalOrigin)
 const appleTouchIconHref = new URL(`${baseUrl}apple-touch-icon.png`, canonicalOrigin).toString();
 const manifestHref = new URL(`${baseUrl}site.webmanifest`, canonicalOrigin).toString();
 const sitemapHref = `${baseUrl}sitemap.xml`;
+const activeLanguage = languageLinks.find((item) => item.active) ?? languageLinks[0];
 ---
 
 <!doctype html>
@@ -89,20 +90,34 @@ const sitemapHref = `${baseUrl}sitemap.xml`;
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a class="brand" href={navHomeHref}>{siteName}</a>
-        <nav>
+        <div class="nav-left">
+          <a class="brand" href={navHomeHref}>{siteName}</a>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
           <a href={navHomeHref}>{homeLabel}</a>
           <a href={navBlogHref}>{blogLabel}</a>
         </nav>
-      </div>
-      <div class="container lang-wrap">
-        <span class="lang-label">{languageLabel}:</span>
-        <div class="lang-links">
-          {languageLinks.map((item) => (
-            <a class={item.active ? 'active' : ''} href={item.href} aria-current={item.active ? 'page' : undefined}>
-              {item.label}
-            </a>
-          ))}
+        <div class="nav-right">
+          <details class="lang-menu">
+            <summary class="lang-menu-summary" aria-label={languageLabel}>
+              <span class="lang-menu-icon" aria-hidden="true">🌐</span>
+              <span class="lang-menu-current">{activeLanguage?.label ?? languageLabel}</span>
+              <span class="lang-menu-caret" aria-hidden="true">▾</span>
+            </summary>
+            <ul class="lang-menu-list">
+              {languageLinks.map((item) => (
+                <li>
+                  <a
+                    class={`lang-menu-link ${item.active ? 'active' : ''}`}
+                    href={item.href}
+                    aria-current={item.active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
         </div>
       </div>
     </header>
@@ -157,37 +172,114 @@ const sitemapHref = `${baseUrl}sitemap.xml`;
   }
 
   .nav-wrap {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
-    padding: 0.75rem 0 0.55rem;
+    gap: 1rem;
+    padding: 0.85rem 0;
   }
 
-  .lang-wrap {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0 0 0.7rem;
-    color: var(--muted);
-    font-size: 0.9rem;
+  .nav-left {
+    justify-self: start;
+    min-width: 0;
   }
 
-  .lang-links {
+  .site-nav {
     display: flex;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 1.9rem;
     flex-wrap: wrap;
+    justify-self: center;
   }
 
-  .lang-links a {
+  .nav-right {
+    display: inline-flex;
+    align-items: center;
+    justify-self: end;
+    white-space: nowrap;
+  }
+
+  .lang-menu {
+    position: relative;
+  }
+
+  .lang-menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .lang-menu-summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
     text-decoration: none;
     color: var(--muted);
     border: 1px solid var(--line);
     border-radius: 999px;
-    padding: 0.1rem 0.6rem;
-    font-size: 0.82rem;
+    padding: 0.3rem 0.78rem;
+    font-size: 0.84rem;
+    font-weight: 600;
+    background: #ffffff;
+    cursor: pointer;
+    user-select: none;
   }
 
-  .lang-links a.active {
+  .lang-menu-icon {
+    font-size: 0.86rem;
+    line-height: 1;
+  }
+
+  .lang-menu[open] .lang-menu-summary {
+    color: #0f766e;
+    border-color: #67e8f9;
+    background: #f0fdfa;
+  }
+
+  .lang-menu-caret {
+    font-size: 0.72rem;
+    line-height: 1;
+    transform: translateY(1px);
+  }
+
+  .lang-menu-list {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0.35rem;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    right: 0;
+    min-width: 150px;
+    border: 1px solid var(--line);
+    border-radius: 0.8rem;
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+    z-index: 30;
+  }
+
+  .lang-menu[open] .lang-menu-list {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .lang-menu-link {
+    display: block;
+    text-decoration: none;
+    color: var(--muted);
+    border: 1px solid transparent;
+    border-radius: 0.6rem;
+    padding: 0.24rem 0.52rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  .lang-menu-link:hover {
+    color: #0f766e;
+    background: #f0fdfa;
+    border-color: #67e8f9;
+  }
+
+  .lang-menu-link.active {
     color: #0f766e;
     border-color: #67e8f9;
     background: #f0fdfa;
@@ -197,22 +289,19 @@ const sitemapHref = `${baseUrl}sitemap.xml`;
   .brand {
     color: var(--brand);
     font-weight: 800;
+    font-size: 1.05rem;
     text-decoration: none;
     letter-spacing: 0.02em;
   }
 
-  nav {
-    display: flex;
-    gap: 1rem;
-  }
-
-  nav a {
+  .site-nav a {
     color: var(--muted);
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;
   }
 
-  nav a:hover {
+  .site-nav a:hover {
     color: var(--brand);
   }
 
@@ -283,9 +372,35 @@ const sitemapHref = `${baseUrl}sitemap.xml`;
     }
 
     .nav-wrap {
-      gap: 0.75rem;
-      flex-direction: column;
-      align-items: flex-start;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        "brand brand"
+        "nav lang";
+      row-gap: 0.68rem;
+      column-gap: 0.75rem;
+    }
+
+    .nav-left {
+      grid-area: brand;
+    }
+
+    .site-nav {
+      grid-area: nav;
+      gap: 1rem;
+      justify-content: flex-start;
+      justify-self: start;
+    }
+
+    .nav-right {
+      grid-area: lang;
+      justify-self: end;
+    }
+
+    .lang-menu-list {
+      min-width: 170px;
+      max-width: min(86vw, 320px);
+      right: 0;
+      left: auto;
     }
 
     :global(table) {

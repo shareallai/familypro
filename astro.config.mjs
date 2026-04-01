@@ -12,6 +12,9 @@ const productionBase = isUserSiteRepo ? '/' : `/${repo}`;
 export default defineConfig({
   site,
   base: isGitHubActions ? productionBase : '/',
+  prefetch: {
+    defaultStrategy: 'hover',
+  },
   markdown: {
     rehypePlugins: [
       [

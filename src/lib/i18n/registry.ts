@@ -22,6 +22,22 @@ export const LANGUAGE_REGISTRY = {
     siteName: 'サブスク節約ラボ',
     ui: ja,
   },
+  de: {
+    label: 'Deutsch',
+    localeCode: 'de',
+  },
+  fr: {
+    label: 'Français',
+    localeCode: 'fr',
+  },
+  es: {
+    label: 'Español',
+    localeCode: 'es',
+  },
+  ru: {
+    label: 'Русский',
+    localeCode: 'ru',
+  },
 } as const satisfies Record<string, LanguageDescriptor>;
 
 export const DEFAULT_LANG = 'en' as const;

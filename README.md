@@ -1,6 +1,6 @@
 # 订阅省钱研究所 (Astro + GitHub Pages)
 
-一个以 Markdown 内容为主、SEO 优先、支持多语言（zh/en/ja 预留）的订阅服务博客示例站。
+一个以 Markdown 内容为主、SEO 优先、支持多语言（zh/en/ja 预留）的订阅内容站，主要介绍 AI 订阅与优惠订阅推荐。
 
 ## 本地运行
 

@@ -111,7 +111,7 @@ const getPostSlug = (id: string) => id.split('/').pop() ?? id;
       <ul class="post-list">
         {postCards.map(({ post, publishedDateText, modifiedDateText, showUpdatedDate }) => (
           <li class="card">
-            <a href={`${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`}>
+            <a href={`${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`} data-astro-prefetch="viewport">
               {getCoverImageSrc(post.data.coverImage) && (
                 <img class="card-cover" src={getCoverImageSrc(post.data.coverImage)} alt={post.data.title} />
               )}

@@ -4,7 +4,7 @@ export const ja: UiDictionary = {
   home: 'ホーム',
   blog: 'ブログ',
   tableOfContents: '目次',
-  heroEyebrow: 'SEO重視 / Markdown中心',
+  heroEyebrow: 'AI・動画配信サブスクをお得かつ安全に選ぶ実践ガイド',
   heroTitle: 'サブスク節約ラボ',
   heroDesc:
     'AI と動画配信サービスのサブスクを対象に、料金比較、税金と為替の見方、決済手段ごとの注意点、地域差で変わる実質コスト、契約時のリスク管理、長期運用で無理なく節約するための判断基準と実践手順を、初心者でも再現できるように体系的に整理します。',

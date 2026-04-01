@@ -20,7 +20,7 @@ const TitleTag = titleTag;
 <ul class="post-list">
   {items.map((item) => (
     <li class="card">
-      <a href={item.href}>
+      <a href={item.href} data-astro-prefetch="viewport">
         {item.coverImageSrc && <img class="card-cover" src={item.coverImageSrc} alt={item.title} />}
         <p class="card-category">{item.category}</p>
         <TitleTag>{item.title}</TitleTag>

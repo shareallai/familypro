@@ -17,7 +17,6 @@ type TranslationRef = { lang: Lang; slug: string };
 export async function getStaticPaths() {
   const getPostSlug = (id: string) => id.split('/').pop() ?? id;
   const posts = await getCollection('blog', ({ data }) => !data.draft);
-  const siteLangs = collectSiteLangs(posts.map((post) => post.data.locale));
   const byTranslation = new Map<string, CollectionEntry<'blog'>[]>();
 
   for (const post of posts) {
@@ -33,7 +32,7 @@ export async function getStaticPaths() {
 
     return {
       params: { lang: post.data.locale, slug: getPostSlug(post.id) },
-      props: { post, translations, siteLangs },
+      props: { post, translations },
     };
   });
 }
@@ -41,16 +40,15 @@ export async function getStaticPaths() {
 interface Props {
   post: CollectionEntry<'blog'>;
   translations: TranslationRef[];
-  siteLangs: Lang[];
 }
 
-const { post, translations, siteLangs } = Astro.props as Props;
+const { post, translations } = Astro.props as Props;
 const currentLang = post.data.locale;
 const ui = getUi(currentLang);
 const localeCode = getLocaleCode(currentLang);
 const siteName = getSiteName(currentLang);
 const visibleHeadline = post.data.headline ?? post.data.title;
-const activeLangs = collectSiteLangs(siteLangs);
+const translationLangs = collectSiteLangs(translations.map((item) => item.lang));
 const { Content, headings } = await render(post);
 const tocH2Headings = headings.filter(
   (heading) => heading.depth === 2 && heading.text.trim().length > 0 && heading.slug.trim().length > 0,
@@ -94,11 +92,11 @@ if (defaultTranslation) {
   });
 }
 
-const languageLinks = activeLangs.map((lang) => {
+const languageLinks = translationLangs.map((lang) => {
   const hit = translations.find((item) => item.lang === lang);
   return {
     label: getLangLabel(lang),
-    href: hit ? `${baseUrl}${lang}/blog/${hit.slug}/` : `${baseUrl}${lang}/blog/`,
+    href: hit ? `${baseUrl}${lang}/blog/${hit.slug}/` : `${baseUrl}${currentLang}/blog/${currentSlug}/`,
     active: lang === currentLang,
   };
 });
@@ -511,37 +509,28 @@ const jsonLd = {
   }
 
   @media (min-width: 980px) {
-    :global(main.container.content) {
-      --container-max: 1240px;
-      --container-vw: 94vw;
-    }
-
     .article-layout-with-toc {
-      --article-toc-width: 290px;
-      --article-toc-gap: 1.5rem;
-      grid-template-columns: minmax(0, 1fr) var(--article-toc-width);
-      column-gap: var(--article-toc-gap);
+      display: block;
     }
+  }
 
-    .article-layout-with-toc > .article-content {
-      grid-column: 1;
-      min-width: 0;
-    }
-
+  @media (min-width: 1460px) {
     :global(.toc-mobile-only) {
       display: none !important;
     }
 
     .article-layout-with-toc > .toc-desktop-only {
-      grid-column: 2;
-      align-self: start;
-      width: 100%;
+      --article-toc-width: 250px;
+      --article-toc-gap: 1.2rem;
       display: block !important;
-      position: sticky;
+      position: fixed;
       top: 6.4rem;
+      left: calc(50% + (min(var(--container-max), var(--container-vw)) / 2) + var(--article-toc-gap));
+      width: var(--article-toc-width);
       max-height: calc(100vh - 7.2rem);
       overflow: auto;
       overscroll-behavior: contain;
+      z-index: 8;
     }
   }
 </style>

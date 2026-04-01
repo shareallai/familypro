@@ -18,6 +18,6 @@ export interface UiDictionary {
 export interface LanguageDescriptor {
   label: string;
   localeCode: string;
-  siteName: string;
-  ui: UiDictionary;
+  siteName?: string;
+  ui?: UiDictionary;
 }
