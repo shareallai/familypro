@@ -3,7 +3,7 @@ locale: zh
 translationKey: grok-plan-guide
 title: 2026 Grok 套餐指南：X Premium、SuperGrok、Heavy
 headline: Grok 套餐别买错：先分清 X Premium、SuperGrok 和 Heavy 再下单
-description: 基于 2026 年 3 月 27 日可访问的 xAI 官网、X Help 与美国区 App Store 页面，梳理 Grok 在 X 站内和独立 App 的套餐线，讲清价格层级、已公开权益、未公开额度、买前最容易混淆的地方，以及不同用户该怎么买。
+description: 基于 2026 年 4 月 1 日可访问信息，梳理 X 站内订阅与 SuperGrok Lite / SuperGrok / Heavy 的价格和能力边界，帮你按预算快速选档。
 summary: 如果你正在纠结 Grok 到底该买 X Premium、Premium+、SuperGrok Lite、SuperGrok 还是 SuperGrok Heavy，这篇文章会先把两条订阅线拆开，再讲清公开价格、能力边界和适合谁买。
 category: AI 订阅对比
 pubDate: 2026-03-26
@@ -32,7 +32,7 @@ draft: false
 
 如果不先把这两条线拆开，你很容易买成“社交平台会员”，却以为自己买的是“完整版 Grok”。
 
-截至 **2026 年 3 月 27 日**，基于可访问的 **xAI 官网、X Help 与美国区 App Store 页面**，Grok 相关方案可以先按两类理解：
+截至 **2026 年 4 月 1 日**，基于可访问的 **xAI 官网、X Help 与美国区 App Store 页面**，Grok 相关方案可以先按两类理解：
 
 - **X 站内订阅**：`Basic`、`Premium`、`Premium+`
 - **Grok 独立订阅**：免费版、`SuperGrok Lite`、`SuperGrok`、`SuperGrok Heavy`
@@ -256,6 +256,22 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 - 它更像独立 Grok 线的轻量入口
 - 是否可选、价格和计费周期仍以下单页为准
 
+按 **2026-04-01** 可见口径，`SuperGrok Lite` 可以理解成“想体验图像/视频生成，但暂时不想直接上 30 美元档”的入门版。它更适合轻度、偶尔使用的用户，不是重度生产档。
+
+你可以把它先理解为以下组合（数据日期：**2026-04-01**，仅供参考）：
+
+- **价格**：常见显示为 **US$10/月**（约人民币 70-80 元，受汇率波动影响）；部分平台也会出现 `US$100` 档位，具体对应周期以下单页为准
+- **对话额度**：通常比免费版高，常见口径为免费版约 `2x`；但低于标准 `SuperGrok` 的更高额度
+- **图片生成**：提供基础生图能力，但日额度有限
+- **视频生成**：每天少量短视频，常见规格为 `480p`、最长约 `6 秒`，更偏试玩而非专业生产
+- **AI Agent**：通常附带 `1` 个 Agent（Expert 模式）
+- **生成优先级**：常规速度，非最高优先级队列
+
+买 Lite 前还要记住两点：
+
+- 免费版仍可用 Grok，但查询次数和多模态能力限制会更严格
+- `X Premium` 在部分地区可能附带部分 Grok 访问权限，但 `SuperGrok Lite` 依然是独立于 X 会员体系的 Grok 订阅
+
 ### 5.3 你已经确定会长期高频使用 Grok
 
 优先看 `SuperGrok`。
@@ -282,7 +298,8 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 
 ## 六、最后给一个不绕弯的购买建议
 
-- **预算敏感**：先用免费版；若主要用独立 Grok，再看 `SuperGrok Lite`（若可见）
+- **主要想低门槛试生图和短视频**：优先看 `SuperGrok Lite`（若可见）
+- **预算敏感且只偶尔问答**：先用免费版
 - **主要在 X 里用 Grok**：从 `Premium` 或 `Premium+` 选
 - **主要在 Grok.com / App 里把它当主力 AI**：直接看 `SuperGrok`
 - **明确需要最高模型层级和更高 rate limits**：再上 `SuperGrok Heavy`
@@ -307,9 +324,10 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 ## 官方参考
 
 - [xAI Consumer FAQs](https://x.ai/legal/faq)
+- [Grok Plans](https://grok.com/plans)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video（US App Store）](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- [FamilyPro Super Grok 购买页（独享 / 4 人拼车）](https://familypro.io/en/products/grok?invite=7Dfd94eb)
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok 购买页（独享 / 4 人拼车）</a>

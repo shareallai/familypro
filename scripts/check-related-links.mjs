@@ -1,8 +1,18 @@
 import fs from 'fs';
 import path from 'path';
+import { FOLLOW_ORIGINS } from '../src/lib/markdown/follow-origins.js';
 
 const BLOG_ROOT = 'src/content/blog';
 const ISSUE_PREFIX = 'References section check failed:';
+const FOLLOW_ORIGIN_SET = new Set(
+  FOLLOW_ORIGINS.map((origin) => {
+    try {
+      return new URL(origin).origin;
+    } catch {
+      return null;
+    }
+  }).filter(Boolean),
+);
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -88,6 +98,51 @@ function lineAt(text, index) {
   return text.slice(0, index).split('\n').length;
 }
 
+function collectFollowOriginNofollowIssues(markdown) {
+  const issues = [];
+  const htmlAnchorRegex = /<a\b[^>]*>/gi;
+
+  for (const match of markdown.matchAll(htmlAnchorRegex)) {
+    const tag = match[0];
+    const hrefMatch = tag.match(/\bhref=(["'])(https?:\/\/[^"']+)\1/i);
+    if (!hrefMatch) {
+      continue;
+    }
+
+    let origin = null;
+    try {
+      origin = new URL(hrefMatch[2]).origin;
+    } catch {
+      origin = null;
+    }
+
+    if (!origin || !FOLLOW_ORIGIN_SET.has(origin)) {
+      continue;
+    }
+
+    const relMatch = tag.match(/\brel=(["'])([^"']*)\1/i);
+    if (!relMatch) {
+      continue;
+    }
+
+    const relTokens = relMatch[2]
+      .split(/\s+/)
+      .map((value) => value.trim().toLowerCase())
+      .filter(Boolean);
+
+    if (!relTokens.includes('nofollow')) {
+      continue;
+    }
+
+    issues.push({
+      line: lineAt(markdown, match.index ?? 0),
+      message: `link to ${origin} must not include rel="nofollow" because the origin is allowlisted for follow links`,
+    });
+  }
+
+  return issues;
+}
+
 function checkFile(file) {
   const text = fs.readFileSync(file, 'utf8');
   const { frontmatter, body } = splitFrontmatter(text);
@@ -95,7 +150,7 @@ function checkFile(file) {
   const expected = expectedHeading(locale);
   const expectedHeadingText = `## ${expected}`;
   const allLinks = uniqueNormalized(collectExternalLinks(body));
-  const issues = [];
+  const issues = collectFollowOriginNofollowIssues(body);
 
   if (allLinks.length === 0) {
     return issues;

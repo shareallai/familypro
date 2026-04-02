@@ -3,7 +3,7 @@ locale: fr
 translationKey: grok-plan-guide
 title: "Guide forfaits Grok 2026 : X Premium, SuperGrok et Heavy"
 headline: Comment choisir entre X Premium, SuperGrok et Heavy
-description: "Vérifié sur xAI, X Help et l’App Store US au 27 mars 2026. Comparez X Premium, SuperGrok Lite, SuperGrok et Heavy pour choisir l’offre adaptée à votre usage."
+description: "Vérifié sur xAI, X Help et l’App Store US au 1er avril 2026. Comparez X Premium, SuperGrok Lite, SuperGrok et Heavy pour choisir l’offre adaptée à votre usage."
 summary: Si vous hésitez entre X Premium, Premium+, SuperGrok Lite, SuperGrok et SuperGrok Heavy, ce guide sépare clairement les deux lignes d’abonnement et explique quel plan acheter selon votre usage réel.
 category: Comparatifs d'abonnements IA
 pubDate: 2026-03-26
@@ -23,7 +23,7 @@ Si vous avez regardé les offres Grok récemment, le vrai problème n’est pas 
 
 `X Premium`, `X Premium+`, `SuperGrok Lite`, `SuperGrok` et `SuperGrok Heavy` sont souvent présentés ensemble comme si c’était la même famille. En pratique, ce n’est pas le cas. Une partie des avantages Grok est incluse dans les abonnements de la plateforme X, et une autre partie appartient à l’abonnement autonome `Grok.com` / application Grok. En plus, la communication officielle parle encore de `higher limits` ou de `much higher rate limits` sans publier de tableau de quotas complet et stable.
 
-Au **27 mars 2026**, sur la base des pages accessibles de **xAI, X Help et l’App Store US**, le plus clair est de découper l’offre en deux blocs :
+Au **1er avril 2026**, sur la base des pages accessibles de **xAI, X Help et l’App Store US**, le plus clair est de découper l’offre en deux blocs :
 
 - **Abonnements X** : `Basic`, `Premium`, `Premium+`
 - **Abonnements Grok autonomes** : accès gratuit selon la région, `SuperGrok Lite`, `SuperGrok`, `SuperGrok Heavy`
@@ -126,7 +126,7 @@ En résumé :
 
 Si vous êtes habitué aux comparatifs avec quotas détaillés par jour ou par mois, l’offre Grok paraît moins cadrée : les pages publiques donnent encore peu de chiffres durs.
 
-Éléments considérés comme confirmés au **27 mars 2026** :
+Éléments considérés comme confirmés au **1er avril 2026** :
 
 - `Premium` offre une limite d’usage Grok plus haute que l’expérience standard sur X
 - `Premium+` va plus loin que `Premium`
@@ -246,6 +246,22 @@ Si vous utilisez surtout Grok autonome sur web/mobile et voulez une entrée paya
 - C’est un palier d’entrée autonome plus léger
 - Disponibilité, prix et cycle de facturation doivent être validés sur la page de paiement
 
+Au **2026-04-01**, `SuperGrok Lite` se lit surtout comme une formule d’entrée pour les utilisateurs occasionnels qui veulent tester la génération d’images/vidéos sans passer directement au palier à 30 USD.
+
+Lecture pratique du palier Lite (date des données : **2026-04-01**, à titre indicatif) :
+
+- **Prix** : affiché le plus souvent à **US$10/mois** (environ 70-80 CNY selon le taux de change) ; certaines plateformes affichent aussi un item `US$100`, et la périodicité exacte doit être vérifiée au checkout
+- **Chat** : plafond généralement supérieur au gratuit, avec une référence fréquente autour de `2x`, mais inférieur à `SuperGrok` standard
+- **Images** : génération d’images de base, avec quota quotidien limité
+- **Vidéos** : petit quota quotidien de clips courts, souvent en `480p` jusqu’à `6 secondes`
+- **AI Agent** : inclut en général `1` Agent (mode Expert)
+- **Priorité de génération** : vitesse standard, sans priorité maximale
+
+Avant de payer Lite, gardez deux points en tête :
+
+- l’accès gratuit continue d’exister, mais avec des limites plus strictes sur les requêtes et les fonctions multimodales
+- selon la région, X Premium peut inclure un accès partiel à Grok, mais `SuperGrok Lite` reste un abonnement Grok autonome
+
 ### 5.3 Vous comptez utiliser Grok sérieusement au quotidien
 
 Commencez par `SuperGrok`.
@@ -272,6 +288,12 @@ Si vous ne pouvez pas expliquer précisément pourquoi vous avez besoin de `Heav
 
 ## 6. Recommandation finale
 
+- **Objectif : tester image/vidéo à faible coût** : commencez par `SuperGrok Lite` (si visible)
+- **Budget serré et usage chat occasionnel** : gardez d’abord la version gratuite
+- **Usage principal dans X** : comparez `Premium` et `Premium+`
+- **Usage principal sur Grok.com/app** : commencez par `SuperGrok`
+- **Besoin clair du niveau maximal et de limites plus hautes** : évaluez `SuperGrok Heavy`
+
 ### 6.1 Option d'essai à coût réduit pour SuperGrok
 
 Si vous avez déjà décidé d’acheter `SuperGrok`, vous pouvez aussi comparer une option tierce de partage de coût. D’après l’affichage actuel de la page produit FamilyPro, deux modes sont proposés :
@@ -280,7 +302,7 @@ Si vous avez déjà décidé d’acheter `SuperGrok`, vous pouvez aussi comparer
 - Offre partagée à 4 : prix affiché à **US$5.99**, adaptée à un test à faible coût
 
 Date des données de prix : **2026-03-31**. Informations fournies à titre indicatif ; vérifiez toujours le prix et les options disponibles sur la page de checkout finale.  
-Lien d’achat : <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="nofollow">Page d’achat FamilyPro Super Grok (individuel / partage à 4)</a>
+Lien d’achat : <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">Page d’achat FamilyPro Super Grok (individuel / partage à 4)</a>
 
 Pour la plupart des acheteurs, la décision se résume à deux questions :
 
@@ -292,9 +314,10 @@ Une fois ces deux points clarifiés, la grille Grok est beaucoup plus simple à 
 ## References
 
 - [xAI Consumer FAQs](https://x.ai/legal/faq)
+- [Grok Plans](https://grok.com/plans)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- [FamilyPro Super Grok purchase page (solo / 4-person shared)](https://familypro.io/en/products/grok?invite=7Dfd94eb)
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">Page d’achat FamilyPro Super Grok (individuel / partage à 4)</a>

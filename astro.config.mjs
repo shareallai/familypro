@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import { rehypeExternalLinkNofollow } from './src/lib/markdown/rehype-external-link-nofollow.js';
+import { FOLLOW_ORIGINS } from './src/lib/markdown/follow-origins.js';
 
 const repository = process.env.GITHUB_REPOSITORY ?? 'shareallai/familypro';
 const [owner, repo] = repository.split('/');
@@ -21,7 +22,7 @@ export default defineConfig({
         rehypeExternalLinkNofollow,
         {
           siteOrigin: new URL(site).origin,
-          followOrigins: ['https://familypro.io'],
+          followOrigins: FOLLOW_ORIGINS,
         },
       ],
     ],

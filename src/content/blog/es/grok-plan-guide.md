@@ -3,7 +3,7 @@ locale: es
 translationKey: grok-plan-guide
 title: "Guía de planes Grok 2026: X Premium, SuperGrok y Heavy"
 headline: Cómo elegir entre X Premium, SuperGrok y Heavy
-description: "Verificado con páginas de xAI, X Help y App Store de EE. UU. al 27 de marzo de 2026. Así se diferencian X Premium, SuperGrok Lite, SuperGrok y Heavy."
+description: "Verificado con páginas de xAI, X Help y App Store de EE. UU. al 1 de abril de 2026. Así se diferencian X Premium, SuperGrok Lite, SuperGrok y Heavy."
 summary: Si dudas entre X Premium, Premium+, SuperGrok Lite, SuperGrok y SuperGrok Heavy, esta guía separa las dos líneas de suscripción y te ayuda a elegir el plan correcto según tu uso real.
 category: Comparativas de suscripciones de IA
 pubDate: 2026-03-26
@@ -23,7 +23,7 @@ Si has revisado los planes de Grok recientemente, la confusión no viene solo de
 
 `X Premium`, `X Premium+`, `SuperGrok Lite`, `SuperGrok` y `SuperGrok Heavy` suelen aparecer juntos como si fueran equivalentes. No lo son. Parte de las ventajas de Grok está dentro de la suscripción de la plataforma X, y otra parte pertenece a la suscripción independiente de `Grok.com` y la app de Grok. Además, en muchas páginas públicas siguen apareciendo frases como `higher limits` y `much higher rate limits`, sin una tabla de cuotas fija y completa.
 
-A fecha de **27 de marzo de 2026**, y con base en páginas accesibles de **xAI, X Help y App Store de EE. UU.**, la forma más clara de entenderlo es dividirlo en dos familias:
+A fecha de **1 de abril de 2026**, y con base en páginas accesibles de **xAI, X Help y App Store de EE. UU.**, la forma más clara de entenderlo es dividirlo en dos familias:
 
 - **Suscripciones de X**: `Basic`, `Premium` y `Premium+`
 - **Suscripciones independientes de Grok**: acceso gratis según región, `SuperGrok Lite`, `SuperGrok` y `SuperGrok Heavy`
@@ -126,7 +126,7 @@ Resumen corto:
 
 Si vienes de páginas de IA con tablas detalladas de límites diarios o mensuales, Grok se siente diferente: en consumo general hay pocos números fijos.
 
-Lo que se puede tratar como confirmado (a **27 de marzo de 2026**):
+Lo que se puede tratar como confirmado (a **1 de abril de 2026**):
 
 - `Premium` tiene más límite de uso de Grok que la experiencia estándar en X
 - `Premium+` tiene límites más altos que `Premium`
@@ -248,6 +248,22 @@ Si usas Grok principalmente en web/app independientes y quieres una entrada de p
 - Es un escalón de entrada más ligero dentro de la línea independiente
 - Disponibilidad, ciclo de cobro y precio deben confirmarse en checkout
 
+A fecha de **2026-04-01**, `SuperGrok Lite` se entiende mejor como un plan de entrada para usuarios casuales que quieren probar generación de imagen y video sin saltar directo al plan de 30 USD.
+
+Una lectura práctica del nivel Lite (fecha de datos: **2026-04-01**, solo de referencia):
+
+- **Precio**: lo más habitual es **US$10/mes** (aprox. 70-80 CNY según tipo de cambio); en algunas plataformas también aparece un ítem `US$100`, y el ciclo exacto debe validarse en checkout
+- **Chat**: suele ofrecer más margen que el plan gratis, con una referencia frecuente de alrededor de `2x`, pero por debajo de `SuperGrok` estándar
+- **Imágenes**: generación de imágenes básica con cupo diario limitado
+- **Video**: pocos clips cortos al día, normalmente `480p` y hasta `6 segundos`
+- **AI Agent**: normalmente incluye `1` Agent (modo Expert)
+- **Prioridad de generación**: velocidad estándar, sin la cola de mayor prioridad
+
+Antes de pagar Lite, conviene tener en cuenta dos matices:
+
+- el plan gratis sigue activo, pero con límites más estrictos en consultas y funciones multimodales
+- en algunas regiones, X Premium puede incluir parte del acceso a Grok, pero `SuperGrok Lite` sigue siendo una suscripción independiente de Grok
+
 ### 5.3 Ya sabes que usarás Grok con alta frecuencia
 
 Empieza por `SuperGrok`.
@@ -274,6 +290,12 @@ Si no puedes explicar con claridad por qué necesitas `Heavy`, empezar con `Supe
 
 ## 6. Recomendación final
 
+- **Quieres probar imagen/video con bajo costo**: empieza por `SuperGrok Lite` (si aparece)
+- **Presupuesto ajustado y uso ocasional de chat**: mantén primero el plan gratis
+- **Usas Grok sobre todo dentro de X**: compara `Premium` y `Premium+`
+- **Usas Grok principalmente en web/app independientes**: empieza por `SuperGrok`
+- **Ya necesitas el nivel más alto y más límites**: evalúa `SuperGrok Heavy`
+
 ### 6.1 Opción de prueba de menor costo para usuarios de SuperGrok
 
 Si ya decidiste comprar `SuperGrok`, también puedes comparar una opción de compra compartida de terceros. Según lo que muestra actualmente la página de producto de FamilyPro, hay dos modalidades:
@@ -282,7 +304,7 @@ Si ya decidiste comprar `SuperGrok`, también puedes comparar una opción de com
 - Plan compartido de 4 personas: precio mostrado de **US$5.99**, orientado a probar con menor costo
 
 Fecha de los datos de precio: **2026-03-31**. Datos solo de referencia; confirma siempre precio y opciones disponibles en la página final de pago.  
-Enlace de compra: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="nofollow">FamilyPro Super Grok (individual / compartido de 4)</a>
+Enlace de compra: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok (individual / compartido de 4)</a>
 
 Para la mayoría, la decisión real se reduce a dos preguntas:
 
@@ -294,9 +316,10 @@ Cuando esas dos respuestas están claras, elegir plan de Grok se vuelve mucho m�
 ## References
 
 - [xAI Consumer FAQs](https://x.ai/legal/faq)
+- [Grok Plans](https://grok.com/plans)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- [FamilyPro Super Grok purchase page (solo / 4-person shared)](https://familypro.io/en/products/grok?invite=7Dfd94eb)
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok (individual / compartido de 4)</a>
