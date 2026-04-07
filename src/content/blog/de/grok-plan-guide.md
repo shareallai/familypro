@@ -3,11 +3,11 @@ locale: de
 translationKey: grok-plan-guide
 title: "Grok-Tarif-Guide 2026: X Premium, SuperGrok und Heavy"
 headline: So wählst du zwischen X Premium, SuperGrok und Heavy
-description: "Geprüft mit xAI-Seiten, X Help und US-App-Store-Daten vom 1. April 2026. So unterscheiden sich X Premium, SuperGrok Lite, SuperGrok und Heavy in der Praxis."
-summary: Wenn du zwischen X Premium, Premium+, SuperGrok Lite, SuperGrok und SuperGrok Heavy schwankst, trennt dieser Guide die zwei Abo-Linien sauber und zeigt, welches Paket zu welchem Nutzungsprofil passt.
+description: "Vergleiche X Premium, Premium+, SuperGrok Lite, SuperGrok und Heavy nach Zugang, Grok-Vorteilen und passendem Nutzungsprofil."
+summary: Wenn du zwischen X Premium, Premium+, SuperGrok Lite, SuperGrok und SuperGrok Heavy schwankst, trennt dieser Guide zuerst die zwei Abo-Linien und erklärt dann, welche Preissignale öffentlich sichtbar sind, wo die Grenzen der bestätigten Informationen liegen und welches Paket zu welchem Nutzungstyp passt.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-26
-updatedDate: 2026-04-01
+updatedDate: 2026-04-07
 author: Mark
 service: Grok
 tags:
@@ -19,11 +19,13 @@ tags:
 draft: false
 ---
 
-Wenn du dir in letzter Zeit Grok-Tarife angesehen hast, liegt die Verwirrung nicht an zu vielen Namen. Das Problem ist, dass diese Namen nicht zu einer einzigen Abo-Linie gehören.
+Wenn du dir in letzter Zeit Grok-Tarife angesehen hast, liegt die Verwirrung nicht an zu vielen Namen. Das Problem ist, dass diese Namen auf zwei unterschiedliche Abo-Linien verteilt sind.
 
 `X Premium`, `X Premium+`, `SuperGrok Lite`, `SuperGrok` und `SuperGrok Heavy` werden oft so dargestellt, als wären sie austauschbar. Das sind sie nicht. Ein Teil der Grok-Vorteile steckt im X-Plattform-Abo, ein anderer Teil gehört zum eigenständigen Angebot auf `Grok.com` bzw. in der Grok-App. Dazu kommt: In offiziellen Texten stehen weiterhin Formulierungen wie `higher limits` oder `much higher rate limits`, aber kein konsistenter Quotenvergleich mit festen Zahlen.
 
-Stand **1. April 2026** ist es auf Basis der zugänglichen Seiten von **xAI, X Help und dem US-App-Store** am sinnvollsten, Grok in zwei Produktlinien zu trennen:
+Die wichtigste aktuelle Änderung ist dabei: Auf der derzeitigen eingeloggten `X Premium`-Anmeldeseite für normale Privatkonten wird **`Premium+` ausdrücklich als inklusive `SuperGrok`** verkauft, während `Premium` weiter nur als `Enhanced Grok access` erscheint.
+
+Stand **7. April 2026** ist es auf Basis der zugänglichen Seiten von **xAI, X Help, der eingeloggten X-Premium-Anmeldeseite und sichtbaren US-App-Store-Kaufeinträgen** am sinnvollsten, Grok in zwei Produktlinien zu trennen:
 
 - **X-Abos**: `Basic`, `Premium`, `Premium+`
 - **Eigenständige Grok-Abos**: regionsabhängiger Gratiszugang, `SuperGrok Lite`, `SuperGrok`, `SuperGrok Heavy`
@@ -46,11 +48,13 @@ Preisangaben in diesem Artikel beziehen sich auf **US-Dollar und den US-Markt**.
 
 Wenn du nur eine Kurzempfehlung willst:
 
-- **X-Mitgliedschaft mit besserem Grok-Zugang**: `Premium`
-- **Eigenständiges Grok mit kleinerem Budget**: zuerst `SuperGrok Lite` prüfen (falls im Konto/in der Region sichtbar)
+- **Günstigeres X-Abo mit besserem Grok-Zugang**: `Premium`
+- **X-Mitgliedschaft mit enthaltenem `SuperGrok`**: `Premium+`
+- **Eigenständiges Grok mit niedrigerem Einstiegspreis**: zuerst `SuperGrok Lite` prüfen (falls im Konto/in der Region sichtbar)
 - **Grok als Hauptprodukt**: `SuperGrok`
 - **Höchste Stufe für intensive Nutzung**: `SuperGrok Heavy`
-- Wenn du unsicher bist, ob du `Heavy` brauchst, brauchst du es vermutlich noch nicht.
+
+Wenn du unsicher bist, ob du `Heavy` brauchst, brauchst du es vermutlich noch nicht.
 
 ## 2. Grok ist keine einzige Abo-Linie
 
@@ -61,14 +65,15 @@ X Help beschreibt aktuell drei `X Premium`-Stufen:
 | Tarif | US-Webpreis | Was du primär kaufst | Öffentliche Grok-Formulierung |
 | --- | --- | --- | --- |
 | Basic | ab 3 $/Monat oder 32 $/Jahr | Post-Bearbeitung, längere Posts, längere Videos, Reply-Priorisierung und Basisfunktionen | Grok wird nicht als Hauptkaufgrund positioniert |
-| Premium | ab 8 $/Monat oder 84 $/Jahr | Haken, weniger Werbung, Creator-Monetarisierung, Media Studio u. a. | `increased usage limits on Grok` |
-| Premium+ | ab 40 $/Monat oder 395 $/Jahr | Höchste Reply-Priorisierung, stärkere Werbereduktion, Radar, Articles u. a. | `higher limits on Grok`; laut [Grok-4-Ankündigung](https://x.ai/news/grok-4) Zugang für `Premium+`, laut [Grok-4.1-Ankündigung](https://x.ai/news/grok-4-1) Zugang für alle Nutzer |
+| Premium | ab 8 $/Monat oder 84 $/Jahr | Haken, weniger Werbung, Creator-Monetarisierung, Media Studio u. a. | X Help schreibt `increased usage limits on Grok`; die aktuelle Anmeldeseite nennt es `Enhanced Grok access` |
+| Premium+ | ab 40 $/Monat oder 395 $/Jahr | Höchste Reply-Priorisierung, stärkere Werbereduktion, Radar, Articles u. a. | X Help schreibt `higher limits on Grok`; die aktuelle Anmeldeseite bezeichnet es direkt als `SuperGrok`, mit `Worth $30 USD a month` |
 
 Hier passieren die meisten Fehlentscheidungen:
 
 - Du bezahlst zuerst für die **X-Plattform**
-- Grok ist nur ein Teil des Gesamtpakets
-- Ein höherer Preis bei `Premium+` bedeutet nicht automatisch, dass es für reine AI-Nutzung die bessere Wahl ist
+- Aber mit Stand **2026-04-07** verkauft der eingeloggte Signup-Flow `Premium+` bereits als Abo, das **`SuperGrok` einschließt**
+- Auf derselben Seite bleibt `Premium` bei `Enhanced Grok access`, der Unterschied ist also nicht mehr nur ein vages „mehr Limits“
+- Aktionen wie `50% off for 2 months` sind zeitlich begrenzt und sollten immer im finalen Checkout geprüft werden
 
 Wenn dich die soziale Plattform X kaum interessiert, solltest du in der Regel zuerst die eigenständigen Grok-Tarife vergleichen.
 
@@ -119,17 +124,19 @@ dann ist `SuperGrok` in der Regel der passendere Einstiegspunkt.
 
 Kurzform:
 
-- `X Premium` ist **X-Mitgliedschaft mit verbessertem Grok-Zugang**
+- `Premium` ist **eher X-Mitgliedschaft mit verbessertem Grok-Zugang**
+- `Premium+` ist laut aktueller Anmeldeseite **X-Mitgliedschaft mit enthaltenem `SuperGrok`**
 - `SuperGrok` ist **das eigenständige Grok-Abo**
 
 ### 3.2 xAI zeigt Zugangsstufen klarer als harte Zahlenlimits
 
 Wer detaillierte Quoten-Tabellen aus anderen KI-Abos gewohnt ist, merkt bei Grok schnell: Es gibt auf den öffentlichen Seiten noch relativ wenige feste Zahlen.
 
-Als ausreichend bestätigt (Stand **1. April 2026**) gelten:
+Als ausreichend bestätigt (Stand **7. April 2026**) gelten:
 
 - `Premium` hat höhere Grok-Nutzungsgrenzen als die Standardnutzung auf X
 - `Premium+` liegt über `Premium`
+- Die eingeloggte `X Premium`-Anmeldeseite bezeichnet `Premium` aktuell als `Enhanced Grok access` und `Premium+` als `SuperGrok`
 - Laut [Grok-4-Ankündigung](https://x.ai/news/grok-4) ist `Grok 4` für `SuperGrok` und `Premium+` verfügbar
 - Laut [Grok-4.1-Ankündigung](https://x.ai/news/grok-4-1) ist `Grok 4.1` für alle Nutzer auf `grok.com`, `X` und `iOS/Android` verfügbar
 - `SuperGrok Heavy` fügt `Grok 4 Heavy` hinzu
@@ -237,27 +244,25 @@ Bei gelegentlicher Nutzung reicht oft ein normales Paid-Tier. Höhere Stufen rec
 Starte mit `Premium` oder `Premium+`.
 
 - `Premium` passt, wenn X-Mitgliedschaft für dich ohnehin sinnvoll ist und du besseren Grok-Zugang als Zusatz willst
-- `Premium+` passt, wenn du auch die höheren X-Plattformvorteile und den höheren Grok-Zugang brauchst
+- `Premium+` passt, wenn du die höheren X-Plattformvorteile willst und `SuperGrok` über dieses Abo direkt mitnehmen möchtest
 
 Wenn dir Haken, weniger Werbung, Articles oder Radar wenig bedeuten, solltest du nicht automatisch zu `Premium+` greifen.
 
 ### 5.2 Du kaufst einen KI-Assistenten, kein Social-Media-Bundle
 
-Wenn du Grok hauptsächlich eigenständig auf Web/Mobile nutzt und einen günstigeren bezahlten Einstieg willst, prüfe `SuperGrok Lite` (falls für dein Konto/deine Region verfügbar).
+Wenn du Grok hauptsächlich eigenständig auf Web oder Mobile nutzt und erst mit einer günstigeren Paid-Stufe einsteigen willst, ist `SuperGrok Lite` weiterhin die erste Stufe, die du prüfen solltest, falls sie für dein Konto oder deine Region sichtbar ist.
 
-- Es ist als leichter eigenständiger Einstieg zu verstehen
-- Verfügbarkeit, Abrechnungszyklus und Preise immer im Checkout bestätigen
+- Es ist am besten als leichtere Einstiegsstufe innerhalb der eigenständigen Grok-Linie zu verstehen
+- Im US App Store sind aktuell `SuperGrok Lite USD 10` und `SuperGrok Lite USD 100` sichtbar
+- Die öffentliche App-Store-Seite ordnet diese Beträge aber keinem verifizierten Abrechnungszeitraum sauber zu
 
-Mit Stand **2026-04-01** lässt sich `SuperGrok Lite` am besten als Einstiegstarif für Casual-Nutzer einordnen, die Bild- und Video-Generierung testen möchten, aber nicht direkt in den 30-USD-Tarif gehen wollen.
+Mit Stand **2026-04-07** ist die sicherste Lesart von `SuperGrok Lite`: ein bezahlter Einstiegstarif für alle, die eigenständiges Grok ausprobieren wollen, ohne direkt auf Standard-`SuperGrok` zu gehen. Er passt besser zu leichter, gelegentlicher Nutzung als zu schweren Produktions-Workflows.
 
-Praktische Lesart von Lite (Preisdatenstand: **2026-04-01**, nur zur Orientierung):
+Robuster lässt sich Lite derzeit so zusammenfassen:
 
-- **Preis**: häufig als **US$10/Monat** sichtbar (grob 70-80 CNY je nach Wechselkurs); auf manchen Plattformen erscheint zusätzlich ein `US$100`-Eintrag, der Abrechnungszyklus muss im Checkout bestätigt werden
-- **Chat-Limits**: in der Regel höher als im Free-Zugang, oft mit grober `2x`-Einordnung, aber unterhalb von Standard-`SuperGrok`
-- **Bildgenerierung**: grundlegende Bildgenerierung mit begrenztem Tageskontingent
-- **Videogenerierung**: kleine tägliche Menge kurzer Clips, häufig `480p` bis maximal `6 Sekunden`
-- **AI Agent**: typischerweise `1` Agent (Expert-Modus) enthalten
-- **Generierungspriorität**: Standardgeschwindigkeit, nicht die höchste Prioritätsstufe
+- es ist ein Paid-Tier unterhalb von Standard-`SuperGrok`
+- endgültige Funktionsgrenzen, Abrechnungszeitraum und Preis hängen weiter von Region, Plattform und Kontostatus ab
+- vor dem Kauf solltest du immer den realen Checkout in deiner eigenen `Grok.com`- oder App-Sitzung prüfen
 
 Vor dem Lite-Kauf solltest du zwei Punkte einplanen:
 
@@ -296,15 +301,16 @@ Wenn du nicht klar begründen kannst, warum du `Heavy` brauchst, ist `SuperGrok`
 - **Du nutzt Grok primär auf Grok.com/in der App**: starte mit `SuperGrok`
 - **Du brauchst klar das höchste Modellniveau plus höhere Limits**: prüfe `SuperGrok Heavy`
 
-### 6.1 Option zum günstigen Testen von SuperGrok
+### 6.1 SuperGrok günstiger testen? Drittanbieter-Shared-Optionen kann man mitprüfen
 
-Wenn du dich bereits für `SuperGrok` entschieden hast, kannst du zusätzlich eine Drittanbieter-Shared-Option vergleichen. Laut aktueller FamilyPro-Produktseite gibt es zwei Kaufmodi:
+Wenn du dich bereits für `SuperGrok` entschieden hast, kannst du zusätzlich Shared-Account-Angebote von Drittanbietern vergleichen. Auf Basis der am **7. April 2026** sichtbaren FamilyPro-Produktseite ist der Kernpunkt einfach: Solche Angebote geben dir `SuperGrok`-Zugang über ein gemeinsames Konto.
 
-- Solo-Modus: ausgewiesener Preis rund **30 % unter** dem offiziellen Niveau
-- 4er-Shared-Modus: ausgewiesener Preis **US$5.99**, geeignet für einen günstigen Einstiegstest
+- der Vorteil ist meist ein niedrigerer Einstiegspreis
+- der Nachteil ist, dass das Konto nicht vollständig dir allein gehört und du die Shared-Account-Regeln einhalten musst
+- ob eine Shared-Option verfügbar ist, wie lange sie gilt und was sie kostet, hängt trotzdem von der jeweils live sichtbaren Checkout-Seite ab
 
-Preisstand: **2026-03-31**. Alle Angaben nur zur Orientierung; verbindlich sind die tagesaktuellen Preise und Optionen auf der finalen Checkout-Seite.  
-Kauflink: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite (Solo / 4er Shared)</a>
+Wenn du das Passwort selbst ändern, ein langfristiges persönliches Profil pflegen oder ein vollständig privates Konto haben willst, passt ein offizielles Einzelabo meist besser.  
+Kauflink: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite</a>
 
 Für die meisten gilt: Die Entscheidung lässt sich auf zwei Fragen reduzieren.
 
@@ -319,7 +325,8 @@ Wenn diese beiden Punkte klar sind, ist die Grok-Tarifwahl deutlich einfacher.
 - [Grok Plans](https://grok.com/plans)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
+- [X-Premium-Anmeldeseite (Login erforderlich)](https://x.com/i/premium_sign_up)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite (Solo / 4er Shared)</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite</a>

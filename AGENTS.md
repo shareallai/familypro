@@ -1,4 +1,4 @@
-# AGENT.md
+# AGENTS.md
 
 ## 1) Mission
 你是本仓库（Astro 多语言内容站）的执行型工程 agent。目标是：
@@ -21,7 +21,7 @@
 - 不破坏既有路由形态：`/{lang}/`、`/{lang}/blog/`、`/{lang}/blog/{slug}/`。
 - 不硬编码 GitHub Pages repo 路径，遵循 `GITHUB_REPOSITORY` 推导。
 - frontmatter 必须符合 `blog` collection schema。
-- 渲染模式必须保持“服务端输出 HTML”（当前为 Astro 静态预渲染，build-time SSR）。禁止把核心内容改成纯客户端渲染。
+- 渲染模式必须保持“构建期输出静态 HTML”（当前为 Astro prerender）。禁止把核心内容改成纯客户端渲染。
 - 默认策略：新增文章、重写文章、新增语种翻译时，只改 `src/content/blog/**`。
 - `src/pages/**` 与 `src/lib/i18n/locales/**` 视为模板/框架层，非必要不改。
 - 仅在以下情况允许改模板层：站点级 SEO 规则升级、全站信息架构/布局变更、schema 或渲染机制发生结构性调整。
@@ -54,7 +54,7 @@
 - 若使用 `headline`，应让 `title` 更偏搜索结果表达，`headline` 更偏页面阅读体验；两者都必须准确概括内容，且不得互相矛盾。
 - 内容必须以读者问题解决为首要目的；禁止仅为搜索流量堆砌关键词、段落或批量同质页面。
 - 标题与首屏内容必须承诺一致，禁止“标题承诺 A、正文只覆盖 B”的诱导式写法。
-- 文章正文中的站外链接默认必须输出 `rel="nofollow"`；若作者使用原生 HTML `<a>`，也必须保持该属性。
+- 文章正文中的站外链接默认必须输出 `rel="nofollow"`；若仓库实现存在明确的 follow allowlist，则以 allowlist 为准。若作者使用原生 HTML `<a>`，也必须遵循这一规则。
 - 站内内链应使用可抓取的 `<a href>`，并使用可读、具体的锚文本；避免仅用 `click here` 一类泛化文案。
 - `title` 长度建议：
   - 中文页：20-32 个汉字（硬上限 40 汉字）。
@@ -69,7 +69,7 @@
 - 文章页必须保持 `Article` JSON-LD，至少包含 `headline`、`description`、`datePublished`、`dateModified`、`inLanguage`、`author`、`mainEntityOfPage`。
 - 每页仅一个 `h1`；标题层级按 `h1 -> h2 -> h3` 合理递进，不跳级滥用。
 - 非装饰性图片必须有可读 `alt` 文本。
-- `robots.txt` 和 `sitemap-index.xml` 必须可访问；不得引入明显内部死链。
+- `robots.txt` 和 `sitemap.xml` 必须可访问；不得引入明显内部死链。
 
 ## 7) Skill Usage
 - 仓库内博客工作流文档的 source of truth 位于 `.agents/skills/familypro-blog-workflow/`。
@@ -83,7 +83,7 @@
 - 当任务涉及页面布局/样式结构调整（如 article-header 与 article-main 对齐、目录侧栏/悬浮、PC 与移动端分流、sticky 与目录高亮、表格溢出处理）时，必须先阅读 `.agents/skills/familypro-ui-layout-guardrails/SKILL.md`，并按其要求继续读取 `references/layout-checklist.md` 后再动手修改。
 - 这一要求不依赖 `~/.codex/skills` 是否已安装、是否已在当前会话暴露为可用 skill；repo-local auto-discovery 与手动读取都以仓库内这套 workflow 为准。
 - 不依赖 `~/.codex/skills`、软链接或其他本机私有安装；工作流配置默认随代码走。
-- `AGENT.md` 负责仓库级硬约束；具体博客工作流、review 流程、创建流程、翻译流程与检查顺序由 skill 承载。
+- `AGENTS.md` 负责仓库级硬约束；具体博客工作流、review 流程、创建流程、翻译流程与检查顺序由 skill 承载。
 
 ## 8) Validation
 - 若改动了 `src/content/blog/**`：先执行 `npm run sync:updated-date`，确保本次改动文章的 `updatedDate` 已同步到当天。
