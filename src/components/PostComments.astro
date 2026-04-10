@@ -48,10 +48,11 @@ const isConfigured = Boolean(repository && repoId && category && categoryId && t
 <style>
   .post-comments {
     margin-top: 1.2rem;
-    padding: 0.9rem;
-    border: 1px solid #dbe5ef;
+    padding: 0.95rem;
+    border: 1px solid var(--line);
     border-radius: 1rem;
-    background: #ffffff;
+    background: var(--card);
+    box-shadow: var(--shadow-card);
   }
 
   .post-comments :global(.giscus),

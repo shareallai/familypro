@@ -23,6 +23,14 @@ const blog = defineCollection({
     service: z.string().default('General'),
     tags: z.array(z.string()).default([]),
     relatedTranslationKeys: z.array(z.string()).default([]),
+    topOffer: z
+      .object({
+        title: z.string().min(1),
+        subtitle: z.string().min(1),
+        buttonText: z.string().min(1),
+        buttonLink: z.string().min(1),
+      })
+      .optional(),
     draft: z.boolean().default(false),
   }),
 });

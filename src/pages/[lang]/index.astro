@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCardList from '../../components/PostCardList.astro';
 import {
   DEFAULT_LANG,
   buildHomeTitle,
@@ -36,16 +37,6 @@ const localeCode = getLocaleCode(lang);
 const posts = (await getCollection('blog', ({ data }) => !data.draft && data.locale === lang)).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
 );
-const postCards = posts.map((post) => {
-  const publishedAt = post.data.pubDate;
-  const modifiedAt = post.data.updatedDate ?? publishedAt;
-  return {
-    post,
-    publishedDateText: publishedAt.toISOString().slice(0, 10),
-    modifiedDateText: modifiedAt.toISOString().slice(0, 10),
-    showUpdatedDate: modifiedAt.getTime() > publishedAt.getTime(),
-  };
-});
 
 const rawBaseUrl = import.meta.env.BASE_URL;
 const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
@@ -78,6 +69,21 @@ const websiteJsonLd = {
 };
 
 const getPostSlug = (id: string) => id.split('/').pop() ?? id;
+const listItems = posts.map((post) => {
+  const publishedAt = post.data.pubDate;
+  const modifiedAt = post.data.updatedDate ?? publishedAt;
+  const publishedDateText = publishedAt.toISOString().slice(0, 10);
+  const modifiedDateText = modifiedAt.toISOString().slice(0, 10);
+  const showUpdatedDate = modifiedAt.getTime() > publishedAt.getTime();
+  return {
+    href: `${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`,
+    title: post.data.title,
+    summary: post.data.summary,
+    category: post.data.category,
+    coverImageSrc: getCoverImageSrc(post.data.coverImage),
+    meta: `${ui.publishedLabel} ${publishedDateText}${showUpdatedDate ? ` · ${ui.updatedLabel} ${modifiedDateText}` : ''} · ${post.data.tags.join(' / ')}`,
+  };
+});
 ---
 
 <BaseLayout
@@ -100,98 +106,56 @@ const getPostSlug = (id: string) => id.split('/').pop() ?? id;
   <section class="hero">
     <p class="eyebrow">{ui.heroEyebrow}</p>
     <h1>{ui.heroTitle}</h1>
-    <p>{ui.heroDesc}</p>
+    <p class="hero-desc">{ui.heroDesc}</p>
   </section>
 
-  <section>
-    <h2>{ui.latestPosts}</h2>
-    {postCards.length === 0 ? (
+  <section class="list-section">
+    <h2 class="list-title">{ui.latestPosts}</h2>
+    {listItems.length === 0 ? (
       <p>{ui.noPosts}</p>
     ) : (
-      <ul class="post-list">
-        {postCards.map(({ post, publishedDateText, modifiedDateText, showUpdatedDate }) => (
-          <li class="card">
-            <a href={`${baseUrl}${lang}/blog/${getPostSlug(post.id)}/`} data-astro-prefetch="viewport">
-              {getCoverImageSrc(post.data.coverImage) && (
-                <img class="card-cover" src={getCoverImageSrc(post.data.coverImage)} alt={post.data.title} />
-              )}
-              <p class="card-category">{post.data.category}</p>
-              <h3>{post.data.title}</h3>
-            </a>
-            <p>{post.data.summary}</p>
-            <p class="meta">
-              {ui.publishedLabel} {publishedDateText}
-              {showUpdatedDate && ` · ${ui.updatedLabel} ${modifiedDateText}`} · {post.data.tags.join(' / ')}
-            </p>
-          </li>
-        ))}
-      </ul>
+      <PostCardList items={listItems} titleTag="h3" />
     )}
   </section>
 </BaseLayout>
 
 <style>
   .hero {
-    background: #ffffff;
-    border: 1px solid #dbe5ef;
+    background:
+      linear-gradient(180deg, rgba(236, 254, 255, 0.68) 0%, rgba(255, 255, 255, 0.92) 48%, #ffffff 100%),
+      repeating-linear-gradient(90deg, transparent 0, transparent 22px, rgba(15, 23, 42, 0.018) 22px, rgba(15, 23, 42, 0.018) 23px);
+    border: 1px solid var(--line);
     border-radius: 1rem;
-    padding: 1.2rem 1.2rem 1.1rem;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-    margin-bottom: 1.5rem;
+    padding: 1.3rem 1.2rem 1.18rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1.4rem;
   }
 
   .eyebrow {
     margin: 0;
     color: #0f766e;
     font-weight: 700;
-    font-size: 0.88rem;
-  }
-
-  .post-list {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    gap: 1rem;
-  }
-
-  .card {
-    background: #ffffff;
-    border: 1px solid #dbe5ef;
-    border-radius: 0.9rem;
-    padding: 1rem 1rem 0.8rem;
-  }
-
-  .card-cover {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    max-height: 180px;
-    border-radius: 0.7rem;
-    border: 1px solid #dbe5ef;
-    margin-bottom: 0.85rem;
-    object-fit: cover;
-  }
-
-  .card-category {
-    margin: 0 0 0.25rem;
-    color: #0f766e;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-size: 0.79rem;
+    letter-spacing: 0.075em;
     text-transform: uppercase;
   }
 
-  .card h3 {
+  .hero h1 {
+    margin: 0.42rem 0 0.55rem;
+  }
+
+  .hero-desc {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--text-soft);
+  }
+
+  .list-section {
+    margin-top: 0.9rem;
+  }
+
+  .list-title {
     margin-top: 0;
-    margin-bottom: 0.4rem;
-  }
-
-  .card p {
-    margin: 0.3rem 0;
-  }
-
-  .meta {
-    color: #64748b;
-    font-size: 0.9rem;
+    margin-bottom: 0.72rem;
   }
 </style>

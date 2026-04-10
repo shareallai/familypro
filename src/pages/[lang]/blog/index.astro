@@ -105,11 +105,53 @@ const listItems = postCards.map(({ post, publishedDateText, modifiedDateText, sh
   alternates={alternates}
   jsonLd={websiteJsonLd}
 >
-  <h1>{ui.allPosts}</h1>
+  <section class="index-hero">
+    <p class="index-kicker">{ui.blog}</p>
+    <h1>{ui.allPosts}</h1>
+    <p class="index-desc">{description}</p>
+  </section>
 
-  {listItems.length === 0 ? (
-    <p>{ui.noPosts}</p>
-  ) : (
-    <PostCardList items={listItems} />
-  )}
+  <section class="index-list">
+    {listItems.length === 0 ? (
+      <p>{ui.noPosts}</p>
+    ) : (
+      <PostCardList items={listItems} />
+    )}
+  </section>
 </BaseLayout>
+
+<style>
+  .index-hero {
+    background:
+      linear-gradient(180deg, rgba(236, 254, 255, 0.7) 0%, rgba(255, 255, 255, 0.92) 52%, #ffffff 100%),
+      repeating-linear-gradient(90deg, transparent 0, transparent 22px, rgba(15, 23, 42, 0.016) 22px, rgba(15, 23, 42, 0.016) 23px);
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    padding: 1.24rem 1.2rem 1.1rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1rem;
+  }
+
+  .index-kicker {
+    margin: 0;
+    color: #0f766e;
+    font-weight: 700;
+    font-size: 0.79rem;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+  }
+
+  .index-hero h1 {
+    margin: 0.44rem 0 0.48rem;
+  }
+
+  .index-desc {
+    margin: 0;
+    max-width: 64ch;
+    color: var(--text-soft);
+  }
+
+  .index-list {
+    margin-top: 0.95rem;
+  }
+</style>

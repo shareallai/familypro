@@ -84,11 +84,11 @@ const postCards = posts.map((post) => ({
   <section class="hero">
     <p class="eyebrow">{ui.heroEyebrow}</p>
     <h1>{ui.heroTitle}</h1>
-    <p>{ui.heroDesc}</p>
+    <p class="hero-desc">{ui.heroDesc}</p>
   </section>
 
-  <section>
-    <h2>{ui.latestPosts}</h2>
+  <section class="list-section">
+    <h2 class="list-title">{ui.latestPosts}</h2>
     {postCards.length === 0 ? (
       <p>{ui.noPosts}</p>
     ) : (
@@ -99,19 +99,42 @@ const postCards = posts.map((post) => ({
 
 <style>
   .hero {
-    background: #ffffff;
-    border: 1px solid #dbe5ef;
+    background:
+      linear-gradient(180deg, rgba(236, 254, 255, 0.68) 0%, rgba(255, 255, 255, 0.92) 48%, #ffffff 100%),
+      repeating-linear-gradient(90deg, transparent 0, transparent 22px, rgba(15, 23, 42, 0.018) 22px, rgba(15, 23, 42, 0.018) 23px);
+    border: 1px solid var(--line);
     border-radius: 1rem;
-    padding: 1.2rem 1.2rem 1.1rem;
-    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
-    margin-bottom: 1.5rem;
+    padding: 1.3rem 1.2rem 1.18rem;
+    box-shadow: var(--shadow-card);
+    margin-bottom: 1.4rem;
   }
 
   .eyebrow {
     margin: 0;
     color: #0f766e;
     font-weight: 700;
-    font-size: 0.88rem;
+    font-size: 0.79rem;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+  }
+
+  .hero h1 {
+    margin: 0.42rem 0 0.55rem;
+  }
+
+  .hero-desc {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--text-soft);
+  }
+
+  .list-section {
+    margin-top: 0.9rem;
+  }
+
+  .list-title {
+    margin-top: 0;
+    margin-bottom: 0.72rem;
   }
 
 </style>
