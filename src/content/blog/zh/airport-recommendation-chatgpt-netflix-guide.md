@@ -1,7 +1,7 @@
 ---
 locale: zh
 translationKey: airport-recommendation-chatgpt-netflix-guide
-title: 2026 机场推荐：ChatGPT、Gemini、Netflix 怎么选
+title: 2026 机场推荐：解锁 ChatGPT、Gemini、Grok、Claude、Netflix、Disney+
 headline: 想稳定用 ChatGPT 和 Netflix，机场别只看测速
 description: 面向中国用户的 2026 机场选购指南。按 2026-04-14 可访问页面与 7 年使用经验，讲清机场怎么选、客户端怎么配，以及主力和备用怎么搭配。
 summary: 如果你买机场主要是为了 ChatGPT、Grok、Gemini、Claude、Netflix 和 Disney+，这篇文章会先讲清筛选逻辑，再给出更稳妥的主备搭配建议。
