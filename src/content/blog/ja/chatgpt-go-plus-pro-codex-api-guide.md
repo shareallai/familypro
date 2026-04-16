@@ -17,6 +17,10 @@ tags:
   - Codex
   - OpenAI API
   - AIサブスク
+relatedTranslationKeys:
+  - google-ai-plan-guide
+  - grok-plan-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "ChatGPTプランを月額5.5USDから（公式価格より安い選択肢）"
   subtitle: "第三者購入ルートあり · 申込フローが明確 · 購入後サポート付き"

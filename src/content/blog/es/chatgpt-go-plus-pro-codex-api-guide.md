@@ -17,6 +17,10 @@ tags:
   - Codex
   - OpenAI API
   - Suscripción IA
+relatedTranslationKeys:
+  - google-ai-plan-guide
+  - grok-plan-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "ChatGPT desde 5,5 USD (por debajo del precio oficial)"
   subtitle: "Ruta de compra de terceros opcional · Activación clara · Soporte posventa"

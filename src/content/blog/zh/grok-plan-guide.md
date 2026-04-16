@@ -7,7 +7,7 @@ description: 基于最新可核对信息，比较 X Premium、Premium+、SuperGr
 summary: 如果你正纠结 Grok 该买 X Premium、Premium+、SuperGrok Lite、SuperGrok 还是 SuperGrok Heavy，这篇文章会先拆清两条订阅线，再讲明公开价格、能力边界，以及分别适合谁。
 category: AI 订阅对比
 pubDate: 2026-03-26
-updatedDate: 2026-04-10
+updatedDate: 2026-04-16
 author: Mark
 service: Grok
 tags:
@@ -19,6 +19,7 @@ tags:
 relatedTranslationKeys:
   - google-ai-plan-guide
   - chatgpt-go-plus-pro-codex-api-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: 想低成本体验 Grok？最低 $5.99/月
   subtitle: 价格透明 · 开通快速 · 适合先体验再决定

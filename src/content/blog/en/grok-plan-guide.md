@@ -7,7 +7,7 @@ description: Compare X Premium, Premium+, SuperGrok Lite, SuperGrok, and Heavy b
 summary: If you are trying to decide between X Premium, Premium+, SuperGrok Lite, SuperGrok, and SuperGrok Heavy, this guide separates the two subscription lines first, then explains the public pricing signals, the boundaries of what is actually confirmed, and who each option fits.
 category: AI Subscription Comparisons
 pubDate: 2026-03-26
-updatedDate: 2026-04-10
+updatedDate: 2026-04-16
 author: Mark
 service: Grok
 tags:
@@ -19,6 +19,7 @@ tags:
 relatedTranslationKeys:
   - google-ai-plan-guide
   - chatgpt-go-plus-pro-codex-api-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "Want a lower-cost way to try Grok? From $5.99/month"
   subtitle: "Transparent pricing · Fast activation · Great for trying before you decide"

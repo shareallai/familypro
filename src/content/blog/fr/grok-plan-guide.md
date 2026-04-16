@@ -7,7 +7,7 @@ description: "Comparez X Premium, Premium+, SuperGrok Lite, SuperGrok et Heavy s
 summary: Si vous hésitez entre X Premium, Premium+, SuperGrok Lite, SuperGrok et SuperGrok Heavy, ce guide sépare d’abord les deux lignes d’abonnement puis précise quels signaux de prix sont publics, où s’arrêtent les informations réellement confirmées et quel plan colle à votre usage réel.
 category: Comparatifs d'abonnements IA
 pubDate: 2026-03-26
-updatedDate: 2026-04-10
+updatedDate: 2026-04-16
 author: Mark
 service: Grok
 tags:
@@ -16,6 +16,10 @@ tags:
   - X Premium
   - SuperGrok
   - Abonnement IA
+relatedTranslationKeys:
+  - google-ai-plan-guide
+  - chatgpt-go-plus-pro-codex-api-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "Envie d’essayer Grok à moindre coût ? Dès 5,99 USD/mois"
   subtitle: "Prix transparents · Activation rapide · Idéal pour tester avant de décider"

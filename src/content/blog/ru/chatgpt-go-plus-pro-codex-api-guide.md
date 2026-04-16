@@ -17,6 +17,10 @@ tags:
   - Codex
   - OpenAI API
   - AI подписка
+relatedTranslationKeys:
+  - google-ai-plan-guide
+  - grok-plan-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "Тарифы ChatGPT от 5,5 USD (ниже официальной цены)"
   subtitle: "Опциональный сторонний путь покупки · Понятное подключение · Поддержка после оплаты"

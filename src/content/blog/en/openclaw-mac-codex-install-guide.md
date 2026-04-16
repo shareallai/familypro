@@ -7,7 +7,7 @@ description: Updated guide for installing OpenClaw on macOS, completing Codex OA
 summary: A practical setup walkthrough for developers who want a working OpenClaw + Codex workflow on Mac, with a clear verification checklist.
 category: AI Tooling
 pubDate: 2026-03-24
-updatedDate: 2026-04-01
+updatedDate: 2026-04-16
 author: Mark
 service: OpenClaw
 tags:
@@ -19,6 +19,7 @@ tags:
 relatedTranslationKeys:
   - codex-claude-cursor-instructions-guide
   - chatgpt-go-plus-pro-codex-api-guide
+  - google-ai-plan-guide
 draft: false
 ---
 

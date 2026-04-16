@@ -7,7 +7,7 @@ description: Checked on April 10, 2026, this guide compares ChatGPT Go, Plus, an
 summary: If you are deciding between ChatGPT Go, Plus, and Pro, or you are unsure how Codex and the OpenAI API fit together, this guide gives you a fast and practical decision path.
 category: AI Subscription Comparisons
 pubDate: 2026-03-31
-updatedDate: 2026-04-10
+updatedDate: 2026-04-16
 author: Mark
 service: General
 tags:
@@ -19,8 +19,8 @@ tags:
   - AI subscription
 relatedTranslationKeys:
   - google-ai-plan-guide
+  - grok-plan-guide
   - codex-claude-cursor-instructions-guide
-  - openclaw-mac-codex-install-guide
 topOffer:
   title: ChatGPT plans from USD 5.5 (below official pricing)
   subtitle: Optional third-party purchase path · Clear onboarding flow · After-sales support included

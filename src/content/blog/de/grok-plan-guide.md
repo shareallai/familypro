@@ -7,7 +7,7 @@ description: "Vergleiche X Premium, Premium+, SuperGrok Lite, SuperGrok und Heav
 summary: Wenn du zwischen X Premium, Premium+, SuperGrok Lite, SuperGrok und SuperGrok Heavy schwankst, trennt dieser Guide zuerst die zwei Abo-Linien und erklärt dann, welche Preissignale öffentlich sichtbar sind, wo die Grenzen der bestätigten Informationen liegen und welches Paket zu welchem Nutzungstyp passt.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-26
-updatedDate: 2026-04-10
+updatedDate: 2026-04-16
 author: Mark
 service: Grok
 tags:
@@ -16,6 +16,10 @@ tags:
   - X Premium
   - SuperGrok
   - KI Abonnement
+relatedTranslationKeys:
+  - google-ai-plan-guide
+  - chatgpt-go-plus-pro-codex-api-guide
+  - codex-claude-cursor-instructions-guide
 topOffer:
   title: "Grok günstiger testen? Ab 5,99 USD/Monat"
   subtitle: "Transparente Preise · Schnelle Freischaltung · Ideal zum Testen vor der Entscheidung"

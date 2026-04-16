@@ -7,7 +7,7 @@ description: 面向中国用户的美区 Apple ID 注册指南。讲清账号分
 summary: 如果你只是想在 iPhone 上下载 ChatGPT、Grok、Gemini、Netflix、Telegram 这类中国区不一定能下到的 App，更稳妥的做法通常不是改主号地区，而是单独准备一个美区 Apple ID。
 category: Apple 账户指南
 pubDate: 2026-04-14
-updatedDate: 2026-04-15
+updatedDate: 2026-04-16
 author: Mark
 service: Apple ID
 tags:
@@ -20,7 +20,7 @@ tags:
   - Telegram
 relatedTranslationKeys:
   - airport-recommendation-chatgpt-netflix-guide
-  - google-ai-plan-guide
+  - spotify-plan-guide
   - chatgpt-go-plus-pro-codex-api-guide
 topOffer:
   title: 无法成功？购买现成美区 Apple ID 
