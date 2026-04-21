@@ -21,12 +21,14 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Do not leave unclear referents in key statements when multiple entities are in context.
 - For any quantity, include unit and time window when relevant.
 - For time-sensitive claims, include an explicit date (`as of YYYY-MM-DD`).
+- Write in a reader-facing tone for users trying to understand the post topic and decide what to do next; avoid detached report style.
 - Distinguish clearly between:
   - verified fact
   - currently observed behavior
   - recommendation or inference
 - Keep core terminology stable within one article; avoid frequent synonym swaps for the same concept.
 - Avoid absolute wording (`always`, `never`, `guaranteed`) unless it is verified and scoped.
+- Avoid AI-sounding repetition, mechanical transitions, and over-templated paragraph cadence.
 
 ## Sentence-level checks
 

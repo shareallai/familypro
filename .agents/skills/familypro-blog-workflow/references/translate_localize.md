@@ -7,6 +7,7 @@ Use this reference when producing another language version of an article or loca
 - Default ordering: Chinese first, then other requested languages.
 - Do not translate line by line.
 - Re-express the same facts and intent in the target language’s natural editorial style.
+- Keep a reader-facing tone for users trying to understand this topic, and avoid literal, robotic, or boilerplate phrasing.
 
 ## What must stay aligned across languages
 
@@ -14,12 +15,14 @@ Use this reference when producing another language version of an article or loca
 - Product names, model names, command names, and configuration keys
 - Main SEO keyword family
 - CTA and article intent
+- Section numbering structure (`h2`: `1.` / `2.` / `3.`, `h3`: `1.1` / `1.2`) in article body headings
 - `translationKey`
 - Any translated/localized file you edit should sync `updatedDate` to today's date (`YYYY-MM-DD`).
 - If the post has explicit freshness dates (`as of`, `last checked on`, `截至`, `最后核对日期`), update and align those dates across all edited language versions.
 - If the post includes reference links, each language version should end with a localized final reference section:
   - non-Chinese: `## References`
   - Chinese: `## 官方参考`
+- Keep the final localized reference heading unnumbered (`## References` / `## 官方参考`) to satisfy repository checks.
 - Run `npm run check:references` after translation/localization changes when references are present.
 
 ## What may change across languages

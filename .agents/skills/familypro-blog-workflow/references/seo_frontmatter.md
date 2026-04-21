@@ -38,7 +38,8 @@ Hard caps are mandatory. Treat anything over the cap as a bug that must be rewri
 - The page has one template-level `h1`.
 - Markdown body should begin at `h2`.
 - Aim for a clear `h1 -> h2 -> h3` structure, but only when the article logic supports it.
-- Numbered `h2` / `h3` headings are fine when the article is tutorial-like and the numbering reflects the true structure.
+- Use numbered `h2` / `h3` headings by default in article body (`h2`: `1.` / `2.`, `h3`: `1.1` / `1.2`) and keep numbering aligned with the true structure.
+- Keep the localized final reference heading unnumbered (`## 官方参考` / `## References`) because repository checks rely on exact heading text.
 - External links in the article body should default to `rel="nofollow"`.
 - If the article uses raw HTML `<a>` tags, keep `rel="nofollow"` explicit instead of assuming the renderer will add it later.
 

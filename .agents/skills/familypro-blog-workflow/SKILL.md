@@ -39,13 +39,16 @@ You may need more than one reference file, but only load the ones relevant to th
 - Prefer content-only changes unless the task clearly requires a template or SEO logic change.
 - Treat Chinese and other languages as separate writing tasks, not literal sentence mapping.
 - For writing/rewriting/localization tasks in any language, apply the default checklist in `references/language-clarity.md` unless the user requests a specific voice that conflicts with it.
+- Write for readers who want to understand the blog topic and make a decision or take action; keep the tone natural and direct, and avoid robotic/template-like phrasing.
 - Preserve shared facts, product claims, and `translationKey` consistency across languages.
+- Use numbered section headings by default in article bodies (`h2`: `1.` / `2.` / `3.`, `h3`: `1.1` / `1.2`), with numbering aligned to real structure.
 - Any blog file edit (frontmatter or body) must sync `updatedDate` to the current date (`YYYY-MM-DD`).
 - If an edited post contains explicit freshness markers in frontmatter/body (for example `as of`, `last checked on`, `截至`, `最后核对日期`), sync those dates to the current verification date and keep wording consistent across language variants.
 - If facts, commands, links, or product behavior may have changed, verify them before writing.
 - If a post includes reference links, it must end with a reference section:
   - `## References` for non-Chinese posts
   - `## 官方参考` for Chinese posts
+- Keep the final localized reference heading unnumbered so repository validation scripts pass.
 - Treat locale-specific SEO length hard caps as mandatory, not advisory. If `title` or `description` exceeds the hard cap for that language, rewrite it.
 - If the user asks for review, findings come first; do not silently rewrite content unless asked.
 

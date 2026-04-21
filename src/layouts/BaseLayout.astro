@@ -405,6 +405,16 @@ const sponsorCta = getSponsorCtaCopy(lang);
     font-size: 0.9em;
   }
 
+  /* Keep inline code styling, but do not overlay light backgrounds inside fenced code blocks. */
+  :global(pre.astro-code code) {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+  }
+
   :global(table) {
     width: 100%;
     border-collapse: collapse;

@@ -19,7 +19,9 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
    - Are config paths, files, and auth flows described correctly?
 3. Structure and readability
    - Does the `h1 -> h2 -> h3` structure reflect the actual argument?
+   - Are article-body headings consistently numbered by structure (`h2`: `1.` / `2.`, `h3`: `1.1` / `1.2`)?
    - Are any sections thin, duplicated, or mechanically split?
+   - Does the prose sound like a human explanation for users who want to understand this topic, rather than a template-like AI draft?
    - For posts in any language, check sentence-level ambiguity (unclear referents, overloaded long sentences, missing subject/object) using `language-clarity.md`.
 4. Frontmatter and multilingual integrity
    - `locale`, `translationKey`, `title`, `headline`, `description`, `summary`, dates
@@ -39,6 +41,7 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
    - If a post includes reference links, it must end with one final localized reference section:
      - non-Chinese: `## References`
      - Chinese: `## 官方参考`
+   - The final localized reference heading should remain unnumbered to satisfy repository checks.
    - The final reference section should include links that were cited in the article body.
    - For multi-post review, run `npm run check:references` and report failures as findings.
 
@@ -55,6 +58,7 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
 - A command path is outdated or no longer canonical
 - The article treats a conditional fact as universal
 - The post adds keyword-heavy filler that does not help the intended reader
+- Headings are not numbered or numbering is inconsistent with the actual structure
 - Multilingual variants drift in meaning or over-translate
 - `title` and `h1` no longer describe the same page
 - English or Japanese `title` exceeds 70 characters, or `description` exceeds 160 characters
