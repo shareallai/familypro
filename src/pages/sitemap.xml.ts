@@ -1,6 +1,6 @@
 import { getCollection } from 'astro:content';
 import type { APIRoute } from 'astro';
-import { DEFAULT_LANG, collectSiteLangs } from '../lib/i18n';
+import { collectSiteLangs } from '../lib/i18n';
 
 export const prerender = true;
 
@@ -29,9 +29,24 @@ type UrlEntry = {
   lastmod?: string;
 };
 
+function resolveSitemapBase(rawBaseUrl: string): string {
+  const normalizedBase = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+  if (!import.meta.env.PROD) {
+    return normalizedBase;
+  }
+
+  const repository = (process.env.GITHUB_REPOSITORY ?? 'shareallai/familypro').trim();
+  const [owner, repo] = repository.split('/');
+  if (!owner || !repo || repo === `${owner}.github.io`) {
+    return normalizedBase;
+  }
+
+  return `/${repo}/`;
+}
+
 export const GET: APIRoute = async ({ site, url }) => {
   const rawBaseUrl = import.meta.env.BASE_URL;
-  const baseUrl = rawBaseUrl.endsWith('/') ? rawBaseUrl : `${rawBaseUrl}/`;
+  const baseUrl = resolveSitemapBase(rawBaseUrl);
   const siteUrl = site ?? new URL(url.origin);
 
   const posts = await getCollection('blog', ({ data }) => !data.draft);

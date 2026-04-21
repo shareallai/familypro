@@ -4,6 +4,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostComments from '../../../components/PostComments.astro';
 import PostCardList from '../../../components/PostCardList.astro';
 import TopOfferCard from '../../../components/TopOfferCard.astro';
+import { getSponsorCtaCopy } from '../../../lib/sponsorCtaCopy';
 import {
   DEFAULT_LANG,
   collectSiteLangs,
@@ -151,6 +152,8 @@ const jsonLd = {
 };
 
 const topOffer = post.data.topOffer;
+const sponsorCta = getSponsorCtaCopy(currentLang);
+const sponsorRel = 'nofollow sponsored noopener noreferrer';
 ---
 
 <BaseLayout
@@ -209,6 +212,15 @@ const topOffer = post.data.topOffer;
                   </li>
                 ))}
               </ul>
+              <div class="toc-sponsor-wrap">
+                <a class="toc-sponsor" href={sponsorCta.href} target="_blank" rel={sponsorRel} aria-label={sponsorCta.tocAriaLabel}>
+                  <span class="toc-sponsor-copy">{sponsorCta.tocTitle}</span>
+                  <span class="toc-sponsor-button">
+                    <span>{sponsorCta.tocButtonText}</span>
+                    <span class="toc-sponsor-arrow" aria-hidden="true">→</span>
+                  </span>
+                </a>
+              </div>
             </nav>
           </details>
         )}
@@ -238,9 +250,18 @@ const topOffer = post.data.topOffer;
                     {heading.text}
                   </a>
                 </li>
-              ))}
-            </ul>
-          </nav>
+                ))}
+              </ul>
+            </nav>
+            <div class="toc-sponsor-wrap">
+              <a class="toc-sponsor" href={sponsorCta.href} target="_blank" rel={sponsorRel} aria-label={sponsorCta.tocAriaLabel}>
+                <span class="toc-sponsor-copy">{sponsorCta.tocTitle}</span>
+                <span class="toc-sponsor-button">
+                  <span>{sponsorCta.tocButtonText}</span>
+                  <span class="toc-sponsor-arrow" aria-hidden="true">→</span>
+                </span>
+              </a>
+            </div>
         </aside>
       )}
     </div>
@@ -568,6 +589,78 @@ const topOffer = post.data.topOffer;
   .toc-link[aria-current='true'] {
     color: #0f766e;
     font-weight: 700;
+  }
+
+  .toc-sponsor-wrap {
+    margin-top: 0.95rem;
+    padding-top: 0.78rem;
+    border-top: 1px dashed var(--line);
+  }
+
+  .toc-sponsor {
+    display: grid;
+    gap: 0.58rem;
+    text-decoration: none;
+    border: 1px solid #99f6e4;
+    border-radius: 0.96rem;
+    padding: 0.78rem 0.78rem 0.74rem;
+    background:
+      radial-gradient(circle at 102% -6%, rgba(14, 116, 144, 0.18) 0%, rgba(14, 116, 144, 0) 46%),
+      linear-gradient(180deg, #f0fdfa 0%, #ecfeff 100%);
+    box-shadow: 0 12px 26px -22px rgba(15, 118, 110, 0.54);
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+  }
+
+  .toc-sponsor-copy {
+    color: var(--text);
+    font-size: 0.84rem;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+  }
+
+  .toc-sponsor-button {
+    justify-self: start;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.34rem;
+    color: #ffffff;
+    background: #0f766e;
+    border: 1px solid #0f766e;
+    border-radius: 999px;
+    padding: 0.35rem 0.68rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+    box-shadow: 0 8px 16px -14px rgba(15, 118, 110, 0.86);
+    transition: background-color 140ms ease, border-color 140ms ease;
+  }
+
+  .toc-sponsor-arrow {
+    line-height: 1;
+  }
+
+  .toc-sponsor:hover,
+  .toc-sponsor:focus-visible {
+    border-color: #5eead4;
+    box-shadow: 0 16px 30px -22px rgba(15, 118, 110, 0.66);
+    transform: translateY(-1px);
+  }
+
+  .toc-sponsor:hover .toc-sponsor-button,
+  .toc-sponsor:focus-visible .toc-sponsor-button {
+    background: #115e59;
+    border-color: #115e59;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toc-sponsor,
+    .toc-sponsor-button {
+      transition: none;
+    }
   }
 
   @media (prefers-reduced-motion: no-preference) {
