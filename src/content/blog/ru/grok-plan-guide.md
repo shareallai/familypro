@@ -7,7 +7,7 @@ description: "Сравниваем X Premium, Premium+, SuperGrok Lite, SuperGro
 summary: Если вы выбираете между X Premium, Premium+, SuperGrok Lite, SuperGrok и SuperGrok Heavy, этот материал сначала разводит две линии подписки, а затем показывает, какие ценовые сигналы публичны, где заканчивается реально подтвержденная информация и какой вариант подходит под ваш сценарий.
 category: Сравнение AI-подписок
 pubDate: 2026-03-26
-updatedDate: 2026-04-16
+updatedDate: 2026-04-22
 author: Mark
 service: Grok
 tags:
@@ -21,9 +21,9 @@ relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: "Хотите попробовать Grok дешевле? От 5,99 USD в месяц"
-  subtitle: "Прозрачная цена · Быстрое подключение · Удобно протестировать перед решением"
-  buttonText: "Посмотреть варианты покупки Grok"
+  title: "Планы Grok от 5,99 USD в месяц"
+  subtitle: "Прозрачное ценообразование · Быстрое подключение · Подходит для тестирования перед выбором"
+  buttonText: "Посмотреть варианты планов Grok"
   buttonLink: https://familypro.io/en/products/grok?invite=7Dfd94eb
 draft: false
 ---

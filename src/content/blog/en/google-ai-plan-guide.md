@@ -3,11 +3,11 @@ locale: en
 translationKey: google-ai-plan-guide
 title: "Google AI Plus vs Pro vs Ultra: Pricing, Limits, and Which Plan to Buy"
 headline: Google AI Plus, Pro, or Ultra? A practical buyer's guide
-description: Based on official Google pages checked on March 31, 2026, this guide compares Google AI Plus, Pro, and Ultra by features, published limits, and best-fit users.
+description: Based on official Google pages checked on April 21, 2026, this guide compares Google AI Plus, Pro, and Ultra by features, published limits, and best-fit users.
 summary: This guide compares Google AI Plus, Pro, and Ultra across pricing, storage, AI credits, and key services like Gemini, NotebookLM, Flow, Whisk, Jules, and Gemini CLI so you can choose the right tier.
 category: AI Subscription Comparisons
 pubDate: 2026-03-25
-updatedDate: 2026-04-10
+updatedDate: 2026-04-22
 author: Mark
 service: Google AI
 tags:
@@ -23,9 +23,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Want a lower-cost way to start Google AI Plus?
-  subtitle: Optional third-party purchase path · Transparent pricing · After-sales support included
-  buttonText: View Google AI Plus purchase options
+  title: Google AI plans with a lower entry cost
+  subtitle: Optional third-party purchase channel · Pricing may change · Review terms before checkout
+  buttonText: View Google AI plan options
   buttonLink: https://familypro.io/en/products/gemini?invite=7Dfd94eb
 draft: false
 ---
@@ -34,7 +34,7 @@ If you have been researching Google's AI subscriptions, you have probably seen t
 
 At first glance, this looks like a simple entry, mid, and flagship lineup. The hard part is that value is spread across many surfaces. Some benefits live in the `Gemini app`, some in `NotebookLM / Flow / Whisk`, and some in `AI credits`, Google One storage, developer perks, and regional restrictions. Most people are not confused because they dislike the plans. They are confused because it is genuinely difficult to map each tier to their actual workflow.
 
-As of **March 31, 2026**, Google's consumer AI lineup is fairly clear: these three plans are the main options. To compare them accurately, it helps to separate three layers:
+As of **April 21, 2026**, Google's consumer AI lineup is fairly clear: these three plans are the main options. To compare them accurately, it helps to separate three layers:
 
 - **AI products and services**, such as Gemini, NotebookLM, Flow, Whisk, Jules, and Gemini CLI.
 - **Hard limits**, such as NotebookLM source counts, AI credits, and cloud storage size.
@@ -63,7 +63,7 @@ Using current official US pricing, the three plans are:
 Their included Google One storage and monthly AI credits are:
 
 - `Plus`: **200 GB** storage and **200 AI credits/month**
-- `Pro`: **2 TB** storage and **1,000 AI credits/month**
+- `Pro`: **5 TB** storage and **1,000 AI credits/month**
 - `Ultra`: **30 TB** storage and **25,000 AI credits/month**
 
 If you only want a one-line recommendation:
@@ -79,7 +79,7 @@ If you only want a one-line recommendation:
 | Plan | US Price | Storage | Monthly AI Credits | Best Fit |
 | --- | --- | --- | --- | --- |
 | Google AI Plus | $7.99/month | 200 GB | 200/month | Entry-level personal use, family sharing, light creative work |
-| Google AI Pro | $19.99/month | 2 TB | 1,000/month | Mainline power users, research, office work, development |
+| Google AI Pro | $19.99/month | 5 TB | 1,000/month | Mainline power users, research, office work, development |
 | Google AI Ultra | $249.99/month | 30 TB | 25,000/month | High-intensity creation, agent workflows, heavy development |
 
 ### 2.2 Which AI Products Do You Actually Get?
@@ -167,25 +167,31 @@ This table matters because it tells you something very practical:
 - `Pro` is where NotebookLM starts feeling like a serious project and knowledge-work tool.
 - `Ultra` pushes NotebookLM into workstation territory rather than "nice subscription extra."
 
-### 3.3 Gemini app limits: Google now publishes the main hard caps for Plus, Pro, and Ultra
+### 3.3 Gemini app limits: Google now publishes the main hard caps across Basic, Plus, Pro, and Ultra
 
 This is the section that most often gets outdated.
 
-- Google’s current `Gemini Apps limits & upgrades` help page now publishes the main limits for **no plan / Plus / Pro / Ultra**.
+- Google’s current `Gemini Apps limits & upgrades` help page now publishes the main limits for **Basic (no Google AI plan) / Plus / Pro / Ultra**.
 - Google also says these limits can change with capacity, experimentation, and product updates, and that usage is distributed throughout the day rather than guaranteed as one fixed uninterrupted block.
 
-As of March 31, 2026, the core public Gemini hard limits include:
+As of April 21, 2026, the core public Gemini hard limits include:
 
-| Gemini App Item | Plus | Pro | Ultra |
-| --- | --- | --- | --- |
-| Gemini 3.1 Pro prompts | 30/day | 100/day | 500/day |
-| Deep Research reports | 12/day | 20/day | 120/day |
-| Nano Banana 2 image generation / editing | 50 images/day | 100 images/day | 1,000 images/day |
-| Nano Banana Pro redo | 50 images/day | 100 images/day | 1,000 images/day |
-| In-app video generation | 2/day | 3/day | 5/day |
-| Gemini Agent | No | No | 200 agent requests/day, up to 3 concurrent tasks |
-| Deep Think 3.1 | No | No | 10/day |
-| Context window | 128k tokens | 1M tokens | 1M tokens |
+| Gemini app item | Basic (no Google AI plan) | Plus | Pro | Ultra |
+| --- | --- | --- | --- | --- |
+| Pro 3.1 model | Basic access (no fixed public count) | 30/day | 100/day | 500/day |
+| Thinking model | Basic access (daily limits can change frequently) | 90/day | 300/day | 1500/day |
+| Fast model | General access | General access | General access | General access |
+| Context window | 32k | 128k | 1M | 1M |
+| Deep Research reports | 5/month | 12/day | 20/day | 120/day |
+| Nano Banana 2 image generation/editing | 20/day | 50/day | 100/day | 1000/day |
+| Nano Banana Pro redo | - | 50/day | 100/day | 1000/day |
+| Video generation | - | 2/day (Veo 3.1 Lite) | 3/day (Veo 3.1 Lite) | 5/day (Veo 3.1 Pro) |
+| Music generation (30s tracks) | 10/day | 20/day | 50/day | 100/day |
+| Dynamic view | 25 prompts/day | 25 prompts/day | 250 prompts/day | 250 prompts/day |
+| Slide generation in Canvas | 20/day | 20/day | Unlimited | Unlimited |
+| Screen automation | 5 requests/day | 12 requests/day | 20 requests/day | 120 requests/day |
+| Gemini Agent | - | - | - | 200 agent requests/day, up to 3 concurrent tasks |
+| Deep Think 3.1 | - | - | - | 10/day (192k context window) |
 
 Google also explicitly notes on that page that:
 
@@ -440,7 +446,7 @@ Common `Pro` profiles include:
 - people who rely heavily on NotebookLM
 - people who use Flow or Whisk regularly
 - developers who want Gemini CLI, Code Assist, or Jules
-- people who already need 2 TB of Google One storage
+- people who already need 5 TB of Google One storage
 - people who will really use AI inside Workspace
 
 In one line: `Pro` is not a minor Plus upgrade. It is the point where the plan becomes a real high-frequency working tier.
@@ -476,17 +482,17 @@ If you only want the easiest recommendation possible:
 - Already know you will use Gemini, NotebookLM, Flow, or coding tools every day: go straight to `Pro`
 - Only move to `Ultra` if you clearly need `Project Mariner / Project Genie / very high AI credits / Ultra-exclusive capabilities`
 
-If you have already decided to buy `Google AI Plus` and care about long-term cost, here is an optional purchase option (from the third-party platform **FamilyPro**, not an official Google sales channel):
+If you have already decided to buy a Google AI plan and care about long-term cost, here is an optional third-party option (from **FamilyPro**, not an official Google sales channel):
 
-- [Google AI Plus option ($12)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [FamilyPro Google AI plan page (optional)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
 
-Price note (data date: **March 31, 2026**, for reference only): this third-party listing is currently priced at **$12 for 12 months** and includes a **1-month replacement warranty** (you can request an account replacement for eligible issues during that period). If you use the full 12 months, that works out to about **$1/month**. Before purchasing, confirm real-time stock, regional availability, and the latest after-sales terms on the product page.
+Price note (data date: **April 21, 2026**, for reference only): this third-party page currently presents **Google Gemini AI - Pro** and shows a headline entry price of **$9.9**. Third-party listings can change by package duration, region, and availability, so check the live checkout page and after-sales terms before purchasing.
 
 And one final reminder: Google explicitly says many limits can change based on capacity, region, and experimental rollout. Before buying, it is worth checking your own live Google One plan page one more time.
 
 ## References
 
-This article is based primarily on the following official Google pages (plus one optional purchase link), last checked on **March 31, 2026**:
+This article is based primarily on the following official Google pages (plus one optional purchase link), last checked on **April 21, 2026**:
 
 - [Google AI Plans](https://one.google.com/about/google-ai-plans/)
 - [Google AI Plus availability announcement](https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/)
@@ -500,4 +506,4 @@ This article is based primarily on the following official Google pages (plus one
 - [Upgrade NotebookLM](https://support.google.com/notebooklm/answer/16213268)
 - [Use Gemini 3 Pro and Nano Banana Pro in AI Mode](https://support.google.com/websearch/answer/16011537)
 - [Generate and edit images in AI Mode with Nano Banana Pro](https://support.google.com/websearch/answer/16649374)
-- [FamilyPro third-party platform: Google AI Plus (optional purchase link)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [FamilyPro third-party platform: Google AI plans page (optional purchase link)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)

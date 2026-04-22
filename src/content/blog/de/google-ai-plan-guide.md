@@ -3,11 +3,11 @@ locale: de
 translationKey: google-ai-plan-guide
 title: "Google AI Plus vs Pro vs Ultra: Preise, Limits und Kaufhilfe"
 headline: Google AI Plus, Pro oder Ultra? So triffst du die richtige Wahl
-description: "Auf Basis offizieller Google-Seiten mit Stand 31. März 2026 vergleicht dieser Leitfaden Google AI Plus, Pro und Ultra nach Preis, veröffentlichten Limits und passendem Nutzungsszenario."
+description: "Auf Basis offizieller Google-Seiten mit Stand 21. April 2026 vergleicht dieser Leitfaden Google AI Plus, Pro und Ultra nach Preis, veröffentlichten Limits und passendem Nutzungsszenario."
 summary: Dieser Guide stellt Google AI Plus, Pro und Ultra bei Kosten, AI Credits, NotebookLM- und Gemini-Limits sowie praktischen Einsatzfällen gegenüber, damit du ohne Fehlkauf entscheidest.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-25
-updatedDate: 2026-04-16
+updatedDate: 2026-04-22
 author: Mark
 service: Google AI
 tags:
@@ -23,9 +23,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Google AI Plus günstiger starten?
-  subtitle: Optionaler Drittanbieter-Kaufweg · Transparente Preise · Support inklusive
-  buttonText: Google AI Plus Kaufoptionen ansehen
+  title: Google-AI-Tarife mit niedrigerem Einstiegspreis
+  subtitle: Optionale Drittanbieter-Kaufoption · Preise können sich ändern · Bedingungen vor dem Kauf prüfen
+  buttonText: Google-AI-Tarifoptionen ansehen
   buttonLink: https://familypro.io/en/products/gemini?invite=7Dfd94eb
 draft: false
 ---
@@ -34,7 +34,7 @@ Wer sich mit Googles KI-Abos beschäftigt, landet fast immer bei denselben drei 
 
 Die Verwirrung kommt nicht von den drei Stufen selbst, sondern von der Verteilung der Leistungen. Ein Teil liegt im `Gemini app`, ein Teil in `NotebookLM / Flow / Whisk`, und ein weiterer Teil steckt in `AI credits`, Google-One-Speicher, Entwickler-Vorteilen und regionalen Einschränkungen. Dadurch ist die Wahl selten so einfach wie „nimm einfach die höchste Stufe“.
 
-Stand **31. März 2026** ist die Consumer-Linie klar: Plus, Pro, Ultra. Für eine belastbare Entscheidung solltest du sie in drei Ebenen aufteilen:
+Stand **21. April 2026** ist die Consumer-Linie klar: Plus, Pro, Ultra. Für eine belastbare Entscheidung solltest du sie in drei Ebenen aufteilen:
 
 - Welche **Produkte** sind enthalten?
 - Welche **harten, veröffentlichten Limits** gibt es?
@@ -63,7 +63,7 @@ Aktuelle US-Preise:
 Speicher und monatliche AI Credits:
 
 - `Plus`: **200 GB** + **200 AI credits/Monat**
-- `Pro`: **2 TB** + **1.000 AI credits/Monat**
+- `Pro`: **5 TB** + **1.000 AI credits/Monat**
 - `Ultra`: **30 TB** + **25.000 AI credits/Monat**
 
 Wenn du nur eine schnelle Empfehlung willst:
@@ -79,7 +79,7 @@ Wenn du nur eine schnelle Empfehlung willst:
 | Tarif | US-Preis | Speicher | Monatliche AI Credits | Typischer Fit |
 | --- | --- | --- | --- | --- |
 | Google AI Plus | 7,99 USD/Monat | 200 GB | 200 | Einstieg, leichte Kreativarbeit |
-| Google AI Pro | 19,99 USD/Monat | 2 TB | 1.000 | Hauptnutzung, Recherche, Entwicklung |
+| Google AI Pro | 19,99 USD/Monat | 5 TB | 1.000 | Hauptnutzung, Recherche, Entwicklung |
 | Google AI Ultra | 249,99 USD/Monat | 30 TB | 25.000 | Hochlast, Agenten-Workflows |
 
 ### 2.2 Welche Produkte sind enthalten?
@@ -157,18 +157,24 @@ Praktisch bedeutet das:
 
 Die aktuelle Seite `Gemini Apps limits & upgrades` zeigt für `No plan / Plus / Pro / Ultra` mehrere harte Zahlenwerte. Gleichzeitig weist Google darauf hin, dass diese Werte je nach Kapazität, Experimentstatus und Rollout angepasst werden können.
 
-Kernwerte mit Stand **31. März 2026**:
+Kernwerte mit Stand **21. April 2026**:
 
-| Gemini-App-Item | Plus | Pro | Ultra |
-| --- | --- | --- | --- |
-| Gemini 3.1 Pro prompts | 30/Tag | 100/Tag | 500/Tag |
-| Deep Research reports | 12/Tag | 20/Tag | 120/Tag |
-| Nano Banana 2 Bildgenerierung/-bearbeitung | 50 Bilder/Tag | 100 Bilder/Tag | 1.000 Bilder/Tag |
-| Nano Banana Pro redo | 50 Bilder/Tag | 100 Bilder/Tag | 1.000 Bilder/Tag |
-| In-App-Videoerstellung | 2/Tag | 3/Tag | 5/Tag |
-| Gemini Agent | Nein | Nein | 200 Requests/Tag, bis zu 3 parallele Tasks |
-| Deep Think 3.1 | Nein | Nein | 10/Tag |
-| Context window | 128k tokens | 1M tokens | 1M tokens |
+| Gemini-App-Item | Basic (ohne Google AI Plan) | Plus | Pro | Ultra |
+| --- | --- | --- | --- | --- |
+| Pro-3.1-Modell | Basiszugang (keine feste öffentliche Zahl) | 30/Tag | 100/Tag | 500/Tag |
+| Thinking-Modell | Basiszugang (Tageslimit kann häufig variieren) | 90/Tag | 300/Tag | 1500/Tag |
+| Fast-Modell | Allgemeiner Zugriff | Allgemeiner Zugriff | Allgemeiner Zugriff | Allgemeiner Zugriff |
+| Context window | 32k | 128k | 1M | 1M |
+| Deep Research reports | 5/Monat | 12/Tag | 20/Tag | 120/Tag |
+| Nano Banana 2 Bildgenerierung/-bearbeitung | 20/Tag | 50/Tag | 100/Tag | 1000/Tag |
+| Nano Banana Pro redo | - | 50/Tag | 100/Tag | 1000/Tag |
+| Videoerstellung | - | 2/Tag (Veo 3.1 Lite) | 3/Tag (Veo 3.1 Lite) | 5/Tag (Veo 3.1 Pro) |
+| Musikgenerierung (30 Sek.) | 10/Tag | 20/Tag | 50/Tag | 100/Tag |
+| Dynamic view | 25 Prompts/Tag | 25 Prompts/Tag | 250 Prompts/Tag | 250 Prompts/Tag |
+| Foliengenerierung in Canvas | 20/Tag | 20/Tag | Unbegrenzt | Unbegrenzt |
+| Screen automation | 5 Requests/Tag | 12 Requests/Tag | 20 Requests/Tag | 120 Requests/Tag |
+| Gemini Agent | - | - | - | 200 Requests/Tag, bis zu 3 parallele Tasks |
+| Deep Think 3.1 | - | - | - | 10/Tag (192k Context Window) |
 
 Google nennt zusätzlich:
 
@@ -229,7 +235,7 @@ Diese Punkte sind zentrale Ultra-Differenzierer, aber nur für bestimmte Profile
 - regelmäßige NotebookLM-Nutzung
 - wiederkehrende Flow-/Whisk-Workflows
 - Bedarf an Entwicklerfunktionen
-- realer Bedarf an 2 TB Speicher
+- realer Bedarf an 5 TB Speicher
 
 ### 5.3 Für wen Google AI Ultra sinnvoll ist
 
@@ -251,17 +257,17 @@ Kurzempfehlung:
 - Klare Hochfrequenz-Nutzung: `Pro`
 - Eindeutiger Ultra-Bedarf: `Ultra`
 
-Wenn du bereits `Google AI Plus` kaufen willst und die Langzeitkosten optimieren möchtest, kannst du zusätzlich eine Drittanbieteroption über **FamilyPro** prüfen (kein offizieller Google-Vertrieb):
+Wenn du bereits einen Google-AI-Plan kaufen willst und die Langzeitkosten optimieren möchtest, kannst du zusätzlich eine Drittanbieteroption über **FamilyPro** prüfen (kein offizieller Google-Vertrieb):
 
-- [Google AI Plus option ($12)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [FamilyPro-Seite für Google-AI-Pläne (optional)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
 
-Preis-Hinweis (Datenstand: **31. März 2026**, nur als Referenz): Diese Listing-Seite zeigt aktuell **12 USD für 12 Monate** mit **1 Monat Ersatzgarantie**. Das entspricht rechnerisch etwa **1 USD pro Monat**. Bitte vor Kauf Verfügbarkeit, Region und aktuelle Garantiebedingungen live gegenprüfen.
+Preis-Hinweis (Datenstand: **21. April 2026**, nur als Referenz): Die Drittanbieter-Seite zeigt aktuell **Google Gemini AI - Pro** mit einem Einstiegswert von **9,9 USD**. Drittanbieterangebote können sich je nach Laufzeit, Region und Verfügbarkeit ändern. Bitte vor Kauf Live-Checkout und Garantiebedingungen prüfen.
 
 Zum Schluss: Google weist explizit darauf hin, dass Limits je nach Kapazität, Region und Experimentstatus variieren können. Vor Abschluss daher den eigenen Google-One-Planstatus nochmals prüfen.
 
 ## References
 
-This article is based primarily on the following official Google pages (plus one optional purchase link), last checked on **March 31, 2026**:
+This article is based primarily on the following official Google pages (plus one optional purchase link), last checked on **April 21, 2026**:
 
 - [Google AI Plans](https://one.google.com/about/google-ai-plans/)
 - [Google AI Plus availability announcement](https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/)
@@ -275,4 +281,4 @@ This article is based primarily on the following official Google pages (plus one
 - [Upgrade NotebookLM](https://support.google.com/notebooklm/answer/16213268)
 - [Use Gemini 3 Pro and Nano Banana Pro in AI Mode](https://support.google.com/websearch/answer/16011537)
 - [Generate and edit images in AI Mode with Nano Banana Pro](https://support.google.com/websearch/answer/16649374)
-- [FamilyPro third-party platform: Google AI Plus (optional purchase link)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [FamilyPro third-party platform: Google AI plans page (optional purchase link)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)

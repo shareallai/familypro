@@ -1,120 +1,201 @@
 ---
 locale: es
 translationKey: chatgpt-image-2-guide
-title: "ChatGPT Image 2: estado real, mejoras clave y cómo probarlo"
-headline: ChatGPT Image 2 en la práctica — qué mejoró y cómo aprovecharlo
-description: "A fecha de 2026-04-21, la documentación pública de OpenAI sigue centrada en GPT Image 1.5. Esta guía separa hechos confirmados y señales de comunidad con una prueba práctica."
-summary: Si ChatGPT te está dando imágenes más consistentes últimamente, esta guía te ayuda a validar si es una mejora real y cómo integrarla en tu flujo de trabajo.
+title: "ChatGPT Images 2.0: planes, límites y comparación con Nano Banana"
+headline: "Guía de ChatGPT Images 2.0: planes, prompts y selección"
+description: "Con información verificada a 2026-04-22, este artículo explica acceso por plan, límites prácticos, mejoras reales, patrones de prompting, benchmark y comparación con Nano Banana."
+summary: "ChatGPT Images 2.0 ya está disponible. Esta guía aborda las decisiones que más importan: quién puede usarlo, cómo leer límites, qué cambió y cuándo elegir Nano Banana."
 category: Análisis de herramientas IA
-pubDate: 2026-04-21
-updatedDate: 2026-04-21
+pubDate: 2026-04-22
+updatedDate: 2026-04-22
 author: Mark
 service: General
 tags:
-  - ChatGPT Image 2
-  - GPT Image 2
-  - GPT Image 1.5
-  - OpenAI
+  - ChatGPT Images 2.0
+  - gpt-image-2
+  - Nano Banana 2
+  - Nano Banana Pro
   - Generación de imágenes
   - Prompting
 relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - codex-claude-cursor-instructions-guide
+topOffer:
+  title: "Planes de ChatGPT desde 5,5 USD (por debajo del precio oficial)"
+  subtitle: "Canal opcional de compra por terceros · Proceso de activación claro · Soporte posventa disponible"
+  buttonText: "Ver opciones de planes de ChatGPT"
+  buttonLink: https://familypro.io/en/products/chatgpt?invite=7Dfd94eb
 draft: false
 ---
 
-Si llevas semanas generando imágenes en ChatGPT, quizá ya notaste lo mismo que mucha gente: ciertos resultados de pronto salen más limpios y con menos retrabajo.
+`ChatGPT Images 2.0` (modelo base `gpt-image-2`) ya está publicado oficialmente. Para la mayoría de usuarios, el cambio importante es operativo: tareas que antes quedaban en “demo vistosa pero poco entregable” ahora llegan con más frecuencia a un resultado útil, sobre todo en piezas con texto, visuales tipo UI, infografías y edición iterativa.
 
-El texto dentro de la imagen falla menos. Los mockups de interfaz se ven más creíbles. Los prompts largos se respetan mejor. En comunidad, a ese salto muchos lo llaman `ChatGPT Image 2` o `gpt-image-2`.
+Las decisiones de uso suelen seguir la misma secuencia: quién tiene acceso, cómo interpretar límites, qué mejoró de verdad, cómo escribir prompts estables y cómo elegir frente a Nano Banana. Este artículo sigue ese orden.
 
-Aquí vamos a lo útil: qué está confirmado, qué sigue siendo observación, y cómo comprobar en tu propia cuenta si ya tienes esa mejora.
+Las referencias de precio y límites se basan en información visible a **2026-04-22** y deben leerse **solo como orientación**. La referencia final siempre es tu propia interfaz de cuenta.
 
-Primero, el marco correcto: **a 2026-04-21, la documentación pública de OpenAI sigue tomando GPT Image 1.5 como referencia, y `gpt-image-2` no aparece todavía como nombre de modelo oficialmente publicado.**
+## 1. Panorama de lanzamiento
 
-## 1. Qué está confirmado oficialmente
+Hay tres hechos clave:
 
-Si nos limitamos a fuentes públicas de OpenAI, hay tres puntos claros:
+1. Las ChatGPT Release Notes del 2026-04-21 anuncian explícitamente `ChatGPT Images 2.0`.
+2. En la misma actualización se introduce `images with thinking`, un modo de imagen con razonamiento más profundo.
+3. En API ya aparecen `gpt-image-2` y el snapshot `gpt-image-2-2026-04-21`, lo que alinea disponibilidad en producto y desarrollo.
 
-1. OpenAI publicó la nueva experiencia de imágenes de ChatGPT el **2025-12-16**, documentando `GPT Image 1.5`.
-2. En la documentación pública de modelos, el modelo de imagen documentado sigue siendo `gpt-image-1.5`.
-3. Hasta el **2026-04-21**, no hay anuncio formal de OpenAI con ficha oficial de lanzamiento y precio para `gpt-image-2`.
+Esto explica por qué la conversación cambió de “retoque de estilo” a “mayor tasa de cumplimiento de tareas”.
 
-Por eso, hoy lo más correcto es tratar “Image 2” como etiqueta de comunidad, no como nombre oficial definitivo.
+## 2. Disponibilidad y límites por plan
 
-## 2. Entonces, ¿por qué tanta gente habla de Image 2?
+### 2.1 Planes disponibles
 
-Porque hay señales observables repetidas, no solo opiniones sueltas:
+Conviene separarlo en dos capas:
 
-- **Rastros de pruebas A/B**: TestingCatalog reportó señales de pruebas Image V2 en ChatGPT y LM Arena.
-- **Mejora de consistencia sin cambiar hábitos de prompt**: varios usuarios reportan mejores resultados con rutinas similares.
-- **Más comparativas públicas**: en Reddit y X se multiplicaron ejemplos lado a lado, sobre todo en carteles con texto y UI.
+- `ChatGPT Images 2.0`: utilizable en planes de ChatGPT.
+- `images with thinking`: actualmente situado en planes de pago según la tabla de capacidades.
 
-Eso sí: observación de producto no equivale automáticamente a especificación oficial cerrada.
+### 2.2 Cómo leer los límites
 
-## 3. Las mejoras que más se sienten en uso real
+OpenAI comunica diferencias por nivel, no un SLA fijo de imágenes. Una lectura práctica:
 
-Para usuarios normales, importa menos el nombre técnico y más esto: “¿me ahorra tiempo o no?”.
+- Free: capacidad limitada y menor velocidad
+- Go: margen claramente superior a Free
+- Plus: mejor desempeño en tareas complejas
+- Pro: techos más altos y prioridad (con políticas de uso justo y antiabuso)
 
-En los ejemplos públicos, cuatro mejoras se repiten mucho.
+Rangos comunitarios más citados:
 
-### 3.1 El texto dentro de la imagen es más estable
+- Free: aprox. 2-3 imágenes por 24 horas
+- Go: aprox. 20-30 por día
+- Plus: aprox. 50 por 3 horas
+- Pro: techo alto, menor fricción para uso intensivo
 
-Errores de ortografía, cortes raros o etiquetas ilegibles aparecen menos que antes en muchos casos recientes.
+Tómalos como rangos orientativos, no como garantía.
 
-### 3.2 Los diseños tipo UI salen más listos para presentar
+### 2.3 Recomendación rápida
 
-Muchos resultados ya sirven para revisión interna: mejor jerarquía visual, espaciado más coherente y componentes más consistentes.
+- Prueba ligera: Free
+- Producción semanal: Go / Plus
+- Producción diaria intensiva: Pro
 
-### 3.3 El realismo y el color se ven más naturales
+## 3. Mejoras y nuevas capacidades
 
-En piel, tela y reflejos se nota menos “efecto plástico”. También se reporta menos ese tono amarillento que antes salía demasiado.
+La síntesis más útil es esta: de herramienta para idear a herramienta para entregar.
 
-### 3.4 Los prompts largos se respetan mejor
+Mejoras más visibles:
 
-Cuando pides varias restricciones a la vez (composición + estilo + texto + posiciones), la tasa de acierto suele subir y el número de iteraciones baja.
+- texto multilingüe más estable en títulos, botones y composiciones mixtas
+- salida estructurada más sólida para infografías, visuales tipo slide, grids de iconos y storyboard
+- edición más controlable en referencias, máscaras y composiciones multiimagen
+- mayor control de salida con niveles de calidad y formatos más amplios
+- modo Thinking para tareas complejas donde la coherencia pesa más que la latencia
 
-## 4. Cómo saber si tu cuenta ya está en ese rollout
+Aun así, conviene mantener expectativas realistas: la documentación oficial sigue marcando límites en latencia, precisión de layout y alcance por modelo.
 
-La mejor forma no es mirar etiquetas de interfaz. Es usar un set fijo de pruebas y comparar resultados en el tiempo.
+## 4. Uso y patrones de prompts
 
-Un set mínimo útil:
+Para resultados consistentes, no basta con palabras de estilo. Funciona mejor definir requisitos de entrega en cuatro capas:
 
-1. Póster con mucho texto (idiomas mixtos, fecha, CTA)
-2. Pantalla móvil tipo app (barra de estado, tarjetas, botones)
-3. Escena con varios sujetos (primer plano, plano medio, fondo)
-4. Retrato fotorrealista (manos, pelo, materiales, luz)
+1. objetivo
+2. estructura
+3. restricciones visuales
+4. especificación de salida
 
-Prompt de referencia:
+Plantilla para póster:
 
 ```text
-Genera un póster de campaña ecommerce en 1536x1024. Título principal: “Lanzamiento Primavera 2026”. Subtítulo: “Venta limitada desde el 30 de abril a las 20:00”. Botón en la esquina superior derecha: “Reservar ahora”. Estilo: fotografía comercial realista con una capa ligera de UI. Requisitos de color y contraste: paleta cómoda para la vista, sin choques de alta saturación, y contraste claro entre texto/botones y fondo. Todo el texto debe ser legible y sin errores.
+Genera un póster de campaña en 1536x1024.
+Título principal: Limited 48 Hours | New Launch
+Subtítulo: Sale starts Apr 30, 8:00 PM
+Texto de botón: Reserve Now
+Estilo: fotografía comercial realista con ligera capa UI
+Requisitos: texto legible y sin errores, contraste claro entre texto/botones y fondo, evitar choques de color sobresaturados.
 ```
 
-Si en varias corridas consigues texto correcto, estructura estable y menos edición posterior, lo más probable es que tu cuenta ya esté dentro de ese tramo mejorado.
+Plantilla para infografía:
 
-## 5. Cómo aprovecharlo sin vender humo
+```text
+Genera una infografía bilingüe (inglés + chino) sobre AI Image Trends 2026.
+Estilo: diseño plano moderno con cuadrícula limpia.
+Tipografía: título 36pt, cuerpo 14pt.
+Requisitos: iconografía consistente, etiquetas de gráfico legibles, espaciado equilibrado.
+```
 
-Para creadores, equipos de producto y marketing, esto ya puede ahorrar mucho tiempo. Pero conviene no convertir mejoras observadas en promesas de especificación fija.
+Plantilla de consistencia de personaje:
 
-Una forma prudente de trabajar:
+```text
+Genera una hoja de personaje en cuatro vistas: front, side, back, 3/4.
+Personaje: pelo plateado, chaqueta cyberpunk.
+Requisito: mantener rostro, proporciones y detalles de vestuario consistentes en todas las vistas.
+```
 
-1. Comunicar fuera del equipo solo capacidades oficialmente publicadas.
-2. Revisar manualmente cualquier texto legal o de marca dentro de imágenes.
-3. Mantener un set de regresión semanal en vez de confiar en una imagen espectacular aislada.
-4. Para costes API, seguir usando solo modelos y precios documentados oficialmente.
+Plantilla de edición local:
 
-## 6. Cierre
+```text
+Edita solo el área seleccionada: cambia el fondo a una calle nocturna cyberpunk con lluvia, añade el texto de neón chino “未来已来”, mantén intacta la persona y conserva iluminación coherente.
+```
 
-Si sientes que ChatGPT ahora “acierta más” al generar imágenes, seguramente no es impresión tuya.
+## 5. Lectura de benchmark
 
-La estrategia sensata es esta: usar la mejora en el día a día, pero seguir tomando las decisiones de producto y presupuesto con base en documentación oficial hasta que OpenAI publique el lanzamiento formal.
+En la actualización actual, el leaderboard público de Arena coloca a `gpt-image-2 (medium)` en primer lugar en dos ejes:
+
+- Text-to-Image: 1512
+- Image Edit: 1513
+
+`nano-banana-2` y `nano-banana-pro` también se mantienen arriba, pero por debajo en este snapshot. Eso sugiere ventaja de GPT en preferencia agregada y edición.
+
+Dos avisos son importantes:
+
+1. Los rankings son dinámicos.
+2. La preferencia agregada no sustituye validación en tu caso de uso.
+
+El benchmark orienta la evaluación, no la reemplaza.
+
+## 6. GPT Image 2 vs Nano Banana
+
+La pregunta útil no es “quién gana en todo”, sino “qué modelo reduce más retrabajo en esta tarea”.
+
+| Dimensión | Ventaja más frecuente | Lectura práctica |
+| --- | --- | --- |
+| Salidas con texto y layout | GPT Image 2 | Más estable en pósteres, UI y piezas textuales |
+| Visuales estructurados de negocio | GPT Image 2 | Mejor cumplimiento bajo restricciones |
+| Precisión de edición y consistencia | GPT Image 2 | Menor deriva en iteraciones |
+| Tono fotorrealista y velocidad | Nano Banana 2 / Pro | Suele iterar más rápido y en ciertos casos se ve más natural |
+| Producción de alto volumen | depende del flujo | Mandan plataforma, coste y handoff |
+
+Regla de decisión rápida:
+
+- Si el entregable exige texto + layout, empieza por GPT Image 2.
+- Si priorizas exploración rápida y look fotográfico, Nano Banana sigue siendo fuerte.
+- En equipos, el enfoque híbrido es cada vez más común.
+
+## 7. Reacción en plataformas sociales
+
+En X y Reddit se repiten patrones similares:
+
+- positivo: mejor legibilidad de texto, UI más usable, menos rondas de corrección en tareas complejas
+- reservas: siguen apareciendo artefactos puntuales en anatomía, grano o detalle fino; en ciertas escenas fotorrealistas Nano Banana mantiene preferencia
+
+Esto marca una etapa más madura: menos debate de “ganador absoluto” y más selección por flujo de entrega real.
+
+## 8. Conclusión
+
+`ChatGPT Images 2.0` acerca la generación de imágenes a un uso claramente productivo, especialmente en texto, estructura y edición iterativa.
+
+Para contenido, operaciones, producto y colaboración de diseño, esta versión ya merece pruebas como flujo principal. La forma más fiable de decidir sigue siendo operativa: comparar en tareas reales, medir retrabajo y estandarizar el modelo más estable.
 
 ## References
 
-- [The new ChatGPT Images is here (OpenAI, 2025-12-16)](https://openai.com/index/new-chatgpt-images-is-here/)
-- [GPT Image 1.5 model docs (OpenAI Platform)](https://platform.openai.com/docs/models/gpt-image-1.5)
-- [Image generation guide (OpenAI Platform)](https://platform.openai.com/docs/guides/tools-image-generation/)
-- [OpenAI tests next-gen Image V2 model on ChatGPT and LM Arena (TestingCatalog, 2026-04-06)](https://www.testingcatalog.com/openai-tests-next-gen-image-v2-model-on-chatgpt-and-lm-arena/)
-- [What Is GPT Image 2? Everything We Know About OpenAI's Next Image Model (MindStudio, 2026-04-11)](https://www.mindstudio.ai/blog/what-is-gpt-image-2/)
-- [GPT Image 2: Complete Guide (CurateClick, 2026-04)](https://curateclick.com/blog/gpt-image-2-guide)
-- [GPT Image 2 preview discussion (Reddit r/OpenAI)](https://www.reddit.com/r/OpenAI/comments/1simerz/gpt_image_2_preview/)
+- [ChatGPT Release Notes (2026-04-21: ChatGPT Images 2.0)](https://help.openai.com/en/articles/6825453-chatgpt-can-now-generate-images)
+- [ChatGPT Pricing (Free/Go/Plus/Pro comparison)](https://chatgpt.com/pricing/)
+- [Introducing ChatGPT Go ("10x Free" reference)](https://openai.com/index/introducing-chatgpt-go/)
+- [OpenAI API Pricing (GPT-image-2 pricing)](https://openai.com/api/pricing/)
+- [GPT Image 2 Model (API model and snapshots)](https://developers.openai.com/api/docs/models/gpt-image-2)
+- [Image Generation Guide (sizes, quality, limits, cost)](https://developers.openai.com/api/docs/guides/image-generation)
+- [Arena Leaderboard (Text-to-Image / Image Edit)](https://arena.ai/leaderboard)
+- [Nano Banana Pro (Gemini 3 Pro Image) official page](https://deepmind.google/models/gemini-image/pro/)
+- [Nano Banana 2 official announcement (Google Blog)](https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/)
+- [Nano Banana 2 (Gemini 3.1 Flash Image) official page](https://deepmind.google/models/gemini-image/flash/)
+- [Gemini 3.1 Flash Image Model Card](https://deepmind.google/models/model-cards/gemini-3-1-flash-image/)
+- [Reddit: GPT Image v2 prompt and comparison thread (r/ChatGPT)](https://www.reddit.com/r/ChatGPT/comments/1snuu1r/i_created_a_github_repo_with_top_gpt_image_v2/)
+- [Reddit: GPT Image 2 vs Nano Banana Pro (r/OpenAI)](https://www.reddit.com/r/OpenAI/comments/1pixvun/gpt_image_2_vs_nano_banana_pro/)
+- [Reddit: Nano Banana 2 / Pro default-policy discussion (r/GeminiAI)](https://www.reddit.com/r/GeminiAI/comments/1rfh9ps/psa_google_is_forcing_the_inferior_nano_banana_2/)

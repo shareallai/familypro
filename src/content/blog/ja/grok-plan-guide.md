@@ -7,7 +7,7 @@ description: "X Premium、Premium+、SuperGrok Lite、SuperGrok、Heavyを、入
 summary: X Premium、Premium+、SuperGrok Lite、SuperGrok、SuperGrok Heavyで迷う人向けに、2つの課金ラインを先に分けたうえで、公開価格の読み方、現時点で確定している範囲、どのプランがどんな使い方に合うかを整理しました。
 category: AIサブスク比較
 pubDate: 2026-03-26
-updatedDate: 2026-04-16
+updatedDate: 2026-04-22
 author: Mark
 service: Grok
 tags:
@@ -21,9 +21,9 @@ relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: "低コストでGrokを試すなら？月額$5.99から"
-  subtitle: "価格が明確 · 開通が早い · まず試してから判断しやすい"
-  buttonText: "Grok購入プランを見る"
+  title: "Grokプランを月額5.99USDから"
+  subtitle: "料金体系が明確 · 開通が迅速 · 導入前の試用に適した選択肢"
+  buttonText: "Grokプランの選択肢を見る"
   buttonLink: https://familypro.io/en/products/grok?invite=7Dfd94eb
 draft: false
 ---
