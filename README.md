@@ -57,27 +57,34 @@ cp .env.example .env
 
 ## IndexNow（GitHub Pages 子路径站点）
 
-这个仓库已经把 IndexNow key 文件放在：
+这个仓库已经把 IndexNow key 文件放在（Option 2：自定义 keyLocation）：
 
-- `public/8f2ac072a8574a3898dd1c19b001b894.txt`
+- `public/myIndexNowKey63638.txt`
 
 部署到 GitHub Pages 后，它会出现在：
 
-- `https://shareallai.github.io/familypro/8f2ac072a8574a3898dd1c19b001b894.txt`
+- `https://shareallai.github.io/familypro/myIndexNowKey63638.txt`
 
-因为站点不是根域名根目录，而是在 `/familypro/` 子路径下，所以提交 IndexNow 时要显式带上 `keyLocation`。
+因为站点不是用户站点根域（`https://shareallai.github.io/`），而是在 `/familypro/` 子路径下：
+
+- 本仓库只使用 Option 2（自定义 `keyLocation`）。
+- 不使用根域路径 `https://shareallai.github.io/<key>.txt`（该路径不在本仓库可控范围）。
+- 提交 IndexNow 时必须显式带上 `--key-location`。
 
 提交全站 sitemap：
 
 ```bash
-python3 scripts/indexnow_submit.py --key 8f2ac072a8574a3898dd1c19b001b894
+python3 scripts/indexnow_submit.py \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt
 ```
 
 只提交变更页面：
 
 ```bash
 python3 scripts/indexnow_submit.py \
-  --key 8f2ac072a8574a3898dd1c19b001b894 \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt \
   --url https://shareallai.github.io/familypro/zh/blog/grok-plan-guide/ \
   --url https://shareallai.github.io/familypro/en/blog/grok-plan-guide/
 ```
@@ -86,7 +93,8 @@ python3 scripts/indexnow_submit.py \
 
 ```bash
 python3 scripts/indexnow_submit.py \
-  --key 8f2ac072a8574a3898dd1c19b001b894 \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt \
   --dry-run
 ```
 
@@ -96,3 +104,38 @@ python3 scripts/indexnow_submit.py \
 - 未传 `--url` 或 `--url-file` 时，会自动读取 `<site-root>/sitemap.xml`。
 - 默认使用全局 IndexNow 端点：`https://api.indexnow.org/indexnow`。
 - 会校验提交 URL 必须属于 `keyLocation` 的路径作用域。对当前仓库来说，只允许提交 `https://shareallai.github.io/familypro/` 下的 URL。
+
+手动提交脚本（按官方示例手填参数）：
+
+1) POST JSON（支持批量 URL，推荐）
+
+```bash
+python3 scripts/indexnow_manual_submit.py \
+  --request-mode post \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt \
+  --url https://shareallai.github.io/familypro/url1 \
+  --url https://shareallai.github.io/familypro/folder/url2 \
+  --url https://shareallai.github.io/familypro/url3
+```
+
+2) GET Query（单 URL）
+
+```bash
+python3 scripts/indexnow_manual_submit.py \
+  --request-mode get \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt \
+  --url https://shareallai.github.io/familypro/zh/blog/grok-plan-guide/
+```
+
+3) 只看请求内容，不实际发送
+
+```bash
+python3 scripts/indexnow_manual_submit.py \
+  --request-mode post \
+  --key 4162e84885d4491791ae613ee30bf61b \
+  --key-location https://shareallai.github.io/familypro/myIndexNowKey63638.txt \
+  --url https://shareallai.github.io/familypro/zh/blog/grok-plan-guide/ \
+  --dry-run
+```

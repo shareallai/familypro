@@ -18,6 +18,7 @@ from typing import Iterable, NoReturn
 
 DEFAULT_ENDPOINT = "https://api.indexnow.org/indexnow"
 DEFAULT_REPOSITORY = "shareallai/familypro"
+DEFAULT_KEY_FILE_NAME = "myIndexNowKey63638.txt"
 MAX_BATCH_SIZE = 10_000
 
 
@@ -43,8 +44,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--key-location",
         help=(
-            "Full public URL of the key file. Defaults to <site-root>/<key>.txt. "
-            "For this repo that becomes /familypro/<key>.txt."
+            "Full public URL of the key file. Defaults to "
+            f"<site-root>/{DEFAULT_KEY_FILE_NAME} for this repo's Option 2 setup."
         ),
     )
     parser.add_argument(
@@ -124,10 +125,11 @@ def derive_default_site_root(explicit_site_root: str | None) -> str:
     return f"{site_origin}/{repo}"
 
 
-def derive_key_location(site_root: str, key: str, explicit_key_location: str | None) -> str:
+def derive_key_location(site_root: str, explicit_key_location: str | None) -> str:
     if explicit_key_location:
         return explicit_key_location
-    return join_url(site_root, f"{key}.txt")
+    # This repo intentionally uses an Option 2 custom keyLocation file path.
+    return join_url(site_root, DEFAULT_KEY_FILE_NAME)
 
 
 def local_name(tag: str) -> str:
@@ -269,7 +271,7 @@ def main() -> int:
     site_root = derive_default_site_root(args.site_root)
     site_root_parsed = ensure_https_url(site_root, "site root")
     host = site_root_parsed.netloc
-    key_location = derive_key_location(site_root, args.key, args.key_location)
+    key_location = derive_key_location(site_root, args.key_location)
 
     sitemap_source = args.sitemap
     input_urls: list[str] = list(args.url)
