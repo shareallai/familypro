@@ -17,9 +17,9 @@ tags:
   - 学生签证
   - 移民规划
 topOffer:
-  title: Duolingo 考试代报低至官方价 4 折
-  subtitle: 价格更省约 60% · 流程简洁
-  buttonText: 查看 Duolingo 优惠
+  title: Super Duolingo 会员低至官方价 4 折
+  subtitle: 价格更省约 60% · 开通流程简洁
+  buttonText: 查看 Super Duolingo 优惠
   buttonLink: https://familypro.io/en/products/duolingo?invite=7Dfd94eb
 draft: false
 ---
