@@ -3,11 +3,11 @@ locale: en
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go vs Plus vs Pro: Codex and API Billing Explained"
 headline: What are ChatGPT Go, Plus, and Pro? Codex and API explained
-description: Checked on April 10, 2026, this guide compares ChatGPT Go, Plus, and Pro (including $100/$200 Pro), explains Codex access, and confirms API billing is separate.
+description: Checked on April 23, 2026, this guide compares ChatGPT Go, Plus, and Pro (including $100/$200 Pro), explains Codex access, and confirms API billing is separate.
 summary: If you are deciding between ChatGPT Go, Plus, and Pro, or you are unsure how Codex and the OpenAI API fit together, this guide gives you a fast and practical decision path.
 category: AI Subscription Comparisons
 pubDate: 2026-03-31
-updatedDate: 2026-04-22
+updatedDate: 2026-04-24
 author: Mark
 service: General
 tags:
@@ -22,9 +22,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: ChatGPT plans starting at USD 5.5 (below official pricing)
-  subtitle: Optional third-party purchase channel · Clear activation process · Post-purchase support available
-  buttonText: View ChatGPT plan options
+  title: familypro ChatGPT plans from USD 5.5
+  subtitle: Better pricing · Faster activation · Post-purchase support
+  buttonText: Get started on familypro
   buttonLink: https://familypro.io/en/products/chatgpt?invite=7Dfd94eb
 draft: false
 ---
@@ -38,7 +38,7 @@ If you are looking at OpenAI plans for the first time, four questions usually cr
 
 This post has one job: answer those questions clearly, so you can pick the right option in about 10 minutes.
 
-Scope note: all plan details in this article are based on official OpenAI pages visible on **2026-04-10**. Prices are shown in **USD** and are **for reference only**. Always confirm on your current checkout and billing pages.
+Scope note: all plan details in this article are based on official OpenAI pages visible on **2026-04-23**. Prices are shown in **USD** and are **for reference only**. Always confirm on your current checkout and billing pages.
 
 ## 1. Quick answer: four common questions, one framework
 
@@ -62,7 +62,7 @@ Treat Go, Plus, and Pro as three levels of the same product line. The real diffe
 | Plus | Higher limits and broader advanced features for heavy daily use | Individual users doing regular writing, analysis, learning, and research |
 | Pro | Highest limits and priority experience for very heavy use | High-frequency power users who care about limits and speed |
 
-As of 2026-04-10 on official pages:
+As of 2026-04-23 on official pages:
 
 - `Plus`: **$20/month** (help center)
 - `Pro`: currently **two plans: $100/month and $200/month** (same Pro capability set, different usage headroom)
@@ -74,7 +74,7 @@ Three details to keep in mind:
 - The two Pro plans ($100 / $200) mainly differ by usage allowance (officially framed around roughly 5x vs 20x compared with Plus).
 - "Unlimited" on plan pages is not absolute unlimited use. It is still constrained by abuse guardrails and terms.
 
-## 3. Go vs Plus vs Pro limits (as of 2026-04-10)
+## 3. Go vs Plus vs Pro limits (as of 2026-04-23)
 
 OpenAI can adjust limits over time. The table below only includes differences explicitly shown on official pages.
 
@@ -86,7 +86,7 @@ OpenAI can adjust limits over time. The table below only includes differences ex
 | Legacy models (for example 4o) | Not included | Expanded access included | Included, with higher limits |
 | Agent mode | Not included | Included, `40 requests / month` | Included, `400 requests / month` |
 | Sora | Not included | Included | Included, typically with higher priority and concurrency |
-| Voice | Included, but same limit class as Free | Included under subscriber voice limits | GPT-4o voice is `unlimited*` (abuse guardrails apply) |
+| Voice | Included (check the in-product limit shown on your account) | Included (check the in-product limit shown on your account) | `unlimited*` (abuse guardrails apply) |
 | Codex | Available for a limited time (official wording: `limited time`) | Included | Included |
 
 `*` Here, `unlimited` means high practical availability, not unconditional unlimited usage. Terms and system guardrails still apply.
@@ -125,7 +125,7 @@ That is why two people can both "use Codex" but see costs in different places.
 
 Its billing model is also different: API usage is generally pay-as-you-go (for example by token, request, or tool usage).
 
-Using official pricing visible on 2026-04-10 as a reference point:
+Using official pricing visible on 2026-04-23 as a reference point:
 
 - GPT-5.4 text input: about `2.50 USD / 1M tokens`
 - GPT-5.4 text output: about `15.00 USD / 1M tokens`

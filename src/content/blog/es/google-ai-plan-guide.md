@@ -7,7 +7,7 @@ description: "Con base en páginas oficiales de Google verificadas el 21 de abri
 summary: Comparamos Google AI Plus, Pro y Ultra en costos, AI credits, límites de NotebookLM y Gemini, y escenarios reales para ayudarte a decidir sin pagar de más.
 category: Comparativas de suscripciones de IA
 pubDate: 2026-03-25
-updatedDate: 2026-04-22
+updatedDate: 2026-04-24
 author: Mark
 service: Google AI
 tags:
@@ -23,9 +23,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Planes de Google AI con menor costo de entrada
-  subtitle: Canal opcional de compra por terceros · El precio puede cambiar · Revisa las condiciones antes de pagar
-  buttonText: Ver opciones de planes de Google AI
+  title: FamilyPro ofrece planes Google AI Pro
+  subtitle: Opciones Pro disponibles · Precio transparente · Soporte posventa
+  buttonText: Ver opciones Pro en FamilyPro
   buttonLink: https://familypro.io/en/products/gemini?invite=7Dfd94eb
 draft: false
 ---

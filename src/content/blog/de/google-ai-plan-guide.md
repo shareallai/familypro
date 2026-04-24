@@ -7,7 +7,7 @@ description: "Auf Basis offizieller Google-Seiten mit Stand 21. April 2026 vergl
 summary: Dieser Guide stellt Google AI Plus, Pro und Ultra bei Kosten, AI Credits, NotebookLM- und Gemini-Limits sowie praktischen Einsatzfällen gegenüber, damit du ohne Fehlkauf entscheidest.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-25
-updatedDate: 2026-04-22
+updatedDate: 2026-04-24
 author: Mark
 service: Google AI
 tags:
@@ -23,9 +23,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Google-AI-Tarife mit niedrigerem Einstiegspreis
-  subtitle: Optionale Drittanbieter-Kaufoption · Preise können sich ändern · Bedingungen vor dem Kauf prüfen
-  buttonText: Google-AI-Tarifoptionen ansehen
+  title: FamilyPro bietet Google-AI-Pro-Tarife
+  subtitle: Pro-Optionen verfügbar · Transparente Preise · Support nach dem Kauf
+  buttonText: FamilyPro Pro-Optionen ansehen
   buttonLink: https://familypro.io/en/products/gemini?invite=7Dfd94eb
 draft: false
 ---

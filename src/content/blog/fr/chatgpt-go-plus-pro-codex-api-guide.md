@@ -3,11 +3,11 @@ locale: fr
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go, Plus, Pro : Codex et facturation API expliqués"
 headline: "ChatGPT Go, Plus, Pro : comment comprendre Codex et OpenAI API"
-description: "Vérifié au 10 avril 2026, ce guide compare ChatGPT Go, Plus et Pro (dont Pro 100/200 USD), précise l’accès Codex et confirme que l’API est facturée séparément."
+description: "Vérifié au 23 avril 2026, ce guide compare ChatGPT Go, Plus et Pro (dont Pro 100/200 USD), précise l’accès Codex et confirme que l’API est facturée séparément."
 summary: Si vous hésitez entre ChatGPT Go, Plus et Pro, ou si vous voulez clarifier la relation entre Codex, ChatGPT et OpenAI API, ce guide vous donne un cadre de décision rapide.
 category: Comparatifs d'abonnements IA
 pubDate: 2026-03-31
-updatedDate: 2026-04-22
+updatedDate: 2026-04-24
 author: Mark
 service: General
 tags:
@@ -22,9 +22,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: "Plans ChatGPT à partir de 5,5 USD (sous le prix officiel)"
-  subtitle: "Canal d’achat tiers en option · Processus d’activation clair · Support après achat disponible"
-  buttonText: "Voir les options de plan ChatGPT"
+  title: "Offres ChatGPT sur familypro dès 5,5 USD"
+  subtitle: "Meilleur prix · Activation rapide · Support après achat"
+  buttonText: "Accéder à familypro"
   buttonLink: https://familypro.io/en/products/chatgpt?invite=7Dfd94eb
 draft: false
 ---
@@ -38,7 +38,7 @@ Quand on découvre les offres OpenAI pour la première fois, la confusion revien
 
 Ce guide a un objectif unique : clarifier ces quatre questions pour que vous puissiez choisir la bonne formule en une dizaine de minutes.
 
-Cadre de lecture : les informations s’appuient sur les pages officielles OpenAI visibles au **2026-04-10**. Les montants sont indiqués en **USD** et restent **indicatifs**. La source finale reste toujours votre checkout et votre page de facturation au moment de l’achat.
+Cadre de lecture : les informations s’appuient sur les pages officielles OpenAI visibles au **2026-04-23**. Les montants sont indiqués en **USD** et restent **indicatifs**. La source finale reste toujours votre checkout et votre page de facturation au moment de l’achat.
 
 ## 1. Réponse rapide : 4 questions, un cadre simple
 
@@ -62,7 +62,7 @@ Go, Plus et Pro sont trois niveaux d’une même ligne produit. Le sujet central
 | Plus | Limites plus élevées et fonctionnalités avancées plus larges pour un usage quotidien soutenu | Utilisateurs individuels qui écrivent, analysent, apprennent et recherchent régulièrement |
 | Pro | Niveau le plus élevé en limites et en priorité | Utilisateurs intensifs à haute fréquence, sensibles aux plafonds et à la vitesse |
 
-Selon les pages officielles visibles au 2026-04-10 :
+Selon les pages officielles visibles au 2026-04-23 :
 
 - `Plus` : **20 USD/mois**
 - `Pro` : **deux offres actuellement, 100 USD/mois et 200 USD/mois** (même famille Pro, réserve d’usage différente)
@@ -74,7 +74,7 @@ Trois points pratiques à garder en tête :
 - Les deux offres Pro (100/200 USD) se distinguent surtout par la marge d’usage (environ 5x et 20x vs Plus selon la formulation officielle).
 - Le terme "Unlimited" ne signifie pas usage absolu sans limite ; les conditions d’utilisation et garde-fous anti-abus s’appliquent.
 
-## 3. Go vs Plus vs Pro : fonctionnalités et limites (au 2026-04-10)
+## 3. Go vs Plus vs Pro : fonctionnalités et limites (au 2026-04-23)
 
 OpenAI peut ajuster les limites dans le temps. Le tableau ci-dessous reprend uniquement les écarts explicitement affichés sur les pages officielles.
 
@@ -86,7 +86,7 @@ OpenAI peut ajuster les limites dans le temps. Le tableau ci-dessous reprend uni
 | Legacy models (ex. 4o) | Non inclus | Accès étendu inclus | Inclus, avec limites plus élevées |
 | Agent mode | Non inclus | Inclus, `40 requêtes / mois` | Inclus, `400 requêtes / mois` |
 | Sora | Non inclus | Inclus | Inclus, généralement avec meilleure priorité/concurrence |
-| Voice | Inclus, mais classe de limite proche de Free | Inclus dans le quota voix abonné | Voix GPT-4o en `unlimited*` (avec garde-fous) |
+| Voice | Inclus (voir le plafond affiché sur votre compte) | Inclus (voir le plafond affiché sur votre compte) | `unlimited*` (avec garde-fous) |
 | Codex | Disponible temporairement (`limited time`) | Inclus | Inclus |
 
 `*` Ici, `unlimited` signifie une forte disponibilité pratique, pas une absence totale de limites.
@@ -125,7 +125,7 @@ C’est la raison pour laquelle deux utilisateurs de Codex peuvent voir des coû
 
 La facturation est également différente : l’API fonctionne surtout en pay-as-you-go (token, requête, appel d’outil, etc.).
 
-Exemple d’ordre de grandeur visible au 2026-04-10 :
+Exemple d’ordre de grandeur visible au 2026-04-23 :
 
 - Entrée texte GPT-5.4 : environ `2.50 USD / 1M tokens`
 - Sortie texte GPT-5.4 : environ `15.00 USD / 1M tokens`

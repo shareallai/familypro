@@ -7,7 +7,7 @@ description: Based on official Google pages checked on April 21, 2026, this guid
 summary: This guide compares Google AI Plus, Pro, and Ultra across pricing, storage, AI credits, and key services like Gemini, NotebookLM, Flow, Whisk, Jules, and Gemini CLI so you can choose the right tier.
 category: AI Subscription Comparisons
 pubDate: 2026-03-25
-updatedDate: 2026-04-22
+updatedDate: 2026-04-24
 author: Mark
 service: Google AI
 tags:
@@ -23,9 +23,9 @@ relatedTranslationKeys:
   - grok-plan-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Google AI plans with a lower entry cost
-  subtitle: Optional third-party purchase channel · Pricing may change · Review terms before checkout
-  buttonText: View Google AI plan options
+  title: FamilyPro offers Google AI Pro plans
+  subtitle: Google AI Pro options · Transparent pricing · Post-purchase support
+  buttonText: View FamilyPro Pro options
   buttonLink: https://familypro.io/en/products/gemini?invite=7Dfd94eb
 draft: false
 ---

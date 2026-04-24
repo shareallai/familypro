@@ -107,6 +107,8 @@ python3 scripts/indexnow_submit.py \
 
 手动提交脚本（按官方示例手填参数）：
 
+- 该脚本会打印完整 HTTP 请求与响应（请求行、头、body、状态码、响应头、响应体）。
+
 1) POST JSON（支持批量 URL，推荐）
 
 ```bash
