@@ -1,0 +1,7 @@
+interface:
+  display_name: "FamilyPro Blog Illustrations"
+  short_description: "Add and verify blog illustrations."
+  default_prompt: "Use $familypro-blog-illustration-workflow to add or verify a blog image asset."
+
+policy:
+  allow_implicit_invocation: true
