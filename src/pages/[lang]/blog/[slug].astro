@@ -7,7 +7,6 @@ import TopOfferCard from '../../../components/TopOfferCard.astro';
 import { getSponsorCtaCopy } from '../../../lib/sponsorCtaCopy';
 import {
   DEFAULT_LANG,
-  collectSiteLangs,
   getLangLabel,
   getLocaleCode,
   getSiteName,
@@ -61,7 +60,11 @@ const ui = getUi(currentLang);
 const localeCode = getLocaleCode(currentLang);
 const siteName = getSiteName(currentLang);
 const visibleHeadline = post.data.headline ?? post.data.title;
-const translationLangs = collectSiteLangs(translations.map((item) => item.lang));
+const translationLangs = Array.from(new Set(translations.map((item) => item.lang))).sort((a, b) => {
+  if (a === DEFAULT_LANG) return -1;
+  if (b === DEFAULT_LANG) return 1;
+  return a.localeCompare(b);
+});
 const { Content, headings } = await render(post);
 const tocH2Headings = headings.filter(
   (heading) => heading.depth === 2 && heading.text.trim().length > 0 && heading.slug.trim().length > 0,

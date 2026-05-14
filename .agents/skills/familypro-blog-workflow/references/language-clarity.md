@@ -30,6 +30,16 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Avoid absolute wording (`always`, `never`, `guaranteed`) unless it is verified and scoped.
 - Avoid AI-sounding repetition, mechanical transitions, and over-templated paragraph cadence.
 
+## Editorial style defaults
+
+- Prefer a written, concise, matter-of-fact style: clear enough for quick execution, but not chatty, promotional, or report-like.
+- Lead with the user's actual scenario or decision point, not with broad setup, generic definitions, or "this article will explain" framing.
+- Keep only the use cases that matter to the current article. Do not expand into adjacent scenarios just to make the post feel comprehensive.
+- Use bullets, numbered lists, FAQs, and tables only when they improve scanning. Do not turn every section into "three points," "three checks," or a formulaic FAQ.
+- Prefer connected paragraphs over mechanical sequencing such as "first / second / third" when the section is short or explanatory.
+- Remove filler transitions and generic conclusions such as "in summary," "what really matters is," and repeated "it is worth noting" phrasing unless they add a concrete condition.
+- Make the final article feel edited: compact sections, no repeated claims, no inflated adjectives, and no obvious AI cadence.
+
 ## Sentence-level checks
 
 - Subject is explicit where omission may cause confusion.
@@ -79,3 +89,4 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Read the full article once without editing and mark any sentence that needs re-reading.
 - Rewrite marked sentences until each can be understood in one pass.
 - Ensure key conclusions can be quoted alone without losing conditions.
+- Check whether the article can be shortened without losing the user's scenario, commands, facts, or decision guidance; if yes, shorten it.
