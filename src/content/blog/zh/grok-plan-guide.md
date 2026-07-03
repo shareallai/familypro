@@ -7,7 +7,7 @@ description: 基于最新可核对信息，比较 X Premium、Premium+、SuperGr
 summary: 如果你正纠结 Grok 该买 X Premium、Premium+、SuperGrok Lite、SuperGrok 还是 SuperGrok Heavy，这篇文章会先拆清两条订阅线，再讲明公开价格、能力边界，以及分别适合谁。
 category: AI 订阅对比
 pubDate: 2026-03-26
-updatedDate: 2026-04-22
+updatedDate: 2026-07-03
 author: Mark
 service: Grok
 tags:
@@ -21,8 +21,8 @@ relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: Grok 方案低至 5.99 USD/月
-  subtitle: 价格信息透明 · 开通流程快速 · 适合先试用后决策
+  title: 对比 Grok 官方与共享方案
+  subtitle: 价格会随地区和平台变化 · 下单前先核对权益
   buttonText: 查看 Grok 方案选项
   buttonLink: https://familypro.io/en/products/grok?invite=7Dfd94eb
 draft: false
@@ -38,9 +38,9 @@ draft: false
 
 如果不先把这两条线拆开，你很容易买成 `X` 会员，却以为自己买的是完整的 Grok 订阅。
 
-先说关键结论：按当前普通个人账号能看到的 `X Premium` 订阅页，**`Premium+` 已经直接包含 `SuperGrok`**，而 `Premium` 仍显示为 `Enhanced Grok access`。
+先说关键结论：公开可核对的 X Help 仍把 `Premium` 和 `Premium+` 按 Grok 上限区分，而 xAI 近期产品新闻已经把 `SuperGrok` 与 `X Premium Plus` 一起作为 Grok Build 等新入口的订阅资格来写。普通个人账号最终拿到什么 bundle，仍要以下单页为准。
 
-截至 **2026 年 4 月 7 日**，基于当前可访问的 **xAI 官网、X Help、登录态 X Premium 订阅页与美国区 App Store 购买项**，Grok 相关方案可以先按两类理解：
+截至 **2026 年 7 月 3 日**，基于当前可访问的 **xAI 官网、xAI Docs、X Help、xAI 新闻页与美国区 App Store 购买项**，Grok 相关方案可以先按两类理解：
 
 - **X 站内订阅**：`Basic`、`Premium`、`Premium+`
 - **Grok 独立订阅**：免费版、`SuperGrok Lite`、`SuperGrok`、`SuperGrok Heavy`
@@ -80,14 +80,15 @@ X Help 当前把 `X Premium` 分成三档：
 | 套餐 | 美国区 Web 价格 | 你主要买到的是什么 | Grok 相关表述 |
 | --- | --- | --- | --- |
 | Basic | $3/月 或 $32/年起 | 编辑帖子、长文、长视频、回复排序等基础权益 | 官方说明里没有把 Grok 当作核心卖点 |
-| Premium | $8/月 或 $84/年起 | 蓝标、较少广告、创作者变现资格、Media Studio 等 | X Help 写 `increased usage limits on Grok`；当前订阅页显示 `Enhanced Grok access` |
-| Premium+ | $40/月 或 $395/年起 | 更少广告、最高回复排序、Radar、Articles 等 | X Help 写 `higher limits on Grok`；当前订阅页直接写 `SuperGrok`，并标注 `Worth $30 USD a month` |
+| Premium | $8/月 或 $84/年起 | 蓝标、较少广告、创作者变现资格、Media Studio 等 | X Help 写 `increased usage limits on Grok` |
+| Premium+ | $40/月 或 $395/年起 | 更少广告、最高回复排序、Radar、Articles 等 | X Help 写 `higher limits on Grok`；xAI 其他产品公告还把 `X Premium Plus` 与 Grok Build 等入口关联起来 |
 
 这条线最容易买错的地方是：
 
 - 你付费的首要对象仍然是 **X 平台**
-- 但按 **2026-04-07** 登录态订阅页，普通个人版 `Premium+` 已经被直接销售为 **包含 `SuperGrok`**
-- 同一页面里 `Premium` 仍只写 `Enhanced Grok access`，所以 `Premium` 和 `Premium+` 的 Grok 权益已经不是同一层
+- X Help 仍把 `Premium+` 描述为比 `Premium` 有更高 Grok 上限；同一帮助页也明确写到 Premium Business / Organization 及其关联账号包含 `Premium+`，并包含 `SuperGrok`
+- 但普通个人账号的 `Premium+` 与 `SuperGrok` 实际绑定文案仍可能随地区、登录态和购买入口变化，下单前要看最终结账页
+- 因此 `Premium` 和 `Premium+` 的 Grok 权益不是同一层，但具体 bundle 仍受购买入口影响
 - 页面上的 `50% off for 2 months` 一类促销属于临时活动，最终还是以下单页为准
 
 如果你并不在意 X 的社交功能，那就更该优先看独立订阅，而不是在 `Basic / Premium / Premium+` 之间来回比较。
@@ -103,7 +104,7 @@ xAI 当前消费者 FAQ 和官网页至少可以确认两件事：
 
 - **免费访问**：只在部分地区开放，且是 `limited free access`，不是所有地区和账户都能直接获得完整功能
 - **SuperGrok Lite**：美国区 App Store 可见的轻量付费档位；是否可见、价格和计费周期受地区/平台/账户影响
-- **SuperGrok**：面向独立网页和 App 的付费订阅；[Grok 4 公告](https://x.ai/news/grok-4) 写向 `SuperGrok` 开放，[Grok 4.1 公告](https://x.ai/news/grok-4-1) 写向所有用户开放
+- **SuperGrok**：面向独立网页和 App 的付费订阅；xAI 当前 Grok 页面把它概括为更高 limits、priority access 和 multi-agent，[Grok 4 公告](https://x.ai/news/grok-4) 写向 `SuperGrok` 开放，[Grok 4.1 公告](https://x.ai/news/grok-4-1) 写向所有用户开放
 - **SuperGrok Heavy**：在 `SuperGrok` 之上额外提供 `Grok 4 Heavy`，并给出 `much higher rate limits`
 
 价格信息也要分开看，而且目前只能写到“公开页当前可确认”的程度：
@@ -140,7 +141,7 @@ xAI 当前消费者 FAQ 和官网页至少可以确认两件事：
 一句话总结：
 
 - `Premium` 更像 **X 会员里带增强版 Grok 访问**
-- `Premium+` 按当前订阅页展示，已经是 **X 会员里直接包含 `SuperGrok`**
+- `Premium+` 是 **X 会员里的更高 Grok 权益层**，具体是否显示为包含 `SuperGrok` 要看账户和下单页
 - `SuperGrok` 是 **Grok 订阅本身**
 
 ### 3.2 当前最清楚的是“访问层级”，不是“完整硬额度”
@@ -151,9 +152,11 @@ xAI 当前消费者 FAQ 和官网页至少可以确认两件事：
 
 - `Premium` 比普通用户有更高的 Grok 使用上限
 - `Premium+` 比 `Premium` 上限更高
-- 登录态 `X Premium` 订阅页当前把 `Premium` 写成 `Enhanced Grok access`，把 `Premium+` 直接写成 `SuperGrok`
+- X Help 当前写明 `Premium` 有 `increased usage limits on Grok`，`Premium+` 有 `higher limits on Grok`
 - [Grok 4 公告](https://x.ai/news/grok-4) 写明 `Grok 4` 向 `SuperGrok` 和 `Premium+` 开放
 - [Grok 4.1 公告](https://x.ai/news/grok-4-1) 写明 `Grok 4.1` 向 `grok.com`、`X`、`iOS/Android` 的所有用户开放
+- xAI Docs 当前把 API 侧主力文本模型列为 `grok-4.3`，但这是开发者 API 信息，不能直接等同于消费者订阅页的模型选择器
+- [Grok Build 公告](https://x.ai/news/grok-build-cli) 写明 Grok Build early beta 面向 `SuperGrok` 和 `X Premium Plus` 订阅者开放
 - `SuperGrok Heavy` 额外提供 `Grok 4 Heavy`
 - `SuperGrok Heavy` 提供 `much higher rate limits`
 
@@ -245,10 +248,24 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 - 图片编辑
 - 视频生成
 - 视频理解
+- 最高 2K 图片与最长 15 秒视频的公开能力描述
+- Grok Imagine Video 1.5 已在 2026 年 6 月更新到更快的视频生成体验
 
 这里真正要问的不是“能不能用”，而是“你会不会高频用”。
 
 如果只是偶尔做封面图或尝试视频特效，普通付费档通常足够。真正需要更高档位的人，往往已经把图像/视频生成纳入稳定工作流。
+
+### 4.5 Grok Build / 开发工具接入：适合把 Grok 当代码工作流的人
+
+2026 年 5 月以后，Grok 订阅的价值不只在聊天窗口里。xAI 已经把 `SuperGrok` 和 `X Premium Plus` 订阅接到 Grok Build 以及部分第三方开发工具里。
+
+对开发者来说，新增判断点是：
+
+- 是否需要 Grok Build 这类终端 coding agent
+- 是否想在 Warp、Kilo Code 等工具里用现有 Grok / X Premium 订阅登录
+- 是否愿意接受这些能力仍处在 beta 或逐步扩展阶段
+
+如果你完全不用代码工具，这部分不应成为购买主因；如果你本来就在比较 AI coding agent，`SuperGrok` 与 `Premium+` 的价值就不能只按聊天和生图来算。
 
 ## 五、到底该怎么买：按人群选，比按功能名选更准
 
@@ -257,7 +274,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 优先看 `Premium` 或 `Premium+`。
 
 - `Premium`：适合本来就愿意买 X 会员，同时希望提升 Grok 可用性的人
-- `Premium+`：适合既重视 X 平台权益，也希望直接拿到 `SuperGrok` 的人
+- `Premium+`：适合既重视 X 平台权益，也希望拿到更高 Grok 权益，并愿意在下单页确认是否包含 `SuperGrok` 的人
 
 如果你并不在乎蓝标、广告、Articles、Radar 这些 X 内权益，就不要因为“里面也有 Grok”而直接上 `Premium+`。
 
@@ -269,7 +286,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 - 美国区 App Store 当前可见 `SuperGrok Lite US$10` 和 `SuperGrok Lite US$100` 两个购买项
 - 但 App Store 页面没有把金额和计费周期一一写清
 
-按 **2026-04-07** 当前可见口径，`SuperGrok Lite` 可以理解成“想先体验独立付费版 Grok，但暂时不想直接上标准 `SuperGrok`”的入门档。它更适合轻度、偶尔使用的用户，不适合把 Grok 当重度生产工具的人。
+按 **2026-07-03** 当前可见口径，`SuperGrok Lite` 可以理解成“想先体验独立付费版 Grok，但暂时不想直接上标准 `SuperGrok`”的入门档。它更适合轻度、偶尔使用的用户，不适合把 Grok 当重度生产工具的人。
 
 所以对 Lite 更稳妥的理解是：
 
@@ -316,7 +333,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 
 ### 6.1 想更低成本试 SuperGrok：也可以对比第三方共享/拼车方案
 
-如果你已经确定要买 `SuperGrok`，也可以顺手对比第三方共享/拼车渠道。按 **2026-04-07** 当前可见的 FamilyPro 商品页信息，这类方案的本质是通过**共享账号**提供 `SuperGrok` 访问。
+如果你已经确定要买 `SuperGrok`，也可以顺手对比第三方共享/拼车渠道。按 **2026-07-03** 当前可核对口径，这类方案的本质是通过**共享账号**提供 `SuperGrok` 访问。
 
 - 好处通常是入手门槛更低
 - 代价是账号不是完全独享，且需要遵守共享账号规则
@@ -336,8 +353,12 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 
 - [xAI Consumer FAQs](https://x.ai/legal/faq)
 - [Grok Plans](https://grok.com/plans)
+- [xAI Grok product page](https://x.ai/grok)
+- [xAI Docs: Models](https://docs.x.ai/docs/models)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
+- [xAI News: Introducing Grok Build](https://x.ai/news/grok-build-cli)
+- [xAI News: Grok Imagine Video 1.5](https://x.ai/news/grok-imagine-video-1-5)
 - [X Premium 订阅页（需登录）](https://x.com/i/premium_sign_up)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)

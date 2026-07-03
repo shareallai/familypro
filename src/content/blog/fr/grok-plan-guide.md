@@ -7,7 +7,7 @@ description: "Comparez X Premium, Premium+, SuperGrok Lite, SuperGrok et Heavy s
 summary: Si vous hésitez entre X Premium, Premium+, SuperGrok Lite, SuperGrok et SuperGrok Heavy, ce guide sépare d’abord les deux lignes d’abonnement puis précise quels signaux de prix sont publics, où s’arrêtent les informations réellement confirmées et quel plan colle à votre usage réel.
 category: Comparatifs d'abonnements IA
 pubDate: 2026-03-26
-updatedDate: 2026-04-22
+updatedDate: 2026-07-03
 author: Mark
 service: Grok
 tags:
@@ -21,8 +21,8 @@ relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - codex-claude-cursor-instructions-guide
 topOffer:
-  title: "Plans Grok à partir de 5,99 USD/mois"
-  subtitle: "Tarification transparente · Activation rapide · Adapté à un essai avant décision"
+  title: "Comparer les options Grok officielles et partagées"
+  subtitle: "Prix variables selon région et plateforme · Vérifiez les droits avant paiement"
   buttonText: "Voir les options de plan Grok"
   buttonLink: https://familypro.io/en/products/grok?invite=7Dfd94eb
 draft: false
@@ -32,9 +32,9 @@ Si vous avez regardé les offres Grok récemment, le point vraiment déroutant n
 
 `X Premium`, `X Premium+`, `SuperGrok Lite`, `SuperGrok` et `SuperGrok Heavy` sont souvent présentés ensemble comme si c’était la même famille. En pratique, ce n’est pas le cas. Une partie des avantages Grok est incluse dans les abonnements de la plateforme X, et une autre partie appartient à l’abonnement autonome `Grok.com` / application Grok. En plus, la communication officielle parle encore de `higher limits` ou de `much higher rate limits` sans publier de tableau de quotas complet et stable.
 
-La mise à jour la plus importante est la suivante : sur l’actuelle page d’inscription `X Premium` en session connectée pour un compte personnel standard, **`Premium+` est désormais vendu explicitement comme incluant `SuperGrok`**, alors que `Premium` reste présenté comme `Enhanced Grok access`.
+La mise à jour la plus importante est la suivante : X Help distingue toujours `Premium` et `Premium+` par leurs limites Grok, tandis que les actualités récentes de xAI traitent déjà `SuperGrok` et `X Premium Plus` comme des souscriptions ouvrant de nouvelles surfaces comme Grok Build. Pour un compte personnel, l’écran de paiement final reste la référence pour confirmer le bundle exact.
 
-Au **7 avril 2026**, sur la base des pages accessibles de **xAI, X Help, de la page d’inscription X Premium en session connectée et des achats visibles sur l’App Store US**, le plus clair est de découper l’offre en deux blocs :
+Au **3 juillet 2026**, sur la base des pages accessibles de **xAI, xAI Docs, X Help, des actualités xAI et des achats visibles sur l’App Store US**, le plus clair est de découper l’offre en deux blocs :
 
 - **Abonnements X** : `Basic`, `Premium`, `Premium+`
 - **Abonnements Grok autonomes** : accès gratuit selon la région, `SuperGrok Lite`, `SuperGrok`, `SuperGrok Heavy`
@@ -74,14 +74,14 @@ X Help présente actuellement trois niveaux `X Premium` :
 | Forfait | Prix Web US | Ce que vous achetez d’abord | Formulation publique côté Grok |
 | --- | --- | --- | --- |
 | Basic | à partir de 3 $/mois ou 32 $/an | Édition des posts, posts plus longs, vidéos plus longues, priorité de réponses, fonctions de base | Grok n’est pas présenté comme argument principal |
-| Premium | à partir de 8 $/mois ou 84 $/an | Badge, moins de publicités, éligibilité à la monétisation, Media Studio, etc. | X Help indique `increased usage limits on Grok` ; la page d’inscription actuelle l’affiche comme `Enhanced Grok access` |
-| Premium+ | à partir de 40 $/mois ou 395 $/an | Priorité maximale des réponses, réduction pub plus forte, Radar, Articles, etc. | X Help indique `higher limits on Grok` ; la page d’inscription actuelle l’affiche directement comme `SuperGrok`, avec `Worth $30 USD a month` |
+| Premium | à partir de 8 $/mois ou 84 $/an | Badge, moins de publicités, éligibilité à la monétisation, Media Studio, etc. | X Help indique `increased usage limits on Grok` |
+| Premium+ | à partir de 40 $/mois ou 395 $/an | Priorité maximale des réponses, réduction pub plus forte, Radar, Articles, etc. | X Help indique `higher limits on Grok` ; d’autres annonces xAI relient aussi `X Premium Plus` à Grok Build et à certaines intégrations |
 
 Le point qui crée le plus d’erreurs d’achat :
 
 - Vous payez d’abord la **plateforme X**
-- Mais au **2026-04-07**, le tunnel d’inscription connecté vend déjà `Premium+` comme une offre qui **inclut `SuperGrok`**
-- Sur cette même page, `Premium` reste présenté comme `Enhanced Grok access`, donc l’écart n’est plus seulement un vague “plus de limites”
+- X Help décrit toujours `Premium+` comme un niveau avec plus de limites Grok que `Premium`; le même article précise aussi que les comptes Premium Business / Organization et leurs affiliés reçoivent `Premium+` avec accès à `SuperGrok`
+- Pour les comptes individuels, la formulation exacte reliant `Premium+` et `SuperGrok` peut varier selon la région, l’état de connexion et le canal d’achat ; vérifiez donc l’écran de paiement final
 - Les promos du type `50% off for 2 months` restent temporaires et doivent toujours être validées sur l’écran de paiement final
 
 Si l’écosystème social X ne vous intéresse pas, il est généralement plus logique de comparer d’abord les offres Grok autonomes.
@@ -97,7 +97,7 @@ La lecture la plus robuste de l’offre autonome publique, en croisant xAI et le
 
 - **Accès gratuit** : dépendant de la région, limité, et différent d’un accès complet partout
 - **SuperGrok Lite** : niveau payant plus léger visible sur l’App Store US ; disponibilité, prix et période de facturation variables selon région, plateforme et compte
-- **SuperGrok** : abonnement Grok autonome web/mobile ; l’annonce [Grok 4](https://x.ai/news/grok-4) indique l’accès `SuperGrok`, l’annonce [Grok 4.1](https://x.ai/news/grok-4-1) indique un accès généralisé
+- **SuperGrok** : abonnement Grok autonome web/mobile ; la page Grok actuelle de xAI le résume par des limites supérieures, un accès prioritaire et le multi-agent, l’annonce [Grok 4](https://x.ai/news/grok-4) indique l’accès `SuperGrok`, l’annonce [Grok 4.1](https://x.ai/news/grok-4-1) indique un accès généralisé
 - **SuperGrok Heavy** : offre supérieure ajoutant `Grok 4 Heavy` et `much higher rate limits`
 
 Le sujet prix demande plus de prudence qu’il n’y paraît :
@@ -134,20 +134,22 @@ alors `SuperGrok` est généralement le meilleur point de départ.
 En résumé :
 
 - `Premium` correspond à **un abonnement X avec un accès Grok renforcé**
-- `Premium+`, d’après la page d’inscription actuelle, correspond à **un abonnement X avec `SuperGrok` inclus**
+- `Premium+` correspond à **un abonnement X avec des limites Grok plus élevées** et peut, selon le compte et le checkout, recouper un accès de niveau `SuperGrok`
 - `SuperGrok` correspond à **l’abonnement Grok autonome**
 
 ### 3.2 xAI expose mieux les niveaux d’accès que les quotas chiffrés
 
 Si vous êtes habitué aux comparatifs avec quotas détaillés par jour ou par mois, l’offre Grok paraît moins cadrée : les pages publiques donnent encore peu de chiffres durs.
 
-Éléments considérés comme confirmés au **7 avril 2026** :
+Éléments considérés comme confirmés au **3 juillet 2026** :
 
 - `Premium` offre une limite d’usage Grok plus haute que l’expérience standard sur X
 - `Premium+` va plus loin que `Premium`
-- La page d’inscription `X Premium` affiche actuellement `Premium` comme `Enhanced Grok access` et `Premium+` comme `SuperGrok`
+- X Help indique que `Premium` inclut `increased usage limits on Grok`, tandis que `Premium+` inclut `higher limits on Grok`
 - L’annonce [Grok 4](https://x.ai/news/grok-4) indique un accès `Grok 4` pour `SuperGrok` et `Premium+`
 - L’annonce [Grok 4.1](https://x.ai/news/grok-4-1) indique un accès pour tous les utilisateurs sur `grok.com`, `X`, `iOS/Android`
+- xAI Docs liste actuellement `grok-4.3` comme modèle texte principal côté API, mais il s’agit d’une information développeur et non d’une garantie sur le sélecteur de modèles des offres grand public
+- L’annonce [Grok Build](https://x.ai/news/grok-build-cli) indique que la beta early access est disponible pour les abonnés `SuperGrok` et `X Premium Plus`
 - `SuperGrok Heavy` ajoute `Grok 4 Heavy`
 - `SuperGrok Heavy` ajoute aussi `much higher rate limits`
 
@@ -239,10 +241,24 @@ Les pages publiques de Grok mettent clairement en avant :
 - édition d’image
 - génération vidéo
 - compréhension vidéo
+- prise en charge publique d’images jusqu’à 2K et de vidéos jusqu’à 15 secondes
+- Grok Imagine Video 1.5, mis à jour en juin 2026 avec une génération vidéo plus rapide
 
 La bonne question n’est pas “est-ce disponible ?”, mais “à quelle fréquence en avez-vous vraiment besoin ?”.
 
 Si c’est ponctuel, un palier payant standard peut suffire. Les offres plus hautes deviennent logiques quand image/vidéo font partie d’un flux de production régulier.
+
+### 4.5 Grok Build et accès aux outils développeur : utile si Grok entre dans votre workflow code
+
+Depuis mai 2026, une souscription Grok peut compter au-delà de la fenêtre de chat. xAI a commencé à relier `SuperGrok` et `X Premium Plus` à Grok Build et à certains outils développeur tiers.
+
+Pour les développeurs, les nouvelles questions d’achat sont :
+
+- avez-vous besoin d’un coding agent en terminal comme Grok Build
+- voulez-vous vous connecter avec une souscription Grok ou X Premium existante dans des outils comme Warp ou Kilo Code
+- acceptez-vous que ces fonctions restent en beta ou soient encore en cours d’extension selon les outils
+
+Si vous n’utilisez pas d’outils de code, ce point ne devrait pas guider l’achat. Si vous comparez déjà des AI coding agents, la valeur de `SuperGrok` et `Premium+` ne se limite plus au chat, à la recherche et aux images.
 
 ## 5. Quel plan acheter en pratique ?
 
@@ -251,7 +267,7 @@ Si c’est ponctuel, un palier payant standard peut suffire. Les offres plus hau
 Commencez par `Premium` ou `Premium+`.
 
 - `Premium` convient si l’abonnement X vous intéresse déjà et que vous voulez un meilleur accès Grok en bonus
-- `Premium+` convient si vous voulez aussi les bénéfices X haut de gamme et récupérer `SuperGrok` dans ce même abonnement
+- `Premium+` convient si vous voulez aussi les bénéfices X haut de gamme et des droits Grok plus élevés, en vérifiant au paiement si votre compte inclut `SuperGrok`
 
 Si vous ne valorisez pas badge, réduction pub, Articles ou Radar, n’allez pas automatiquement vers `Premium+`.
 
@@ -263,7 +279,7 @@ Si vous utilisez surtout Grok autonome sur web ou mobile et cherchez une entrée
 - L’App Store US affiche actuellement `SuperGrok Lite USD 10` et `SuperGrok Lite USD 100`
 - Mais la fiche publique de l’App Store n’associe pas clairement ces montants à une périodicité de facturation vérifiée
 
-Au **2026-04-07**, la lecture la plus prudente de `SuperGrok Lite` est la suivante : une formule payante d’entrée pour celles et ceux qui veulent tester Grok autonome sans passer directement à `SuperGrok` standard. Elle colle mieux à un usage léger ou occasionnel qu’à un workflow de production intensif.
+Au **2026-07-03**, la lecture la plus prudente de `SuperGrok Lite` est la suivante : une formule payante d’entrée pour celles et ceux qui veulent tester Grok autonome sans passer directement à `SuperGrok` standard. Elle colle mieux à un usage léger ou occasionnel qu’à un workflow de production intensif.
 
 La synthèse la plus défendable aujourd’hui est donc :
 
@@ -310,7 +326,7 @@ Si vous ne pouvez pas expliquer précisément pourquoi vous avez besoin de `Heav
 
 ### 6.1 Vous voulez tester SuperGrok à moindre coût ? Comparez aussi les options partagées de tiers
 
-Si vous avez déjà décidé d’acheter `SuperGrok`, vous pouvez aussi regarder les offres tierces en compte partagé. D’après la page produit FamilyPro visible au **7 avril 2026**, le compromis central est simple : ce type d’offre donne accès à `SuperGrok` via un compte partagé.
+Si vous avez déjà décidé d’acheter `SuperGrok`, vous pouvez aussi regarder les offres tierces en compte partagé. D’après le contexte FamilyPro vérifiable au **3 juillet 2026**, le compromis central est simple : ce type d’offre donne accès à `SuperGrok` via un compte partagé.
 
 - l’avantage est souvent un ticket d’entrée plus bas
 - l’inconvénient est que le compte n’est pas totalement individuel et qu’il faut respecter les règles d’usage partagé
@@ -330,8 +346,12 @@ Une fois ces deux points clarifiés, la grille Grok est beaucoup plus simple à 
 
 - [xAI Consumer FAQs](https://x.ai/legal/faq)
 - [Grok Plans](https://grok.com/plans)
+- [xAI Grok product page](https://x.ai/grok)
+- [xAI Docs: Models](https://docs.x.ai/docs/models)
 - [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
 - [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
+- [xAI News: Introducing Grok Build](https://x.ai/news/grok-build-cli)
+- [xAI News: Grok Imagine Video 1.5](https://x.ai/news/grok-imagine-video-1-5)
 - [Page d’inscription X Premium (connexion requise)](https://x.com/i/premium_sign_up)
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
