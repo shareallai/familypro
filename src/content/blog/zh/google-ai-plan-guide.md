@@ -1,13 +1,13 @@
 ---
 locale: zh
 translationKey: google-ai-plan-guide
-title: Google AI Plus、Pro、Ultra 怎么选？价格、额度与权益完整指南
-headline: Google AI Plus、Pro、Ultra 选购指南：看懂服务差异和真实配额
-description: 基于 2026 年 4 月 21 日 Google 官方页面，系统梳理 Google AI Plus、Pro、Ultra 的服务范围、公开额度和适用人群，帮你快速做出购买判断。
-summary: 这篇指南会对比 Google AI Plus、Pro、Ultra 的价格、存储、AI credits 与 Gemini、NotebookLM、Flow、Whisk、Jules、Gemini CLI 等关键能力，帮你判断哪一档更适合你。
+title: Google AI Plus、Pro、Ultra 怎么选？价格、额度与权益指南
+headline: Google AI Plus、Pro、Ultra 选购指南：看懂新额度和真实差异
+description: 基于 2026 年 7 月 6 日 Google 官方页面，梳理 Google AI Plus、Pro、Ultra 的价格、存储、用量机制和适用人群，帮你避免按旧额度表误判。
+summary: 这篇指南会对比 Google AI Plus、Pro、Ultra 的价格、存储、compute-based 用量、AI credits、NotebookLM、Flow、Antigravity 等关键差异，帮你判断哪一档更适合你。
 category: AI 订阅对比
 pubDate: 2026-03-25
-updatedDate: 2026-04-24
+updatedDate: 2026-07-06
 author: Mark
 service: Google AI
 tags:
@@ -32,13 +32,13 @@ draft: false
 
 如果你最近在评估 Google 的 AI 套餐，通常会反复比较三个名称：`Google AI Plus`、`Google AI Pro`、`Google AI Ultra`。
 
-从命名上看，它们只是入门、进阶、旗舰三档；真正的难点在于权益分布较为分散。一部分能力位于 `Gemini app`，一部分分布在 `NotebookLM / Flow / Whisk`，还有一部分体现在 `AI credits`、Google One 存储、开发者权益和地区限制中。多数用户的困惑并不在于是否愿意付费，而在于难以判断哪一档与自身使用场景更匹配。
+从 2026 年 5 月之后的官方口径看，这篇文章最需要更新的一点是：不能再只按旧的“每天多少条提示”或“每月固定多少 AI credits”来判断。Google 已经把 Gemini app 的核心用量改成 **compute-based usage limits**：一次请求消耗多少，取决于提示复杂度、使用的模型/功能，以及当前对话长度；额度每 5 小时刷新，直到触及周上限。
 
-截至 **2026 年 4 月 21 日**，Google 面向个人用户的 AI 订阅主线已经比较明确，就是这三档。但要做出有效比较，最好先拆成三层来看：
+截至 **2026 年 7 月 6 日**，更稳妥的比较方式是拆成三层：
 
 - 一层是 **AI 产品服务**，比如 Gemini、NotebookLM、Flow、Whisk、Jules、Gemini CLI。
-- 一层是 **硬额度**，比如 `NotebookLM` 的 sources 数量、`AI credits`、云存储大小。
-- 还有一层是 **软额度**，Google 官方通常只写成 `more access`、`higher limits`、`highest limits`，并不会给你一个永远固定不变的数字。
+- 一层是 **仍有硬数字的额度**，比如 `NotebookLM` 的 notebooks、sources、reports 等上限，以及 Google One 存储。
+- 还有一层是 **动态用量池**，比如 Gemini app、Flow、Antigravity 等产品里的 compute-based limits 与可额外购买的 AI credits。
 
 因此，本文不按官网目录逐条复述，而是聚焦三件事：
 
@@ -46,174 +46,150 @@ draft: false
 - 哪些额度 Google 有公开数字，哪些没有。
 - 在不盲目上最高配的前提下，你应选择哪一档。
 
-文中价格以 **美国区官方口径** 为基准。不同国家和地区的价格、促销和可用功能会有差异，购买前请回到你自己的 Google One 结账页再核对一次。
+文中价格与权益以 **2026 年 7 月 6 日可查官方页面** 为基准；不同国家和地区的价格、促销、存储档位和可用功能会变动，购买前请回到你自己的 Google One 结账页核对一次。价格与第三方购买信息仅作参考，不构成购买建议。
 
-## 一、先给结论：大多数人只需要在 Plus 和 Pro 之间做选择
+## 1. 先给结论：大多数人只需要在 Plus 和 Pro 之间做选择
 
-- **Google AI Plus**：入门档。适合想系统体验 Google AI 生态、会用 Gemini 和 NotebookLM、偶尔做图做视频的人。
-- **Google AI Pro**：主力档。适合重度使用 Gemini、NotebookLM、Flow，以及有代码、办公、研究场景的人。
-- **Google AI Ultra**：旗舰档。适合高强度创作、开发、代理式工作流和极高配额需求用户。
+- **Google AI Plus**：入门档。适合想系统体验 Google AI、主要用 Gemini / NotebookLM、偶尔用 Flow 或视频生成功能的人。官方当前写明 Plus 包含 **400GB 或 2TB** 存储，具体取决于你所在地区和可选 Plus 方案。
+- **Google AI Pro**：主力档。适合重度使用 Gemini、NotebookLM、Flow、Workspace AI、Jules、Antigravity 或开发者工具的人。官方当前写明 Pro 包含 **5TB 或 10TB** 存储。
+- **Google AI Ultra**：高强度档。适合代理式开发、高频视频/创作、Deep Think、Gemini Spark、Project Genie、最高 NotebookLM 上限等场景。官方当前写明 Ultra 可能是 **20TB 或 30TB** 存储，并且按具体 Ultra 方案提供比 Pro 高 **5 倍或 20 倍** 的 Gemini / Antigravity 用量。
 
-如果只看美国区当前官方定价，三档分别是：
+如果只看美国公开价格与近期官方/结账页口径，常见基准大致是：
 
-- `Google AI Plus`：**$7.99/月**
+- `Google AI Plus`：**约 $4.99/月**
 - `Google AI Pro`：**$19.99/月**
-- `Google AI Ultra`：**$249.99/月**
+- `Google AI Ultra`：已出现 **20TB / 30TB** 两种 Ultra 档位，不同地区与账号看到的价格可能不同
 
-配套的 Google One 云存储和月度 AI credits 分别是：
-
-- `Plus`：**200GB** 存储，**200 AI credits/月**
-- `Pro`：**5TB** 存储，**1,000 AI credits/月**
-- `Ultra`：**30TB** 存储，**25,000 AI credits/月**
+这类价格必须按结账页复核。尤其是 Ultra，2026 年官方页面已经不再只是旧文章里的单一 “$249.99/月 + 30TB” 叙述。
 
 如果你只想看简化建议：
 
-- 预算敏感：先上 `Plus`
-- 明确会高频使用：直接 `Pro`
-- 仅当你已经确认需要 `Project Mariner / Genie / 超高视频额度 / Ultra 独占能力` 时，再考虑 `Ultra`
+- 预算敏感、还在试用阶段：先上 `Plus`
+- 明确会高频使用 Gemini、NotebookLM、Workspace、Flow 或开发者工具：直接 `Pro`
+- 仅当你已经确认需要 `Deep Think / Gemini Spark / Project Genie / 最高 Antigravity 与 NotebookLM 上限 / Ultra 独占能力` 时，再考虑 `Ultra`
 
-## 二、在功能清单之前，先看三档最核心的差别
+## 2. 在功能清单之前，先看三档最核心的差别
 
 ### 2.1 一张表先看懂
 
-| 套餐 | 美国区价格 | 存储空间 | 月度 AI credits | 核心适合人群 |
+| 套餐 | 美国区价格参考 | 存储空间 | 用量机制 | 核心适合人群 |
 | --- | --- | --- | --- | --- |
-| Google AI Plus | $7.99/月 | 200GB | 200/月 | 个人入门、家庭共享、轻度创作 |
-| Google AI Pro | $19.99/月 | 5TB | 1,000/月 | 主力用户、研究、办公、开发 |
-| Google AI Ultra | $249.99/月 | 30TB | 25,000/月 | 高强度创作、代理工作流、重度开发 |
+| Google AI Plus | 约 $4.99/月 | 400GB 或 2TB | Gemini 约为标准用量 2 倍；不支持购买额外 AI credits | 个人入门、家庭共享、轻度创作 |
+| Google AI Pro | $19.99/月常见 | 5TB 或 10TB | Gemini 约为标准用量 4 倍；可购买 AI credits 扩展 Flow / Antigravity 等 | 主力用户、研究、办公、开发 |
+| Google AI Ultra | 视 20TB / 30TB 方案而定 | 20TB 或 30TB | Gemini / Antigravity 相比 Pro 高 5 倍或 20 倍，取决于具体 Ultra 档 | 高强度创作、代理工作流、重度开发 |
 
 ### 2.2 每档大致都包含哪些 AI 产品
 
 | AI 产品 / 服务 | Plus | Pro | Ultra |
 | --- | --- | --- | --- |
-| Gemini app | 有 | 有，更高额度 | 有，最高额度 |
+| Gemini app | 有，约标准用量 2 倍 | 有，约标准用量 4 倍 | 有，比 Pro 高 5 倍或 20 倍 |
 | NotebookLM | 有，Plus 额度 | 有，Pro 额度 | 有，Ultra 额度 |
-| Flow | 有 | 有，更高额度 | 有，最高额度 |
+| Flow | 有 | 有，更高额度，可买 AI credits | 有，最高额度，可买 AI credits |
 | Whisk | 有 | 有，更高额度 | 有，最高额度 |
 | Gemini in Gmail / Workspace | 有，基础范围 | 有，范围更大 | 有 |
 | Search AI Mode | 有，更多访问 | 有，更高访问 | 有，最高访问 |
 | Deep Search（Search） | 有 | 有 | 有 |
-| Jules | 无 | 有 | 有，额度最高 |
+| Jules | 无 | 有，更高额度 | 有，最高任务与并发上限 |
 | Gemini CLI / Gemini Code Assist | 无 | 有 | 有 |
-| Google Antigravity | 无 | 有 | 有，额度最高 |
+| Google Antigravity | 无 | 有，更高额度和优先流量 | 有，最高额度、优先流量和新模型优先访问 |
 | Google Photos 生成式 AI | 官方未明确列出 | 更高额度 | 最高额度 |
 | Gemini in Chrome / Auto browse | 无 | 有 | 有 |
-| Project Mariner | 无 | 无 | 有 |
+| Gemini Spark | 无 | 无 | 有，当前美国区为主 |
 | Project Genie | 无 | 无 | 有 |
 | Google Home Premium | 无 | Standard | Advanced |
-| YouTube Premium 个人版 | 无 | 无 | 有，限部分国家/地区 |
+| YouTube Premium | 无 | Premium Lite（可用地区） | Individual（可用地区） |
 | Google Developer Program premium | 无 | 有 | 有 |
 
 这里先提醒一个关键点：
 
 - **不是所有服务都带公开硬数字额度。**
 - 像 `NotebookLM`、`AI credits` 这类，Google 公布得相对透明。
-- 像 `Gemini app`、`Flow`、`Whisk`、`Jules`、`Gemini CLI` 的不少能力，Google 仍以“更高限制”描述，而不是固定次数。
+- 像 `Gemini app`、`Flow`、`Antigravity` 的不少能力，现在更接近动态用量池，而不是固定“每天 N 次”的表格。
 
-## 三、真正决定值不值的，是三组关键额度
+## 3. 真正决定值不值的，是三组关键额度
 
-### 3.1 如果你会做视频，先看 AI credits
+### 3.1 如果你会做视频或代理式开发，先看 AI credits 的新定位
 
-Google 现在把一部分高成本生成能力统一放进 `AI credits` 体系里。当前官方帮助页已经明确，AI credits 可以跨 `Flow`、`Whisk` 和 `Google Antigravity` 使用；但对大多数个人用户来说，最直观的消耗场景仍然是视频生成。
+旧版文章把 AI credits 写成 Plus / Pro / Ultra 各自固定的月度 credits，这是现在最容易误导读者的部分。
 
-三档套餐的月度 AI credits 分别是：
+Google 当前帮助页的重点已经变成：
 
-- `Plus`：**200 AI credits/月**
-- `Pro`：**1,000 AI credits/月**
-- `Ultra`：**25,000 AI credits/月**
+- 每个产品都有自己的 AI 用量限制。
+- 用量取决于你使用的功能和 Google AI 方案。
+- `Google AI Pro` 与 `Google AI Ultra` 用户在触及计划上限后，可以购买 AI credits 来扩展 `Google Flow`、`Google Antigravity` 和其他支持 credits 的产品。
+- `Google AI Plus` 用户不能购买额外 AI credits；如果此前买过 credits，切到 Plus 后仍可在支持的产品中使用剩余额度。
+- AI credits 可能有有效期；家庭共享时 credits 可能以家庭池方式被共享。
 
-Google 官方还给出了一个实用的“理论上限”换算。如果把 credits 全部用于视频生成，大致可得到：
+因此，如果你主要做视频或代理式开发，不要只问“套餐送多少 credits”，而要问：
 
-| 模式 | Plus | Pro | Ultra |
-| --- | --- | --- | --- |
-| Whisk `Veo 3 Fast` | 最多约 10 个视频 | 最多约 50 个视频 | 最多约 1,250 个视频 |
-| Flow `Veo 2 Fast` | 最多约 20 个视频 | 最多约 100 个视频 | 最多约 2,500 个视频 |
-| Flow `Veo 3.1 Fast` | 最多约 10 个视频 | 最多约 50 个视频 | 最多约 2,500 个视频 |
-| Flow 高质量模式 | 最多约 2 个视频 | 最多约 10 个视频 | 最多约 250 个视频 |
-| Video edits | 最多约 10 次 | 最多约 50 次 | 最多约 1,250 次 |
-
-还有几条规则非常重要：
-
-- AI credits **按 billing cycle 刷新**，**不会滚存到下个月**。
-- `Pro` 和 `Ultra` 支持额外购买 top-up credits，`Plus` 不支持。
-- Google 当前公开的 top-up 档位是：`$25 = 2,500 credits`、`$50 = 5,000 credits`、`$200 = 20,000 credits`。
-- Google 还给了未订阅 Google AI 套餐的个人 Google 账号一个免费基线：**50 daily AI credits**，可用于 Whisk 和 Flow 的部分视频生成，按天刷新。
+- 你的常用产品是否支持 AI credits。
+- 你是否需要在 Pro / Ultra 里额外购买 credits。
+- 你的账号、地区、家庭共享和第三方订阅渠道是否影响 credits 购买资格。
 
 如果你的核心需求就是视频生成，可优先按以下方式选择：
 
-- 偶尔做视频，`Plus`
-- 稳定做内容，`Pro`
-- 大量跑视频工作流，`Ultra`
+- 偶尔做视频，先 `Plus`，但不要假设可以随时加购 credits
+- 稳定做内容，`Pro` 更稳，因为可购买 credits 扩展 Flow 等用量
+- 大量跑视频或 Antigravity agent 工作流，才考虑 `Ultra`
 
 ### 3.2 如果你是研究型用户，NotebookLM 往往比 Gemini 更关键
 
 如果你买 Google AI 主要是为了读资料、做研究、做输出，NotebookLM 的价值通常比 Gemini 聊天窗口更大。
 
-当前官方公开的 NotebookLM 上限是：
+当前官方公开的 NotebookLM 上限已经细分到 Standard、Plus、Pro、Ultra 20TB、Ultra 30TB。这里只列最常影响个人选择的付费档：
 
-| 指标 | Plus | Pro | Ultra |
+| 指标 | Plus | Pro | Ultra 20TB | Ultra 30TB |
 | --- | --- | --- | --- |
-| Notebooks 数量 | 200 个/用户 | 500 个/用户 | 500 个/用户 |
-| 每个 notebook 的 sources | 100 | 300 | 600 |
-| Chats | 200 次/天 | 500 次/天 | 5,000 次/天 |
-| Audio Overviews | 6 次/天 | 20 次/天 | 200 次/天 |
-| Video Overviews | 6 次/天 | 20 次/天 | 200 次/天 |
-| Reports / Flashcards / Quizzes | 20 次/天 | 100 次/天 | 1,000 次/天 |
-| Deep Research | 3 次/天 | 20 次/天 | 200 次/天 |
+| Notebooks 数量 | 200 个/用户 | 500 个/用户 | 500 个/用户 | 500 个/用户 |
+| 每个 notebook 的 sources | 100 | 300 | 500 | 600 |
+| Chats | 200 次/天 | 500 次/天 | 2,500 次/天 | 5,000 次/天 |
+| Audio Overviews | 6 次/天 | 20 次/天 | 100 次/天 | 200 次/天 |
+| Video Overviews | 6 次/天 | 20 次/天 | 100 次/天 | 200 次/天 |
+| Reports / Flashcards / Quizzes / Mind Maps | 20 次/天 | 100 次/天 | 500 次/天 | 1,000 次/天 |
+| Deep Research | 3 次/天 | 20 次/天 | 75 次/天 | 200 次/天 |
 
 这组表很重要，因为它直接告诉你：
 
 - `Plus` 已经够个人学习、课程、轻研究。
 - `Pro` 才开始进入“长期项目资料库”和“重度知识工作”区间。
-- `Ultra` 的 NotebookLM 更像研究工作台，不像普通订阅附加功能。
+- `Ultra 20TB` 和 `Ultra 30TB` 在 NotebookLM 上不是完全一样，尤其是 sources、chats、Deep Research 和各类生成物上限。
 
-### 3.3 Gemini app：Google 已经公开 Basic / Plus / Pro / Ultra 的主要硬额度
+### 3.3 Gemini app：不要再按旧的固定日额度表购买
 
 这里需要纠正一个常见误解：
 
-- Google 当前的 `Gemini Apps limits & upgrades` 帮助页，已经公开了 **Basic（无计划）/ Plus / Pro / Ultra** 四档的主要额度。
-- 但 Google 也明确写明，这些限制会随着容量、实验状态和产品调整变化，而且额度会在一天中分布发放，不保证永远固定不变。
+- Google 的 `Gemini Apps limits & upgrades` 帮助页已经明确写明，Gemini Apps 采用 **compute-based usage limits**。
+- 这些限制会考虑提示复杂度、所用模型/功能、对话长度。
+- 用量每 5 小时刷新，直到达到 weekly limit。
+- 官方明确说明，Gemini Apps limits 可能变化，访问也会受测试、实验或可用性影响。
 
-截至 2026 年 4 月 21 日，Google 在 Gemini 帮助页里明确公开的核心硬额度包括：
+当前官方给出的核心比较方式是：
 
-| Gemini app 项目 | Basic（无 Google AI 计划） | Plus | Pro | Ultra |
-| --- | --- | --- | --- | --- |
-| Pro 3.1 模型 | 基础访问（官方未给固定次数） | 30/天 | 100/天 | 500/天 |
-| Thinking 模型 | 基础访问（官方提示日限会频繁变化） | 90/天 | 300/天 | 1500/天 |
-| Fast 模型 | 常规访问 | 常规访问 | 常规访问 | 常规访问 |
-| 上下文窗口（Context window） | 32k | 128k | 1M | 1M |
-| Deep Research 报告 | 5 份/月 | 12 份/天 | 20 份/天 | 120 份/天 |
-| Nano Banana 2 生图/编辑 | 20 张/天 | 50 张/天 | 100 张/天 | 1000 张/天 |
-| Nano Banana Pro 重做 | — | 50 张/天 | 100 张/天 | 1000 张/天 |
-| 视频生成 | — | 2 个/天（Veo 3.1 Lite） | 3 个/天（Veo 3.1 Lite） | 5 个/天（Veo 3.1 Pro） |
-| 音乐生成（30 秒） | 10 首/天 | 20 首/天 | 50 首/天 | 100 首/天 |
-| 动态视图（Dynamic view） | 25 条提示/天 | 25 条提示/天 | 250 条提示/天 | 250 条提示/天 |
-| Canvas 幻灯片生成 | 20 份/天 | 20 份/天 | 无限制 | 无限制 |
-| 屏幕自动化（Screen automation） | 5 次请求/天 | 12 次请求/天 | 20 次请求/天 | 120 次请求/天 |
-| Gemini Agent | — | — | — | 200 次请求/天，最多 3 个并行任务 |
-| Deep Think 3.1 | — | — | — | 10 次/天（192k 上下文窗口） |
+| 方案 | Gemini app 用量 |
+| --- | --- |
+| 无 AI plan | Standard limits |
+| Google AI Plus | 标准用量的 2 倍 |
+| Google AI Pro | 标准用量的 4 倍 |
+| Google AI Ultra | 取决于订阅，约为 Pro 的 5 倍或 20 倍 |
 
-Google 在同一页还明确说明：
+上下文窗口仍然有清晰数字：
 
-- `1M context window` 大致相当于同时理解 **约 1,500 页文本** 或 **30,000 行代码**。
-- `Deep Think 3.1` 的上下文窗口是 **192k tokens**。
-- 这些限制 **会根据容量、实验状态和产品调整而变化**。
+| 方案 | Context window |
+| --- | --- |
+| 无 AI plan | 32k tokens |
+| Google AI Plus | 128k tokens |
+| Google AI Pro | 1M tokens |
+| Google AI Ultra | 1M tokens |
 
-### 3.4 你给的这张图，核实后应如何解读？
-
-对照 Google 官方 Gemini 帮助页（2026-04-21）核实后，可以这样理解：
-
-- 图里 `Pro` 与 `Ultra` 多数额度是对的，比如 `Pro 3.1`、`Thinking`、`Deep Research`、`Nano Banana`、`视频生成`、`屏幕自动化`、`Agent`。
-- 图里把 `Plus` 整列省略了，容易让人误判“免费版下一档直接是 Pro”。官方其实是四档：`Basic / Plus / Pro / Ultra`。
-- 图里“普通版 Pro 3.1 = 每天 10 条”“普通版 Thinking = 每天 30 条”不属于官方固定公开值。官方在这两项对 Basic 的写法是 `Basic access`，并提示日限会频繁变动。
+Google 在同一页还说明，`1M context window` 大致相当于同时理解 **约 1,500 页文本** 或 **30,000 行代码**。所以，如果你买套餐主要为了长文档、代码库、研究资料，`Pro` 的价值仍然很明确；但如果你只是想用聊天窗口问日常问题，旧版那种逐项固定次数表已经不是最可靠的购买依据。
 
 如果你买套餐时主要关注 Gemini 本身，更实用的理解方式是：
 
-- `Plus` 已经不再只是模糊的 “more access” 档位，而是有公开日额度的入门增强档
-- `Pro` 的关键升级在于 **1M context window** 和更高的日常上限
-- `Ultra` 才将 `Gemini Agent`、`Deep Think` 与最高配额集中开放
+- `Plus` 是低成本增强访问和 128k 上下文窗口
+- `Pro` 的关键升级在于 **1M context window**、4 倍标准用量、Workspace / Flow / Jules / Antigravity 等完整生态
+- `Ultra` 才是 Deep Think、Gemini Spark、Project Genie、最高 Antigravity / NotebookLM 上限和优先访问的组合
 
-## 四、这些 AI 产品各自负责什么，哪些值得你为之付费
+## 4. 这些 AI 产品各自负责什么，哪些值得你为之付费
 
 下面这部分不谈营销口号，只讨论实际使用场景。很多人看到一串产品名会觉得“都想要”，但把用途拆开后，通常很快就能判断哪些对自己有价值，哪些只是名称上显得强大。
 
@@ -467,7 +443,7 @@ Project Genie 是 `Ultra` 的实验型研究原型，官方定义是 `text and i
 - `Gemini Agent`
 - `Deep Think`
 - `YouTube Premium`
-- 30TB 存储
+- 20TB / 30TB 存储档位
 - 更高开发者权益
 
 如果你用不到这些，`Ultra` 基本不划算。
@@ -492,13 +468,13 @@ Project Genie 是 `Ultra` 的实验型研究原型，官方定义是 `text and i
 
 - [FamilyPro Google AI 套餐页面（可选）](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
 
-价格信息说明（数据日期：**2026-04-21**，仅供参考）：该第三方页面当前展示为 **Google Gemini AI - Pro**，页面标题出现的起步价为 **$9.9**。第三方页面通常存在套餐时长、可用规格和地区可见性的动态变化，下单前请以实际结账页为准，并优先核对售后条款。
+第三方价格说明（数据日期：**2026-07-06**，仅供参考）：第三方页面的套餐时长、可用规格、地区可见性和价格可能动态变化；下单前请以实际结账页为准，并优先核对售后条款。本文不把第三方页面价格作为 Google 官方价格。
 
 最后请记住：Google 官方已明确说明，许多额度会随容量、地区和实验状态变化。购买前，建议回到自己的 Google One 页面再次核对最新权益。
 
 ## 官方参考
 
-本文主要基于以下 Google 官方页面整理（并附可选购买链接），最后核对日期为 **2026 年 4 月 21 日**：
+本文主要基于以下 Google 官方页面整理（并附可选购买链接），最后核对日期为 **2026 年 7 月 6 日**：
 
 - [Google AI Plans 官方套餐页](https://one.google.com/about/google-ai-plans/)
 - [Google AI Plus 扩展公告](https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/)
