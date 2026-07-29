@@ -1,27 +1,17 @@
 ---
 locale: de
 translationKey: google-ai-plan-guide
-title: "Google AI Plus vs Pro vs Ultra: Preise, Limits und Wahl"
-headline: Google AI Plus, Pro oder Ultra? Aktualisierte Kaufhilfe
-description: "Offizielle Google-Seiten, Stand 6. Juli 2026: Google AI Plus, Pro und Ultra nach Preis, Speicher, Limits, AI Credits und Nutzungsszenario."
-summary: Dieser Guide stellt Google AI Plus, Pro und Ultra bei Kosten, Speicher, compute-basierter Nutzung, AI Credits, NotebookLM, Flow und Entwicklerfunktionen gegenüber.
+title: "Google AI Plus, Pro oder Ultra: Tarife und Einsatz 2026"
+headline: "Google AI Plus, Pro und Ultra: Leistungen, Limits und Einsatzfälle"
+description: "Google-Planinformationen, geprüft am 29. Juli 2026: Vergleich von Plus, Pro und Ultra nach Speicher, Gemini-Zugang, Flow Credits, Produkten und Einsatzfällen."
+summary: Dieser Leitfaden ordnet die aktuellen Google-AI-Tarife nach veröffentlichten Limits, Produktzugang, regionalen Einschränkungen und praktischen Einsatzfällen ein.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-25
-updatedDate: 2026-07-06
+updatedDate: 2026-07-29
 author: Mark
 service: Google AI
-tags:
-  - Google AI
-  - Gemini
-  - Google One
-  - NotebookLM
-  - Flow
-  - Jules
-  - KI Abonnement
-relatedTranslationKeys:
-  - chatgpt-go-plus-pro-codex-api-guide
-  - grok-plan-guide
-  - codex-claude-cursor-instructions-guide
+tags: [Google AI, Gemini, Google One, NotebookLM, Flow, Jules, KI Abonnement]
+relatedTranslationKeys: [chatgpt-go-plus-pro-codex-api-guide, grok-plan-guide, codex-claude-cursor-instructions-guide]
 topOffer:
   title: FamilyPro bietet Google-AI-Pro-Tarife
   subtitle: Pro-Optionen verfügbar · Transparente Preise · Support nach dem Kauf
@@ -30,233 +20,93 @@ topOffer:
 draft: false
 ---
 
-Wer sich mit Googles KI-Abos beschäftigt, landet fast immer bei denselben drei Namen: `Google AI Plus`, `Google AI Pro` und `Google AI Ultra`.
+Google AI gibt es als `Google AI Plus`, `Google AI Pro` und `Google AI Ultra`. Alte Tabellen mit festen Prompts pro Tag reichen nicht mehr aus: Der Zugang zu Gemini, Flow, Search AI Mode und Entwicklerprodukten hängt von Modell, Funktion, Konto und Region ab.
 
-Der wichtigste 2026-Updatepunkt: Du solltest nicht mehr nur nach alten Tabellen mit „Prompts pro Tag“ oder „monatlich enthaltenen AI Credits“ entscheiden. Google beschreibt die Nutzung in Gemini Apps inzwischen als **compute-based usage limits**. Der Verbrauch hängt von Prompt-Komplexität, verwendetem Modell bzw. Feature und Chat-Länge ab.
+Stand **29. Juli 2026** stützt sich dieser Beitrag auf die öffentliche US-Tarifseite von Google. Preise, Testzeiträume, kaufbare Stufen und Funktionsumfang können nach Land und Konto abweichen. Maßgeblich ist die eigene Google-One-Kassenseite.
 
-Stand **6. Juli 2026** solltest du die Tarife in drei Ebenen aufteilen:
+## 1. Einordnung der Tarife
 
-- Welche **Produkte** sind enthalten?
-- Welche **harten, veröffentlichten Limits** gibt es, vor allem bei NotebookLM und Speicher?
-- Wo handelt es sich um **dynamische Nutzungspools**, etwa bei Gemini, Flow und Antigravity?
+- **Plus**: für regelmäßige Nutzung von Gemini, Gemini Notebook und leichte Kreativarbeit; 400 GB Speicher, 2x Gemini-Nutzung und Flow-Einstiegscredits.
+- **Pro**: für Recherche, kreative Arbeit und Entwicklung; 5 TB, 4x Gemini-Nutzung sowie breiterer Zugang zu Flow, Search AI Mode, Jules, Antigravity, AI Studio und Gemini in Google-Apps.
+- **Ultra**: für dauerhaft hohe Generierung, Deep Think und höhere Agentenlimits; 20-TB- und 30-TB-Stufen mit 5x beziehungsweise 20x der Pro-Nutzung.
 
-Dieser Beitrag konzentriert sich deshalb auf kaufrelevante Fragen:
+Plus reicht meist für gelegentliche Schreib-, Recherche- und Bildaufgaben. Werden Gemini Notebook, Flow oder Coding Agents täglich genutzt, ist Pro die sachlichere Wahl. Ultra setzt einen nachweisbaren Bedarf an den hohen Limits oder Exklusivfunktionen voraus.
 
-- Welche Dienste bekommst du in Plus, Pro und Ultra wirklich?
-- Welche Limits sind mit Zahlen dokumentiert und welche nicht?
-- Welche Stufe passt zu welchem Nutzungstyp?
+## 2. Veröffentliche Limits
 
-Alle Preise beziehen sich auf offizielle Seiten mit Stand **6. Juli 2026**. Region, Aktionen, Speicherstufe und Verfügbarkeit können abweichen. Vor dem Kauf immer den eigenen Google-One-Checkout prüfen.
-
-## 1. Kurzfazit: Für die meisten reicht die Entscheidung Plus vs Pro
-
-- **Google AI Plus**: Einstieg für regelmäßige Nutzung. Die aktuelle Google-Hilfe nennt je nach konkretem Plus-Tarif **400 GB oder 2 TB** Speicher.
-- **Google AI Pro**: Arbeitsstufe für häufige Nutzung von Gemini, NotebookLM, Flow sowie Entwicklungs- und Recherchearbeit. Die aktuelle Google-Hilfe nennt je nach Pro-Tarif **5 TB oder 10 TB** Speicher.
-- **Google AI Ultra**: Spezialstufe für Deep Think, Gemini Spark, Project Genie, agentische Workflows und höchste Limits. Die aktuelle Google-Hilfe nennt **20 TB oder 30 TB** Speicher und je nach Ultra-Tarif **5x oder 20x** Gemini-/Antigravity-Quote gegenüber Pro.
-
-US-Preisreferenz:
-
-- `Google AI Plus`: **ca. 4,99 USD/Monat**
-- `Google AI Pro`: **19,99 USD/Monat**
-- `Google AI Ultra`: Varianten mit **20 TB / 30 TB**, sichtbarer Preis kann nach Region und Konto abweichen
-
-Diese Preise sind Referenzwerte. Ultra lässt sich nicht mehr sauber nur als alter Einzeltarif „249,99 USD/Monat + 30 TB“ beschreiben.
-
-Wenn du nur eine schnelle Empfehlung willst:
-
-- Unsicher bei der Nutzungsintensität: `Plus`
-- Klare tägliche Nutzung: `Pro`
-- Nur bei echtem Bedarf an `Deep Think / Gemini Spark / Project Genie / höchsten NotebookLM- und Antigravity-Limits`: `Ultra`
-
-## 2. Die wichtigsten Unterschiede zuerst
-
-### 2.1 Preis, Speicher, Credits
-
-| Tarif | US-Preisreferenz | Speicher | Nutzungsmodell | Typischer Fit |
+| Tarif | Speicher | Gemini-Nutzung | Google-Flow-Credits | Geeignet für |
 | --- | --- | --- | --- | --- |
-| Google AI Plus | ca. 4,99 USD/Monat | 400 GB oder 2 TB | ca. 2x Standard-Gemini-Nutzung, keine zusätzlichen AI Credits kaufbar | Einstieg, leichte Kreativarbeit |
-| Google AI Pro | meist 19,99 USD/Monat | 5 TB oder 10 TB | ca. 4x Standard-Gemini-Nutzung, AI Credits für Flow/Antigravity kaufbar | Hauptnutzung, Recherche, Entwicklung |
-| Google AI Ultra | abhängig von 20-TB-/30-TB-Stufe | 20 TB oder 30 TB | 5x oder 20x Pro in Gemini/Antigravity | Hochlast, Agenten-Workflows |
+| Plus | 400 GB | 2x gegenüber Nicht-AI-Abos | 200/Monat | Lernen, persönliche Recherche, leichte Kreation |
+| Pro | 5 TB | 4x | 1.000/Monat | häufige Recherche, Kreation, Entwicklung |
+| Ultra 5x | 20 TB | 5x Pro | 10.000/Monat | viel Video und Agentenarbeit |
+| Ultra 20x | 30 TB | 20x Pro | 25.000/Monat | sehr hohe Generierungs- und Entwicklungsvolumen |
 
-### 2.2 Welche Produkte sind enthalten?
+Flow Music hat getrennte Monatscredits: 3.000, 10.000, 30.000 und 30.000. Video- und Musikcredits dürfen nicht zusammengerechnet werden. Gemini wird als relative Nutzung beschrieben, nicht als feste Zahl täglicher Nachrichten. Pro und beide Ultra-Stufen führen ein Kontextfenster von **1 Million Token** auf.
 
-| AI-Produkt / Dienst | Plus | Pro | Ultra |
-| --- | --- | --- | --- |
-| Gemini app | Ja, ca. 2x Standard | Ja, ca. 4x Standard | Ja, 5x oder 20x Pro je nach Ultra |
-| NotebookLM | Ja (Plus-Level) | Ja (Pro-Level) | Ja (Ultra-Level) |
-| Flow | Ja | Ja, höherer Zugriff und AI Credits kaufbar | Ja, höchster Zugriff und AI Credits kaufbar |
-| Whisk | Ja | Ja, höherer Zugriff | Ja, höchster Zugriff |
-| Gemini in Gmail / Workspace | Ja, kleinerer Umfang | Ja, größerer Umfang | Ja |
-| Search AI Mode / Deep Search | Ja | Ja | Ja |
-| Jules | Nein | Ja | Ja, mit höherem Zugriff |
-| Gemini CLI / Gemini Code Assist | Nein | Ja | Ja |
-| Google Antigravity | Nein | Ja, höhere Limits und priorisierter Traffic | Ja, höchste Limits, Priorität und erste neue Modelle |
-| Gemini in Chrome / Auto browse | Nein | Ja | Ja |
-| Gemini Spark | Nein | Nein | Ja, vor allem USA |
-| Project Genie | Nein | Nein | Ja |
-| Google Home Premium | Nein | Standard | Advanced |
-| YouTube Premium | Nein | Premium Lite wo verfügbar | Individual wo verfügbar |
-| Google Developer Program premium | Nein | Ja | Ja |
+## 3. Google-AI-Produkte und Grenzen
 
-Wichtig: Nicht jede Funktion hat ein fest veröffentlichtes Zahlenlimit. Bei Gemini, Flow und Antigravity solltest du eher in dynamischen Nutzungspools denken als in festen Tageszahlen.
+### 3.1 Gemini app und Gemini Notebook
 
-## 3. Die drei Limit-Bereiche, die den Kauf wirklich beeinflussen
+Gemini ist der Zugang für Chat, Dateien, Deep Research sowie Bild-, Video- und Musikgenerierung. Die Werte 2x, 4x, 5x und 20x sind relative Zugangsgrenzen; Google veröffentlicht keine einheitliche Nachrichtenquote. Ultra enthält Deep Think; Gemini Agent ist derzeit für US-Nutzer auf Englisch ausgewiesen.
 
-### 3.1 Für Video-Workflows und Code-Agenten die neue Rolle von AI Credits prüfen
+Gemini Notebook (weiterhin über NotebookLM erreichbar) organisiert Recherche auf Basis eigener Quellen. Die Übersichtsseite nennt nur „More“, „Expanded“, „Higher“ und „Highest“ und veröffentlicht keine einheitlichen Zahlen für Notebooks, Quellen oder Ausgaben.
 
-Die alte Version behandelte AI Credits wie feste monatliche Zuteilungen pro Tarif. Das ist inzwischen zu missverständlich.
+### 3.2 Flow, Flow Music und Google Photos
 
-Die aktuelle Hilfe betont stattdessen:
+Google Flow ist das Videowerkzeug mit 200, 1.000, 10.000 oder 25.000 Credits pro Monat. Höhere Stufen führen außerdem 4K-Upscaling und eigene Flow-Tools auf. Flow Music verwendet die getrennten Credits aus Abschnitt 2. Die tatsächliche Belastung hängt von Modell und Ausgabe ab; ein Test mit repräsentativem Material ist sinnvoll.
 
-- Jedes Produkt hat eigene Nutzungslimits.
-- Limits hängen von den verwendeten Funktionen und dem Google-AI-Tarif ab.
-- `Pro` und `Ultra` können AI Credits für zusätzliche Nutzung in `Google Flow`, `Google Antigravity` und unterstützten Produkten kaufen.
-- `Plus` kann keine zusätzlichen AI Credits kaufen.
-- Credits können ablaufen und in Familiengruppen für berechtigte Funktionen geteilt werden.
+Google Photos bietet Remix und Foto-zu-Video mit gestaffeltem Zugang von Limited bis Highest. Für einzelne Fotofunktionen gelten US-Einschränkungen; eine feste Monatszahl veröffentlicht die Tarifübersicht nicht.
 
-Wenn Video oder Antigravity dein Hauptgrund sind, ist `Pro` meist flexibler als `Plus`, weil Credits nachgekauft werden können. `Ultra` lohnt sich nur bei wirklich sehr hoher Last.
+### 3.3 Search, Google-Apps und Chrome
 
-### 3.2 Bei Wissensarbeit zählt NotebookLM oft stärker als Chat-Limits
+Pro und Ultra bieten in Search AI Mode höheren Zugang zu Gemini-Modellen, Bildfunktionen, agentischen Funktionen und Deep Search. Die agentischen Funktionen und Deep Search in AI Mode sind laut Google US-only; feste Abfragezahlen fehlen. Gmail, Docs, Sheets, Vids und Meet erhalten Gemini-Funktionen wie Korrekturhilfe, Videohilfe und Notizen. Gmail AI Overview ist US-only, einzelne Meet-Funktionen sind Englisch-only.
 
-Wenn deine Arbeit auf Quellen, Auswertung und strukturiertem Output basiert, entscheiden NotebookLM-Limits oft stärker als reine Chat-Zahlen.
+Chrome auto browse übernimmt mehrstufige Browseraufgaben. Es ist US-only, bei Pro als Expanded und bei Ultra als Higher/Highest geführt, ohne veröffentlichte feste Aufgabenzahl.
 
-| Kennzahl | Plus | Pro | Ultra 20 TB | Ultra 30 TB |
-| --- | --- | --- | --- | --- |
-| Notebooks | 200 pro Nutzer | 500 pro Nutzer | 500 pro Nutzer | 500 pro Nutzer |
-| Sources pro Notebook | 100 | 300 | 500 | 600 |
-| Chats | 200/Tag | 500/Tag | 2.500/Tag | 5.000/Tag |
-| Audio Overviews | 6/Tag | 20/Tag | 100/Tag | 200/Tag |
-| Video Overviews | 6/Tag | 20/Tag | 100/Tag | 200/Tag |
-| Reports / Flashcards / Quizzes / Mind Maps | 20/Tag | 100/Tag | 500/Tag | 1.000/Tag |
-| Deep Research | 3/Tag | 20/Tag | 75/Tag | 200/Tag |
+### 3.4 AI Studio, Jules, Antigravity und Android Studio
 
-Praktisch bedeutet das:
+AI Studio erweitert Modellzugang, Vibe Coding, Nano Banana Pro und den Zugang zu neuen Funktionen. Jules bearbeitet Repository-Aufgaben; Antigravity und Android Studio betreffen agentische Entwicklung. Google ordnet Requests, Aufgaben und Parallelität nur in Limited, Expanded, Higher und Highest ein. Feste Zahlen veröffentlicht die Übersicht nicht. Google Developer Program premium enthält monatlich 10 USD Cloud Credits bei Pro, 40 USD bei Ultra 5x und 100 USD bei Ultra 20x.
 
-- `Plus` reicht für Lernen und leichte Recherche
-- `Pro` ist die Schwelle für ernsthafte Dauerprojekte
-- `Ultra` ist eher Workstation-Niveau, aber 20 TB und 30 TB haben nicht identische NotebookLM-Limits
+### 3.5 Spark, Project Genie und Zusatzleistungen
 
-### 3.3 Gemini-App-Limits als compute-based Nutzung verstehen
+Gemini Spark und Daily Brief sind für Pro/Ultra in den USA aufgeführt; feste Aufgaben- oder Laufzeitlimits sind nicht veröffentlicht. Project Genie ist Ultra-exklusiv und laut Google in über 140 Ländern verfügbar, aber ohne öffentliches Nutzungskontingent. Dreambeans ist US-only.
 
-Die aktuelle Seite `Gemini Apps limits & upgrades` beschreibt Gemini Apps als **compute-based usage limits**. Der Verbrauch hängt von Prompt-Komplexität, Modell bzw. Feature und Chat-Länge ab. Die Nutzung erneuert sich alle 5 Stunden bis zum Wochenlimit.
+Pro enthält Google Home Premium Standard mit 30 Tagen Ereignisverlauf, Ultra Advanced mit 24/7-Verlauf und Ereignisbeschreibungen. Google Health Premium benötigt eine kompatible Pixel Watch oder Fitbit und ist regional begrenzt. In verfügbaren Ländern enthält Pro YouTube Premium Lite, Ultra YouTube Premium Individual. Der Speicher gilt für Gmail, Drive und Photos; eine Familiengruppe kann mit bis zu fünf Personen geteilt werden.
 
-Aktuelle High-Level-Logik:
+## 4. Auswahl nach Arbeitslast
 
-| Plan | Gemini-App-Nutzung |
-| --- | --- |
-| Ohne AI-Plan | Standardlimits |
-| Google AI Plus | 2x Standard |
-| Google AI Pro | 4x Standard |
-| Google AI Ultra | 5x oder 20x Pro, je nach Abo |
+### 4.1 Plus
 
-Das Context Window bleibt klar veröffentlicht:
+Plus passt zu Schreiben, Lernen, persönlicher Recherche, gelegentlichem Flow und echtem Bedarf an 400 GB Speicher. Es ersetzt kein Hochvolumen-Video- oder Agentenabo.
 
-| Plan | Context window |
-| --- | --- |
-| Ohne AI-Plan | 32k tokens |
-| Google AI Plus | 128k tokens |
-| Google AI Pro | 1M tokens |
-| Google AI Ultra | 1M tokens |
+### 4.2 Pro
 
-Ein `1M context window` entspricht grob **1.500 Seiten Text** oder **30.000 Zeilen Code**. Für lange Dokumente und große Repositories bleibt das einer der stärksten Gründe für `Pro`.
+Pro ist die ausgewogene Stufe für häufige Quellenrecherche, Google Workspace, Flow und Entwicklung mit Jules, Antigravity oder AI Studio. 5 TB, 4x Gemini und 1.000 Flow Credits sind die klar messbaren Unterschiede.
 
-## 4. Welche Produkte bringen in der Praxis wirklich Nutzen?
+### 4.3 Ultra
 
-### 4.1 Gemini app
+Ultra ist für ein nachweisbares monatliches Flow-Volumen, fortlaufende Agentenarbeit, Deep Think oder 20/30 TB Speicher gedacht. Project Genie, YouTube und Home bleiben regionale oder geräteabhängige Zusatzleistungen.
 
-Zentrale Oberfläche für Chat, Schreiben, Recherche, Bild-/Videogenerierung und Coding-Unterstützung.
+## 5. Vor dem Abo berechnen
 
-### 4.2 NotebookLM
+| Bedarf | Notieren | Vergleichen mit |
+| --- | --- | --- |
+| Lange Gemini-Aufgaben | Dokumentgröße, Häufigkeit, Kontextbedarf | 1 Million Token bei Pro/Ultra; keine feste Nachrichtenquote |
+| Flow-Video | Credits aus 10 Beispielprojekten × Monatsvolumen | 200 / 1.000 / 10.000 / 25.000 Credits plus 20–30 % Reserve |
+| Flow Music | Credits pro fertigem Stück | 3.000 / 10.000 / 30.000 / 30.000 getrennte Credits |
+| Notebook-Recherche | parallele Notebooks, Quellen, Ausgaben | keine einheitliche öffentliche Zahl |
+| Agenten | Jules-Aufgaben, Parallelität, AI-Studio-/Antigravity-Nutzung | keine festen öffentlichen Aufgabenlimits |
+| Speicher | aktueller Bedarf + Jahreswachstum + 20 % | 400 GB / 5 TB / 20 TB / 30 TB |
 
-Stark, wenn du mit eigenen Quellen arbeitest und belastbare Zusammenfassungen, Lernmaterial oder strukturierte Auswertungen brauchst.
+Prüfen Sie die Funktionen im selben Google-Konto vor der Zahlung. Nicht sichtbare Funktionen sollten nicht eingepreist werden. Für YouTube, Home, Health, Spark, Deep Search, Auto browse oder Fotogenerierung müssen Land, Sprache und Gerät einzeln geprüft werden.
 
-### 4.3 Flow und Whisk
-
-- `Flow`: eher durchgängiger Video-Workflow
-- `Whisk`: schnelle visuelle Ideation, Bild-zu-Video, kreative Vorstufen
-
-### 4.4 Workspace-Integration (Gmail, Docs, Meet, Calendar)
-
-Ein Kernvorteil im Google-Ökosystem: KI direkt in bestehende Arbeitsabläufe einbetten.
-
-### 4.5 Search AI Mode / Deep Search
-
-Nützlich für Recherche-Workflows statt nur für klassische Suchtreffer.
-
-### 4.6 Jules, Gemini CLI, Gemini Code Assist
-
-Für Entwickler relevant, die nicht nur Code ergänzen, sondern Aufgabenpakete mit KI abarbeiten wollen.
-
-### 4.7 Project Mariner und Project Genie
-
-Diese Punkte sind zentrale Ultra-Differenzierer, aber nur für bestimmte Profile sinnvoll:
-
-- `Project Mariner`: browsernahe Automatisierung
-- `Project Genie`: experimentelles text-/bildbasiertes World-Generation-Prototyping
-
-### 4.8 YouTube Premium, Google Home, Developer Program
-
-`Ultra` kann in einigen Regionen YouTube Premium enthalten. Für Entwickler sind oft die zusätzlichen Cloud-Credits entscheidender (`Pro`: 10 USD/Monat, `Ultra`: 100 USD/Monat).
-
-## 5. Welche Stufe solltest du konkret kaufen?
-
-### 5.1 Wer mit Google AI Plus gut fährt
-
-- systematischer Einstieg in Google AI
-- Fokus auf Gemini + NotebookLM
-- gelegentliche Bild-/Videonutzung
-- Budgetsensitiv
-
-### 5.2 Wer Google AI Pro nehmen sollte
-
-- tägliche Nutzung von Gemini
-- regelmäßige NotebookLM-Nutzung
-- wiederkehrende Flow-/Whisk-Workflows
-- Bedarf an Entwicklerfunktionen
-- realer Bedarf an 5 TB Speicher
-
-### 5.3 Für wen Google AI Ultra sinnvoll ist
-
-- hoher Verbrauch von Credits und Video-Workflows
-- klarer Bedarf an `Gemini Agent`, `Deep Think`, `Project Mariner`, `Project Genie`
-- Nutzung der 20-TB-/30-TB-Stufen und hoher NotebookLM-/Antigravity-Limits
-
-Wenn diese Punkte nicht klar zutreffen, ist `Ultra` für viele überdimensioniert.
-
-## 6. Einfache Entscheidungslogik bei Restzweifeln
-
-1. Erst Produkte festlegen, dann Preis betrachten
-2. Prüfen, welches Limit dich wirklich bremst (Credits, NotebookLM, Gemini-Tageslimits)
-3. Ultra nur wählen, wenn Ultra-Features auch tatsächlich genutzt werden
-
-Kurzempfehlung:
-
-- Noch unklarer Nutzungsgrad: `Plus`
-- Klare Hochfrequenz-Nutzung: `Pro`
-- Eindeutiger Ultra-Bedarf: `Ultra`
-
-Wenn du bereits einen Google-AI-Plan kaufen willst und die Langzeitkosten optimieren möchtest, kannst du zusätzlich eine Drittanbieteroption über **FamilyPro** prüfen (kein offizieller Google-Vertrieb):
-
-- [FamilyPro-Seite für Google-AI-Pläne (optional)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
-
-Preis-Hinweis zu Drittanbietern (Datenstand: **6. Juli 2026**, nur als Referenz): Laufzeit, Konfiguration, regionale Sichtbarkeit und Preis von Drittanbieterangeboten können sich ändern. Bitte vor Kauf Live-Checkout und Garantiebedingungen prüfen. Drittanbieterpreise werden hier nicht als offizielle Google-Preise behandelt.
-
-Zum Schluss: Google weist explizit darauf hin, dass Limits je nach Kapazität, Region und Experimentstatus variieren können. Vor Abschluss daher den eigenen Google-One-Planstatus nochmals prüfen.
+Wenn Sie Google AI Pro gewählt haben, finden Sie eine optionale Drittanbieter-Variante auf der [FamilyPro-Seite für Google-AI-Pläne](https://familypro.io/en/products/gemini?invite=7Dfd94eb). FamilyPro ist kein offizieller Google-Vertriebskanal. Angaben vom **29. Juli 2026** dienen nur als Orientierung; prüfen Sie Checkout und Supportbedingungen.
 
 ## References
 
-This article is based primarily on the following official Google pages (plus one optional purchase link), last checked on **July 6, 2026**:
-
 - [Google AI Plans](https://one.google.com/about/google-ai-plans/)
-- [Google AI Plus availability announcement](https://blog.google/products-and-platforms/products/google-one/google-ai-plus-availability/)
-- [Google AI Ultra announcement](https://blog.google/products-and-platforms/products/google-one/google-ai-ultra/)
-- [Get a Google AI Plus membership](https://support.google.com/googleone/answer/16548195)
-- [Use Google AI Plus benefits](https://support.google.com/googleone/answer/16882689)
-- [Use Google AI Pro benefits](https://support.google.com/googleone/answer/14534406)
-- [Get Google AI Ultra benefits](https://support.google.com/googleone/answer/16286513)
-- [Manage your AI credits with Google One](https://support.google.com/googleone/answer/16287445)
-- [Gemini Apps limits & upgrades for Google AI subscribers](https://support.google.com/gemini/answer/16275805)
-- [Upgrade NotebookLM](https://support.google.com/notebooklm/answer/16213268)
-- [Use Gemini 3 Pro and Nano Banana Pro in AI Mode](https://support.google.com/websearch/answer/16011537)
-- [Generate and edit images in AI Mode with Nano Banana Pro](https://support.google.com/websearch/answer/16649374)
-- [FamilyPro third-party platform: Google AI plans page (optional purchase link)](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [Google AI availability by country](https://support.google.com/googleone/answer/9004013)
+- [Google Flow availability](https://support.google.com/flow/answer/16324674)
+- [Gemini Apps limits and upgrades](https://support.google.com/gemini/answer/16275805)
+- [Google AI subscription benefits](https://support.google.com/googleone/answer/14534406)
+- [FamilyPro: Google AI plans](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
