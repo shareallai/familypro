@@ -409,6 +409,9 @@ const sponsorRel = 'nofollow sponsored noopener noreferrer';
   }
 
   .article-content {
+    width: 100%;
+    max-width: 780px;
+    margin-inline: auto;
     min-width: 0;
   }
 
@@ -420,8 +423,11 @@ const sponsorRel = 'nofollow sponsored noopener noreferrer';
     background: var(--card);
     border: 1px solid var(--line);
     border-radius: 1rem;
-    padding: 1.02rem;
+    padding: clamp(1.08rem, 0.84rem + 0.9vw, 1.5rem);
     box-shadow: var(--shadow-card);
+    color: #27364a;
+    font-size: clamp(1.03125rem, 1rem + 0.15vw, 1.0625rem);
+    line-height: 1.8;
   }
 
   :global(.markdown-body > :first-child) {
@@ -435,17 +441,37 @@ const sponsorRel = 'nofollow sponsored noopener noreferrer';
   :global(.markdown-body p),
   :global(.markdown-body li),
   :global(.markdown-body blockquote) {
+    color: #27364a;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
+  :global(.markdown-body p) {
+    margin-top: 0;
+    margin-bottom: 1.1em;
+  }
+
+  :global(.markdown-body ul),
+  :global(.markdown-body ol) {
+    margin-top: 0.65em;
+    margin-bottom: 1.15em;
+  }
+
+  :global(.markdown-body li + li) {
+    margin-top: 0.38em;
+  }
+
   :global(.markdown-body h2) {
-    margin-top: 1.7rem;
+    margin-top: 2.35rem;
+    margin-bottom: 0.78rem;
+    line-height: 1.4;
     scroll-margin-top: 6.2rem;
   }
 
   :global(.markdown-body h3) {
-    margin-top: 1.1rem;
+    margin-top: 1.55rem;
+    margin-bottom: 0.58rem;
+    line-height: 1.45;
   }
 
   :global(.markdown-body pre) {
@@ -697,8 +723,9 @@ const sponsorRel = 'nofollow sponsored noopener noreferrer';
 
   @media (min-width: 1260px) {
     .article-layout-with-toc {
-      grid-template-columns: minmax(0, 1fr) 272px;
+      grid-template-columns: minmax(0, 780px) 272px;
       gap: 1.2rem;
+      justify-content: center;
     }
 
     .article-layout-with-toc > .article-content {
