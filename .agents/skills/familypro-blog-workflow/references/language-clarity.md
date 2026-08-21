@@ -32,13 +32,23 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 
 ## Editorial style defaults
 
-- Prefer a written, concise, matter-of-fact style: clear enough for quick execution, but not chatty, promotional, or report-like.
+- Prefer a written, concise, gently literary style: clear enough for quick execution, but not clipped, chatty, promotional, or report-like. Let sentences breathe when a slightly fuller transition improves the reading experience.
 - Lead with the user's actual scenario or decision point, not with broad setup, generic definitions, or "this article will explain" framing.
 - Keep only the use cases that matter to the current article. Do not expand into adjacent scenarios just to make the post feel comprehensive.
 - Use bullets, numbered lists, FAQs, and tables only when they improve scanning. Do not turn every section into "three points," "three checks," or a formulaic FAQ.
 - Prefer connected paragraphs over mechanical sequencing such as "first / second / third" when the section is short or explanatory.
 - Remove filler transitions and generic conclusions such as "in summary," "what really matters is," and repeated "it is worth noting" phrasing unless they add a concrete condition.
 - Make the final article feel edited: compact sections, no repeated claims, no inflated adjectives, and no obvious AI cadence.
+
+## Avoiding mechanical prose
+
+- Establish a narrative line—problem, change, practical response, and consequence—before dividing the article into sections. Headings should mark real turns in the argument, not act as labels for every fact.
+- Avoid repeating the same information as a definition, a bullet list, and a closing summary. Once a point is clear, move the article forward.
+- Vary paragraph shape according to meaning. Several consecutive sections should not all follow the same “what it is / what it supports / what it does not support” template unless readers genuinely need a fixed comparison.
+- Keep related commands in one operational sequence. Introduce a command block with enough context to use it, then explain only the non-obvious consequence; avoid alternating one short instruction sentence with one small code block throughout a section.
+- Use authorial judgment where it helps the reader choose, but label personal observation, recommendation, and verified fact distinctly. A restrained first-person sentence can be more credible than impersonal verdicts.
+- Prefer natural transitions that express cause, contrast, or consequence. Avoid stock framing such as “the core is,” “the responsibilities are clear,” “this solution solves,” or “how to choose” when the surrounding prose already conveys that relationship.
+- End after the reader's practical question has been answered. Do not add a generic recap merely to create a conclusion section.
 
 ## Sentence-level checks
 
@@ -90,3 +100,5 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Rewrite marked sentences until each can be understood in one pass.
 - Ensure key conclusions can be quoted alone without losing conditions.
 - Check whether the article can be shortened without losing the user's scenario, commands, facts, or decision guidance; if yes, shorten it.
+- Look at paragraph and section openings in sequence. Rewrite them if too many begin with the same grammatical pattern, product name, or explanatory formula.
+- Remove any list or recap that merely restates the paragraph immediately before it.

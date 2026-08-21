@@ -27,6 +27,7 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - Preserve facts and user intent.
    - Improve flow, transitions, and section boundaries when the original structure is weak.
    - Remove fluff, repeated summaries, and generic “AI-sounding” filler.
+   - Build a readable narrative before optimizing for scanability. Do not give every fact its own heading, lead-in sentence, bullet, or recap when connected prose would carry the argument more naturally.
    - Keep a reader-facing tone for users trying to understand this topic and make a practical decision or next step.
    - Apply `language-clarity.md` for sentence-level fluency and ambiguity checks in the target language.
 6. If the article contains commands, links, pricing, versions, or operational steps, verify them.
