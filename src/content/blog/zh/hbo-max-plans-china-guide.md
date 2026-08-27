@@ -1,13 +1,13 @@
 ---
 locale: zh
 translationKey: hbo-max-plans-china-guide
-title: HBO Max 套餐怎么选？中国用户购买与观看指南
-headline: HBO Max 套餐指南：中国用户购买前要看懂的价格与限制
-description: 基于 2026-08-21 官方信息，对比 HBO Max 三档套餐、画质、并发与下载权益，并说明中国大陆用户购买、片库和共享账号的主要限制。
-summary: 想看 HBO 剧集、华纳电影或《老友记》，先别急着付款。这篇指南会帮你分清三档套餐、Profile 与并发的区别，以及中国大陆用户最容易忽略的地区和共享风险。
+title: HBO Max 套餐怎么选？价格、画质、并发与共享指南
+headline: HBO Max 套餐指南：价格、画质、并发与共享限制
+description: 基于 2026-08-21 美国区官方信息，对比 HBO Max 三档套餐的价格、画质、并发与下载权益，并说明不同地区的片库、付款和共享账号限制。
+summary: 想看 HBO 剧集、华纳电影或《老友记》，先别急着付款。这篇指南会帮你分清三档套餐、Profile 与并发的区别，以及不同地区都可能遇到的片库和共享限制。
 category: 影视流媒体指南
 pubDate: 2026-08-14
-updatedDate: 2026-08-21
+updatedDate: 2026-08-27
 author: Mark
 service: HBO Max
 tags:
@@ -15,7 +15,7 @@ tags:
   - 流媒体
   - 套餐对比
   - 共享账号
-  - 中国用户指南
+  - 地区可用性
 relatedTranslationKeys:
   - disney-plus-plans-china-guide
   - airport-recommendation-chatgpt-netflix-guide
@@ -65,9 +65,9 @@ Profile 只负责区分使用者，**不会增加播放线路**。Basic with Ads
 
 共享账号还要多看一层：你拿到的通常只是指定 Profile，不是主账号。主账号持有人仍能修改密码、管理设备、删除 Profile 或调整订阅；Premium 的 4 路并发也是整个账号共用，而不是每个 Profile 各有 4 路。
 
-## 4. 中国大陆用户购买前有哪些门槛
+## 4. 订阅前要确认哪些地区限制
 
-截至 **2026-08-21**，中国大陆未列入 HBO Max 官方支持地区；香港、澳门和台湾已在亚太支持列表中，但属于不同服务市场。官方说明，在不受支持的国家或地区不能正常串流。
+截至 **2026-08-21**，HBO Max 只在官方列出的国家和地区提供服务，各市场的套餐、价格、片库和付款方式并不完全相同。即使账号可以注册或完成付款，在不受支持的国家或地区也可能无法正常串流。
 
 美国区网页直购接受 Visa、Mastercard、Discover、American Express、JCB、PayPal 和 Apple Pay，但信用卡或借记卡须由美国发行并支持自动续费。经应用商店、运营商或电视服务商订阅，则要遵守对应渠道的地区与付款规则。
 
@@ -111,7 +111,7 @@ HBO Max 支持 Adult 和 Kids Profile。Kids Profile 可以按年龄分级限制
 4. 用计划观看的电视或移动设备实际播放；
 5. 多人使用时，确认套餐并发数和共享规则。
 
-一个人或两个人追剧，Standard 通常最省心；预算敏感且不介意广告，可以先用 Basic with Ads；明确需要三至四路并发或家庭影院规格，再选 Premium。对中国大陆用户而言，服务地区和播放条件应排在价格之前。
+一个人或两个人追剧，Standard 通常最省心；预算敏感且不介意广告，可以先用 Basic with Ads；明确需要三至四路并发或家庭影院规格，再选 Premium。无论在哪个市场订阅，都应先确认当地可用性和播放条件，再比较价格。
 
 ## 官方参考
 

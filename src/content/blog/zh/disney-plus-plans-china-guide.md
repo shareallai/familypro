@@ -1,13 +1,13 @@
 ---
 locale: zh
 translationKey: disney-plus-plans-china-guide
-title: Disney+ 套餐怎么选？中国用户购买与观看指南
-headline: Disney+ 套餐指南：中国用户要看懂价格、共享与地区限制
-description: 基于 2026-08-21 官方信息，对比 Disney+ 含广告与 Premium 套餐，并说明中国大陆用户购买、4 路并发、Household 和共享账号风险。
-summary: Disney+ 的两档套餐并不难选，难点在于 7 个 Profile、4 路并发和 Household 是三件不同的事。本文帮中国用户在付款前理清价格、地区与共享限制。
+title: Disney+ 套餐怎么选？价格、4K、下载与共享指南
+headline: Disney+ 套餐指南：价格、4K、下载与 Household 限制
+description: 基于 2026-08-21 美国区官方信息，对比 Disney+ 含广告与 Premium 套餐，并说明 4 路并发、Household、地区差异和共享账号风险。
+summary: Disney+ 的两档套餐并不难选，难点在于 7 个 Profile、4 路并发和 Household 是三件不同的事。本文帮你在付款前理清价格、地区与共享限制。
 category: 影视流媒体指南
 pubDate: 2026-08-14
-updatedDate: 2026-08-21
+updatedDate: 2026-08-27
 author: Mark
 service: Disney+
 tags:
@@ -15,7 +15,7 @@ tags:
   - 流媒体
   - 套餐对比
   - Household
-  - 中国用户指南
+  - 地区可用性
 relatedTranslationKeys:
   - hbo-max-plans-china-guide
   - airport-recommendation-chatgpt-netflix-guide
@@ -23,7 +23,7 @@ relatedTranslationKeys:
 draft: false
 ---
 
-Disney+ 把迪士尼、皮克斯、漫威、星球大战和国家地理集中在一个平台里，但中国用户付款前最容易忽略的，并不是片单，而是三个不同概念：**一个账号最多 7 个 Profile、Disney+ 内容最多 4 路同时播放、账号原则上只供同一 Household 使用**。
+Disney+ 把迪士尼、皮克斯、漫威、星球大战和国家地理集中在一个平台里，但付款前最容易忽略的，并不是片单，而是三个不同概念：**一个账号最多 7 个 Profile、Disney+ 内容最多 4 路同时播放、账号原则上只供同一 Household 使用**。
 
 本文按 **2026-08-21** 可查到的美国区官方信息整理。价格、功能、服务地区、片库和字幕可能调整，文中金额不含税，**仅供参考**；最终以实际订阅地区的官方页面为准。
 
@@ -62,9 +62,9 @@ Profile 数量不等于并发数。一个普通订阅中的 Disney+ 内容最多
 
 设备不被识别时，电视或移动端可能要求一次性验证码、确认“外出观看”或更新 Household。验证码会发送到主账号邮箱，更新次数也可能受限。
 
-## 4. 中国大陆用户购买前要确认什么
+## 4. 订阅前要确认哪些地区限制
 
-截至 **2026-08-21**，中国大陆不在 Disney+ 官方服务市场内。香港、澳门和台湾属于独立市场；界面支持中文，也不能推导出中国大陆已经正式开放。
+截至 **2026-08-21**，Disney+ 只在官方列出的国家和地区提供服务。不同市场的套餐、价格、片库、字幕、配音和付款方式可能不同；界面支持某种语言，也不代表该服务已在所有使用这种语言的地区开放。
 
 付款前应逐项核对：
 
@@ -108,7 +108,7 @@ Disney+ 可以按 Profile 设置内容分级、Junior Mode、Kid-Proof Exit 和�
 
 能接受广告、无需离线下载，含广告套餐已经提供最多 4 路 Disney+ 同看和部分 4K 内容；经常旅行、需要下载或不想看点播广告，再选 Premium。不要只为了 4K 升级，因为两档都可能在兼容内容和设备上提供 4K。
 
-中国大陆用户应先确认服务地区、设备和实际播放条件，再比较月费。若考虑共享 Profile，把 Household 验证、主账号控制权和售后规则纳入成本；能登录一次，不等于可以长期稳定使用。
+无论在哪个市场订阅，都应先确认服务地区、设备和实际播放条件，再比较月费。若考虑共享 Profile，把 Household 验证、主账号控制权和售后规则纳入成本；能登录一次，不等于可以长期稳定使用。
 
 ## 官方参考
 
