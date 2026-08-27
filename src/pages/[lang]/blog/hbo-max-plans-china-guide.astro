@@ -1,0 +1,11 @@
+---
+import LegacyRedirect from '../../../components/LegacyRedirect.astro';
+
+export function getStaticPaths() {
+  return ['zh', 'en'].map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.props;
+---
+
+<LegacyRedirect destination={`${lang}/blog/hbo-max-plans-guide/`} />
