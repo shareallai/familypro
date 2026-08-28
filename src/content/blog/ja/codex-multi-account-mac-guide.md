@@ -1,21 +1,22 @@
 ---
 locale: ja
 translationKey: codex-multi-account-mac-guide
-title: "MacでCodexを多重起動：Plusの上限後に別アカウントへ切り替える方法"
-headline: MacでCodexを多重起動し、別のPlusアカウントを保持する
-description: "macOSでCODEX_HOMEとopen -n -a Codexを使い、Codexのローカルログイン状態を分ける方法。Plusアカウントの上限に達したとき、別アカウントへ切り替えたい人向けです。"
-summary: 1つ目のPlusアカウントがCodexの上限に達したとき、別のCODEX_HOMEで2つ目のログイン状態を残しておくと切り替えが楽になります。
+title: "MacのCodex複数アカウント管理：軽量ツールで素早く切り替える方法"
+headline: Codexを多重起動できなくなった後、Macで複数のChatGPTアカウントを管理する
+description: "2026年8月現在、CODEX_HOMEによるCodexの多重起動は安定しません。codex-authとcodex-barで複数のChatGPTアカウントを保存し、利用枠を確認して素早く切り替える方法を解説します。"
+summary: CODEX_HOMEでCodexを多重起動する従来の方法は、安定して使えなくなりました。これからは複数のアカウントを保存し、必要なときに現在のアカウントを切り替える方が実用的です。
 category: AIツールガイド
 pubDate: 2026-05-14
-updatedDate: 2026-05-14
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
   - Codex
-  - ChatGPT Plus
+  - ChatGPT
   - macOS
   - 複数アカウント
-  - CODEX_HOME
+  - codex-auth
+  - codex-bar
 relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - openclaw-mac-codex-install-guide
@@ -24,134 +25,109 @@ relatedTranslationKeys:
 draft: false
 ---
 
-困る場面はかなり具体的です。1つ目のChatGPT PlusアカウントでCodexの上限に達したが、もう1つのPlusアカウントはまだ使える。1つのCodexだけで運用していると、いったんサインアウトし、別アカウントでサインインし直し、あとでまた戻す必要があります。
+以前、`CODEX_HOME` と `open -n -a Codex` を組み合わせてMac上に2つのCodex環境を開いていたなら、もうそのコマンドにこだわる必要はありません。2026-08-28現在、この方法では2つのChatGPTアカウントのログイン状態を安定して並行保持できなくなっています。
 
-macOSでは、別のローカルhomeを指定して2つ目のCodex環境を開けます。
+一方で、複数アカウントを使い分けたい事情は変わりません。1つのアカウントでCodexの利用枠を使い切っても、別のアカウントには余裕がある。そのたびにサインアウトと認証を繰り返すのは面倒です。現在の現実的な解決策は、多重起動を試すことではなく、アカウントを保存しておき、必要に応じて現在のアカウントを切り替えることです。
 
-```bash
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
+そこでおすすめしたいのが、[Loongphy/codex-auth](https://github.com/Loongphy/codex-auth) と [xingcan-hu/codex-bar](https://github.com/xingcan-hu/codex-bar) の組み合わせです。前者はアカウント管理を担い、後者はアカウントと残りの利用枠をMacのメニューバーに表示します。2つのCodex Appを同時にオンラインにしたり、アカウント間の利用枠を合算したりはできませんが、日々の切り替えはかなり楽になります。
 
-通常のCodexは `~/.codex` を使い続けます。このコマンドで開いたCodexは `~/.codex-work` を使うため、別のPlusアカウントでログイン状態を保持できます。アカウントAの上限に達したら、アカウントBのCodexウィンドウへ移るだけで済みます。
+## 1. 従来の方法が使えなくなった理由
 
-これは上限回避でも、2つのPlus枠を1つにまとめる方法でもありません。Codexの利用量は、ログイン中のChatGPTアカウントごとに扱われます。ここで分けているのは、Mac上のローカルログイン状態です。
-
-## 1. どんなときに使うべきか
-
-一番向いているのは、2つのPlusアカウントを実際に使い分ける場合です。アカウントAのCodex上限に達したあと、アカウントBをすぐ使いたいなら、2つのCodex環境を分けておく価値があります。
-
-たまに切り替えるだけなら、手動でサインアウトしても大きな問題にはなりません。毎日のように使うなら、認証、ブラウザ遷移、コールバック待ちを繰り返さないことの効果が大きくなります。
-
-個人用と仕事用を分ける用途にも使えますが、本記事の主題はそこではありません。ここでは「1つ目のPlusアカウントの上限に達したあと、別のPlusアカウントへすぐ移る」ことに絞ります。
-
-## 2. 手順
-
-まず、いつも通りCodexを開き、1つ目のPlusアカウントでログインします。このインスタンスは通常、デフォルトのディレクトリを使います。
-
-```bash
-~/.codex
-```
-
-次にTerminalで以下を実行します。
-
-```bash
-mkdir -p "$HOME/.codex-work"
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
-
-新しく開いたCodexは `~/.codex-work` を使います。このウィンドウで2つ目のPlusアカウントにログインします。
-
-macOSの `open` に環境変数を明示的に渡すなら、次の書き方も使えます。
-
-```bash
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
-```
-
-以後、2つ目のアカウントを開くときは同じ `CODEX_HOME` を使います。ディレクトリ名は `~/.codex-work` でも `~/.codex-plus2` でも構いません。ただし、プロジェクトのリポジトリに入れたり、公開ストレージへ同期したりしないでください。
-
-## 3. このコマンドが効く理由
-
-見るべき部分は2つです。
+以前は、2つ目のCodexプロセスに別のローカルディレクトリを指定していました。
 
 ```bash
 CODEX_HOME="$HOME/.codex-work" open -n -a Codex
 ```
 
-`CODEX_HOME` は、Codexがどのローカルhomeを使うかを決めます。ログイン状態、設定、セッション索引、キャッシュなどはこのディレクトリに紐づきます。通常は `~/.codex` ですが、ここでは `~/.codex-work` を使わせています。
+この方法が成立するには、macOSが独立したCodexプロセスを新たに起動し、そのプロセスが指定された `CODEX_HOME` を採用する必要があります。Codex Appの挙動が変わった現在、この2つの条件では信頼できるアカウント分離になりません。`open -n` を繰り返したり、ディレクトリ名を変えたりして一時的に動くことはあっても、安定した運用方法とは言えません。
 
-`open -n -a Codex` はmacOS側の起動指定です。`-a Codex` はCodexアプリを開く指定、`-n` はすでにCodexが起動していても新しいインスタンスを開く指定です。`-n` がないと、既存ウィンドウが前面に出るだけで、別の `CODEX_HOME` が使われないことがあります。
+代わりに、現在のログイン状態は1つだけにします。ほかのアカウントの認証情報をツールで保存し、使うアカウントを現在の状態へ切り替える仕組みです。2つのウィンドウに別々のアカウントを表示するほど直感的ではありませんが、サインアウトから認証までを毎回やり直す手間は省けます。
 
-つまり、`open -n` で別インスタンスを作り、`CODEX_HOME` で別のローカル状態を持たせる、という仕組みです。
+## 2. 2つの軽量ツールの役割
 
-`open` のオプションを確認したい場合は、Terminalで次を実行します。
+この構成の土台は `codex-auth` です。ターミナルからアカウントのログイン、保存、一覧表示、切り替えを行い、複数アカウントのレジストリを管理します。コマンドラインに慣れているなら、これだけでも十分です。
 
-```bash
-man open
-```
+`codex-bar` は、そのレジストリを使う小さなmacOSメニューバーアプリです。現在のアカウントについて、5時間枠と週間枠の残量を表示し、別のアカウントもクリックで選択できます。新しいアカウントのログイン、削除、別名の設定は引き続き `codex-auth` で行い、メニューバーは頻繁に使う確認と切り替えに専念します。
 
-`open(1)` の `(1)` はUnix manualの「ユーザーコマンド」章を表します。macOSに標準で入っているコマンドの説明であり、追加インストールするツールではありません。
+対応環境には少し違いがあります。`codex-auth` のドキュメントにはCodex CLI、VS Code拡張機能、Codex Appが記載されています。Codex CLIまたはCodex Appでアカウントを切り替えた後は、新しいログイン状態を反映させるためにクライアントを再起動してください。再起動なしの切り替えを試みる実験的な `codex-auth app` コマンドもありますが、作者は不安定で、公式クライアントの更新により動かなくなる可能性があると明記しています。日常運用の前提には向きません。
 
-## 4. 分離できたか確認する
+`codex-bar` はmacOS専用で、macOS 13以降が必要です。現在は公式のビルド済みインストーラがなく、Apple Command Line Toolsを使ってソースからビルドします。ChatGPT/Codexログインだけに対応し、API Keyには対応していません。期限切れトークンの更新も行いません。
 
-通常のCodexウィンドウはアカウントAでログインしたままにします。次に、もう一度このコマンドで2つ目のウィンドウを開きます。
+## 3. codex-authでアカウントを保存する
 
-```bash
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
-
-そのウィンドウでアカウントBにログインします。いったん閉じてから同じコマンドで開き直し、通常ウィンドウがアカウントA、2つ目のウィンドウがアカウントBを覚えていれば分離できています。
-
-うまく分かれない場合は、まず次を確認します。
-
-- `-n` を付けているか。
-- 毎回同じ `CODEX_HOME` を指定しているか。
-- Terminalから起動しており、環境変数が新しいプロセスへ渡っているか。
-
-それでも不安定なら、2つ目のCodexを完全に終了し、次の形式で開き直します。
+インストール前に、Node.jsと公式Codex CLIを用意します。次の2つのコマンドで、Codex CLIと `codex-auth` をグローバルにインストールできます。
 
 ```bash
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
+npm install -g @openai/codex
+npm install -g @loongphy/codex-auth
 ```
 
-## 5. WeChat、WhatsApp、Telegramにも使えるか
-
-考え方は参考になりますが、このコマンドをそのまま使うことはできません。
-
-Codexで成立するのは、Codexが `CODEX_HOME` を読み、ローカル状態を別ディレクトリに置けるためです。WeChat、WhatsApp、Telegramのようなメッセージアプリは、ログイン状態を `~/Library/Containers`、`~/Library/Application Support`、Keychain、ブラウザprofile、App Groupコンテナ、またはサーバー側のデバイス管理に置くことがあります。`CODEX_HOME` を指定しても、そもそも読みません。
-
-WeChatは無理に複数デスクトップインスタンスを開く用途には向きません。`open -n -a WeChat` で2つ目のプロセスが起動しても、同じローカルデータを取り合う可能性があります。
-
-WhatsAppは、公式の複数アカウント機能、リンク済みデバイス、または別ブラウザprofileのWhatsApp Webを使う方が安全です。出所不明の多重起動版は避けるべきです。
-
-Telegramは公式クライアントの複数アカウント機能を先に使います。複数プロセスを起動するより、アプリ内で切り替える方が分かりやすいです。
-
-重要なのは、ウィンドウを2つ出せるかではなく、状態を安全に分離できるかです。分離できなければ、多重起動に見えているだけです。
-
-## 6. 注意点
-
-`~/.codex-work` を別のMacへそのままコピーしないでください。ログイン情報やローカル状態を含む可能性があります。新しいMacでは、改めてログインする方が安全です。
-
-`~/.codex-work` を削除すると、2つ目のCodex環境のローカル状態も消えます。通常は再ログインが必要になり、設定、セッション索引、キャッシュも失われることがあります。
-
-これは公式のアカウント切り替え機能ではありません。macOSの多重起動とCodexのローカルhome指定を組み合わせた実用的な運用方法です。
-
-## 7. 最後に残すコマンド
+まだグローバルにインストールしたくない場合は、`npx @loongphy/codex-auth list` でも実行できます。通常は、まず1つのChatGPTアカウントでログインし、ほかのアカウントも同じ手順で追加します。
 
 ```bash
-# メインアカウント
-open -a Codex
+codex-auth login
 
-# 2つ目のPlusアカウント
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
+# 通常のログインが難しい場合はデバイス認証を使う
+codex-auth login --device-auth
 ```
 
-目的が「1つ目のPlusアカウントでCodex上限に達したあと、別のPlusアカウントへすぐ移りたい」だけなら、この2つで足ります。
+保存後の確認と切り替えには、次のコマンドを使います。
+
+```bash
+# 全アカウントと現在のアカウントを確認する
+codex-auth list
+codex-auth list --active
+
+# 対話式で選ぶか、一覧の番号を指定して切り替える
+codex-auth switch
+codex-auth switch 02
+```
+
+切り替えた後は、Codex CLIまたはCodex Appを再起動します。VS Code拡張機能にすぐ反映されない場合は、ウィンドウを再読み込みするかVS Codeを再起動してください。ここで切り替わるのは `~/.codex/auth.json` が示す現在のアカウントであり、複数のCodexをバックグラウンドで同時実行するわけではありません。
+
+## 4. アカウント情報をMacのメニューバーに置く
+
+利用枠を頻繁に確認するなら、`codex-bar` も追加します。macOS 13以降でApple Command Line Toolsが入っていることを確認し、ソースからビルドしてください。
+
+```bash
+git clone https://github.com/xingcan-hu/codex-bar.git
+cd codex-bar
+./scripts/test.sh
+./scripts/build_app.sh
+./scripts/install.sh /Applications
+open "/Applications/Codex Bar.app"
+```
+
+起動すると、`~/.codex/accounts/registry.json` が読み込まれます。メニューにアカウントが表示されない場合、アプリの故障ではなく、まだ `codex-auth login` でレジストリにアカウントを追加していない可能性があります。
+
+メニューを開くと、各アカウントの5時間枠と週間枠の残量を確認できます。別のアカウントを選ぶと、その認証スナップショットが `~/.codex/auth.json` にコピーされます。クライアントが古い状態をメモリに保持しないよう、切り替え後は実行中のCodex CLIまたはCodex Appを再起動してください。
+
+## 5. CodexBarを第一候補にしなかった理由
+
+[steipete/CodexBar](https://github.com/steipete/CodexBar) は、より成熟し、広く使われているプロジェクトです。2026-08-28現在、GitHubでは約2万600スターを獲得しています。macOSではReleaseをダウンロードするほか、Homebrewでもインストールできます。
+
+```bash
+brew install --cask codexbar
+```
+
+CodexBarの魅力は機能の広さです。Codexだけでなく、Claude、Cursor、Gemini、GitHub Copilotなど、多くのサービスについて利用枠、リセット時刻、稼働状態、ローカルの費用情報をまとめられます。メニューバーアプリはmacOS 14以降が必要で、付属CLIにはmacOS版とLinux版があります。複数のAIサービスを日常的に使う人には、この統合ビューが役立ちます。
+
+ただし、私が必要としているのは数個のChatGPT/Codexアカウントの管理だけです。自分のMacでCodexBarを使ったときは、`codex-auth` と `codex-bar` の組み合わせよりCPUとメモリの使用量が明らかに大きかったため、機能の少ない軽量な構成を選びました。
+
+これは統一条件で測ったベンチマークではなく、あくまで手元の環境での観察です。CodexBarのバージョン、有効にしたサービス数、更新間隔、Macの環境によって負荷は変わります。複数サービスの監視が必要なら、実際にインストールし、アクティビティモニタで現行版の動作を確認して決めるのが確実です。
+
+## 6. 第三者製アカウントツールの注意点
+
+便利さの理由は認証ファイルを直接管理することにあるため、これらを認証情報として慎重に扱ってください。`codex-auth` はアカウントごとの認証ファイルを保存し、切り替え時に現在の `~/.codex/auth.json` を置き換えます。`codex-bar` も同じレジストリを読み、選択された認証スナップショットを現在の位置へコピーします。クラウドストレージやコードリポジトリへアップロードしたり、他人へ送ったりしてはいけません。
+
+利用枠を更新するため、両ツールはChatGPTのアクセストークンを使い、OpenAI/ChatGPTのバックエンド利用状況エンドポイントへリクエストします。これは公開された安定APIではないため、フィールドやアクセス方法が変わる可能性があります。`codex-auth` では `--skip-api` を指定してローカルセッションの記録だけを読むこともできますが、記録が欠けていたり、数時間遅れていたりする場合があります。
+
+複数アカウントでログイン操作を減らしたいだけなら、まず `codex-auth` を使えば目的を果たせます。利用枠の確認と切り替えをメニューバーで行いたくなったら `codex-bar` を追加してください。より高機能なCodexBarは、多くのAIサービスを一か所で管理し、常駐時の負荷が増えることを許容できる人に向いています。
 
 ## References
 
-- [Apple Developer: Reading UNIX Manual Pages](https://developer.apple.com/documentation/os/reading-unix-manual-pages)
-- [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
-- [openai/codex GitHub README](https://github.com/openai/codex)
-- [Multiple Accounts Coming to WhatsApp](https://about.fb.com/news/2023/10/multiple-accounts-on-whatsapp/)
-- [WhatsApp Adds New Features to Simplify Storage, Switch Accounts, and More](https://about.fb.com/news/2026/03/whatsapp-new-features-simplify-storage-switch-accounts/)
-- [Telegram: Autoplaying Videos, Automatic Downloads and Multiple Accounts](https://telegram.org/blog/autoplay)
+- [Loongphy/codex-auth：Codexアカウント管理CLI](https://github.com/Loongphy/codex-auth)
+- [xingcan-hu/codex-bar：codex-auth用の軽量macOSメニューバーアプリ](https://github.com/xingcan-hu/codex-bar)
+- [steipete/CodexBar：複数サービスの利用状況を監視するアプリ](https://github.com/steipete/CodexBar)
+- [OpenAI：Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
+- [OpenAI Codex GitHubリポジトリ](https://github.com/openai/codex)

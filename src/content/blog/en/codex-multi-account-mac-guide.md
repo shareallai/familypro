@@ -1,21 +1,22 @@
 ---
 locale: en
 translationKey: codex-multi-account-mac-guide
-title: "Open Two Codex Accounts on Mac Without Logging Out"
-headline: Switch Codex to another Plus account on Mac with CODEX_HOME
-description: Use CODEX_HOME and open -n -a Codex on macOS to keep a second Plus account signed in, so you can switch when one account hits its Codex limit.
-summary: When one Plus account runs out of Codex quota, a separate CODEX_HOME lets a second Codex instance keep another account signed in.
+title: Manage Multiple Codex Accounts on Mac with Lightweight Tools
+headline: How to manage multiple ChatGPT accounts on Mac after Codex multi-launch stopped working
+description: As of August 2026, CODEX_HOME no longer provides reliable Codex multi-launch. Use codex-auth and codex-bar to save accounts, check limits, and switch quickly.
+summary: The old CODEX_HOME workaround no longer keeps two Codex accounts open reliably. A lighter approach is to save multiple accounts and switch the active one when needed.
 category: AI Tooling
 pubDate: 2026-05-14
-updatedDate: 2026-05-14
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
   - Codex
-  - ChatGPT Plus
+  - ChatGPT
   - macOS
   - Multi-account
-  - CODEX_HOME
+  - codex-auth
+  - codex-bar
 relatedTranslationKeys:
   - chatgpt-go-plus-pro-codex-api-guide
   - openclaw-mac-codex-install-guide
@@ -24,134 +25,109 @@ relatedTranslationKeys:
 draft: false
 ---
 
-The use case is simple: one ChatGPT Plus account has run out of Codex quota, while another Plus account still has room. If you use only one Codex window, switching means signing out, signing in again, and then doing the same thing in reverse later.
+If you previously used `CODEX_HOME` with `open -n -a Codex` to run two Codex environments on a Mac, that workaround is no longer worth relying on. As of 2026-08-28, it cannot consistently preserve two parallel ChatGPT sign-ins.
 
-On macOS, you can keep a second Codex environment open with a separate local home directory:
+The underlying need has not changed. One account may have exhausted its Codex allowance while another still has capacity, and repeatedly signing out and authorizing the next account is tedious. The practical answer now is not to force two app instances. It is to save the accounts, then switch which one is active.
 
-```bash
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
+I currently recommend combining [Loongphy/codex-auth](https://github.com/Loongphy/codex-auth) with [xingcan-hu/codex-bar](https://github.com/xingcan-hu/codex-bar). The first manages stored accounts; the second puts account status and remaining usage in the Mac menu bar. They do not keep two Codex apps online at once or combine account limits, but they make routine switching much less disruptive.
 
-Your normal Codex app keeps using `~/.codex`. The new instance uses `~/.codex-work`, so it can stay signed in to a different Plus account. When account A hits its limit, you move to the Codex window for account B instead of going through the sign-in flow again.
+## 1. Why the old workaround no longer works
 
-This does not merge limits or bypass usage rules. Codex usage still belongs to the ChatGPT account that is signed in. The only thing this changes is how local sign-in state is stored on your Mac.
-
-## 1. When this setup is worth using
-
-This is most useful when you actively rotate between two Plus accounts. For example, account A has reached its Codex limit, account B is still available, and you want to keep working without replacing the current login session.
-
-If you only switch accounts once in a while, signing out manually may be enough. The separate `CODEX_HOME` approach is worth it when you use both accounts often enough that repeated auth flows become friction.
-
-It can also separate a personal account from a work account, but the main problem here is narrower: one account is out of quota, and you want a clean way to move to another one.
-
-## 2. Set up the second Codex profile
-
-Open Codex normally first and sign in to your primary Plus account. That instance usually uses the default directory:
-
-```bash
-~/.codex
-```
-
-Then run this in Terminal:
-
-```bash
-mkdir -p "$HOME/.codex-work"
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
-
-Sign in to the second Plus account in the new Codex window.
-
-You can also pass the environment variable through macOS `open` explicitly:
-
-```bash
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
-```
-
-Use the same `CODEX_HOME` path whenever you want to reopen that second account. The directory name is up to you; `~/.codex-work` or `~/.codex-plus2` are both fine. Do not put this directory in a project repo or sync it to a public drive.
-
-## 3. Why the command works
-
-The command has two jobs:
+The earlier method assigned another local directory to a second Codex process:
 
 ```bash
 CODEX_HOME="$HOME/.codex-work" open -n -a Codex
 ```
 
-`CODEX_HOME` tells Codex which local home directory to use. Sign-in state, configuration, session indexes, caches, and related local data are tied to that directory. By default, Codex uses `~/.codex`; with the override above, this instance uses `~/.codex-work`.
+For this to work, macOS must start a genuinely separate Codex process, and that process must honor the supplied `CODEX_HOME`. Changes in Codex App behavior mean those two conditions no longer provide dependable account isolation. Repeating `open -n` or trying a different directory name may occasionally appear to work, but it is not a stable setup.
 
-`open -n -a Codex` is the macOS app-launch part. `-a Codex` launches the Codex app, and `-n` asks macOS to open a new instance even if Codex is already running. Without `-n`, macOS may simply bring the existing window forward, and your alternate `CODEX_HOME` may never be used.
+The replacement approach keeps one active sign-in. A helper stores the other accounts' authentication data, and switching an account makes its credentials current. It is less visual than having one account in each window, but it avoids repeating the complete sign-out and authorization flow.
 
-That is the whole mechanism: `open -n` gives you another app instance; `CODEX_HOME` gives that instance a different local state directory.
+## 2. How the two lightweight tools fit together
 
-To inspect the `open` options on your own Mac, run:
+`codex-auth` is the foundation. It logs in, stores, lists, and switches accounts from the terminal, maintaining a multi-account registry. If you are comfortable with the command line, it is the only tool you need.
 
-```bash
-man open
-```
+`codex-bar` is a small macOS menu bar app built around the same registry. It shows the active account's remaining 5-hour and weekly usage and lets you select another account. New sign-ins, account removal, and aliases still belong in `codex-auth`; the menu bar keeps only the frequent status and switching actions close at hand.
 
-In `open(1)`, the `(1)` means the user-command section of the Unix manual. It is the built-in macOS command documentation, not a separate tool.
+The supported environments differ slightly. The `codex-auth` documentation lists Codex CLI, the VS Code extension, and Codex App. After switching accounts for Codex CLI or Codex App, restart the client so it picks up the new sign-in. The project also offers an experimental `codex-auth app` command that attempts to switch Codex App without a restart, but its author explicitly describes it as unstable and vulnerable to changes in the official client. Do not build a daily workflow around it.
 
-## 4. Confirm the two accounts are isolated
+`codex-bar` is macOS-only and requires macOS 13 or later. It currently has no prebuilt official installer, so you need Apple Command Line Tools and must build it from source. It supports ChatGPT/Codex authentication only, not API keys, and it does not refresh expired tokens for you.
 
-Keep the normal Codex window signed in to account A. Open the second window with:
+## 3. Save accounts with codex-auth
 
-```bash
-CODEX_HOME="$HOME/.codex-work" open -n -a Codex
-```
-
-Sign in to account B there. Close that second window, then reopen it with the same command. If the normal window still shows account A and the second window remembers account B, the local states are separate.
-
-If the second window still shows account A, check the basics first:
-
-- Make sure `-n` is present.
-- Reuse the same `CODEX_HOME` path each time.
-- Launch it from Terminal so the environment variable is actually passed to the new process.
-
-If it still behaves oddly, quit the second Codex instance completely and reopen it with the explicit form:
+Before installing, make sure the Mac has Node.js and the official Codex CLI. These commands install the CLI and `codex-auth` globally:
 
 ```bash
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
+npm install -g @openai/codex
+npm install -g @loongphy/codex-auth
 ```
 
-## 5. Does this work for WeChat, WhatsApp, or Telegram?
-
-The idea is portable. The exact command is not.
-
-This works for Codex because Codex reads `CODEX_HOME` and can store local state in separate directories. Messaging apps usually do not work that way. WeChat, WhatsApp, and Telegram may store account state in `~/Library/Containers`, `~/Library/Application Support`, Keychain, browser profiles, app-group containers, or server-side device records. Setting `CODEX_HOME` does nothing for apps that never read it.
-
-For WeChat, forcing another desktop instance is risky. Even if `open -n -a WeChat` starts another process, both instances may still compete for the same local data.
-
-For WhatsApp, prefer official multi-account support, linked devices, or a separate browser profile for WhatsApp Web. Avoid unofficial multi-instance builds.
-
-For Telegram, use the built-in multiple-account feature first. It is usually clearer than running several Telegram processes.
-
-The real question is not whether two windows can appear. It is whether the app has reliable state isolation. Without that, multi-opening is only cosmetic.
-
-## 6. Notes before using this daily
-
-Do not copy `~/.codex-work` to another machine. It may contain credentials and local state. Sign in again on the new Mac instead.
-
-Deleting `~/.codex-work` removes the second Codex profile. You will usually need to sign in again, and local settings, indexes, or cached data may be gone.
-
-This is not an official account-switching feature. It is a practical macOS/Codex local-state workaround for users comfortable with Terminal.
-
-## 7. Keep these two commands
+If you prefer not to install it globally yet, run `npx @loongphy/codex-auth list`. For normal use, sign in to one ChatGPT account, then repeat the process for each additional account:
 
 ```bash
-# Primary account
-open -a Codex
+codex-auth login
 
-# Second Plus account
-open -n -a Codex --env CODEX_HOME="$HOME/.codex-work"
+# Use device authorization when the normal flow is inconvenient
+codex-auth login --device-auth
 ```
 
-If your real problem is "my current Plus account has hit the Codex limit, and I want to switch to another Plus account without signing out," these two commands are enough.
+Once the accounts are stored, these commands cover listing and switching:
+
+```bash
+# Show every account and identify the active one
+codex-auth list
+codex-auth list --active
+
+# Open an interactive picker, or switch directly by row number
+codex-auth switch
+codex-auth switch 02
+```
+
+Restart Codex CLI or Codex App after the switch. If the VS Code extension does not update immediately, reload its window or restart VS Code. The tool is replacing the current account represented by `~/.codex/auth.json`; it is not running several Codex environments in the background.
+
+## 4. Put account status in the Mac menu bar
+
+If you check limits often, add `codex-bar`. Confirm that the Mac runs macOS 13 or later and has Apple Command Line Tools, then build it from source:
+
+```bash
+git clone https://github.com/xingcan-hu/codex-bar.git
+cd codex-bar
+./scripts/test.sh
+./scripts/build_app.sh
+./scripts/install.sh /Applications
+open "/Applications/Codex Bar.app"
+```
+
+At launch, it reads `~/.codex/accounts/registry.json`. An empty menu usually means no accounts have been added with `codex-auth login`, not that the menu bar app is broken.
+
+Open the menu to see each account's remaining 5-hour and weekly usage. Selecting another account copies its stored authentication snapshot to `~/.codex/auth.json`. Restart any running Codex CLI or Codex App afterward so the client does not continue using stale in-memory state.
+
+## 5. Why I did not choose CodexBar first
+
+[steipete/CodexBar](https://github.com/steipete/CodexBar) is unquestionably the more mature and popular project. As of 2026-08-28, it has about 20,600 GitHub stars. Mac users can download a release or install it with Homebrew:
+
+```bash
+brew install --cask codexbar
+```
+
+Its strength is breadth. Alongside Codex, it can consolidate usage limits, reset times, service status, and local cost information for Claude, Cursor, Gemini, GitHub Copilot, and many other services. The menu bar app requires macOS 14 or later; its companion CLI also provides macOS and Linux builds. That unified view is useful if you routinely work across several AI services.
+
+My own requirement is narrower: managing a few ChatGPT/Codex accounts. On my Mac, I observed noticeably higher CPU and memory use from CodexBar than from `codex-auth` plus `codex-bar`, so I kept the smaller toolset.
+
+That observation is not a controlled benchmark. CodexBar's version, enabled providers, refresh interval, and the Mac itself can all affect resource use. If you need its multi-service monitoring, install it and judge the current build in Activity Monitor on your own system.
+
+## 6. Understand the authentication risks first
+
+The convenience comes from direct management of authentication files, so handle them as credentials. `codex-auth` stores an authentication file for each account and replaces the current `~/.codex/auth.json` during a switch. `codex-bar` reads the same registry and copies the selected snapshot into place. Do not upload these files to cloud storage or a code repository, and never send them to another person.
+
+To refresh usage data, both tools send the ChatGPT access token to OpenAI/ChatGPT backend usage endpoints. These are not public, stable APIs, so fields and access behavior may change. `codex-auth` supports `--skip-api`, which reads usage from local session records instead, but those records can be absent or several hours behind.
+
+If your only goal is to reduce repeated sign-ins across a few accounts, start with `codex-auth`. Add `codex-bar` only if menu bar access to limits and switching is useful. The full CodexBar project is a better fit when you want one dashboard for many AI services and accept a larger resident footprint in exchange.
 
 ## References
 
-- [Apple Developer: Reading UNIX Manual Pages](https://developer.apple.com/documentation/os/reading-unix-manual-pages)
-- [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
-- [openai/codex GitHub README](https://github.com/openai/codex)
-- [Multiple Accounts Coming to WhatsApp](https://about.fb.com/news/2023/10/multiple-accounts-on-whatsapp/)
-- [WhatsApp Adds New Features to Simplify Storage, Switch Accounts, and More](https://about.fb.com/news/2026/03/whatsapp-new-features-simplify-storage-switch-accounts/)
-- [Telegram: Autoplaying Videos, Automatic Downloads and Multiple Accounts](https://telegram.org/blog/autoplay)
+- [Loongphy/codex-auth: command-line account manager for Codex](https://github.com/Loongphy/codex-auth)
+- [xingcan-hu/codex-bar: lightweight macOS menu bar app for codex-auth](https://github.com/xingcan-hu/codex-bar)
+- [steipete/CodexBar: multi-service usage monitor](https://github.com/steipete/CodexBar)
+- [OpenAI: Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan)
+- [OpenAI Codex GitHub repository](https://github.com/openai/codex)

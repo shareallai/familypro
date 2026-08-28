@@ -7,7 +7,7 @@ description: 截至 2026 年 8 月，Codex App 已无法通过 CODEX_HOME 稳定
 summary: 过去用 CODEX_HOME 多开 Codex 的办法已经走不通了。好在多账号管理仍有轻量的替代方案，只是思路从“同时多开”变成了“保存账号，随用随切”。
 category: AI 工具教程
 pubDate: 2026-05-14
-updatedDate: 2026-08-21
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -25,7 +25,7 @@ relatedTranslationKeys:
 draft: false
 ---
 
-如果你以前按照本文的方法，用 `CODEX_HOME` 配合 `open -n -a Codex` 在 Mac 上打开两套 Codex，那么现在可以不用再折腾这条命令了。截至 2026-08-21，这种方式已经不能稳定保留两个并行登录的 ChatGPT 账号。
+如果你以前按照本文的方法，用 `CODEX_HOME` 配合 `open -n -a Codex` 在 Mac 上打开两套 Codex，那么现在可以不用再折腾这条命令了。截至 2026-08-28，这种方式已经不能稳定保留两个并行登录的 ChatGPT 账号。
 
 变化之后，需求其实没有消失：一个账号的 Codex 额度用完了，另一个账号还有额度，怎样少做几次退出和重新登录？目前更实用的答案不是重新想办法“多开”，而是先把账号保存下来，需要时切换当前账号。
 
@@ -104,7 +104,7 @@ open "/Applications/Codex Bar.app"
 
 ## 5. 为什么我没有优先选择 CodexBar
 
-[steipete/CodexBar](https://github.com/steipete/CodexBar) 无疑是更成熟、也更流行的项目。截至 2026-08-21，它在 GitHub 上约有 2 万个 star，macOS 用户可以下载 Release，也可以直接运行：
+[steipete/CodexBar](https://github.com/steipete/CodexBar) 无疑是更成熟、也更流行的项目。截至 2026-08-28，它在 GitHub 上约有 2.06 万个 star，macOS 用户可以下载 Release，也可以直接运行：
 
 ```bash
 brew install --cask codexbar
