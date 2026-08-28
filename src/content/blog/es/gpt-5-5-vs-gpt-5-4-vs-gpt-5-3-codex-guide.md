@@ -3,11 +3,11 @@ locale: es
 translationKey: gpt-5-5-vs-gpt-5-4-vs-gpt-5-3-codex-guide
 title: "GPT-5.5, 5.4 y 5.3 Codex en 2026: comparativa para decidir mejor"
 headline: Cómo elegir entre GPT-5.5, GPT-5.4 y GPT-5.3 Codex según tu flujo real
-description: "Con fuentes oficiales de OpenAI vigentes al 30 de abril de 2026, esta guía compara GPT-5.3 Codex, GPT-5.4 y GPT-5.5 por capacidades, coste y encaje operativo."
+description: "Actualizado el 28 de agosto de 2026: compara GPT-5.3 Codex, GPT-5.4 y GPT-5.5 por capacidad, coste de API, encaje operativo y necesidad de migración."
 summary: Una guía de decisión para equipos que necesitan combinar GPT-5.3 Codex, GPT-5.4 y GPT-5.5 sin perder control de coste ni calidad.
 category: Comparativas de modelos de IA
 pubDate: 2026-04-29
-updatedDate: 2026-04-30
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -30,7 +30,7 @@ draft: false
 
 OpenAI encadenó tres lanzamientos clave de la familia GPT-5 en poco más de dos meses: GPT-5.3-Codex en febrero, GPT-5.4 en marzo y GPT-5.5 el 23 de abril de 2026 (con disponibilidad en API desde el 24 de abril). Para la mayoría de equipos, el reto ya no es acceder al modelo, sino elegir bien según el tipo de trabajo.
 
-Este análisis pone GPT-5.3 Codex, GPT-5.4 y GPT-5.5 dentro del mismo marco de decisión. Las cifras y descripciones se apoyan en comunicados oficiales de OpenAI, documentación de API y artículos del Help Center consultables hasta **2026-04-30**.
+Este análisis está pensado para equipos que aún usan o evalúan GPT-5.3 Codex, GPT-5.4 o GPT-5.5. En proyectos nuevos conviene incluir la familia GPT-5.6 actual en la misma prueba. Las especificaciones y precios se revisaron en la documentación oficial de OpenAI el **2026-08-28**; los precios son solo orientativos.
 
 ## 1. Posicionamiento y contexto de lanzamiento
 
@@ -38,7 +38,7 @@ Este análisis pone GPT-5.3 Codex, GPT-5.4 y GPT-5.5 dentro del mismo marco de d
 | --- | --- | --- | --- |
 | GPT-5.3-Codex | 2026-02-05 | Modelo centrado en Codex para ejecución agentic de tareas de código | Desarrollo en terminal, depuración, cadenas largas de cambios |
 | GPT-5.4 | 2026-03-05 | Primer modelo unificado que integra razonamiento, coding, computer use y tool search | Proyectos multiarchivo y flujos mixtos de ingeniería + conocimiento |
-| GPT-5.5 | 2026-04-23 (API: 2026-04-24) | Modelo insignia actual, reforzado para planificación, ejecución y autocorrección | Flujo agentic complejo y entregas end-to-end |
+| GPT-5.5 | 2026-04-23 (API: 2026-04-24) | Modelo insignia en su lanzamiento, reforzado para planificación, ejecución y autocorrección | Flujo agentic complejo y entregas end-to-end |
 
 La dirección del producto es coherente: primero especialización en ejecución de código, luego integración entre herramientas y, finalmente, más autonomía en tareas largas. Cuando el trabajo cruza código, análisis y operación, esa evolución se nota enseguida.
 

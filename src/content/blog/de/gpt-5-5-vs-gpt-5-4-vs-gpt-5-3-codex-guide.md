@@ -3,7 +3,7 @@ locale: de
 translationKey: gpt-5-5-vs-gpt-5-4-vs-gpt-5-3-codex-guide
 title: "GPT-5.5, 5.4 und 5.3 Codex im Vergleich: Effizienz, Kosten, Einsatz"
 headline: Wie wählt man zwischen GPT-5.5, GPT-5.4 und GPT-5.3-Codex im Arbeitsalltag?
-description: "Offizielle OpenAI-Quellen bis 30. April 2026: GPT-5.3 Codex, GPT-5.4 und GPT-5.5 im Vergleich nach Leistung, Kosten und Praxiseinsatz."
+description: "Aktualisiert am 28. August 2026: GPT-5.3 Codex, GPT-5.4 und GPT-5.5 im Vergleich nach Fähigkeiten, API-Kosten, Einsatz und Migrationsbedarf."
 summary: Ein praxisnaher Auswahlrahmen für Teams, die GPT-5.3 Codex, GPT-5.4 und GPT-5.5 je nach Aufgabenkomplexität sinnvoll kombinieren wollen.
 category: KI-Modellvergleiche
 pubDate: 2026-04-29
@@ -30,7 +30,7 @@ draft: false
 
 Zwischen Februar und April 2026 hat OpenAI die GPT-5-Linie in kurzer Folge weiterentwickelt: zuerst GPT-5.3-Codex, dann GPT-5.4, anschließend GPT-5.5. Für Entwicklerteams ist damit nicht mehr die Verfügbarkeit das Hauptproblem, sondern die richtige Zuordnung: Welches Modell liefert bei welcher Aufgabenklasse das beste Verhältnis aus Qualität, Laufzeit und Kosten?
 
-Dieser Beitrag ordnet GPT-5.3 Codex, GPT-5.4 und GPT-5.5 entlang einer gemeinsamen Entscheidungslogik ein. Grundlage sind offizielle OpenAI-Release-Seiten, Help-Center-Hinweise und API-Dokumentation mit Stand **2026-04-30**.
+Dieser Beitrag richtet sich an Teams, die GPT-5.3 Codex, GPT-5.4 oder GPT-5.5 noch betreiben oder bewerten. Bei neuen Projekten sollte die aktuelle GPT-5.6-Familie in denselben Test einbezogen werden. Spezifikationen und Preise wurden am **2026-08-28** anhand der offiziellen OpenAI-Dokumentation geprüft; Preisangaben dienen nur als Referenz.
 
 ## 1. Positionierung und Release-Kontext: Welche Lücke sollte jede Version schließen?
 
@@ -38,7 +38,7 @@ Dieser Beitrag ordnet GPT-5.3 Codex, GPT-5.4 und GPT-5.5 entlang einer gemeinsam
 | --- | --- | --- | --- |
 | GPT-5.3-Codex | 2026-02-05 | Codex-zentriertes Modell für agentisches Coding | Terminal-lastige Entwicklung, Debugging, lange Codeketten |
 | GPT-5.4 | 2026-03-05 | Erstes stark integriertes Frontier-Modell für Reasoning, Coding, Computer Use und Tool Search | Multi-Tool-Abläufe, größere Codebasen, Mischaufgaben |
-| GPT-5.5 | 2026-04-23 (API ab 2026-04-24) | Aktuelles Flaggschiff für komplexe Realweltaufgaben mit stärkerer Planungs- und Prüfleistung | Komplexe End-to-End-Workflows mit hoher Autonomie |
+| GPT-5.5 | 2026-04-23 (API ab 2026-04-24) | Zum Release das Flaggschiff für komplexe Realweltaufgaben mit stärkerer Planungs- und Prüfleistung | Komplexe End-to-End-Workflows mit hoher Autonomie |
 
 Die Linie ist klar erkennbar: GPT-5.3-Codex optimiert die Coding-Tiefe, GPT-5.4 integriert Arbeitsmodi, GPT-5.5 erhöht die Ausführungssicherheit bei langen, mehrstufigen Aufgaben. Sobald ein Workflow über reines Coding hinausgeht, wird dieser Unterschied im Alltag spürbar.
 

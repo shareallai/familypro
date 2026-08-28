@@ -3,7 +3,7 @@ locale: fr
 translationKey: gpt-5-5-vs-gpt-5-4-vs-gpt-5-3-codex-guide
 title: "GPT-5.5, 5.4 et 5.3 Codex : guide de choix pour les équipes en 2026"
 headline: Comment arbitrer entre GPT-5.5, GPT-5.4 et GPT-5.3 Codex selon vos cas réels
-description: "Sources officielles OpenAI au 30 avril 2026 : comparaison de GPT-5.3 Codex, GPT-5.4 et GPT-5.5 selon performance, coût et usages."
+description: "Mis à jour le 28 août 2026 : GPT-5.3 Codex, GPT-5.4 et GPT-5.5 comparés selon capacités, coût API, usages et intérêt d’une migration."
 summary: Une méthode concrète pour répartir GPT-5.3 Codex, GPT-5.4 et GPT-5.5 selon la complexité des tâches, sans perdre la maîtrise des coûts.
 category: Comparatifs de modèles IA
 pubDate: 2026-04-29
@@ -30,7 +30,7 @@ draft: false
 
 En 2026, OpenAI a enchaîné trois évolutions majeures de la famille GPT-5 en quelques semaines : GPT-5.3-Codex en février, GPT-5.4 en mars, puis GPT-5.5 le 23 avril (disponible en API dès le 24 avril). Pour les équipes produit et ingénierie, la question n’est plus l’accès au modèle, mais l’allocation pertinente selon le niveau de complexité.
 
-Ce billet propose une comparaison structurée de GPT-5.3 Codex, GPT-5.4 et GPT-5.5, avec une logique de décision orientée exploitation réelle. Les informations proviennent des annonces officielles OpenAI, de la documentation API et du Help Center, telles qu’elles étaient visibles au **2026-04-30**.
+Ce billet s’adresse aux équipes qui utilisent ou évaluent encore GPT-5.3 Codex, GPT-5.4 ou GPT-5.5. Pour un nouveau projet, la famille GPT-5.6 actuelle doit entrer dans le même test. Les spécifications et tarifs ont été revérifiés dans la documentation officielle OpenAI le **2026-08-28** ; les prix restent indicatifs.
 
 ## 1. Positionnement des trois générations
 
@@ -38,7 +38,7 @@ Ce billet propose une comparaison structurée de GPT-5.3 Codex, GPT-5.4 et GPT-5
 | --- | --- | --- | --- |
 | GPT-5.3-Codex | 2026-02-05 | Modèle orienté Codex, optimisé pour l’exécution agentique de tâches de développement | Terminal, debug, chaînes longues de modifications |
 | GPT-5.4 | 2026-03-05 | Premier modèle unifié combinant fortement reasoning, coding, computer use et tool search | Projets multi-fichiers, exécution inter-outils, flux mixtes |
-| GPT-5.5 | 2026-04-23 (API : 2026-04-24) | Modèle phare actuel, renforcé sur la planification et l’auto-vérification en tâches complexes | Workflows agentiques complexes, livrables end-to-end |
+| GPT-5.5 | 2026-04-23 (API : 2026-04-24) | Modèle phare lors de sa sortie, renforcé sur la planification et l’auto-vérification | Workflows agentiques complexes, livrables end-to-end |
 
 La trajectoire est lisible : spécialisation coding avec GPT-5.3-Codex, consolidation des modes d’exécution avec GPT-5.4, puis montée en autonomie opérationnelle avec GPT-5.5. Dès qu’un flux dépasse le pur développement, l’écart fonctionnel devient concret.
 

@@ -1,13 +1,13 @@
 ---
 locale: zh
 translationKey: gpt-5-5-vs-gpt-5-4-vs-gpt-5-3-codex-guide
-title: 2026年GPT-5.5、5.4 与 5.3 Codex 全面对比：开发效率、成本与企业落地选型指南
-headline: GPT-5.5、GPT-5.4 与 GPT-5.3 Codex 如何取舍：面向实际工作流的比较
-description: 基于 2026 年 2 月至 4 月 OpenAI 官方发布、Help Center 与 API 文档，本文从模型定位、上下文规模、关键基准、成本结构和落地场景五个维度，对 GPT-5.3 Codex、GPT-5.4、GPT-5.5 做系统对比，并给出可直接执行的 ChatGPT/Codex 选型路径。
-summary: 如果你在 GPT-5.3 Codex、GPT-5.4、GPT-5.5 之间犹豫，本文提供一套面向开发与知识工作的实用决策框架。
+title: GPT-5.5、5.4 与 5.3 Codex 对比：成本和场景
+headline: GPT-5.5、GPT-5.4 与 GPT-5.3 Codex 怎么选：从任务和成本判断
+description: 截至 2026 年 8 月 28 日，本文依据 OpenAI 官方文档比较 GPT-5.3 Codex、GPT-5.4 与 GPT-5.5 的定位、上下文、API 价格和适用任务，并说明已有工作流是否值得迁移。
+summary: 这三款模型仍适合做历史工作流评估，但已不是新项目的默认选择。本文比较它们的能力边界、API 成本与迁移条件。
 category: AI 模型对比
 pubDate: 2026-04-29
-updatedDate: 2026-04-30
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -28,9 +28,9 @@ topOffer:
 draft: false
 ---
 
-2026 年 2 月到 4 月，OpenAI 在 GPT-5 系列上连续完成三次关键更新：先有 GPT-5.3-Codex，随后是 GPT-5.4，最后是 4 月 23 日发布的 GPT-5.5。对开发者和企业团队而言，真正需要回答的问题已经不是“能不能用上前沿模型”，而是“在既定预算和交付周期内，哪一代模型最合适”。
+如果你的 API、Codex 流程或评测集仍围绕 GPT-5.3-Codex、GPT-5.4、GPT-5.5，这三款模型的差异仍值得弄清；如果是新项目，则应同时评估 OpenAI 当前推荐的 GPT-5.6 系列。本文不把旧模型包装成最新选择，而是回答一个更具体的问题：已有工作流是否值得保留，以及迁移前应该比较哪些指标。
 
-本文只做一件事：把 GPT-5.3 Codex、GPT-5.4、GPT-5.5 放在同一套评价框架里比较，重点看定位、规格、基准和落地场景。文中口径以 OpenAI 官方发布、Help Center 与 API 文档为主，数据截至 **2026-04-30**。
+下文依据 OpenAI 官方模型页比较定位、规格、价格和使用场景，信息核对日期为 **2026-08-28**。价格为 API 每 100 万 tokens 的美元标价，**仅供参考，实际以官方定价页、账单页及账号可用额度为准**。
 
 ## 1. 模型定位与发布时间：三次迭代各自解决什么问题
 
@@ -38,7 +38,7 @@ draft: false
 | --- | --- | --- | --- |
 | GPT-5.3-Codex | 2026-02-05 | Codex 体系下的 agentic coding 主力模型 | 终端开发、调试、长链路工程任务 |
 | GPT-5.4 | 2026-03-05 | 首个把推理、编码、computer use、tool search 深度整合的通用前沿模型 | 跨工具协作、多文件工程、知识工作 |
-| GPT-5.5 | 2026-04-23（API 于 2026-04-24 可用） | 当前旗舰模型，强调复杂任务中的自主规划、执行与校验 | 高复杂度 agentic 工作流、端到端项目交付 |
+| GPT-5.5 | 2026-04-23（API 于 2026-04-24 可用） | 发布时的旗舰模型，强调复杂任务中的自主规划、执行与校验 | 高复杂度 agentic 工作流、端到端项目交付 |
 
 如果把这三代模型放在同一条演进线上，可以看到方向非常明确：GPT-5.3-Codex 重点解决“把代码任务做深做稳”，GPT-5.4 开始强调“把不同工具协同起来”，GPT-5.5 则把重点进一步推向“在复杂任务中减少人工接管频率”。因此，是否升级并不只取决于参数大小，而取决于你的任务是不是已经进入跨工具、长链路和高容错要求的阶段。
 
@@ -92,9 +92,9 @@ GPT-5.4 是 OpenAI 明确强化 computer use 的一代，已经能覆盖相当�
 
 这套分层方式的关键不在于“永远使用最新”，而在于让模型能力和任务复杂度相匹配，避免在低复杂任务上过度投入，也避免在高复杂任务上因为模型能力不足导致反复返工。
 
-## 5. 结语：模型迭代很快，决策框架要保持稳定
+## 5. 是否继续使用：让评测结果决定迁移
 
-从 GPT-5.3-Codex 到 GPT-5.4，再到 GPT-5.5，OpenAI 的技术路线已经从“单点能力增强”逐步转向“面向真实工作的综合执行”。对团队来说，长期有效的策略不是追逐单次发布热点，而是形成一套可复用的模型分工机制：什么任务用什么模型、在什么阈值下升级、如何评估成本与交付质量。只要这套机制稳定，新模型迭代就会变成增益，而不是新的决策负担。
+已有流程稳定、回归成本高时，可以暂时保留旧模型；新任务或成本压力明显时，再把 GPT-5.6 Sol、Terra、Luna 加入同一套评测。至少记录完整任务成功率、总 token、端到端延迟与人工返工次数。模型单价只是输入条件，真正影响迁移决定的是交付一项任务所需的总成本。
 
 ## 官方参考
 
@@ -104,6 +104,8 @@ GPT-5.4 是 OpenAI 明确强化 computer use 的一代，已经能覆盖相当�
 - [Models (OpenAI API Docs)](https://developers.openai.com/api/docs/models)
 - [GPT-5.3-Codex model details](https://developers.openai.com/api/docs/models/gpt-5.3-codex)
 - [GPT-5.4 model details](https://developers.openai.com/api/docs/models/gpt-5.4)
+- [GPT-5.5 model details](https://developers.openai.com/api/docs/models/gpt-5.5)
+- [Current model guidance](https://developers.openai.com/api/docs/guides/latest-model)
 - [GPT-5.3 and GPT-5.5 in ChatGPT (Help Center)](https://help.openai.com/en/articles/11909943-gpt-53-and-gpt-55-in-chatgpt)
 - [OpenAI API Pricing](https://openai.com/api/pricing/)
 - [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index)
