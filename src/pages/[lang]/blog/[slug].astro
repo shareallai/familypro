@@ -4,6 +4,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostComments from '../../../components/PostComments.astro';
 import PostCardList from '../../../components/PostCardList.astro';
 import TopOfferCard from '../../../components/TopOfferCard.astro';
+import { getExternalLinkRel } from '../../../lib/markdown/follow-origins.js';
 import { getSponsorCtaCopy } from '../../../lib/sponsorCtaCopy';
 import {
   DEFAULT_LANG,
@@ -156,7 +157,11 @@ const jsonLd = {
 
 const topOffer = post.data.topOffer;
 const sponsorCta = getSponsorCtaCopy(currentLang);
-const sponsorRel = 'nofollow sponsored noopener noreferrer';
+const sponsorRel = getExternalLinkRel(sponsorCta.href, {
+  sponsored: true,
+  noopener: true,
+  noreferrer: true,
+});
 ---
 
 <BaseLayout

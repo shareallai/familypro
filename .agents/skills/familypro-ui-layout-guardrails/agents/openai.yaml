@@ -1,4 +1,7 @@
 interface:
-  display_name: "Familypro UI Layout Guardrails"
+  display_name: "FamilyPro UI Layout Guardrails"
   short_description: "Guardrails for responsive blog/article layout changes"
-  default_prompt: "Use $familypro-ui-layout-guardrails when adjusting layout or responsive behavior for familypro pages."
+  default_prompt: "Use $familypro-ui-layout-guardrails when adjusting layout or responsive behavior for FamilyPro pages."
+
+policy:
+  allow_implicit_invocation: true

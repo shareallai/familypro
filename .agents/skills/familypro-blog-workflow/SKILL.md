@@ -3,7 +3,7 @@ name: familypro-blog-workflow
 description: Use when creating, rewriting, expanding, translating, localizing, fact-checking, SEO-polishing, or reviewing blog posts for the familypro Astro multilingual content site.
 ---
 
-# Familypro Blog Workflow
+# FamilyPro Blog Workflow
 
 Use this skill for blog-content work in the `familypro` repo, including:
 
@@ -18,7 +18,7 @@ Use this skill for blog-content work in the `familypro` repo, including:
 
 Before doing substantive work, align with:
 
-- `AGENT.md`
+- `AGENTS.md`
 - `src/content.config.ts`
 - The relevant file(s) under `src/content/blog/**`
 
@@ -43,7 +43,7 @@ You may need more than one reference file, but only load the ones relevant to th
 - Preserve shared facts, product claims, and `translationKey` consistency across languages.
 - Use numbered section headings by default in article bodies (`h2`: `1.` / `2.` / `3.`, `h3`: `1.1` / `1.2`), with numbering aligned to real structure.
 - Any blog file edit (frontmatter or body) must sync `updatedDate` to the current date (`YYYY-MM-DD`).
-- If an edited post contains explicit freshness markers in frontmatter/body (for example `as of`, `last checked on`, `截至`, `最后核对日期`), sync those dates to the current verification date and keep wording consistent across language variants.
+- Treat `updatedDate` and factual freshness markers separately. Always sync `updatedDate` after a blog edit, but update markers such as `as of`, `last checked on`, `截至`, or `最后核对日期` only after re-verifying the corresponding facts against their sources.
 - If facts, commands, links, or product behavior may have changed, verify them before writing.
 - If a post includes reference links, it must end with a reference section:
   - `## References` for non-Chinese posts
@@ -51,6 +51,7 @@ You may need more than one reference file, but only load the ones relevant to th
 - Keep the final localized reference heading unnumbered so repository validation scripts pass.
 - Treat locale-specific SEO length hard caps as mandatory, not advisory. If `title` or `description` exceeds the hard cap for that language, rewrite it.
 - If the user asks for review, findings come first; do not silently rewrite content unless asked.
+- For review-only work, keep the repository response contract but put the highest-priority findings directly in its first section instead of leading with a generic summary.
 
 ## Validation
 
@@ -58,6 +59,6 @@ You may need more than one reference file, but only load the ones relevant to th
 - After content changes, run `npm run build`.
 - For posts with reference links, run `npm run check:references` to verify the final reference section exists and includes cited references.
 - If `title` or `description` was reviewed or edited, measure length explicitly against the locale-specific hard caps before finishing.
-- If the edited post includes explicit freshness dates, verify all in-article date markers were updated consistently in each edited language file.
+- If facts were re-verified, confirm the affected in-article freshness dates match that verification date. If no factual re-verification occurred, confirm those markers were preserved.
 - If `title`, `headline`, `description`, canonical, hreflang, or structured data changed, inspect generated output or built HTML.
 - If review is requested, validate by citing concrete file paths and line numbers.

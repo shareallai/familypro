@@ -1,6 +1,7 @@
 ---
 import SEO from '../components/SEO.astro';
 import GoogleVerification from '../components/GoogleVerification.astro';
+import { getExternalLinkRel } from '../lib/markdown/follow-origins.js';
 import { getSponsorCtaCopy } from '../lib/sponsorCtaCopy';
 
 interface Props {
@@ -61,6 +62,11 @@ const manifestHref = new URL(`${baseUrl}site.webmanifest`, canonicalOrigin).toSt
 const sitemapHref = `${baseUrl}sitemap.xml`;
 const activeLanguage = languageLinks.find((item) => item.active) ?? languageLinks[0];
 const sponsorCta = getSponsorCtaCopy(lang);
+const sponsorRel = getExternalLinkRel(sponsorCta.href, {
+  sponsored: true,
+  noopener: true,
+  noreferrer: true,
+});
 ---
 
 <!doctype html>
@@ -102,7 +108,7 @@ const sponsorCta = getSponsorCtaCopy(lang);
             class="site-nav-sponsor"
             href={sponsorCta.href}
             target="_blank"
-            rel="nofollow sponsored noopener noreferrer"
+            rel={sponsorRel}
             aria-label={sponsorCta.navAriaLabel}
           >
             {sponsorCta.navLabel}

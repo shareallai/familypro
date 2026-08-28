@@ -16,7 +16,7 @@ Use this reference when creating a new post, rewriting an existing one, expandin
    - `headline`: optional visible `h1` when wording should differ slightly from `title`
    - `description` and `summary`: concise, readable, and aligned with the actual article
    - `updatedDate`: every blog edit must sync `updatedDate` to today's date (`YYYY-MM-DD`)
-   - If the post includes explicit freshness dates (`as of`, `last checked on`, `截至`, `最后核对日期`), sync those markers to the current verification date in every edited language file.
+   - Keep factual freshness dates separate from `updatedDate`. Change `as of`, `last checked on`, `截至`, or `最后核对日期` only after re-verifying the claims they cover; otherwise preserve the existing data date.
    - Keep `title`/`headline` semantically aligned with the same core keyword so the search promise and page promise match.
 4. Outline before drafting.
    - Decide the article argument/order first.
@@ -33,8 +33,8 @@ Use this reference when creating a new post, rewriting an existing one, expandin
 6. If the article contains commands, links, pricing, versions, or operational steps, verify them.
    - Google-facing baseline: write for an intended audience first, not for search-engine-first filler.
    - Make the first screen explicit about what problem is solved, for whom, and what readers can do after finishing.
-   - External links should default to `rel="nofollow"`.
-   - If you write raw HTML anchors instead of Markdown links, keep `rel="nofollow"` explicit.
+   - External links should default to `rel="nofollow"`, except origins listed in the repository `FOLLOW_ORIGINS` allowlist.
+   - For raw HTML anchors, omit `nofollow` for allowlisted origins. Add `sponsored` to commercial links; use `nofollow sponsored` when a commercial target is not allowlisted.
    - Prefer descriptive anchor text over generic text like "click here".
    - If adding images, ensure they use meaningful alt text and are near relevant paragraph context.
    - If the post includes reference links, add a final reference section that lists those references:
@@ -42,7 +42,7 @@ Use this reference when creating a new post, rewriting an existing one, expandin
      - Chinese: `## 官方参考`
 7. Build and inspect.
    - Run `npm run sync:updated-date` after blog edits.
-   - If explicit freshness dates exist in the post, verify those date strings were updated consistently in all edited language variants.
+   - If facts were re-verified, update the affected freshness dates consistently in the edited language variants. If not, verify that existing factual dates were preserved.
    - Run `npm run check:references` when the post cites references.
    - Run `npm run build` before finishing.
 8. Post-publish SEO sanity check (when Search Console is available).

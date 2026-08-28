@@ -1,4 +1,6 @@
 ---
+import { getExternalLinkRel } from '../lib/markdown/follow-origins.js';
+
 interface Props {
   title: string;
   subtitle: string;
@@ -7,6 +9,11 @@ interface Props {
 }
 
 const { title, subtitle, buttonText, buttonLink } = Astro.props as Props;
+const buttonRel = getExternalLinkRel(buttonLink, {
+  sponsored: true,
+  noopener: true,
+  noreferrer: true,
+});
 ---
 
 <section class="top-offer" aria-label={title}>
@@ -14,7 +21,7 @@ const { title, subtitle, buttonText, buttonLink } = Astro.props as Props;
     <p class="top-offer-title">{title}</p>
     <p class="top-offer-subtitle">{subtitle}</p>
   </div>
-  <a class="top-offer-cta" href={buttonLink} rel="nofollow sponsored">
+  <a class="top-offer-cta" href={buttonLink} rel={buttonRel}>
     <span>{buttonText}</span>
     <span class="top-offer-cta-arrow" aria-hidden="true">→</span>
   </a>

@@ -1,3 +1,5 @@
+import { isFollowAllowed, normalizeHttpOrigin } from './follow-origins.js';
+
 function toRelTokens(rel) {
   if (Array.isArray(rel)) {
     return rel.flatMap((value) => String(value).split(/\s+/)).filter(Boolean);
@@ -27,14 +29,6 @@ function parseHttpUrl(href, siteOrigin) {
   }
 }
 
-function normalizeOrigin(origin) {
-  try {
-    return new URL(origin).origin;
-  } catch {
-    return null;
-  }
-}
-
 function hasRelToken(tokens, token) {
   const lowerToken = token.toLowerCase();
   return tokens.some((value) => String(value).toLowerCase() === lowerToken);
@@ -58,19 +52,7 @@ function visit(node, callback) {
 }
 
 export function rehypeExternalLinkNofollow({ siteOrigin, followOrigins = [] }) {
-  const normalizedSiteOrigin = normalizeOrigin(siteOrigin);
-  const allowedFollowOrigins = new Set();
-
-  if (normalizedSiteOrigin) {
-    allowedFollowOrigins.add(normalizedSiteOrigin);
-  }
-
-  for (const followOrigin of followOrigins) {
-    const normalizedFollowOrigin = normalizeOrigin(followOrigin);
-    if (normalizedFollowOrigin) {
-      allowedFollowOrigins.add(normalizedFollowOrigin);
-    }
-  }
+  const normalizedSiteOrigin = normalizeHttpOrigin(siteOrigin);
 
   return (tree) => {
     visit(tree, (node) => {
@@ -85,7 +67,7 @@ export function rehypeExternalLinkNofollow({ siteOrigin, followOrigins = [] }) {
       }
 
       const relTokens = toRelTokens(node.properties?.rel);
-      if (allowedFollowOrigins.has(parsedUrl.origin)) {
+      if (isFollowAllowed(parsedUrl.href, { siteOrigin: normalizedSiteOrigin, followOrigins })) {
         const cleanedRelTokens = removeRelToken(relTokens, 'nofollow');
         node.properties = node.properties ?? {};
 

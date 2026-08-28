@@ -5,7 +5,7 @@ description: Use when adding, replacing, organizing, captioning, optimizing, or 
 
 # FamilyPro Blog Illustration Workflow
 
-Use this skill together with `familypro-blog-workflow` whenever a blog task touches images, screenshots, diagrams, or article illustrations.
+Use this skill together with `familypro-blog-workflow` when the task also edits `src/content/blog/**`. For asset-only organization, optimization, or verification under `public/blog/**`, use this workflow on its own.
 
 ## Core Rules
 
@@ -17,6 +17,7 @@ Use this skill together with `familypro-blog-workflow` whenever a blog task touc
 - Add meaningful `alt` text for non-decorative images.
 - Add a caption when the image contains prices, UI state, dates, or operational context.
 - If the image shows prices, balances, inventory, limits, or UI availability, state the data date or that values are only examples and final state depends on the live page.
+- Image-specific sizing must not change the article content column, TOC layout, or responsive mode. Reuse shared article styles when available; do not create per-article decorative layout systems.
 
 ## Workflow
 
@@ -45,7 +46,7 @@ Use this pattern for article screenshots:
   <img
     src="../../../blog/{slug}/{filename}.png"
     alt="Specific description of what the screenshot shows."
-    style="display:block; width:100%; max-width:520px; height:auto; margin:0 auto; border:1px solid #d1d5db; border-radius:12px; background:#f8fafc;"
+    style="display:block; width:100%; max-width:520px; height:auto; margin:0 auto;"
   />
   <figcaption>Short caption with context, date, or “final state depends on the live page” where relevant.</figcaption>
 </figure>
@@ -56,6 +57,7 @@ Adjust `max-width` to suit the asset:
 - Tall mobile screenshots: usually `420px` to `560px`.
 - Wide desktop screenshots: usually `100%` without a narrow max width.
 - Small logos/icons: use smaller explicit max widths and concise captions only if needed.
+- Keep borders, backgrounds, radii, and spacing in shared article styles rather than repeating decorative values in each post.
 
 ## Verification Checklist
 

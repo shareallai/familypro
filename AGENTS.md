@@ -6,7 +6,7 @@
 - 优先保证可构建、可部署、可抓取、可索引。
 
 ## 2) Repo Truth Sources
-改动前先对齐以下文件：
+按任务涉及范围对齐以下事实源；不要求为无关改动读取全部文件：
 - 内容 schema：`src/content.config.ts`
 - 内容目录（主事实源）：`src/content/blog/**`
 - 语种与 SEO 辅助函数：`src/lib/i18n.ts`
@@ -34,8 +34,8 @@
 - `headline` 为可选字段；若提供，则作为页面可见 `h1`，而 `title` 继续用于 HTML `<title>`、OG/Twitter 等 SEO 标题。
 - 公开文章必须 `draft: false`。
 - 日期字段必须明确：`pubDate`。只要对博客文件（frontmatter 或正文）有修改，必须同步 `updatedDate` 为修改当日（`YYYY-MM-DD`）；其中 `title` / `headline` / `description` / `summary` / canonical / hreflang 等 SEO 相关调整同样属于必更新场景。
-- 涉及价格/汇率的内容必须标注“数据日期 + 仅供参考”。
-- `service` 仅允许 schema 白名单值。
+- 涉及价格/汇率的内容必须标注“数据日期 + 仅供参考”。`updatedDate` 表示文章文件修改日期；正文中的数据核对日期只有在重新核实对应来源后才能更新，不能因润色、翻译或 SEO 调整自动改成当天。
+- `service` 保持为稳定字符串：优先复用既有服务名称；新增服务可以使用新的、清晰且后续可复用的名称。
 - 新增语种时，若不改 `locales/registry`，系统会使用默认 UI 文案兜底；这是允许的。
 
 ## 5) Writing & Structure Requirements
@@ -56,14 +56,14 @@
 - 若使用 `headline`，应让 `title` 更偏搜索结果表达，`headline` 更偏页面阅读体验；两者都必须准确概括内容，且不得互相矛盾。
 - 内容必须以读者问题解决为首要目的；禁止仅为搜索流量堆砌关键词、段落或批量同质页面。
 - 标题与首屏内容必须承诺一致，禁止“标题承诺 A、正文只覆盖 B”的诱导式写法。
-- 文章正文中的站外链接默认必须输出 `rel="nofollow"`；若仓库实现存在明确的 follow allowlist，则以 allowlist 为准。若作者使用原生 HTML `<a>`，也必须遵循这一规则。
+- 文章正文中的站外链接默认必须输出 `rel="nofollow"`；仓库 `FOLLOW_ORIGINS` 中的域名允许 follow，不得附加 `nofollow`。商业推广链接必须包含 `sponsored`；若目标在 follow allowlist 中则可 follow，否则使用 `nofollow sponsored`。若作者使用原生 HTML `<a>`，也必须遵循同一规则。
 - 站内内链应使用可抓取的 `<a href>`，并使用可读、具体的锚文本；避免仅用 `click here` 一类泛化文案。
 - `title` 长度建议：
   - 中文页：20-32 个汉字（硬上限 40 汉字）。
-  - 英文/日文页：45-65 个字符（硬上限 70 字符）。
+  - 所有非中文页面：45-65 个字符（硬上限 70 字符）。
 - `description` 长度建议：
   - 中文页：60-90 个汉字（硬上限 110 汉字）。
-  - 英文/日文页：120-160 个字符（硬上限 160 字符）。
+  - 所有非中文页面：120-160 个字符（硬上限 160 字符）。
 - 每个可索引页必须有且仅有 1 个绝对 URL canonical，且自指向当前语言页面。
 - 首页/列表页 `hreflang` 基于站内已发布语种；文章页 `hreflang` 基于同一 `translationKey` 的可用翻译语种；都必须包含 `x-default`。
 - 需要去索引时，只允许使用 robots meta 或 `X-Robots-Tag`；禁止把 `noindex` 写在 `robots.txt` 中。
@@ -117,3 +117,5 @@ agent 最终回复使用固定结构：
 2. 修改文件清单
 3. 验证命令与结果
 4. 风险/后续建议（如有）
+
+review-only 任务仍使用上述结构，但第 1 部分必须直接给出最高优先级 findings，不写泛化总结；后续 findings 按严重级别展开。

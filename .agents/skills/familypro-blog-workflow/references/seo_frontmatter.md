@@ -9,7 +9,7 @@ Use this reference when adjusting `title`, `headline`, `description`, `summary`,
 - `description`: search/social summary
 - `summary`: on-page short intro block under the article header
 - Any edit to `title` / `headline` / `description` / `summary` must sync `updatedDate` to today (`YYYY-MM-DD`)
-- If the article includes explicit freshness labels (`as of`, `last checked on`, `截至`, `最后核对日期`), sync those date markers to the current verification date when you edit SEO-facing copy.
+- Editing SEO-facing copy does not by itself refresh factual dates. Update labels such as `as of`, `last checked on`, `截至`, or `最后核对日期` only when the claims they cover were re-verified; otherwise preserve them.
 
 ## Title and headline rules
 
@@ -21,9 +21,9 @@ Use this reference when adjusting `title`, `headline`, `description`, `summary`,
 ## Length guidance
 
 - Chinese `title`: 20-32 Han characters, hard cap 40
-- English/Japanese `title`: 45-65 characters, hard cap 70
+- All non-Chinese `title` values: 45-65 characters, hard cap 70
 - Chinese `description`: 60-90 Han characters, hard cap 110
-- English/Japanese `description`: 120-160 characters, hard cap 160
+- All non-Chinese `description` values: 120-160 characters, hard cap 160
 
 Hard caps are mandatory. Treat anything over the cap as a bug that must be rewritten, not as an acceptable tradeoff.
 
@@ -40,8 +40,8 @@ Hard caps are mandatory. Treat anything over the cap as a bug that must be rewri
 - Aim for a clear `h1 -> h2 -> h3` structure, but only when the article logic supports it.
 - Use numbered `h2` / `h3` headings by default in article body (`h2`: `1.` / `2.`, `h3`: `1.1` / `1.2`) and keep numbering aligned with the true structure.
 - Keep the localized final reference heading unnumbered (`## 官方参考` / `## References`) because repository checks rely on exact heading text.
-- External links in the article body should default to `rel="nofollow"`.
-- If the article uses raw HTML `<a>` tags, keep `rel="nofollow"` explicit instead of assuming the renderer will add it later.
+- External links in the article body should default to `rel="nofollow"`; origins in the repository `FOLLOW_ORIGINS` allowlist must not include `nofollow`.
+- For raw HTML `<a>` tags, apply the same allowlist rule explicitly. Commercial links must include `sponsored`, plus `nofollow` when the target is not allowlisted.
 
 ## Canonical / hreflang / indexing notes
 
@@ -65,7 +65,7 @@ Inspect built output when changing any of the following:
 
 Also verify in-file explicit freshness dates when any SEO-facing copy is edited:
 
-- Intro/body/reference date markers (`as of`, `last checked on`, `截至`, `最后核对日期`) should be updated consistently in each edited language file.
+- If the covered facts were re-verified, update the affected date markers consistently. If no factual verification occurred, confirm the existing markers did not change.
 
 If available, validate these post-build with Search Console:
 

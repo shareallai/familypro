@@ -4,9 +4,8 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
 
 ## Review posture
 
-- Findings first.
+- Findings first. Within the repository's fixed response structure, put the highest-priority findings directly in the first section and do not lead with a generic summary.
 - Prioritize bugs, factual risk, behavioral regressions, stale guidance, broken commands, broken links, and SEO or localization issues.
-- Do not lead with a summary.
 - Do not rewrite content unless the user asks for edits after the review.
 
 ## Review order
@@ -22,7 +21,7 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
    - Are article-body headings consistently numbered by structure (`h2`: `1.` / `2.`, `h3`: `1.1` / `1.2`)?
    - Are any sections thin, duplicated, or mechanically split?
    - Does the prose sound like a human explanation for users who want to understand this topic, rather than a template-like AI draft?
-   - For posts in any language, check sentence-level ambiguity (unclear referents, overloaded long sentences, missing subject/object) using `language-clarity.md`.
+   - For posts in any language, load `language-clarity.md` and check sentence-level ambiguity, information value, and mechanical prose.
 4. Frontmatter and multilingual integrity
    - `locale`, `translationKey`, `title`, `headline`, `description`, `summary`, dates
    - If a blog file was edited, `updatedDate` should be synced to the actual edit date (`YYYY-MM-DD`)
@@ -35,7 +34,7 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
    - first-screen content matches the search promise (no bait-and-switch)
    - links are crawlable (`<a href>`) and anchor text is descriptive
    - image alt text is meaningful where images carry information
-   - external links defaulting to `rel="nofollow"`
+   - external links defaulting to `rel="nofollow"`, with allowlisted origins remaining follow and commercial links carrying `sponsored`
    - likely canonical/hreflang/structured-data implications if relevant to the change
 6. Reference links section integrity
    - If a post includes reference links, it must end with one final localized reference section:
@@ -61,6 +60,6 @@ Use this reference when the user asks to review, audit, inspect, or sanity-check
 - Headings are not numbered or numbering is inconsistent with the actual structure
 - Multilingual variants drift in meaning or over-translate
 - `title` and `h1` no longer describe the same page
-- English or Japanese `title` exceeds 70 characters, or `description` exceeds 160 characters
+- A non-Chinese `title` exceeds 70 characters, or its `description` exceeds 160 characters
 - The article cites external references but does not end with localized final references (`## References` / `## 官方参考`)
 - Canonical/hreflang is internally inconsistent or missing `x-default` where expected

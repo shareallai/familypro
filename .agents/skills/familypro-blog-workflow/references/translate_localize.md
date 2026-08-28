@@ -18,7 +18,7 @@ Use this reference when producing another language version of an article or loca
 - Section numbering structure (`h2`: `1.` / `2.` / `3.`, `h3`: `1.1` / `1.2`) in article body headings
 - `translationKey`
 - Any translated/localized file you edit should sync `updatedDate` to today's date (`YYYY-MM-DD`).
-- If the post has explicit freshness dates (`as of`, `last checked on`, `截至`, `最后核对日期`), update and align those dates across all edited language versions.
+- Preserve the source article's factual freshness dates during translation unless the underlying claims are re-verified. When re-verification occurs, update the affected dates consistently across the edited language versions.
 - If the post includes reference links, each language version should end with a localized final reference section:
   - non-Chinese: `## References`
   - Chinese: `## 官方参考`

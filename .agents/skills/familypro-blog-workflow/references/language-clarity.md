@@ -50,6 +50,19 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Prefer natural transitions that express cause, contrast, or consequence. Avoid stock framing such as “the core is,” “the responsibilities are clear,” “this solution solves,” or “how to choose” when the surrounding prose already conveys that relationship.
 - End after the reader's practical question has been answered. Do not add a generic recap merely to create a conclusion section.
 
+## Information-value pass
+
+Use this pass to detect mechanical or model-like prose without relying on a blacklist of phrases. Apply the test in the target language; wording alone is not evidence of a problem.
+
+1. Classify what each sentence contributes: a fact, reason, condition, consequence, decision criterion, action, or necessary navigation.
+2. Flag a sentence for review when it mainly announces the document's structure, labels the act of explaining, or tells the reader that a conclusion is important without adding subject-matter information.
+3. Run a deletion test: remove the sentence mentally. If the paragraph keeps the same meaning and logical connection, the sentence is likely filler or duplicate navigation.
+4. Run a specificity test on abstract conclusions. Confirm that the sentence names the actual actor, benefit, constraint, comparison baseline, or next action instead of referring vaguely to value, importance, a core idea, or an obvious answer.
+5. Compare section openings and endings. Repeated rhetorical shapes can make prose feel generated even when every sentence is grammatical; vary them according to the underlying logic, not for cosmetic variety.
+6. Rewrite by moving the useful information forward. Replace meta-commentary with the fact, tradeoff, condition, or consequence the reader needs at that point.
+
+Do not remove navigation automatically. A roadmap can be useful in a long or technically complex document when it helps readers choose a path, understand prerequisites, or avoid a costly mistake. Keep it only when the navigation itself changes how the reader uses the document.
+
 ## Sentence-level checks
 
 - Subject is explicit where omission may cause confusion.
@@ -102,3 +115,4 @@ Use this reference when writing, rewriting, localizing, or reviewing blog conten
 - Check whether the article can be shortened without losing the user's scenario, commands, facts, or decision guidance; if yes, shorten it.
 - Look at paragraph and section openings in sequence. Rewrite them if too many begin with the same grammatical pattern, product name, or explanatory formula.
 - Remove any list or recap that merely restates the paragraph immediately before it.
+- Run the information-value pass on the introduction, transitions, section openings, and conclusion; these positions accumulate meta-commentary most easily.

@@ -1,18 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import { FOLLOW_ORIGINS } from '../src/lib/markdown/follow-origins.js';
+import { FOLLOW_ORIGINS, isFollowAllowed } from '../src/lib/markdown/follow-origins.js';
 
 const BLOG_ROOT = 'src/content/blog';
 const ISSUE_PREFIX = 'References section check failed:';
-const FOLLOW_ORIGIN_SET = new Set(
-  FOLLOW_ORIGINS.map((origin) => {
-    try {
-      return new URL(origin).origin;
-    } catch {
-      return null;
-    }
-  }).filter(Boolean),
-);
 
 function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -109,16 +100,11 @@ function collectFollowOriginNofollowIssues(markdown) {
       continue;
     }
 
-    let origin = null;
-    try {
-      origin = new URL(hrefMatch[2]).origin;
-    } catch {
-      origin = null;
-    }
-
-    if (!origin || !FOLLOW_ORIGIN_SET.has(origin)) {
+    if (!isFollowAllowed(hrefMatch[2], { followOrigins: FOLLOW_ORIGINS })) {
       continue;
     }
+
+    const origin = new URL(hrefMatch[2]).origin;
 
     const relMatch = tag.match(/\brel=(["'])([^"']*)\1/i);
     if (!relMatch) {

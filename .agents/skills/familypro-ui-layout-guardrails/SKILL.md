@@ -3,7 +3,7 @@ name: familypro-ui-layout-guardrails
 description: Use when changing UI layout or responsive behavior in the familypro Astro site, especially article/detail/list templates. Covers content-column alignment, desktop/mobile TOC separation, sticky sidebar behavior, active-heading highlighting, overflow handling, and layout regression checks.
 ---
 
-# Familypro UI Layout Guardrails
+# FamilyPro UI Layout Guardrails
 
 Use this skill for template-layer UI changes in:
 
@@ -29,6 +29,7 @@ Use this skill for template-layer UI changes in:
 - Keep desktop TOC independent from main flow (sidebar module), with sticky behavior on desktop only.
 - Prevent content overflow regressions (tables/code blocks/long tokens).
 - Do not introduce per-article hardcoded layout exceptions.
+- Article images may use local `max-width` sizing, but image markup must not redefine the content column, TOC behavior, or responsive layout. Put reusable decoration in shared styles.
 
 ## Recommended implementation pattern
 
