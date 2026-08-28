@@ -3,11 +3,11 @@ locale: en
 translationKey: chatgpt-image-2-guide
 title: "ChatGPT Images 2.0: Plans, Limits, Features, and Nano Banana"
 headline: "ChatGPT Images 2.0 Guide: Plan Tiers, Prompting, and Selection"
-description: "Based on verified information as of 2026-04-22, this guide explains ChatGPT Images 2.0 access tiers, practical limits, feature upgrades, prompting patterns, benchmark context, and Nano Banana tradeoffs."
+description: "Verified as of 2026-04-22: compare ChatGPT Images 2.0 access, limits, upgrades, prompting, benchmarks, and tradeoffs against Nano Banana."
 summary: "ChatGPT Images 2.0 is now available to ChatGPT users. This guide focuses on real decision points: who can use it, how limits work, what improved, and when Nano Banana is a better fit."
 category: AI Tool Insights
 pubDate: 2026-04-22
-updatedDate: 2026-04-22
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:

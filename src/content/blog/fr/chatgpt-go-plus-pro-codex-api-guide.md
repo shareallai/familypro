@@ -3,11 +3,11 @@ locale: fr
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go, Plus, Pro : Codex et facturation API expliqués"
 headline: "ChatGPT Go, Plus, Pro : comment comprendre Codex et OpenAI API"
-description: "Vérifié au 23 avril 2026, ce guide compare ChatGPT Go, Plus et Pro (dont Pro 100/200 USD), précise l’accès Codex et confirme que l’API est facturée séparément."
+description: "Vérifié le 23 avril 2026 : compare ChatGPT Go, Plus et Pro, l’accès à Codex et la facturation séparée de l’API, dont Pro 100/200 USD."
 summary: Si vous hésitez entre ChatGPT Go, Plus et Pro, ou si vous voulez clarifier la relation entre Codex, ChatGPT et OpenAI API, ce guide vous donne un cadre de décision rapide.
 category: Comparatifs d'abonnements IA
 pubDate: 2026-03-31
-updatedDate: 2026-04-24
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -166,35 +166,35 @@ Synthèse en trois lignes :
 
 ## 8. FAQ
 
-### 1) Quelle est la différence la plus concrète entre Go et Plus ?
+### 8.1 Quelle est la différence la plus concrète entre Go et Plus ?
 
 Go vise l’équilibre coût/usage de base. Plus devient plus confortable dès qu’on utilise l’outil souvent et avec des besoins avancés.
 
-### 2) Peut-on utiliser Thinking avec Go ?
+### 8.2 Peut-on utiliser Thinking avec Go ?
 
 Oui. Thinking est activable depuis le menu `+`, avec un plafond public de `10 / 5h`. Si vous lancez souvent des raisonnements longs, Plus ou Pro est généralement plus adapté.
 
-### 3) Plus et Pro incluent-ils tous deux Agent ?
+### 8.3 Plus et Pro incluent-ils tous deux Agent ?
 
 Oui. Les valeurs publiques sont Plus `40 / mois` et Pro `400 / mois`. Si Agent est un outil quotidien, l’écart est important.
 
-### 4) Quelle différence entre Pro 100 USD et Pro 200 USD ?
+### 8.4 Quelle différence entre Pro 100 USD et Pro 200 USD ?
 
 La différence principale est la marge d’usage, pas l’existence des fonctions Pro. Les deux restent des plans Pro.
 
-### 5) "Unlimited" sur Pro signifie-t-il vraiment illimité ?
+### 8.5 "Unlimited" sur Pro signifie-t-il vraiment illimité ?
 
 Non. Ce n’est pas un illimité inconditionnel. Les garde-fous anti-abus et les conditions d’utilisation restent applicables.
 
-### 6) Que se passe-t-il après le plafond principal Go/Plus ?
+### 8.6 Que se passe-t-il après le plafond principal Go/Plus ?
 
 Après dépassement de la fenêtre glissante, l’usage passe sur un modèle mini jusqu’au reset. Ce n’est pas une logique de remise à zéro quotidienne fixe à minuit.
 
-### 7) Je paie déjà Plus/Pro. L’API reste payante séparément ?
+### 8.7 Je paie déjà Plus/Pro. L’API reste payante séparément ?
 
 Oui. Abonnement ChatGPT et API sont séparés ; les frais d’abonnement ne couvrent pas les appels API.
 
-### 8) Puis-je passer de Plus/Pro à Go ?
+### 8.8 Puis-je passer de Plus/Pro à Go ?
 
 Oui, le changement de plan est possible. Les indications officielles précisent en général qu’il n’y a pas de remboursement prorata sur la période en cours, et que le nouveau plan s’applique au cycle suivant.
 

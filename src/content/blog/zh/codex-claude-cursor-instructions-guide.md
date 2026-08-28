@@ -7,7 +7,7 @@ description: 基于 2026 年 3 月 31 日官方文档，系统讲清 Codex、Cla
 summary: 如果你总在 AGENTS.md、CLAUDE.md、.cursor/rules、skills 之间反复混淆，这篇文章会把三套机制的职责边界、加载方式和迁移思路一次讲透。
 category: AI 工具教程
 pubDate: 2026-03-25
-updatedDate: 2026-04-01
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -34,7 +34,7 @@ draft: false
 
 这篇文章基于 **2026 年 3 月 31 日** 可见的官方文档整理，只回答一个最实用的问题：**同样是给 AI Agent 定规矩，Codex、Claude Code、Cursor 分别应该把规范写在哪里，哪些会默认生效，哪些只是按需加载。**
 
-## 先看结论
+## 1. 先看结论
 
 如果你只想先记住一张表，先看这个：
 
@@ -51,11 +51,11 @@ draft: false
 - **Cursor 想默认生效**，优先写 `.cursor/rules/*.mdc`，简单项目也可用根目录 `AGENTS.md`
 - **三者都想做专项 SOP**，再写各自的 skill，而不是把 skill 当成项目主指令
 
-## 一、先分清三种东西
+## 2. 先分清三种东西
 
 很多讨论会混乱，是因为把三类东西混在了一起。
 
-### 1. 项目主指令
+### 2.1 项目主指令
 
 这类文件解决的是“我一进入这个项目，你就先按这些规则干活”。它们的特点通常是：
 
@@ -69,7 +69,7 @@ draft: false
 - Claude Code 的 `CLAUDE.md`
 - Cursor 的 `.cursor/rules/*.mdc`，或它支持的根目录 `AGENTS.md`
 
-### 2. 专项 skill / workflow
+### 2.2 专项 skill / workflow
 
 这类文件解决的是“只有当任务属于某一类时，才加载这套工作流”。它们更像 SOP 包，不像项目入口。
 
@@ -82,7 +82,7 @@ draft: false
 
 它们不适合承担“这个项目的所有默认规则”。
 
-### 3. 用户级配置
+### 2.3 用户级配置
 
 这类东西不是项目共享规范，而是你个人机器上的长期偏好，比如：
 
@@ -92,11 +92,11 @@ draft: false
 
 所以当你说“我想全局都这样”，要先想清楚你说的是**这个仓库所有人都该这样**，还是**只有我这台机器都这样**。
 
-## 二、Codex：`AGENTS.md` 是主入口，skill 是按需读
+## 3. Codex：`AGENTS.md` 是主入口，skill 是按需读
 
 Codex 这套机制最容易总结，因为官方写得很明确：`AGENTS.md` 是项目级主指令，skills 走 progressive disclosure。
 
-### 2.1 `AGENTS.md` 会在开工前进入指令链
+### 3.1 `AGENTS.md` 会在开工前进入指令链
 
 OpenAI 官方文档写得很直白：Codex 会在开始工作前读取 `AGENTS.md`，而且不只看一个固定位置。
 
@@ -108,7 +108,7 @@ OpenAI 官方文档写得很直白：Codex 会在开始工作前读取 `AGENTS.m
 
 这意味着 Codex 的 `AGENTS.md` 不是“放着备用”，而是**默认会参与启动时上下文构建**。如果你有必须长期生效的仓库约束，把它写在这里最稳妥。
 
-### 2.2 skill 不是默认全量读，而是先读元数据
+### 3.2 skill 不是默认全量读，而是先读元数据
 
 Codex skills 的关键点不是“也能写规则”，而是**它不会像 `AGENTS.md` 那样无条件整份读入**。
 
@@ -123,7 +123,7 @@ Codex skills 的关键点不是“也能写规则”，而是**它不会像 `AGE
 - **仓库硬规则**写 `AGENTS.md`
 - **专项工作流**写 `.agents/skills/<skill>/SKILL.md`
 
-### 2.3 看到 `AGENT.md` 不代表官方改名了
+### 3.3 看到 `AGENT.md` 不代表官方改名了
 
 这里顺手说一个常见误区。
 
@@ -131,11 +131,11 @@ Codex skills 的关键点不是“也能写规则”，而是**它不会像 `AGE
 
 **截至 2026 年 3 月 31 日，Codex 官方项目主指令文件名仍然是 `AGENTS.md`。**
 
-## 三、Claude Code：`CLAUDE.md` 是项目记忆入口，rules 和 skills 是拆分层
+## 4. Claude Code：`CLAUDE.md` 是项目记忆入口，rules 和 skills 是拆分层
 
 Claude Code 和 Codex 很像，但又不完全一样。最容易理解的方式是：**它把项目主说明、模块化规则和专项 skill 分成了三层。**
 
-### 3.1 `CLAUDE.md` 是项目级长期说明
+### 4.1 `CLAUDE.md` 是项目级长期说明
 
 Anthropic 官方现在把 `CLAUDE.md` 直接定义为“persistent instructions”。
 
@@ -148,7 +148,7 @@ Anthropic 官方现在把 `CLAUDE.md` 直接定义为“persistent instructions�
 
 这个设计的实际含义是：Claude Code 的项目范围，和你**从哪个目录启动会话**关系很大。你在 `foo/` 启动，和在 `foo/bar/` 启动，读到的项目指令链可能不一样。
 
-### 3.2 `.claude/rules/` 更像模块化规则，而不是单独取代 `CLAUDE.md`
+### 4.2 `.claude/rules/` 更像模块化规则，而不是单独取代 `CLAUDE.md`
 
 Claude Code 现在官方支持把规则拆到 `.claude/rules/`。
 
@@ -164,7 +164,7 @@ Claude Code 现在官方支持把规则拆到 `.claude/rules/`。
 - `.claude/rules/` 是模块化拆分
 - `.claude/skills/` 是专项技能包
 
-### 3.3 `.claude/skills` 是正式目录，旧 `.claude/commands` 还兼容
+### 4.3 `.claude/skills` 是正式目录，旧 `.claude/commands` 还兼容
 
 Anthropic 当前文档已经把 custom commands 和 skills 基本合流了。
 
@@ -176,7 +176,7 @@ Anthropic 当前文档已经把 custom commands 和 skills 基本合流了。
 
 这也解释了为什么很多老文章还在讲 `.claude/commands`，而新文档更强调 `.claude/skills`。不是前者突然失效了，而是官方推荐路径已经偏向 skill。
 
-### 3.4 `CLAUDE.md` 很像 Codex 的 `AGENTS.md`，但注入位置不一样
+### 4.4 `CLAUDE.md` 很像 Codex 的 `AGENTS.md`，但注入位置不一样
 
 如果你从 Codex 迁移到 Claude Code，一个实用心智模型是：
 
@@ -185,13 +185,13 @@ Anthropic 当前文档已经把 custom commands 和 skills 基本合流了。
 
 但两者还是有一个值得知道的差别：Anthropic 文档明确写了，`CLAUDE.md` 的内容是在系统提示之后，以一条 user message 的形式送进上下文的。它当然很重要，但它不是不可违背的硬系统层配置。
 
-## 四、Cursor：先把它理解成 Rules 系统，不是 `AGENTS.md` 那一套
+## 5. Cursor：先把它理解成 Rules 系统，不是 `AGENTS.md` 那一套
 
 Cursor 最容易让人误判的地方，是你看到它也谈“规则”、也谈“技能”、也谈“agent”，就会下意识把它往 Codex / Claude Code 的文件命名体系里硬套。
 
 但如果你问的是**项目级约束应该放哪**，当前最稳的答案仍然是：**优先使用 `.cursor/rules/*.mdc`。**
 
-### 4.1 `.cursor/rules/*.mdc` 是 Cursor 的原生项目规则格式
+### 5.1 `.cursor/rules/*.mdc` 是 Cursor 的原生项目规则格式
 
 Cursor 官方规则文档把 Project Rules 定义得很清楚：
 
@@ -202,7 +202,7 @@ Cursor 官方规则文档把 Project Rules 定义得很清楚：
 
 如果你是团队协作场景，这套机制最大的价值是：**规则本身可以跟项目一起进版本控制，而不是只活在某个人的本地设置里。**
 
-### 4.2 Cursor 的“默认生效”主要靠 Rules，而不是 skill
+### 5.2 Cursor 的“默认生效”主要靠 Rules，而不是 skill
 
 Cursor 当然也有 Skills、Agents、Plugins，但它们更像能力扩展层，不是“项目主约束入口”的最核心答案。
 
@@ -213,7 +213,7 @@ Cursor 当然也有 Skills、Agents、Plugins，但它们更像能力扩展层�
 
 这一点和 Codex / Claude Code 的差别非常大。后两者会把“项目主说明文件”单独命名出来，而 Cursor 更像是把**规则系统本身**当作项目入口。
 
-### 4.3 补充一句：Cursor 现在正式把 `AGENTS.md` 也列进来了
+### 5.3 补充一句：Cursor 现在正式把 `AGENTS.md` 也列进来了
 
 这里补一个容易踩坑的细节。
 
@@ -223,9 +223,9 @@ Cursor 当前官方 Rules 文档里，已经把 `AGENTS.md` 作为一种可识�
 
 再补一条容易被忽略的细节：Cursor 官方 CLI 文档还说明，CLI 会把项目根目录里的 `AGENTS.md` 和 `CLAUDE.md` 一并当作 rules 读取。所以如果你跨工具复用项目说明，Cursor 并不是完全看不懂这些文件名；只是它自己的原生规则中心依然是 Rules。
 
-## 五、最容易搞混的四个点
+## 6. 最容易搞混的四个点
 
-### 5.1 skill 不是项目主指令
+### 6.1 skill 不是项目主指令
 
 这个误区最常见。
 
@@ -238,7 +238,7 @@ Cursor 当前官方 Rules 文档里，已经把 `AGENTS.md` 作为一种可识�
 
 把两者混用，通常只会让效果变差。
 
-### 5.2 文件名长得像，不等于加载逻辑一样
+### 6.2 文件名长得像，不等于加载逻辑一样
 
 同样是 Markdown 文件：
 
@@ -248,13 +248,13 @@ Cursor 当前官方 Rules 文档里，已经把 `AGENTS.md` 作为一种可识�
 
 别因为它们最后都长得像文档，就以为加载时机、优先级、作用范围也一样。
 
-### 5.3 Claude Code 的“项目范围”特别依赖启动目录
+### 6.3 Claude Code 的“项目范围”特别依赖启动目录
 
 这一点和很多人直觉不一样。
 
 Anthropic quickstart 的标准方式就是先 `cd /path/to/your/project` 再运行 `claude`。再配合 `CLAUDE.md` 的层级加载机制，你就会明白：**Claude Code 的项目感知，本质上是跟当前工作目录绑定得很深的。**
 
-### 5.4 真实仓库里的文件名可能带团队私货
+### 6.4 真实仓库里的文件名可能带团队私货
 
 不少团队会用：
 
@@ -265,11 +265,11 @@ Anthropic quickstart 的标准方式就是先 `cd /path/to/your/project` 再运�
 
 这不奇怪。但你写对外教程时，最好把“团队自定义命名”和“官方默认机制”分开讲，不然读者很容易误以为这些名字本来就是官方统一标准。
 
-## 六、如果你要做三端迁移，最实用的映射是这样
+## 7. 如果你要做三端迁移，最实用的映射是这样
 
 假设你现在手里有一套现成的项目规范，想同时适配 Codex、Claude Code、Cursor，最务实的拆法通常是三层。
 
-### 第一层：仓库默认规则
+### 7.1 第一层：仓库默认规则
 
 把必须默认生效的内容写成各自的项目主入口：
 
@@ -285,7 +285,7 @@ Anthropic quickstart 的标准方式就是先 `cd /path/to/your/project` 再运�
 - 安全边界
 - 目录级别约束
 
-### 第二层：专项 SOP
+### 7.2 第二层：专项 SOP
 
 把只有某类任务才需要的流程拆成 skills。
 
@@ -297,7 +297,7 @@ Anthropic quickstart 的标准方式就是先 `cd /path/to/your/project` 再运�
 - review 清单
 - 自动化脚本调用方式
 
-### 第三层：个人偏好
+### 7.3 第三层：个人偏好
 
 把不该强加给团队、但你自己希望长期复用的习惯，放到用户级配置：
 
@@ -311,7 +311,7 @@ Anthropic quickstart 的标准方式就是先 `cd /path/to/your/project` 再运�
 - **团队共享**和**个人偏好**分开
 - **项目入口**和**能力扩展**分开
 
-## 结论
+## 8. 结论
 
 如果你只记一句话，请记这句：**Codex 和 Claude Code 都有很明确的“项目主说明文件”概念，而 Cursor 更像是把项目规则系统本身做成了主入口。**
 

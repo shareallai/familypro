@@ -7,7 +7,7 @@ description: Checked on April 23, 2026, this guide compares ChatGPT Go, Plus, an
 summary: If you are deciding between ChatGPT Go, Plus, and Pro, or you are unsure how Codex and the OpenAI API fit together, this guide gives you a fast and practical decision path.
 category: AI Subscription Comparisons
 pubDate: 2026-03-31
-updatedDate: 2026-04-24
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -166,35 +166,35 @@ Three-line summary:
 
 ## 8. FAQ
 
-### 1) What is the biggest practical difference between Go and Plus?
+### 8.1 What is the biggest practical difference between Go and Plus?
 
 Go is mainly about affordability with higher basic limits than Free. Plus is where advanced capabilities and heavier ongoing usage become meaningfully more comfortable.
 
-### 2) Can Go use Thinking?
+### 8.2 Can Go use Thinking?
 
 Yes. Go can enable Thinking from the input `+` menu, with an officially published limit of `10 / 5h`. If you rely on long reasoning workflows often, Plus or Pro is usually a safer fit.
 
-### 3) Do both Plus and Pro include Agent? How different are the limits?
+### 8.3 Do both Plus and Pro include Agent? How different are the limits?
 
 Yes. Current public limits are Plus `40 / month` and Pro `400 / month`. If Agent is part of your daily workflow, the Pro gap is substantial.
 
-### 4) What is the practical difference between Pro `$100` and Pro `$200`?
+### 8.4 What is the practical difference between Pro `$100` and Pro `$200`?
 
 The practical difference is usage allowance, not whether core Pro capabilities exist. Both are Pro plans; in official language, `$100` targets serious weekly use while `$200` is for heavier, continuously parallel workloads.
 
-### 5) Pro says "unlimited." Is it truly unlimited?
+### 8.5 Pro says "unlimited." Is it truly unlimited?
 
 No. It does not mean unconditional infinite usage. Official language still ties usage to abuse guardrails and terms of use.
 
-### 6) What happens after I hit Go/Plus primary model limits?
+### 8.6 What happens after I hit Go/Plus primary model limits?
 
 After you hit the current rolling-window cap, usage moves to a mini model until reset. This is rolling-window logic, not midnight daily reset logic.
 
-### 7) I already pay for Plus/Pro. Do I still pay separately for API?
+### 8.7 I already pay for Plus/Pro. Do I still pay separately for API?
 
 Yes. ChatGPT subscriptions and API billing are separate systems, and subscription fees do not offset API call charges.
 
-### 8) Can I downgrade from Plus or Pro to Go?
+### 8.8 Can I downgrade from Plus or Pro to Go?
 
 Yes, you can switch plans. Official guidance indicates no prorated refund for the current cycle; the lower tier usually takes effect in the next billing cycle.
 

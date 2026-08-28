@@ -3,11 +3,11 @@ locale: fr
 translationKey: chatgpt-image-2-guide
 title: "ChatGPT Images 2.0 : plans, limites et comparaison Nano Banana"
 headline: "Guide ChatGPT Images 2.0 : offres, prompts et choix"
-description: "Vérifié au 2026-04-22, ce guide détaille l’accès par offre, la logique des limites, les progrès clés, les modèles de prompts, la lecture benchmark et la comparaison avec Nano Banana."
+description: "Vérifié le 2026-04-22 : accès, limites, progrès et prompts de ChatGPT Images 2.0, avec benchmarks et comparaison pratique face à Nano Banana."
 summary: "ChatGPT Images 2.0 est disponible. Cet article se concentre sur les décisions concrètes : qui peut l’utiliser, comment lire les limites, ce qui a changé, et quand Nano Banana est préférable."
 category: Analyse d'outils IA
 pubDate: 2026-04-22
-updatedDate: 2026-04-22
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:

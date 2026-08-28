@@ -3,11 +3,11 @@ locale: ru
 translationKey: gpt-5-5-vs-gpt-5-4-vs-gpt-5-3-codex-guide
 title: "GPT-5.5, 5.4 и 5.3 Codex в 2026: практический выбор модели"
 headline: Как распределить GPT-5.5, GPT-5.4 и GPT-5.3 Codex по реальным задачам
-description: "По официальным данным OpenAI на 30 апреля 2026 года сравниваем GPT-5.3 Codex, GPT-5.4 и GPT-5.5 по возможностям, стоимости и пригодности для рабочих сценариев."
+description: "По данным OpenAI на 30 апреля 2026 года: сравнение GPT-5.3 Codex, GPT-5.4 и GPT-5.5 по возможностям, стоимости и рабочим сценариям."
 summary: Практическая схема для команд, которым нужно сочетать GPT-5.3 Codex, GPT-5.4 и GPT-5.5 без потери качества и контроля затрат.
 category: Сравнение AI-моделей
 pubDate: 2026-04-29
-updatedDate: 2026-04-30
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:

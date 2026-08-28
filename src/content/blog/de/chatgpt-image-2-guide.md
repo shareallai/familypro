@@ -3,11 +3,11 @@ locale: de
 translationKey: chatgpt-image-2-guide
 title: "ChatGPT Images 2.0: Tarife, Limits und Nano Banana Vergleich"
 headline: "ChatGPT Images 2.0 Leitfaden: Tarife, Prompting und Auswahl"
-description: "Stand 2026-04-22: Dieser Beitrag erklärt Zugänge nach Tarif, praktische Limit-Logik, zentrale Funktionssprünge, Prompt-Muster, Benchmark-Einordnung und den Vergleich mit Nano Banana."
+description: "Stand 2026-04-22: ChatGPT Images 2.0 nach Tarifzugang, Limits, Funktionen und Prompting – mit praktischer Einordnung gegenüber Nano Banana."
 summary: "ChatGPT Images 2.0 ist verfügbar. Der Leitfaden zeigt praxisnah, wer es nutzen kann, wie Limits zu lesen sind, was sich verbessert hat und wann Nano Banana sinnvoller ist."
 category: KI-Tool-Analyse
 pubDate: 2026-04-22
-updatedDate: 2026-04-22
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:

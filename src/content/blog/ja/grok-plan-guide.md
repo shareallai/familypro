@@ -7,7 +7,7 @@ description: "X Premium、Premium+、SuperGrok Lite、SuperGrok、Heavyを、入
 summary: X Premium、Premium+、SuperGrok Lite、SuperGrok、SuperGrok Heavyで迷う人向けに、2つの課金ラインを先に分けたうえで、公開価格の読み方、現時点で確定している範囲、どのプランがどんな使い方に合うかを整理しました。
 category: AIサブスク比較
 pubDate: 2026-03-26
-updatedDate: 2026-07-03
+updatedDate: 2026-08-28
 author: Mark
 service: Grok
 tags:
@@ -333,7 +333,7 @@ Lite契約前に押さえる点は2つです。
 - 共有プランの有無、期間、価格はその時点の決済画面表示に依存する
 
 自分でパスワードを変えたい、長期の個人プロフィールを持ちたい、完全専有アカウントがほしいという人には、公式の直接契約の方が合いやすいです。  
-購入リンク: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok購入ページ</a>
+購入リンク: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok購入ページ</a>
 
 多くの人にとって、最終的な意思決定は次の2問に集約できます。
 
@@ -356,4 +356,4 @@ Lite契約前に押さえる点は2つです。
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok購入ページ</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok購入ページ</a>

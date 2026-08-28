@@ -443,6 +443,20 @@ const sponsorRel = getExternalLinkRel(sponsorCta.href, {
     margin-bottom: 0;
   }
 
+  :global(.markdown-body .article-figure-image) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-inline: auto;
+    border: 1px solid var(--line);
+    border-radius: 0.75rem;
+    background: var(--card);
+  }
+
+  :global(.markdown-body .article-figure-image-narrow) {
+    max-width: 520px;
+  }
+
   :global(.markdown-body p),
   :global(.markdown-body li),
   :global(.markdown-body blockquote) {

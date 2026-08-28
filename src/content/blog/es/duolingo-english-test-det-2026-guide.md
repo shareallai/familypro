@@ -1,13 +1,13 @@
 ---
 locale: es
 translationKey: duolingo-english-test-det-2026-guide
-title: "Guía 2026 del Duolingo English Test: costo, admisión y límites de visa"
+title: "Duolingo English Test 2026: costo, admisión y límites de visa"
 headline: "Duolingo English Test 2026: costos, aceptación y límites migratorios"
-description: "Actualizada a abril de 2026, esta guía resume formato, tiempos de resultado, costos, verificación universitaria y límites de visa o migración antes de aplicar."
+description: "Actualizada en abril de 2026: formato, resultados, costos, verificación universitaria y límites de visa del Duolingo English Test."
 summary: "Si tienes poco tiempo para aplicar y pocas fechas de examen, aquí verás cuándo el Duolingo English Test puede bastar y cuándo conviene combinarlo con IELTS o PTE."
 category: Exámenes de inglés para estudiar fuera
 pubDate: 2026-04-24
-updatedDate: 2026-04-24
+updatedDate: 2026-08-28
 author: Mark
 service: Duolingo
 tags:

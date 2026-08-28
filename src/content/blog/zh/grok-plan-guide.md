@@ -7,7 +7,7 @@ description: 基于最新可核对信息，比较 X Premium、Premium+、SuperGr
 summary: 如果你正纠结 Grok 该买 X Premium、Premium+、SuperGrok Lite、SuperGrok 还是 SuperGrok Heavy，这篇文章会先拆清两条订阅线，再讲明公开价格、能力边界，以及分别适合谁。
 category: AI 订阅对比
 pubDate: 2026-03-26
-updatedDate: 2026-07-03
+updatedDate: 2026-08-28
 author: Mark
 service: Grok
 tags:
@@ -54,7 +54,7 @@ draft: false
 
 文中价格统一按 **美国区 / 美元口径** 描述。不同平台、不同国家和地区的价格会变化，尤其是 App Store / Google Play 与网页价格不一定一致；**价格仅供参考，最终以下单页为准**。
 
-## 一、先看结论：多数人真正要先决定的是“买 X”还是“买 Grok”
+## 1. 先看结论：多数人真正要先决定的是“买 X”还是“买 Grok”
 
 - **主要在 X 里用 Grok**，并且你还需要蓝标、减广告、发长文等平台权益：先看 `Premium` 和 `Premium+`
 - **把 Grok 当主力 AI 助手**，主要在 `Grok.com` 或手机 App 里聊天、搜索、写作、做图、做视频：先看 `SuperGrok`
@@ -71,7 +71,7 @@ draft: false
 
 如果你还在犹豫自己是否需要 `Heavy`，大概率暂时不需要。
 
-## 二、先分清：Grok 实际上不是一条套餐线
+## 2. 先分清：Grok 实际上不是一条套餐线
 
 ### 2.1 X 站内订阅：你买的是 X 会员，Grok 只是其中一项权益
 
@@ -116,7 +116,7 @@ xAI 当前消费者 FAQ 和官网页至少可以确认两件事：
 
 这也是 Grok 与 Google AI、Claude 等“表格化订阅体系”最大的区别之一：**层级是清楚的，但公开价格和公开配额并不整齐。**
 
-## 三、决定值不值，核心看这三件事
+## 3. 决定值不值，核心看这三件事
 
 ### 3.1 你到底要 X 里的 Grok，还是 Grok.com 里的 Grok
 
@@ -199,7 +199,7 @@ xAI 当前消费者 FAQ 和官网页至少可以确认两件事：
 - 需要模型花更久时间推理
 - 把 Grok 当高频研究或开发工具，而不是轻量问答工具
 
-## 四、这些能力分别适合谁
+## 4. 这些能力分别适合谁
 
 下面这部分不讲营销词，只讲更实际的使用场景。因为官方页面上的功能名很多，但并不是每个人都需要。
 
@@ -267,7 +267,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 
 如果你完全不用代码工具，这部分不应成为购买主因；如果你本来就在比较 AI coding agent，`SuperGrok` 与 `Premium+` 的价值就不能只按聊天和生图来算。
 
-## 五、到底该怎么买：按人群选，比按功能名选更准
+## 5. 到底该怎么买：按人群选，比按功能名选更准
 
 ### 5.1 你主要在 X 内使用，也希望 Grok 更好用
 
@@ -323,7 +323,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 
 如果你现在还说不清自己为什么需要 `Heavy`，通常说明先上 `SuperGrok` 更合理。
 
-## 六、最后给一个不绕弯的购买建议
+## 6. 最后给一个不绕弯的购买建议
 
 - **主要想低门槛试生图和短视频**：优先看 `SuperGrok Lite`（若可见）
 - **预算敏感且只偶尔问答**：先用免费版
@@ -340,7 +340,7 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 - 是否有拼车/共享、具体时长和实时价格，仍应以下单页显示为准
 
 如果你需要自己改密码、绑定长期个人资料，或者非常在意账号完全独享，这类方案通常就不如直接买官方订阅。  
-购买入口：<a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok 购买页</a>
+购买入口：<a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok 购买页</a>
 
 对大多数人来说，真正的选择不是“套餐名越多越难选”，而是先回答这两句：
 
@@ -363,4 +363,4 @@ xAI 当前在官网与 App Store 都强调 `Voice Mode`、`Live Camera`。
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video（US App Store）](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok 购买页</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok 购买页</a>

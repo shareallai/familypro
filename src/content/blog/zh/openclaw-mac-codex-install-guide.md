@@ -7,7 +7,7 @@ description: 面向开发者的 OpenClaw for Mac 最新实操，覆盖安装脚�
 summary: 一篇可直接照做的 macOS 安装与接入指南，重点是先跑通 OpenClaw + Codex，再用最少命令验证环境真的可用。
 category: AI 工具教程
 pubDate: 2026-03-24
-updatedDate: 2026-04-16
+updatedDate: 2026-08-28
 author: Mark
 service: OpenClaw
 tags:
@@ -118,7 +118,7 @@ openclaw models status --check
 5. 需要自动化守护时，加上 `openclaw models status --check`。
 6. 只有确实要做 memory search 时，再补 embeddings provider 与 API Key。
 
-## 结语
+## 8. 结语
 
 在 Mac 上配置 OpenClaw + Codex，难点不是命令本身，而是顺序。先把安装、认证、模型可见性这三层跑通，再去扩展 transport、fallback、memory，排错成本会低很多。
 

@@ -7,7 +7,7 @@ description: Compare X Premium, Premium+, SuperGrok Lite, SuperGrok, and Heavy b
 summary: If you are trying to decide between X Premium, Premium+, SuperGrok Lite, SuperGrok, and SuperGrok Heavy, this guide separates the two subscription lines first, then explains the public pricing signals, the boundaries of what is actually confirmed, and who each option fits.
 category: AI Subscription Comparisons
 pubDate: 2026-03-26
-updatedDate: 2026-07-03
+updatedDate: 2026-08-28
 author: Mark
 service: Grok
 tags:
@@ -333,7 +333,7 @@ If you have already decided on `SuperGrok`, you can also compare third-party sha
 - whether a shared option is available, for how long, and at what price still depends on the live checkout page
 
 If you need to change the password yourself, keep a long-term personal profile, or want a fully private account, buying the official subscription directly is usually the safer fit.  
-Purchase link: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok purchase page</a>
+Purchase link: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok purchase page</a>
 
 For most buyers, this is not about counting plan names. It is a two-step decision:
 
@@ -356,4 +356,4 @@ Once you answer those two questions, Grok’s plan structure becomes much easier
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok purchase page</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok purchase page</a>

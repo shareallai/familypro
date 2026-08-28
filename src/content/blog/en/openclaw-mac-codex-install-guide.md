@@ -7,7 +7,7 @@ description: Updated guide for installing OpenClaw on macOS, completing Codex OA
 summary: A practical setup walkthrough for developers who want a working OpenClaw + Codex workflow on Mac, with a clear verification checklist.
 category: AI Tooling
 pubDate: 2026-03-24
-updatedDate: 2026-04-16
+updatedDate: 2026-08-28
 author: Mark
 service: OpenClaw
 tags:
@@ -118,7 +118,7 @@ This is a frequent source of confusion when core model calls work but retrieval/
 5. Add `openclaw models status --check` for automation monitoring.
 6. Add embeddings provider/API key only when your workflow actually needs memory search.
 
-## Final note
+## 8. Final note
 
 Most setup pain comes from doing steps out of order. If you verify install, auth, and model visibility first, you can postpone advanced tuning and isolate failures much faster.
 

@@ -7,7 +7,7 @@ description: "Сравниваем X Premium, Premium+, SuperGrok Lite, SuperGro
 summary: Если вы выбираете между X Premium, Premium+, SuperGrok Lite, SuperGrok и SuperGrok Heavy, этот материал сначала разводит две линии подписки, а затем показывает, какие ценовые сигналы публичны, где заканчивается реально подтвержденная информация и какой вариант подходит под ваш сценарий.
 category: Сравнение AI-подписок
 pubDate: 2026-03-26
-updatedDate: 2026-07-03
+updatedDate: 2026-08-28
 author: Mark
 service: Grok
 tags:
@@ -335,7 +335,7 @@ xAI сейчас явно продвигает `Voice Mode` и `Live Camera`.
 - наличие такого варианта, срок и цена все равно зависят от актуальной страницы оплаты в момент покупки
 
 Если вам важно самому менять пароль, вести долгосрочный личный профиль или иметь полностью приватный аккаунт, прямой официальный тариф обычно безопаснее.  
-Ссылка на покупку: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">Страница покупки FamilyPro Super Grok</a>
+Ссылка на покупку: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">Страница покупки FamilyPro Super Grok</a>
 
 Для большинства покупателей решение сводится к двум вопросам:
 
@@ -358,4 +358,4 @@ xAI сейчас явно продвигает `Voice Mode` и `Live Camera`.
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">Страница покупки FamilyPro Super Grok</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">Страница покупки FamilyPro Super Grok</a>

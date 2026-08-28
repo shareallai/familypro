@@ -3,11 +3,11 @@ locale: de
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go, Plus, Pro: Codex und API-Abrechnung klar erklärt"
 headline: Was unterscheidet ChatGPT Go, Plus und Pro? Codex und API im Überblick
-description: "Stand 23. April 2026: Dieser Guide vergleicht ChatGPT Go, Plus und Pro (inklusive Pro 100/200 USD), ordnet Codex ein und zeigt, warum API-Kosten separat laufen."
+description: "Stand 23. April 2026: Vergleich von ChatGPT Go, Plus und Pro, Codex-Zugang und separater API-Abrechnung – inklusive Pro für 100 und 200 USD."
 summary: Wenn du zwischen ChatGPT Go, Plus und Pro schwankst oder wissen willst, wie Codex und OpenAI API zusammenhängen, findest du hier eine schnelle und belastbare Entscheidungslogik.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-31
-updatedDate: 2026-04-24
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -166,35 +166,35 @@ Drei-Zeilen-Zusammenfassung:
 
 ## 8. FAQ
 
-### 1) Was ist der wichtigste praktische Unterschied zwischen Go und Plus?
+### 8.1 Was ist der wichtigste praktische Unterschied zwischen Go und Plus?
 
 Go optimiert Preis gegen Grundnutzen. Plus ist die Stufe, bei der intensive Nutzung und fortgeschrittene Funktionen deutlich komfortabler werden.
 
-### 2) Kann man mit Go Thinking nutzen?
+### 8.2 Kann man mit Go Thinking nutzen?
 
 Ja. Thinking lässt sich über das `+`-Menü aktivieren, mit einem veröffentlichten Rahmen von `10 / 5h`. Für regelmäßige lange Reasoning-Workflows sind Plus oder Pro in der Praxis stabiler.
 
-### 3) Haben Plus und Pro beide Agent-Zugang? Wie groß ist der Unterschied?
+### 8.3 Haben Plus und Pro beide Agent-Zugang? Wie groß ist der Unterschied?
 
 Ja. Öffentlich kommuniziert sind Plus `40 / Monat` und Pro `400 / Monat`. Wenn Agent Teil deines Tagesgeschäfts ist, ist dieser Abstand relevant.
 
-### 4) Worin unterscheiden sich Pro 100 USD und Pro 200 USD praktisch?
+### 8.4 Worin unterscheiden sich Pro 100 USD und Pro 200 USD praktisch?
 
 Vor allem in der Nutzungsgrenze, nicht bei der Frage, ob Pro-Funktionen vorhanden sind. Beide sind Pro; es geht primär um Lastspielraum.
 
-### 5) Pro sagt "unlimited". Ist das wirklich unbegrenzt?
+### 8.5 Pro sagt "unlimited". Ist das wirklich unbegrenzt?
 
 Nein. Es bedeutet nicht bedingungslos unendlich. Offizielle Formulierungen verweisen weiterhin auf Guardrails und Nutzungsbedingungen.
 
-### 6) Was passiert nach Erreichen des Hauptmodell-Limits bei Go/Plus?
+### 8.6 Was passiert nach Erreichen des Hauptmodell-Limits bei Go/Plus?
 
 Nach Erreichen des Rolling-Window-Limits wird bis zum Reset auf ein Mini-Modell umgestellt. Das ist Rolling-Window-Logik, nicht täglicher Mitternachts-Reset.
 
-### 7) Ich zahle bereits Plus/Pro. Muss ich API trotzdem separat zahlen?
+### 8.7 Ich zahle bereits Plus/Pro. Muss ich API trotzdem separat zahlen?
 
 Ja. ChatGPT-Abo und API-Billing sind getrennt, Abozahlungen verrechnen API-Calls nicht.
 
-### 8) Kann ich von Plus oder Pro auf Go downgraden?
+### 8.8 Kann ich von Plus oder Pro auf Go downgraden?
 
 Ja, ein Wechsel ist möglich. Offizielle Hinweise sagen üblicherweise: keine anteilige Rückerstattung im laufenden Zyklus; Umstellung greift zum nächsten Abrechnungszeitraum.
 

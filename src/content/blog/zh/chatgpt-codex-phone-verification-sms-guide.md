@@ -7,7 +7,7 @@ description: 面向中国用户，说明 ChatGPT 网页聊天不需要手机号�
 summary: 如果你在 Codex 登录或授权时卡在手机号验证，这篇文章会先厘清它和 ChatGPT 网页聊天的区别，再说明如何用 HeroSMS 与 5SIM 选择 SMS 国家、购买号码并接收验证码。
 category: AI 工具教程
 pubDate: 2026-05-08
-updatedDate: 2026-05-08
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -84,9 +84,9 @@ HeroSMS 可以先试，因为流程直观：注册、充值，选择服务和国
 
 <figure>
   <img
+    class="article-figure-image article-figure-image-narrow"
     src="../../../blog/chatgpt-codex-phone-verification-sms-guide/herosms-openai-thailand-sms.png"
     alt="HeroSMS 接码页面示例，已选择 OpenAI 服务、泰国国家、短信验证类型和 20 分钟接码时间。"
-    style="display:block; width:100%; max-width:520px; height:auto; margin:0 auto; border:1px solid #d1d5db; border-radius:12px; background:#f8fafc;"
   />
   <figcaption>HeroSMS 中选择 OpenAI、泰国与短信验证码的示例页面（价格与库存以购买页实时显示为准）。</figcaption>
 </figure>

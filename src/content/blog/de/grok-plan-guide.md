@@ -7,7 +7,7 @@ description: "Vergleiche X Premium, Premium+, SuperGrok Lite, SuperGrok und Heav
 summary: Wenn du zwischen X Premium, Premium+, SuperGrok Lite, SuperGrok und SuperGrok Heavy schwankst, trennt dieser Guide zuerst die zwei Abo-Linien und erklärt dann, welche Preissignale öffentlich sichtbar sind, wo die Grenzen der bestätigten Informationen liegen und welches Paket zu welchem Nutzungstyp passt.
 category: KI-Abo-Vergleiche
 pubDate: 2026-03-26
-updatedDate: 2026-07-03
+updatedDate: 2026-08-28
 author: Mark
 service: Grok
 tags:
@@ -335,7 +335,7 @@ Wenn du dich bereits für `SuperGrok` entschieden hast, kannst du zusätzlich Sh
 - ob eine Shared-Option verfügbar ist, wie lange sie gilt und was sie kostet, hängt trotzdem von der jeweils live sichtbaren Checkout-Seite ab
 
 Wenn du das Passwort selbst ändern, ein langfristiges persönliches Profil pflegen oder ein vollständig privates Konto haben willst, passt ein offizielles Einzelabo meist besser.  
-Kauflink: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite</a>
+Kauflink: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok Kaufseite</a>
 
 Für die meisten gilt: Die Entscheidung lässt sich auf zwei Fragen reduzieren.
 
@@ -358,4 +358,4 @@ Wenn diese beiden Punkte klar sind, ist die Grok-Tarifwahl deutlich einfacher.
 - [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
 - [About X Premium](https://help.x.com/en/using-x/x-premium)
 - [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb">FamilyPro Super Grok Kaufseite</a>
+- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok Kaufseite</a>

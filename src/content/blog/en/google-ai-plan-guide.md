@@ -3,11 +3,11 @@ locale: en
 translationKey: google-ai-plan-guide
 title: "Google AI Plus, Pro, or Ultra: 2026 Plans and Best Fit"
 headline: "Google AI Plus, Pro, and Ultra: plans, limits, and use cases"
-description: "Official Google plan information checked July 29, 2026: compare Google AI Plus, Pro, and Ultra by storage, Gemini access, Flow credits, products, and use cases."
+description: "Google plan details checked July 29, 2026: compare AI Plus, Pro, and Ultra by storage, Gemini access, Flow credits, included products, and use cases."
 summary: This guide compares the current Google AI Plus, Pro, and Ultra plans, including published limits, product access, regional restrictions, and practical ways to choose a tier.
 category: AI Subscription Comparisons
 pubDate: 2026-03-25
-updatedDate: 2026-07-29
+updatedDate: 2026-08-28
 author: Mark
 service: Google AI
 tags:

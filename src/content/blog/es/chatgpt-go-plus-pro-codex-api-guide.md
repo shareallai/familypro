@@ -3,11 +3,11 @@ locale: es
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go, Plus y Pro: Codex y facturación API explicados"
 headline: ¿Qué son ChatGPT Go, Plus y Pro? Relación entre Codex y OpenAI API
-description: "Revisado al 23 de abril de 2026, este artículo compara ChatGPT Go, Plus y Pro (incluido Pro 100/200 USD), explica Codex y confirma que el API se paga por separado."
+description: "Revisado el 23 de abril de 2026: compara ChatGPT Go, Plus y Pro, el acceso a Codex y la facturación separada de la API, incluido Pro 100/200 USD."
 summary: Si estás dudando entre ChatGPT Go, Plus y Pro, o no tienes claro cómo se relacionan Codex y OpenAI API con la suscripción de ChatGPT, esta guía te da un marco de decisión rápido.
 category: Comparativas de suscripciones de IA
 pubDate: 2026-03-31
-updatedDate: 2026-04-24
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
@@ -166,35 +166,35 @@ Resumen en tres líneas:
 
 ## 8. FAQ
 
-### 1) ¿Cuál es la diferencia más práctica entre Go y Plus?
+### 8.1 ¿Cuál es la diferencia más práctica entre Go y Plus?
 
 Go prioriza precio con capacidad básica mejorada frente a Free. Plus es donde el uso frecuente y las funciones avanzadas se vuelven mucho más cómodas.
 
-### 2) ¿Go puede usar Thinking?
+### 8.2 ¿Go puede usar Thinking?
 
 Sí. Se activa desde el menú `+`, con límite público de `10 / 5h`. Si dependes de razonamiento largo de forma recurrente, Plus o Pro suele encajar mejor.
 
-### 3) ¿Plus y Pro incluyen Agent? ¿Qué tan distinta es la cuota?
+### 8.3 ¿Plus y Pro incluyen Agent? ¿Qué tan distinta es la cuota?
 
 Sí. Límites públicos actuales: Plus `40 / mes` y Pro `400 / mes`. Si Agent es parte de tu uso diario, la diferencia es grande.
 
-### 4) ¿Qué cambia entre Pro 100 USD y Pro 200 USD?
+### 8.4 ¿Qué cambia entre Pro 100 USD y Pro 200 USD?
 
 Principalmente cambia el margen de uso, no la existencia de funciones Pro. Ambos son Pro.
 
-### 5) Pro dice "unlimited". ¿Es ilimitado real?
+### 8.5 Pro dice "unlimited". ¿Es ilimitado real?
 
 No de forma incondicional. El lenguaje oficial mantiene restricciones por guardrails antiabuso y términos de uso.
 
-### 6) ¿Qué pasa cuando alcanzo el límite principal en Go/Plus?
+### 8.6 ¿Qué pasa cuando alcanzo el límite principal en Go/Plus?
 
 Al agotar la ventana móvil, pasas a un modelo mini hasta el reset. Es lógica de ventana rodante, no reinicio diario fijo a medianoche.
 
-### 7) Ya pago Plus/Pro. ¿API sigue siendo aparte?
+### 8.7 Ya pago Plus/Pro. ¿API sigue siendo aparte?
 
 Sí. Suscripción ChatGPT y facturación API son sistemas distintos; la suscripción no descuenta llamadas API.
 
-### 8) ¿Puedo bajar de Plus o Pro a Go?
+### 8.8 ¿Puedo bajar de Plus o Pro a Go?
 
 Sí, puedes cambiar de plan. La guía oficial suele indicar que no hay reembolso prorrateado del ciclo en curso y que el cambio se aplica al siguiente ciclo de facturación.
 

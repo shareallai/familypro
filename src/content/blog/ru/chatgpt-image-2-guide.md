@@ -3,11 +3,11 @@ locale: ru
 translationKey: chatgpt-image-2-guide
 title: "ChatGPT Images 2.0: тарифы, лимиты и сравнение с Nano Banana"
 headline: "Гид по ChatGPT Images 2.0: планы, промпты и выбор"
-description: "По данным на 2026-04-22, разбираем доступ по планам, практическую логику лимитов, ключевые улучшения, шаблоны промптов, benchmark-контекст и сравнение с Nano Banana."
+description: "Данные на 2026-04-22: доступ, лимиты, улучшения и промпты ChatGPT Images 2.0, а также бенчмарки и сравнение с Nano Banana."
 summary: "ChatGPT Images 2.0 уже доступен. В статье собраны практические ответы: кому подходит Free/Go/Plus/Pro, что реально улучшилось и как выбирать между GPT Image 2 и Nano Banana."
 category: Обзор AI-инструментов
 pubDate: 2026-04-22
-updatedDate: 2026-04-22
+updatedDate: 2026-08-28
 author: Mark
 service: General
 tags:
