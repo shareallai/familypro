@@ -109,6 +109,8 @@ Account emails do not have to match. What matters is selecting the exact account
 
 These are my recommendations, not official guarantees of task counts.
 
+### 6.1 New subscribers: choose for actual usage
+
 | Your situation | Start by considering | Why |
 | --- | --- | --- |
 | Occasional questions; unsure whether you need a subscription | Free | Test it with real tasks first |
@@ -116,13 +118,29 @@ These are my recommendations, not official guarantees of task counts.
 | Daily Grok use and some coding agent work | Premium | Observe real weekly consumption at $30/month |
 | Daily coding or automation; lower tiers repeatedly run out | Super | Pay for demonstrated usage needs |
 | Sustained heavy work exceeds even Super's allowance | Ultra | Validate the need before committing $200/month |
-| Existing SuperGrok is sufficient; little use of other products | Keep the old plan while comparing the switching offer | Extra bundled products may add little value for you |
-| Heavy subscriber relying on specific models, discounts or bonuses | Confirm those benefits before switching | Tier names do not establish equivalence |
-| Mostly using Claude or GPT in Cursor | Compare total old and new costs | Third-party model usage is not included in the new allowance |
 
 For a new subscriber, I would start monthly and complete one or two normal working weeks before choosing annual billing. Buying Ultra for hypothetical future work is difficult to justify.
 
-For an existing SuperGrok or Heavy subscriber, compare your actual renewal price with the total cost after switching, especially if you have a promotional rate. Switch only once your required features are confirmed, the shared allowance suits your workload, and you accept that account unification cannot be undone.
+### 6.2 SuperGrok to Premium: when switching makes sense
+
+The [official announcement](https://x.ai/news/x-subscription) describes Premium as including the benefits of SuperGrok, Cursor Pro and X Premium+. That gives SuperGrok subscribers a reason to compare Premium first. It does not mean legacy Cursor Pro's third-party model allowance carries over, or that every Grok task will have the same available count after switching.
+
+**If you currently pay $30/month for SuperGrok, want to code with Grok models in Cursor or need X Premium+ benefits, and your switching quote is also $30/month, Premium is worth considering first.** The reason is access to additional products you actually want at the same subscription cost. This does not guarantee enough allowance to maintain your old Grok workload while also using Cursor heavily: both draw from one weekly pool.
+
+If you separately pay for SuperGrok and X Premium+, consolidation also deserves a comparison. Check whether the new quote is lower than your actual combined bills and whether it preserves the benefits you need. If you also pay for Cursor, include third-party model charges in that calculation rather than comparing subscription fees alone.
+
+### 6.3 Existing subscribers who should wait
+
+| Your situation | Recommendation | Reason or missing evidence |
+| --- | --- | --- |
+| You only use Grok, its allowance is sufficient, and you do not need Cursor or X Premium+ | Keep your plan unless your account offers clearly better switching terms | The extra products do not address a current need; there is no demonstrated reason to switch immediately |
+| Your old SuperGrok renewal has a lower promotional price | Compare actual costs over the same billing period first | Standard Premium pricing may cost more; this is not necessarily an upgrade at the same price |
+| Your work relies on a legacy Cursor allowance for Claude, GPT or other third-party models | Calculate the cost of replacing that allowance before deciding | Those models are separately billed from the first use on the new plan; savings depend on usage |
+| You rely on Heavy-specific models, extras or special pricing | Keep Heavy until the benefit mapping is confirmed | Public information does not establish that Ultra or Super fully replaces your particular Heavy benefits |
+| You already exhaust Grok's allowance and plan substantial Cursor use | Check the new weekly allowance before switching for bundled features | Both products consume the pool; account-specific comparisons are needed to establish sufficient capacity |
+| You need separate work and personal accounts, or the option to return to your old subscription | Do not unify accounts as a trial | Unification is permanent; canceling does not restore old subscriptions |
+
+There is currently no reliable universal answer for Heavy-to-Ultra equivalence or how many extra tasks a Grok-only user would get by switching. If billing settings do not clearly explain the relevant benefits and usage, ask official support first. **Base the decision on your needs, total cost and confirmed benefits, rather than new tier names or broad claims about value.**
 
 ## References
 
