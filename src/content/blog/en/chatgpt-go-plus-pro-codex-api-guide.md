@@ -3,11 +3,11 @@ locale: en
 translationKey: chatgpt-go-plus-pro-codex-api-guide
 title: "ChatGPT Go vs Plus vs Pro: Codex and API Billing Explained"
 headline: What are ChatGPT Go, Plus, and Pro? Codex and API explained
-description: Checked on April 23, 2026, this guide compares ChatGPT Go, Plus, and Pro (including $100/$200 Pro), explains Codex access, and confirms API billing is separate.
-summary: If you are deciding between ChatGPT Go, Plus, and Pro, or you are unsure how Codex and the OpenAI API fit together, this guide gives you a fast and practical decision path.
+description: "Compare ChatGPT Go, Plus and Pro, GPT-6.1 Sol, Astra and Luna, Codex access and separate API costs. Plans and prices checked October 14, 2026."
+summary: "Choose a plan for your tasks, understand the new Work/Codex models, and check which requests use your subscription or a separate API bill."
 category: AI Subscription Comparisons
 pubDate: 2026-03-31
-updatedDate: 2026-08-28
+updatedDate: 2026-10-14
 author: Mark
 service: General
 tags:
@@ -29,186 +29,79 @@ topOffer:
 draft: false
 ---
 
-If you are looking at OpenAI plans for the first time, four questions usually create the most confusion:
+Choosing ChatGPT Go, Plus or Pro starts with where you will use it: ordinary Chat, an agent working on code and documents, or a model integrated into your own product. These routes have different model access and billing.
 
-- What is the real difference between `ChatGPT Go`, `Plus`, and `Pro`?
-- Is `Codex` a separate paid product?
-- How does the `OpenAI API` relate to a ChatGPT subscription?
-- If I pay for Plus or Pro, do I still need to pay for API usage?
+Plan details, models and API prices were checked on **2026-10-14**. USD amounts are **for reference only**; checkout, regional taxes and your bill determine the actual charge. Availability also depends on rollout, client and workspace settings.
 
-This post has one job: answer those questions clearly, so you can pick the right option in about 10 minutes.
+## 1. Go, Plus and Pro: prices and practical choices
 
-Scope note: all plan details in this article are based on official OpenAI pages visible on **2026-04-23**. Prices are shown in **USD** and are **for reference only**. Always confirm on your current checkout and billing pages.
+The [official Work/Codex pricing page](https://learn.chatgpt.com/docs/pricing) lists the following personal plans. The recommendations are starting points, not promises of a fixed number of tasks.
 
-## 1. Quick answer: four common questions, one framework
-
-1. `Go / Plus / Pro` are **personal ChatGPT subscription tiers** on `chatgpt.com`. The main differences are model access, tool coverage, and usage limits.
-2. `Codex` is OpenAI's **AI coding agent**, not a separate "chat membership."
-3. `OpenAI API` is for the **developer platform** (`platform.openai.com`) when you want to integrate models into your own product, app, or workflow.
-4. **ChatGPT subscriptions do not include API usage credits.** API billing is separate and usage-based.
-
-If you only remember one line:
-
-- ChatGPT subscriptions are for using AI inside ChatGPT.
-- API billing is for building AI into your own systems.
-
-## 2. What Go, Plus, and Pro are actually selling
-
-Treat Go, Plus, and Pro as three levels of the same product line. The real difference is practical ceiling, not product identity.
-
-| Tier | Simplified positioning | Best fit |
+| Plan | Reference monthly price, USD | When to consider it |
 | --- | --- | --- |
-| Go | Low-cost expansion above Free, with more messages, uploads, image tools, memory, and related features | Budget-conscious individual users who want more than Free |
-| Plus | Higher limits and broader advanced features for heavy daily use | Individual users doing regular writing, analysis, learning, and research |
-| Pro | Highest limits and priority experience for very heavy use | High-frequency power users who care about limits and speed |
+| Free | $0 | Try lightweight tasks before paying |
+| Go | $8 | A limited budget and lightweight Codex work |
+| Plus | $20 | Regular agent work across code and documents |
+| Pro | $100 / $200 / $500 | Persistent usage limits or a specific need for higher speed |
 
-As of 2026-04-23 on official pages:
+Pro now has three tiers. The older description of two plans with identical capabilities is incomplete: **Ultrafast access** is listed for Pro $500, with model and client requirements. Compare the current checkout and account limits rather than treating the old 5x/20x figures as universal task multipliers.
 
-- `Plus`: **$20/month** (help center)
-- `Pro`: currently **two plans: $100/month and $200/month** (same Pro capability set, different usage headroom)
-- `Go`: defined as a low-cost tier; launch materials included a **US $8/month** reference, but Go pricing is region-dependent, so checkout is the final source
+For ordinary conversations, check the models and tools available in Chat itself. Work/Codex access does not describe the Chat model picker.
 
-Three details to keep in mind:
+## 2. The new models: GPT-6.1 Sol, GPT-6 Astra and GPT-6 Luna
 
-- Go/Plus/Pro are monthly subscriptions; annual prepay is not currently offered.
-- The two Pro plans ($100 / $200) mainly differ by usage allowance (officially framed around roughly 5x vs 20x compared with Plus).
-- "Unlimited" on plan pages is not absolute unlimited use. It is still constrained by abuse guardrails and terms.
+GPT-5.4 is no longer the right headline example for newer models. The [current model documentation](https://learn.chatgpt.com/docs/models) distinguishes these choices:
 
-## 3. Go vs Plus vs Pro limits (as of 2026-04-23)
+| Model | Suitable tasks | A practical starting point |
+| --- | --- | --- |
+| GPT-6.1 Sol | Multi-step work across code, apps and documents | Try it for routine complex work before moving to Astra |
+| GPT-6 Astra | Demanding workflows requiring sustained reasoning and judgment | Consider it when task difficulty justifies the usage cost |
+| GPT-6 Luna | Summaries, extraction, classification and focused code edits | Try it for clear, repetitive tasks on a tighter budget |
 
-OpenAI can adjust limits over time. The table below only includes differences explicitly shown on official pages.
+In ChatGPT, **GPT-6.1 Sol, GPT-6 Sol and GPT-6 Luna are available in Work/Codex, not ordinary Chat**. GPT-6.1 Sol's launch rollout includes Plus, Pro, Business, Enterprise and Edu; Free/Go are excluded at launch. Enterprise/Edu administrators may need to enable it. Check your account and client for availability.
 
-| Dimension | Go | Plus | Pro |
-| --- | --- | --- | --- |
-| Price (USD) | Low-cost tier (pricing display varies by region/currency; checkout final) | `$20/month` | `$100/month` or `$200/month` (roughly `5x / 20x` usage headroom vs Plus) |
-| GPT-5.3 message cap | Up to `160 messages / 3 hours` | Up to `160 messages / 3 hours` | GPT-5 family is `unlimited*` (abuse guardrails apply) |
-| Thinking cap | Can enable Thinking from the input `+` menu, up to `10 messages / 5 hours` | Can manually select GPT-5.4 Thinking, up to `3000 messages / week` | Includes GPT-5.4 Pro, GPT-5 family is `unlimited*` (abuse guardrails apply) |
-| Legacy models (for example 4o) | Not included | Expanded access included | Included, with higher limits |
-| Agent mode | Not included | Included, `40 requests / month` | Included, `400 requests / month` |
-| Sora | Not included | Included | Included, typically with higher priority and concurrency |
-| Voice | Included (check the in-product limit shown on your account) | Included (check the in-product limit shown on your account) | `unlimited*` (abuse guardrails apply) |
-| Codex | Available for a limited time (official wording: `limited time`) | Included | Included |
+OpenAI scheduled GPT-5.5's retirement from ChatGPT, Work and Codex for **October 14, 2026**. That retirement does not affect the API. Update saved defaults, scripts or scheduled tasks that select it to an available replacement; do not assume its API availability ends on the same date.
 
-`*` Here, `unlimited` means high practical availability, not unconditional unlimited usage. Terms and system guardrails still apply.
+## 3. Is Codex included, and how do its limits work?
 
-Three details that are commonly misunderstood:
+Codex is an agent that can understand, edit and run code. Official pricing now includes Free and Go rather than describing their access only as a temporary promotion. **Free/Go get GPT-6 Luna in the desktop app, subject to rollout**; Plus offers more surfaces, including web, CLI and IDE extension.
 
-- After Go/Plus reach `160 / 3h`, usage shifts to a mini model until the rolling window resets.
-- Plus `3000 / week` applies to manual Thinking selection; automatic Instant-to-Thinking switches are not counted in that weekly bucket.
-- If your in-product limit banners differ from this post, trust what your account currently shows.
+Work and Codex share usage. Model, context, reasoning and tools affect consumption, so a message is not a fixed unit of work. Old Chat message caps cannot tell you how many Codex tasks you can run, and API token prices cannot predict included subscription tasks.
 
-## 4. How Codex relates to Go, Plus, and Pro
+Check the Usage page for remaining allowance and reset times. Plus/Pro users can buy ChatGPT credits after reaching limits; these are separate from API balances. Try Luna for focused work and Sol or Astra for harder tasks before deciding that a higher plan is necessary.
 
-First, definition: `Codex` is a coding agent. You can use it in CLI, IDE, web, and desktop experiences for code understanding, editing, execution, and collaboration.
+## 4. Separate API billing and current model prices
 
-Current official inclusion language indicates:
+API-key requests in your product, script or service use API billing. A ChatGPT subscription does not automatically grant API credits or offset API charges. Codex with ChatGPT sign-in uses plan allowances; API-key authentication uses the API bill.
 
-- `Plus / Pro / Business / Enterprise / Edu` include Codex
-- `Free / Go` can also access Codex during limited-time availability windows
+These are **Standard, short-context text rates checked on 2026-10-14**, in USD per million tokens, for reference only.
 
-So Codex is not best understood as a fully separate membership. It is better understood as a specialized capability layer across plan tiers, with different limits by tier.
+| API model ID | Input | Cached input | Cache writes | Output |
+| --- | --- | --- | --- | --- |
+| `gpt-6.1-sol` | $2.00 | $0.10 | $2.50 | $10.00 |
+| `gpt-6-astra` | $10.00 | $1.00 | $12.50 | $50.00 |
+| `gpt-6-luna` | $0.10 | $0.01 | $0.125 | $0.50 |
 
-One important billing detail: Codex CLI supports two authentication paths.
+For example, one million uncached input tokens and 200,000 output tokens on Sol cost **$4** at these rates, before cache writes, tools and other charges. Long context has separate rates, and Batch, Flex, Fast or Ultrafast processing can change pricing. Budget with the [current API rate card](https://developers.openai.com/api/docs/pricing), not this table alone.
 
-- Sign in with your ChatGPT account: usage follows your ChatGPT plan allowances.
-- Sign in with an API key: usage follows API billing.
+## 5. Can a third-party app use a Plus/Pro allowance?
 
-That is why two people can both "use Codex" but see costs in different places.
+Yes, when the app supports it and your account is eligible. [Sign in with ChatGPT](https://learn.chatgpt.com/docs/sign-in-with-chatgpt) lets eligible Plus/Pro users authorize supported apps to consume existing Work/Codex usage. **Signing in and granting plan usage are separate permissions**: a ChatGPT login button alone does not establish how requests are paid for.
 
-## 5. What OpenAI API is, and why it is fundamentally different from chat subscriptions
+This adds no new allowance and does not provide a general-purpose API key. The app may charge its own fees. For your own integration, check whether this route is supported; conventional API-key requests still use separate billing.
 
-`OpenAI API` is a developer interface, not a chat membership. The core use case is integrating model capabilities into your own systems, for example:
+## 6. Choose around the work you actually do
 
-- building your own support bot or knowledge assistant
-- running summarization, classification, or extraction in internal workflows
-- adding text, image, or voice capabilities to your product
+For light use, try Free or Go first. For recurring complex Work/Codex tasks, check Plus and GPT-6.1 Sol availability. Compare the three Pro tiers when limits regularly interrupt your work or you need a supported Ultrafast mode.
 
-Its billing model is also different: API usage is generally pay-as-you-go (for example by token, request, or tool usage).
-
-Using official pricing visible on 2026-04-23 as a reference point:
-
-- GPT-5.4 text input: about `2.50 USD / 1M tokens`
-- GPT-5.4 text output: about `15.00 USD / 1M tokens`
-
-Pricing can change with model updates and regional strategy. Recalculate with the current official pricing page before budgeting.
-
-## 6. The key question: does a ChatGPT subscription include API usage?
-
-Short answer: **No. Subscription fees do not offset API usage, and API credits are not automatically included.**
-
-OpenAI help center guidance is consistent:
-
-- ChatGPT (`chatgpt.com`) and Platform (`platform.openai.com`) use separate billing systems.
-- ChatGPT subscription billing does not transfer to API usage.
-- To use API, you need to set up payment on the Platform side and pay based on usage.
-
-A single OpenAI account can still do both:
-
-- personal usage through Go / Plus / Pro
-- product integration through separate API pay-as-you-go
-
-This split is common in teams and does not conflict.
-
-## 7. Choose by scenario to avoid overbuying
-
-If you are still deciding, this simple path usually works:
-
-- Mostly personal chat and light tools: start with `Go`
-- Daily writing, analysis, learning, and research: choose `Plus` first
-- Very heavy, high-frequency usage with strong limit sensitivity: consider `Pro` (usually start with `$100`, then move to `$200` for sustained parallel heavy workflows)
-- Building your own product or automation with model calls: enable `API` separately, whether or not you subscribe to ChatGPT
-
-Three-line summary:
-
-- `Go / Plus / Pro` are subscription choices for using ChatGPT itself.
-- `API` is the engineering choice for building your own AI-powered workflows or products.
-- `Codex` can sit between both worlds: plan-based usage with ChatGPT login, or usage-based billing with API key auth.
-
-## 8. FAQ
-
-### 8.1 What is the biggest practical difference between Go and Plus?
-
-Go is mainly about affordability with higher basic limits than Free. Plus is where advanced capabilities and heavier ongoing usage become meaningfully more comfortable.
-
-### 8.2 Can Go use Thinking?
-
-Yes. Go can enable Thinking from the input `+` menu, with an officially published limit of `10 / 5h`. If you rely on long reasoning workflows often, Plus or Pro is usually a safer fit.
-
-### 8.3 Do both Plus and Pro include Agent? How different are the limits?
-
-Yes. Current public limits are Plus `40 / month` and Pro `400 / month`. If Agent is part of your daily workflow, the Pro gap is substantial.
-
-### 8.4 What is the practical difference between Pro `$100` and Pro `$200`?
-
-The practical difference is usage allowance, not whether core Pro capabilities exist. Both are Pro plans; in official language, `$100` targets serious weekly use while `$200` is for heavier, continuously parallel workloads.
-
-### 8.5 Pro says "unlimited." Is it truly unlimited?
-
-No. It does not mean unconditional infinite usage. Official language still ties usage to abuse guardrails and terms of use.
-
-### 8.6 What happens after I hit Go/Plus primary model limits?
-
-After you hit the current rolling-window cap, usage moves to a mini model until reset. This is rolling-window logic, not midnight daily reset logic.
-
-### 8.7 I already pay for Plus/Pro. Do I still pay separately for API?
-
-Yes. ChatGPT subscriptions and API billing are separate systems, and subscription fees do not offset API call charges.
-
-### 8.8 Can I downgrade from Plus or Pro to Go?
-
-Yes, you can switch plans. Official guidance indicates no prorated refund for the current cycle; the lower tier usually takes effect in the next billing cycle.
+For product integration, calculate an API budget separately: test Luna on clear batch tasks, Sol on complex work, and Astra where the difficulty warrants it. When buying through a third party, confirm the exact plan, account arrangement, Codex access and support terms. A lower price alone does not establish official Pro benefits or access to every model.
 
 ## References
 
-- [Introducing ChatGPT Go, now available worldwide](https://openai.com/index/introducing-chatgpt-go/)
-- [ChatGPT Plans | Free, Go, Plus, Pro, Business, and Enterprise](https://chatgpt.com/pricing)
-- [What is ChatGPT Go?](https://help.openai.com/en/articles/11989085-what-is-chatgpt-go)
-- [What is ChatGPT Plus?](https://help.openai.com/en/articles/6950777-what-is-chatgpt-plus)
-- [About ChatGPT Pro plans](https://help.openai.com/en/articles/9793128-what-is-chatgpt-pro)
-- [GPT-5.3 and GPT-5.4 in ChatGPT](https://help.openai.com/en/articles/11909943-gpt-5-in-chatgpt)
-- [ChatGPT agent (availability and monthly limits)](https://help.openai.com/en/articles/11752874-chatgpt-agent)
-- [Using Codex with your ChatGPT plan](https://help.openai.com/en/articles/11369540)
-- [Codex CLI (authentication and plan inclusion)](https://developers.openai.com/codex/cli)
-- [Billing settings in ChatGPT vs Platform](https://help.openai.com/en/articles/9039756-billing-settings-in-chatgpt-vs-platform)
-- [How can I move my ChatGPT subscription to the API?](https://help.openai.com/en/articles/8156019)
-- [OpenAI API Pricing](https://openai.com/api/pricing/)
+- [ChatGPT Work and Codex pricing](https://learn.chatgpt.com/docs/pricing)
+- [Models and availability in Work and Codex](https://learn.chatgpt.com/docs/models)
+- [GPT-6.1 Sol API model](https://developers.openai.com/api/docs/models/gpt-6.1-sol)
+- [GPT-6 Astra API model](https://developers.openai.com/api/docs/models/gpt-6-astra)
+- [GPT-6 Luna API model](https://developers.openai.com/api/docs/models/gpt-6-luna)
+- [OpenAI API pricing](https://developers.openai.com/api/docs/pricing)
+- [Sign in with ChatGPT](https://learn.chatgpt.com/docs/sign-in-with-chatgpt)
