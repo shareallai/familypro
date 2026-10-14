@@ -3,11 +3,11 @@ locale: zh
 translationKey: google-ai-plan-guide
 title: Google AI Plus、Pro、Ultra：2026 年权益与适用人群
 headline: Google AI Plus、Pro、Ultra 权益与选购分析
-description: 基于 2026 年 7 月 29 日 Google 官方套餐页，比较 Google AI Plus、Pro、Ultra 的存储、Gemini 用量、Flow credits、开发者权益与适用场景。
+description: 基于 2026 年 10 月 14 日 Google 官方套餐页，比较 Google AI Plus、Pro、Ultra 的存储、Gemini 用量、Flow credits、开发者权益与适用场景。
 summary: 本文依据当前 Google 官方套餐页梳理 Google AI Plus、Pro、Ultra 的核心权益、公开用量与地区限制，并说明各档位对应的使用场景。
 category: AI 订阅对比
 pubDate: 2026-03-25
-updatedDate: 2026-07-29
+updatedDate: 2026-10-14
 author: Mark
 service: Google AI
 tags:
@@ -32,13 +32,13 @@ draft: false
 
 Google AI 的付费档位为 `Google AI Plus`、`Google AI Pro` 和 `Google AI Ultra`。随着权益结构调整，过去以“每日可提问次数”为核心的比较方式已不足以反映实际差异。Gemini、Flow、搜索 AI Mode 与开发者产品的可用量，均会受到模型、功能、地区和账号状态的影响。
 
-截至 **2026 年 7 月 29 日**，选购时宜先确认自身是否需要长文档与研究、视频与创作生成，以及代码与代理式开发三类能力。单以聊天次数作为指标，难以准确判断套餐价值。
+截至 **2026 年 10 月 14 日**，选购时宜先确认自身是否需要长文档与研究、视频与创作生成，以及代码与代理式开发三类能力。单以聊天次数作为指标，难以准确判断套餐价值。
 
 本文以 Google 官方套餐页的美国区公开权益为核对基准；价格、试用、可购买档位和功能开放范围会因地区、账号与结账页不同而变化。文中的价格和第三方渠道信息仅供参考，不构成购买建议；付款前请以自己的 Google One 结账页为准。
 
 ## 1. 三档套餐的定位
 
-- **Google AI Plus**：面向希望在日常工作中使用 Gemini、Gemini Notebook 和基础创作功能的个人用户。套餐包含 400GB 存储、相当于非 AI 订阅用户 2 倍的 Gemini 用量，以及 Flow 的基础 credits。
+- **Google AI Plus**：面向希望在日常工作中使用 Gemini、Gemini Notebook 和基础创作功能的个人用户。套餐包含 400GB 或 2TB 存储、相当于非 AI 订阅用户 2 倍的 Gemini 用量，以及 Flow 的基础 credits。
 - **Google AI Pro**：面向高频研究、内容创作和开发场景。套餐提供 5TB 存储和 4 倍 Gemini 用量，并扩展 Google Search AI Mode、Flow、Jules、Antigravity、AI Studio 及 Google 应用内 Gemini 的访问范围。
 - **Google AI Ultra**：面向持续消耗大量视频或创作额度、需要 Deep Think，或需要更高代理式开发上限的用户。套餐分为 20TB 和 30TB 两个层级，Gemini 用量分别为 Pro 的 5 倍或 20 倍。
 
@@ -48,14 +48,16 @@ Google AI 的付费档位为 `Google AI Plus`、`Google AI Pro` 和 `Google AI U
 
 ### 2.1 核心套餐表
 
-| 套餐 | 云端存储 | Gemini 用量（相对非 AI 订阅） | Flow credits | 更适合谁 |
+| 套餐 | 云端存储 | Gemini 用量（倍率基准见各行） | Flow credits | 更适合谁 |
 | --- | --- | --- | --- | --- |
-| Google AI Plus | 400GB | 2 倍 | 200/月 | 轻度创作、学习、个人资料整理 |
-| Google AI Pro | 5TB | 4 倍 | 1,000/月 | 重度研究、内容创作、办公与开发 |
+| Google AI Plus | 400GB 或 2TB | 非 AI 订阅的 2 倍 | 200/月 | 轻度创作、学习、个人资料整理 |
+| Google AI Pro | 5TB | 非 AI 订阅的 4 倍 | 1,000/月 | 重度研究、内容创作、办公与开发 |
 | Google AI Ultra 5x | 20TB | Pro 的 5 倍 | 10,000/月 | 高频视频生成、复杂开发工作流 |
 | Google AI Ultra 20x | 30TB | Pro 的 20 倍 | 25,000/月 | 极高频生成与代理式开发 |
 
-上表中的 Flow credits 为官方套餐比较表列示的月度额度，仅适用于 Flow，不能与 Gemini 聊天次数直接换算。实际可用功能还会随模型、输出类型和地区而变化。
+官方首屏仍展示 Plus 的 400GB 方案，详细比较表则列出 400GB 或 2TB。2TB 选项是否可购买、对应价格及附加权益，应以自己的 Google One 结账页为准，不能假定两种存储方案完全相同。
+
+上表中的 Flow credits 为官方套餐比较表列示的月度额度，不能与 Gemini 聊天次数直接换算；其他产品是否消耗同一 AI credits 余额，应以各产品当前计费规则为准。实际可用功能还会随模型、输出类型和地区而变化。
 
 Gemini 的用量应视为动态资源池，而非固定的每日次数。复杂提示、所选模型、附件和对话长度均会影响消耗。`Pro` 与两档 `Ultra` 均公开列示 **100 万 token** 的扩展上下文窗口；对于长文档、资料库或代码库任务，这一指标通常比单次对话数量更具参考意义。
 
@@ -69,7 +71,9 @@ Google 官方页面会因国家、账号和促销活动显示不同的价格与�
 
 ### 3.1 Gemini 的模型访问与上下文窗口
 
-`Plus` 提供对 Gemini 3.1 Pro 的更多访问，以及有限的 Gemini Omni Flash 访问；`Pro` 和 `Ultra` 则提供更高的模型访问和文件上传额度。当前套餐表中，Pro 与两档 Ultra 均列有 100 万 token 的扩展上下文窗口。对于长报告、资料库和代码库任务，上下文窗口通常比“每天可对话多少次”更值得关注。
+Plus 当前列有 Gemini 3.6 Flash；Pro 和 Ultra 增加 Gemini 4 Argon 访问，且仍列有 Gemini 3.1 Pro 与 Deep Research。Argon 的开放范围受国家/地区条件限制。上下文窗口为 Plus 128k token、Pro 和 Ultra 100 万 token，不能将使用倍率换算成固定消息数。
+
+Plus、Pro 与 Ultra 的文件上传和模型访问上限各不相同。长文档任务应先看材料是否适合当前上下文窗口，再根据实际使用是否频繁触及上限决定升级。
 
 Gemini 的可用量并非固定的每日次数。提示复杂度、模型、附件和对话长度都会影响消耗。因此，套餐表中的 2 倍、4 倍、5 倍或 20 倍，应理解为相对访问上限，而不是可直接换算为固定条数的配额。
 
@@ -95,13 +99,13 @@ Gemini app 是 Google AI 套餐的主要入口，用于对话、写作、推理�
 
 ### 4.2 Gemini Notebook：基于资料库的研究与学习
 
-Google 套餐页将该服务列为 `Gemini Notebook`，用于围绕用户提供的资料组织、分析和生成内容。其服务入口仍为 NotebookLM。与通用对话不同，这类工具适合将项目文档、课程材料、网页资料或会议记录置于同一资料库中，再据此提问、生成摘要或整理研究结果。
+Google 套餐页将该服务列为 `Gemini Notebook`，用于围绕用户提供的资料组织、分析和生成内容。官方当前列出的独立入口为 [notebook.google](https://notebook.google/)。与通用对话不同，这类工具适合将项目文档、课程材料、网页资料或会议记录置于同一资料库中，再据此提问、生成摘要或整理研究结果。
 
 套餐差异体现在使用上限和 notebook 容量。官方套餐表将其依次列为“更多、扩展、更高、最高”，但未在当前总览页公布 notebooks、来源数或生成次数的固定数值。若主要需求是研究和阅读，应以自己需要同时维护的资料库数量、单个项目的材料规模和每周生成频率评估，而不宜假定存在统一的日配额。
 
 ### 4.3 Google Flow：视频生成与创作流程
 
-Google Flow 是面向视频创作的生成工具。当前套餐表为 Plus、Pro、Ultra 5x、Ultra 20x 分别列出 **200、1,000、10,000、25,000 credits/月**，并提供 Google Omni Flash 访问；更高档位还列有 4K 图像/视频放大和用于创建自定义 Flow 工具的相关能力。
+Google Flow 是面向视频创作的生成工具。当前套餐表为 Plus、Pro、Ultra 5x、Ultra 20x 分别列出 **200、1,000、10,000、25,000 credits/月**，并提供 Gemini Omni Flash 访问；更高档位还列有 4K 图像/视频放大和用于创建自定义 Flow 工具的相关能力。
 
 它适合需要连续处理素材、分镜和视频输出的创作场景。若仅偶尔生成短片，Plus 的额度可用于验证工作流；如果已有稳定的视频交付需求，应根据实际 credits 消耗判断 Pro 或 Ultra 是否必要。
 
@@ -115,7 +119,7 @@ Google Flow Music 是套餐页中单列的音乐生成产品，与 Google Flow �
 
 Google Search 的 AI Mode 为 Pro 和 Ultra 列出更高等级的 Gemini 模型访问、图像生成与编辑、代理能力，以及 Deep Search。当前套餐表仅以“扩展、更高、最高”描述此类访问，不提供固定的搜索或生成次数；Google 官方还对 AI Mode 中的代理能力和 Deep Search 明确标注了美国区限制。
 
-Google Finance 也单列 Deep Search，Plus 即有更多访问，Pro 和 Ultra 逐级提升。该功能的开放范围与搜索服务所在地区相关，不能以美国区功能表推断其他地区均可使用。
+Google Finance 也单列 Deep Search，Plus 即有更多访问，Pro 和 Ultra 逐级提升。官方当前明确将 Google Finance Deep Search 标注为美国区功能，不能据此推断其他地区均可使用。
 
 ### 4.6 Gemini in Gmail、Docs、Sheets、Vids 与 Meet：Google 应用内协作
 
@@ -141,29 +145,29 @@ Google Antigravity 是 Google 的代理式开发平台，套餐表以代理请�
 
 Pro 已提供扩展的访问等级；Ultra 适合需要更高请求量或长期运行代理任务的使用情形。是否具备可持续的开发工作量，是判断其价值的前提。
 
-### 4.10 Gemini Spark 与 Daily Brief：个人代理与信息摘要
+### 4.10 Tasks in Gemini 与 Daily Brief：任务执行与信息摘要
 
-Gemini Spark 被 Google 定位为可在用户指示下持续处理任务的个人 AI agent。当前官方页面说明，该功能向美国的 Pro 和 Ultra 订阅用户开放；Daily Brief 同样标注为美国区功能。套餐页未列出 Spark 的固定任务数、运行时长或并发额度。
+[Tasks in Gemini](https://support.google.com/gemini/answer/17094507) 可执行多步骤任务和安排持续工作流，向符合条件的 Pro、Ultra 个人账号开放，要求年满 18 岁并启用 Keep Activity 和 Personal Intelligence。当前帮助页说明，其适用于 Gemini Apps 支持的地区，但不包括欧洲经济区、尼日利亚、瑞士和英国；不能再将个人任务代理概括为美国限定。Daily Brief 在套餐表中仍标注为美国区功能。
 
-这两项产品更接近试验性或地区限定的个人助理服务。对于非美国地区用户，不应据此判断套餐价值，除非已在自己的账号中确认可用。
+任务执行与信息摘要的开放范围并不相同。应先确认自己的账号满足对应功能的地区、年龄及设置条件，再把它们计入套餐价值。
 
 ### 4.11 Chrome auto browse：浏览器任务执行
 
-Chrome auto browse 允许 Gemini 在 Chrome 中代为完成部分多步骤任务，例如比较不同日期的酒店与机票价格。官方套餐表将该能力列为 Pro 与 Ultra 的权益，并注明仅限美国；访问级别为 Pro“扩展”、Ultra“更高/最高”，未公布固定任务数。
+Chrome auto browse 允许 Gemini 在 Chrome 中代为完成部分多步骤任务，例如比较不同日期的酒店与机票价格。官方套餐表将该能力列为 Pro 与 Ultra 的权益，并注明面向美国和印度开放；访问级别为 Pro“扩展”、Ultra“更高/最高”，未公布固定任务数。
 
 这类浏览器自动化功能涉及登录状态、站点兼容性和地区开放范围。它适合有明确网页操作流程的用户，不能替代对付款、账号授权或关键结果的人工复核。
 
 ### 4.12 Google Photos：Remix 与照片转视频
 
-Google Photos 在套餐中列出 Remix 和照片转视频两项生成能力，访问级别随套餐提升：Plus 为有限、Pro 为扩展、Ultra 为更高或最高。官方权益说明对部分照片功能标注了美国区限制，且当前总览页不提供每月生成次数。
+Google Photos 在套餐中列出 Remix 和照片转视频两项生成能力，访问级别随套餐提升：Plus 为更多、Pro 为扩展、Ultra 为更高或最高。官方权益说明对部分照片功能标注了美国区限制，且当前总览页不提供每月生成次数。
 
 对于以 Google Photos 为主要相册和素材管理工具的用户，这些功能具有附加价值；若不使用该产品，相关权益通常不应成为订阅的决定性因素。
 
-### 4.13 Project Genie 与 Dreambeans：Ultra 的前沿功能
+### 4.13 Project Genie 与 Playground：互动世界与游戏
 
-Project Genie 是 Ultra 专属的互动世界模型访问权益。Google 表示该功能在 140 多个国家和地区可用，但未在套餐页列出生成次数或时长上限；实际开放范围仍应以账号页面为准。Dreambeans 则提供每日个性化故事，目前由官方标注为美国区功能。
+Project Genie 是 Ultra 专属的互动世界模型权益，Google 标注其在 140 多个国家和地区可用，未在套餐总览页公布统一生成次数或时长上限。Playground 则用于创建和游玩自定义游戏，当前标注为美国区功能，访问等级随套餐提升。两者并不是同一产品，也不能把 Playground 视为 Ultra 专属功能。
 
-两者均属于 Ultra 的附加或前沿功能，不是日常办公、研究或开发工作流的基础组成部分。除非已有具体使用计划，否则不宜仅因这类功能升级 Ultra。
+这些功能适合已有互动世界或游戏创作需求的用户。它们不是日常办公和研究的基础权益，购买前应实际确认地区可用性和需要的生成能力。
 
 ### 4.14 Google Home Premium 与 Google Health Premium：设备与健康服务
 
@@ -179,7 +183,11 @@ Pro 包含 Google Home Premium Standard，提供 30 天事件历史；Ultra 包�
 
 ### 4.16 云端存储与家庭共享：Google One 的基础部分
 
-400GB、5TB、20TB 或 30TB 存储可用于 Gmail、Google Drive 和 Google Photos，套餐页同时列有最多与 5 人共享的家庭共享功能。存储与设备备份、存储空间管理共同构成 Google AI 套餐的 Google One 基础权益。
+400GB 或 2TB、5TB、20TB 或 30TB 存储可用于 Gmail、Google Drive 和 Google Photos，套餐页同时列有最多与 5 人共享的家庭共享功能。存储与设备备份、存储空间管理共同构成 Google AI 套餐的 Google One 基础权益。
+
+家庭共享允许套餐管理员与最多 5 位其他成员共享存储和部分 AI 权益，并不意味着所有附加订阅都能共享。[Google AI Pro 权益说明](https://support.google.com/googleone/answer/14534406)明确指出：YouTube Premium Lite 仅限管理员，Google Developer Program premium 不能共享给家庭成员，Colab 的 200 CCU 权益也限管理员且不适用于试用订阅。计算家庭组的套餐价值时，应把个人权益单独列出。
+
+[AI credits 的家庭共享规则](https://support.google.com/googleone/answer/16287445?hl=en)还需单独计算：符合条件的 credits 由家庭组共用，不能按每位成员各有一份完整额度估算。Pro、Ultra 管理员可在支持地区加购 credits，用于 Flow 和 Antigravity；日本目前不支持这些 AI credits，通过第三方、Pixel Pass 或 Apple 计费的订阅也不符合加购资格。Flow Music credits 仍是独立额度。
 
 如果本身已经需要较大 Google One 存储空间，AI 套餐的总成本更容易被长期使用消化。反之，若存储需求很低，也不应只因存储数字较大而选择更高档位。
 
@@ -187,7 +195,7 @@ Pro 包含 Google Home Premium Standard，提供 30 天事件历史；Ultra 包�
 
 ### 5.1 Plus：日常使用与初步试用
 
-适合以下情况：你主要用 Gemini 处理日常写作、学习资料或个人规划；会使用 Gemini Notebook，但没有大量长项目；偶尔尝试 Flow；400GB 存储也确实有价值。
+适合以下情况：你主要用 Gemini 处理日常写作、学习资料或个人规划；会使用 Gemini Notebook，但没有大量长项目；偶尔尝试 Flow；400GB 或 2TB 存储也确实有价值。
 
 Plus 适合将 Google AI 纳入日常任务的用户，并不适用于替代专业视频生成或代理开发套餐。若在实际使用中经常达到模型或 Flow 限制，再考虑升级至 Pro 较为审慎。
 
@@ -207,30 +215,33 @@ Ultra 适合已有明确高用量需求的用户，例如每月需要大量 Flow
 
 | 主要需求 | 应记录的数据 | 与套餐额度的对应关系 | 判断标准 |
 | --- | --- | --- | --- |
-| Gemini 长文与代码任务 | 单次材料长度、每周处理次数、是否反复需要长上下文 | Pro 与 Ultra 提供 100 万 token 上下文；Plus 的优势是 2 倍相对用量而非公开固定消息数 | 若任务经常需要在同一对话中保留大量资料，再考虑 Pro；否则先验证 Plus 的实际限制 |
+| Gemini 长文与代码任务 | 单次材料长度、每周处理次数、是否反复需要长上下文 | Pro 与 Ultra 提供 100 万 token 上下文；Plus 为 128k token 上下文和 2 倍相对用量，不提供固定消息数 | 若任务经常需要在同一对话中保留大量资料，再考虑 Pro；否则先验证 Plus 的实际限制 |
 | Flow 视频生成 | 最近 10 个项目的 credits 消耗、每月项目数、常用模型与输出规格 | 200 / 1,000 / 10,000 / 25,000 Flow credits/月 | 用“10 个项目的总消耗 ÷ 10 × 月项目数”估算月需求，再与套餐额度比较；预留 20% 至 30% 余量 |
 | Flow Music | 每首音乐消耗、每月成品数量、是否需要反复修改 | 3,000 / 10,000 / 30,000 / 30,000 credits/月 | 先区分音乐与视频 credits；不能用 Flow 视频的余额推算音乐生成能力 |
 | Notebook 研究 | 同时维护的资料库数量、每个资料库的来源量、每周报告或学习材料产出 | 官方总览只列“更多/扩展/更高/最高”，未列统一固定次数 | 若无法列出稳定的资料库与来源规模，就不应仅因“更高额度”升级 Ultra |
 | 代码代理 | 每月需要 Jules 处理的任务数、同时运行的任务数、AI Studio/Antigravity 的实际使用时长 | Jules、Antigravity 与 AI Studio 的具体请求数未在总览页公开 | 在免费或现有档位连续记录一周；只有任务或并发已影响交付时，才将更高档位计入成本 |
-| 存储 | 当前 Gmail、Drive、Photos 已用空间，加上过去 12 个月的增长量 | 400GB / 5TB / 20TB / 30TB | 以“已用空间 + 年增长量 + 20% 缓冲”比较档位；不应只因 Ultra 存储大而升级 |
+| 存储 | 当前 Gmail、Drive、Photos 已用空间，加上过去 12 个月的增长量 | 400GB 或 2TB / 5TB / 20TB / 30TB | 以“已用空间 + 年增长量 + 20% 缓冲”比较档位；不应只因 Ultra 存储大而升级 |
 
 还应在付款前完成以下具体核对：
 
 1. 在自己的 Google One 页面截图保存套餐名称、月费、试用结束日、续费价与存储档位；不要以其他国家的报价替代结账页价格。
-2. 在同一 Google 账号中打开 Gemini、Flow、Gemini Notebook 和 Google Search AI Mode；页面未出现的功能不应计入价值。对于 Deep Search、Chrome auto browse、Gemini Spark、Gemini Agent 和 Google Photos 生成能力，应分别核对地区、语言和设备条件。
+2. 在同一 Google 账号中打开 Gemini、Flow、Gemini Notebook 和 Google Search AI Mode；页面未出现的功能不应计入价值。对于 Deep Search、Chrome auto browse、Tasks in Gemini、Gemini Agent 和 Google Photos 生成能力，应分别核对地区、语言和设备条件。
 3. 若需要家庭共享，先确认家庭组成员、存储分配和 AI 权益是否符合当前账号页面的规则；不要假定所有试用、媒体订阅或实验功能均可共享。
 4. 若以 YouTube Premium、Google Home Premium 或 Google Health Premium 抵扣套餐成本，先确认本地区是否供应该权益；Google Health Premium 还应确认拥有兼容的 Pixel Watch 或 Fitbit 设备。
 5. 使用第三方方案时，逐项核对账号归属、订阅时长、是否自动续费、地区限制、售后范围与退款条件。第三方页面价格不能作为 Google 官方价格或权益承诺。
 
-如已确定选择 Google AI Pro，并需了解第三方方案，可查看 [FamilyPro Google AI 套餐页面（可选）](https://familypro.io/en/products/gemini?invite=7Dfd94eb)。FamilyPro 不是 Google 官方销售渠道；第三方套餐的时长、规格、地区可见性和价格均可能变化。相关信息的数据日期为 **2026-07-29**，仅供参考；下单前请以实际结账页和售后条款为准。
+如已确定选择 Google AI Pro，并需了解第三方方案，可查看 <a href="https://familypro.io/en/products/gemini?invite=7Dfd94eb" rel="sponsored">FamilyPro Google AI 套餐页面（可选）</a>。FamilyPro 不是 Google 官方销售渠道；第三方套餐的时长、规格、地区可见性和价格均可能变化。相关信息的数据日期为 **2026-07-29**，仅供参考；下单前请以实际结账页和售后条款为准。
 
 ## 官方参考
 
-本文最后核对日期为 **2026 年 7 月 29 日**。Google 会调整套餐、模型和地区开放范围，购买前建议再次查看以下官方页面：
+Google 官方套餐与限额信息最后核对日期为 **2026 年 10 月 14 日**。Google 会调整套餐、模型和地区开放范围，购买前建议再次查看以下官方页面：
 
 - [Google AI Plans 官方套餐页](https://one.google.com/about/google-ai-plans/)
 - [Google AI 方案国家/地区可用性](https://support.google.com/googleone/answer/9004013)
-- [Google Flow 的国家/地区可用性](https://support.google.com/flow/answer/16324674)
+- [Google Flow 的国家/地区可用性](https://support.google.com/flow/answer/16353544)
 - [Gemini Apps 的限制与升级说明](https://support.google.com/gemini/answer/16275805)
+- [Gemini Notebook 官方入口](https://notebook.google/)
+- [Gemini 任务与工作流官方说明](https://support.google.com/gemini/answer/17094507)
 - [Google AI 订阅的 Gemini 权益说明](https://support.google.com/googleone/answer/14534406)
-- [FamilyPro 第三方平台：Google AI 套餐页（可选购买链接）](https://familypro.io/en/products/gemini?invite=7Dfd94eb)
+- [AI credits 家庭共享与加购规则](https://support.google.com/googleone/answer/16287445?hl=en)
+- <a href="https://familypro.io/en/products/gemini?invite=7Dfd94eb" rel="sponsored">FamilyPro 第三方平台：Google AI 套餐页（可选购买链接）</a>
