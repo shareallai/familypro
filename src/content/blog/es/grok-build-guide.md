@@ -3,11 +3,11 @@ locale: es
 translationKey: grok-build-guide
 title: "Guía Grok Build 2026: planes, modelos, límites y comandos"
 headline: Cómo evaluar Grok Build para tu flujo de ingeniería
-description: "Con fuentes oficiales de xAI de mayo de 2026, esta guía explica Grok Build: planes con acceso, setup, plataformas, modelos, límites y comandos clave."
+description: "Guía Grok Build actualizada: planes, Grok 4.7 y Fast, instalación, comandos, cuota semanal compartida y costes separados de la API."
 summary: Este artículo ayuda a equipos técnicos a decidir si Grok Build encaja en su operación de desarrollo, con criterios prácticos sobre acceso, incorporación y uso diario.
 category: Análisis de herramientas IA
 pubDate: 2026-05-26
-updatedDate: 2026-06-01
+updatedDate: 2026-10-15
 author: Mark
 service: Grok
 tags:
@@ -23,15 +23,9 @@ relatedTranslationKeys:
 draft: false
 ---
 
-Cuando apareció Grok Build, muchos equipos de ingeniería tuvieron primero dos dudas concretas: en qué se diferencia de Codex CLI, Claude Code y Cursor Agent, y si ya conviene incorporarlo al flujo actual.
+Grok Build reúne lectura del código, planificación, cambios y verificación en el terminal. Distingue las funciones del cliente, los modelos disponibles en tu cuenta y la facturación mediante suscripción o API.
 
-Esta guía va directo a decisiones de implementación: **qué es Grok Build, qué planes pueden usarlo, cómo se configura, cómo encaja entre CLI y experiencia visual, qué modelos soporta, cómo leer los límites y qué comandos importan en el trabajo diario**.
-
-Para evitar confusiones con fechas, empecemos por la línea temporal:
-
-- `2026-05-14`: xAI marcó Grok Build como beta en Developer Release Notes.
-- `2026-05-19`: `grok-build-0.1` apareció como modelo de codificación en acceso temprano.
-- `2026-05-25`: xAI publicó "Introducing Grok Build" y abrió la beta temprana para suscriptores elegibles.
+**Hechos y precios comprobados: 2026-10-15. Precios en dólares orientativos, sin impuestos aplicables. Consulta tarifas oficiales y tu factura.** Para comprar o migrar, revisa la [guía de los nuevos planes Grok](../xai-grok-x-subscription-plan-guide/).
 
 ## 1. Qué es Grok Build
 
@@ -43,23 +37,11 @@ Según la documentación de xAI, Grok Build es un agente de codificación que se
 
 En la práctica, no es solo un chat que lanza comandos. Es una cadena de ejecución única que combina planificación, edición, operaciones de archivos, llamadas a herramientas y subagentes en paralelo.
 
-## 2. Qué planes pueden usar Grok Build
+## 2. Planes actuales y acceso
 
-Según el anuncio de lanzamiento del `2026-05-25`, la beta temprana está disponible de forma explícita para dos grupos de suscripción individual:
+Los nuevos clientes comparan The X Subscription: Free es limitado; Plus cuesta $8/mes, Premium $30, Super $100 y Ultra $200. La página de precios incluye Grok Build en Plus. Comprueba modelos y cuota disponible al iniciar sesión; el antiguo SuperGrok o X Premium+ ya no es el único requisito de compra.
 
-- `SuperGrok`
-- `X Premium Plus`
-
-La documentación de precios y administración para equipos también describe asignación por licencias empresariales:
-
-- `SuperGrok` (business license)
-- `SuperGrok Heavy` (business license)
-
-Para usuarios individuales, un orden de decisión fiable es:
-
-1. Confirmar si tu cuenta tiene `SuperGrok` o `X Premium Plus`.
-2. Instalar el CLI y validar acceso con login local.
-3. Si tu empresa compra licencias de forma centralizada, pedir al admin la asignación en Grok Business.
+Premium, Super y Ultra incluyen 4x, 15x y 50x el uso de Plus, no cantidades fijas de tareas. Grok Bot empieza en Premium. Los usuarios actuales pueden mantener su plan; no unifiques cuentas solo para probar Build. Los equipos deben comprobar plazas y políticas de organización.
 
 ## 3. Cómo usarlo: onboarding rápido (unos 5 minutos)
 
@@ -90,10 +72,17 @@ export XAI_API_KEY="xai-..."
 grok
 ```
 
+Si el entorno remoto no puede abrir el navegador, el código de dispositivo es una alternativa, no un paso obligatorio tras el acceso normal.
+
+```bash
+grok login --device-auth
+```
+
 ### 3.3 Arranque dentro de un repositorio
 
 ```bash
 cd your-project
+grok inspect
 grok
 ```
 
@@ -144,73 +133,44 @@ A nivel de familia de producto, las capacidades de Grok también cubren:
 
 Distinción clave: Grok Build está posicionado como agente de codificación en terminal, no como app de chat móvil.
 
-## 6. Qué modelos soporta Grok Build
+## 6. Modelos y configuración
 
-### 6.1 Modelo de codificación principal
+### 6.1 Grok 4.7, Fast y modelos anteriores
 
-La documentación de Build enumera explícitamente:
+La presentación actual de Build introduce `grok-4.7`; la tabla API aún incluye `grok-build-0.1`. El identificador antiguo no demuestra que sea el modelo único ni el predeterminado del cliente. `grok-build` en el ejemplo de ajustes es un nombre de configuración, no necesariamente el mismo identificador API.
 
-- `grok-build-0.1` (early access)
+Grok 4.7 Fast sirve el mismo modelo en infraestructura más rápida. Solo está en Cursor y Build, con cobro mediante el plan del producto; no está en la API pública xAI ni incluido en el nivel gratuito de Build. La mayor velocidad puede consumir más presupuesto.
 
-El mismo modelo también está disponible en la API de xAI para equipos que construyen bucles agentic propios.
+### 6.2 Comprobar la cuenta y los ajustes
 
-### 6.2 Cambio de modelo y configuración personalizada
+Usa `grok models` en el shell y `/model <name>` en la TUI. Modelos personalizados y predeterminado se configuran en `~/.grok/config.toml`, a nivel de usuario. El archivo de proyecto `.grok/config.toml` cubre principalmente MCP, Plugins y reglas de permisos, no todos los ajustes personales. `grok inspect` muestra las fuentes cargadas.
 
-Grok Build permite cambiar modelo dentro de la sesión con `/model <name>`, definir modelo por defecto en archivos de configuración y declarar endpoints personalizados con definiciones basadas en `base_url`.
+## 7. Cuota compartida, API y coste de Fast
 
-En operación real, los modelos visibles dependen tanto de permisos de la cuenta como de la configuración activa.
+### 7.1 Consumo de la suscripción
 
-## 7. Cómo interpretar los límites de Grok Build
+Cada plaza de pago tiene una reserva semanal para uso elegible de modelos propios en las interfaces Grok y Cursor admitidas. El consumo depende de la tarea; los multiplicadores no garantizan mensajes, tareas de programación o vídeos diarios. Observa `/usage` y el panel de consumo durante una semana normal.
 
-Aquí se concentran muchos errores de compra. Conviene separar límites de suscripción y facturación API.
+Los modelos de terceros en Cursor se cobran desde el primer uso. La API pública Grok se factura aparte y no consume esa reserva. Un endpoint personalizado sigue las condiciones de su proveedor.
 
-### 7.1 Límites del lado suscripción (SuperGrok / Premium+)
+### 7.2 Tarifas API actuales y Fast
 
-La comunicación pública sigue siendo más descriptiva que tabular. Lo habitual es ver frases como:
+Precios de `grok-4.7` en el endpoint global estándar, en dólares por millón de tokens. Al alcanzar el umbral de contexto largo, sus tarifas se aplican a todos los tokens de la solicitud, no solo al exceso.
 
-- `higher rate limits`
-- `enhanced quotas`
-- `much higher rate limits` (Heavy)
+| Contexto de entrada | Entrada | Entrada en caché | Salida |
+| --- | --- | --- | --- |
+| Menos de 200k tokens | $2.00 | $0.50 | $6.00 |
+| Desde 200k tokens | $4.00 | $1.00 | $12.00 |
 
-La jerarquía queda clara, pero no hay una tabla pública estable con cuotas fijas por día de Grok Build.
+Dentro de Cursor/Build, Fast cuesta 2 veces la tarifa estándar en contexto corto y 1,5 veces en contexto largo, mediante el plan del producto. Las herramientas pueden añadir cargos; la antigua estimación uniforme de $5 por mil llamadas para todas ellas no sirve. **Fecha de datos: 2026-10-15, solo referencia. Endpoints regionales, modelos, herramientas y reglas de cobro afectan al total.**
 
-Método práctico de evaluación:
+## 8. Comandos diarios y trabajos largos
 
-1. Medir consumo de tokens y créditos con `/usage`.
-2. Probar una semana con carga real.
-3. Subir de plan solo si los choques con límites son frecuentes en condiciones de producción.
+`/model <name>` cambia el modelo, `/plan [description]` entra en Plan y `/view-plan` muestra el plan. `/usage` muestra consumo, `/context` el contexto y `/compact` lo resume. `/new` y `/resume` inician o recuperan sesiones; `/rewind` vuelve a un turno anterior. `/skills`, `/plugins` y `/mcps` abren las pestañas de extensiones.
 
-### 7.2 Precios del lado API
+`/goal <objective>` sirve para trabajo largo con un final verificable. `/create-workflow` crea un flujo, `/workflow <name>` lo ejecuta y `/workflows` abre el seguimiento. `/loop` repite instrucciones y `/tasks` lista tareas en segundo plano. Comprueba permisos, costes y `/help` local.
 
-Para usuarios API, la documentación de xAI con fecha `2026-05-15` lista:
-
-- `grok-build-0.1`: entrada `$1.00 / 1M tokens`, entrada cacheada `$0.20 / 1M`, salida `$2.00 / 1M`
-- Las llamadas a herramientas se cobran aparte (por ejemplo, `web_search`, `x_search` y `code_execution` suelen aparecer como `$5 / 1k calls`)
-
-**Fecha de datos: 2026-05-26. Los precios son solo de referencia y pueden cambiar; antes de comprar, verifica siempre la página oficial de facturación más reciente.**
-
-## 8. Comandos integrados de uso frecuente
-
-En uso diario de ingeniería, estos comandos suelen ser los más útiles:
-
-- `/model <name>`: cambiar el modelo activo.
-- `/plan`: revisar el plan de ejecución actual.
-- `/usage`: revisar consumo de tokens y créditos.
-- `/context`: comprobar consumo de contexto.
-- `/new`: iniciar una sesión nueva.
-- `/resume`: reabrir una sesión anterior.
-- `/rewind`: volver a un estado previo de conversación.
-- `/compact`: compactar historial de conversación.
-- `/feedback`: enviar feedback de producto desde la sesión.
-- `/plugins`: abrir gestión de plugins.
-- `/skills`: abrir gestión de skills.
-- `/mcps`: abrir gestión de integraciones MCP.
-
-Otros comandos de shell que también se usan bastante:
-
-- `/memory`
-- `/imagine`
-- `/imagine-video`
+La restricción de edición de Plan es independiente de los permisos: antes de aprobar solo se edita el archivo del plan. Bash y MCP siguen sus permisos y el shell puede escribir. Plan no es una sandbox de solo lectura.
 
 ## 9. Capacidades frecuentes de Grok y dónde aportan valor
 
@@ -234,31 +194,23 @@ Grok Build puede descubrir reglas locales y directorios de skills, y ampliarse v
 
 La familia Grok también incluye rutas de generación y comprensión de imagen/video, útiles para documentación técnica, demos y flujos orientados a contenido.
 
-## 10. Conclusión: quién debería adoptar ahora y quién debería observar
+## 10. Decidir si incorporarlo
 
-Encaje más fuerte inmediato:
+Prueba una tarea limitada con cuenta, modelo y cobro identificados. Lee las reglas, revisa plan y diff, y ejecuta pruebas o build. Elige el plan por consumo medido, no por suposiciones sobre nombres antiguos.
 
-- Equipos que ya trabajan con terminal como núcleo operativo.
-- Equipos que quieren una única entrada para planificar, editar y ejecutar herramientas.
-- Usuarios que ya tienen acceso `SuperGrok` o `X Premium Plus`.
-
-Mejor observar primero:
-
-- Equipos muy dependientes de flujos GUI de escritorio independientes.
-- Compradores que exigen cuotas fijas totalmente explícitas antes de adoptar.
-- Organizaciones muy atadas a otra plataforma agentic con baja tolerancia al cambio.
-
-Conclusión final: **Grok Build ya es viable para flujos reales de ingeniería, pero su encaje más sólido sigue estando en entornos terminal-first y automatización-first.**
+Si necesitas una GUI de escritorio, prueba la integración concreta. Un flujo existente debe comparar resultados, coste total y esfuerzo de migración con la misma tarea. Disponer de herramientas no sustituye la validación del resultado.
 
 ## References
 
-- [Introducing Grok Build (xAI News, May 25, 2026)](https://x.ai/news/grok-build-cli)
-- [Grok Build Getting Started (xAI Docs)](https://docs.x.ai/build/overview)
-- [Modes and Commands (xAI Docs)](https://docs.x.ai/build/modes-and-commands)
-- [Headless and Scripting (xAI Docs)](https://docs.x.ai/build/cli/headless-scripting)
-- [Skills, Plugins, and Marketplaces (xAI Docs)](https://docs.x.ai/build/features/skills-plugins-marketplaces)
-- [Enterprise Deployments (xAI Docs)](https://docs.x.ai/build/enterprise)
-- [xAI Developer Release Notes (May 2026 entries)](https://docs.x.ai/developers/release-notes)
-- [xAI Pricing (Grok Plans)](https://x.ai/pricing)
-- [xAI API Pricing](https://docs.x.ai/developers/pricing)
-- [Manage Licenses and Users (Grok Business)](https://docs.x.ai/grok/management)
+- [Grok Build overview](https://docs.x.ai/build/overview)
+- [CLI reference](https://docs.x.ai/build/cli/reference)
+- [Modes and commands](https://docs.x.ai/build/modes-and-commands)
+- [Plan mode](https://docs.x.ai/build/features/plan-mode)
+- [Permissions](https://docs.x.ai/build/features/permissions)
+- [Headless and scripting](https://docs.x.ai/build/cli/headless-scripting)
+- [Settings](https://docs.x.ai/build/settings)
+- [Skills, Plugins and Marketplaces](https://docs.x.ai/build/features/skills-plugins-marketplaces)
+- [API pricing and Grok 4.7 Fast](https://docs.x.ai/developers/pricing)
+- [The X Subscription pricing](https://x.ai/pricing)
+- [Monthly and annual prices](https://docs.x.ai/x-subscription/pricing)
+- [Weekly usage limits](https://docs.x.ai/x-subscription/usage-limits)

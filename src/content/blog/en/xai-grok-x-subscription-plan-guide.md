@@ -1,152 +1,137 @@
 ---
-locale: en
-translationKey: xai-grok-x-subscription-plan-guide
-title: "Grok Pricing 2026: Plans, SuperGrok and Heavy Migration"
-headline: "Grok Pricing and Plans: Should SuperGrok or Heavy Users Switch?"
-description: Compare Grok plan prices and weekly limits. See when SuperGrok users should switch to Premium, why Heavy users may need to wait, and how migration refunds work.
-summary: Choose a new plan by usage. SuperGrok users paying the same price can consider Premium if they need Cursor or X Premium+. Check legacy discounts, third-party model allowances and Heavy-specific benefits before switching.
-category: AI Subscription Comparisons
-pubDate: 2026-10-13
-updatedDate: 2026-10-13
-author: Mark
-service: Grok
-tags:
-  - Grok
-  - xAI
-  - The X Subscription
-  - SuperGrok
-  - SuperGrok Heavy
-  - Cursor
+locale: "en"
+translationKey: "xai-grok-x-subscription-plan-guide"
+title: "Grok New Plans: Pricing, Benefits and Migration Guide"
+headline: "Grok’s new subscription: choosing Plus, Premium, Super or Ultra"
+description: "Compare new Grok prices, shared weekly usage and migration rules, with sourced community reactions and advice for SuperGrok and Heavy subscribers."
+summary: "Compare the shared allowance and total bill, not just the tier name. Existing users can keep their plan; migration needs extra care when third-party models or Heavy benefits matter."
+category: "AI Subscription Comparisons"
+pubDate: "2026-10-13"
+updatedDate: 2026-10-15
+author: "Mark"
+service: "Grok"
+tags: ["Grok", "xAI", "The X Subscription", "SuperGrok", "Cursor"]
+relatedTranslationKeys: ["grok-plan-guide", "grok-build-guide"]
 draft: false
 ---
 
-**Existing SuperGrok and SuperGrok Heavy subscribers can currently keep their plans. Switching is optional.** New customers choose Free, Plus, Premium, Super or Ultra. For existing users, the decision depends on useful new benefits, total cost and whether the available features and usage meet their needs.
+**Existing SuperGrok and SuperGrok Heavy subscribers can currently keep their plans.** New customers choose Free, Plus, Premium, Super or Ultra. Whether to switch depends on the features you need, the total bill and the allowance your work requires.
 
-xAI launched [The X Subscription](https://x.ai/news/x-subscription) on **October 12, 2026**, bringing Grok, Grok Bot, Cursor and X benefits into one subscription.
+xAI [announced The X Subscription](https://x.ai/news/x-subscription) on **October 12, 2026**. **Facts checked: 2026-10-15. USD list prices are for reference only, exclude applicable taxes and may differ by region or offer. Check your account checkout.** Switching is rolling out to eligible accounts.
 
-**Facts checked: October 13, 2026. USD list prices are provided for reference and exclude applicable taxes and fees. Your checkout determines the final price, promotions and purchase options.** Switching is rolling out gradually; a missing migration option does not invalidate your existing subscription.
+## 1. What the unified subscription includes
 
-## 1. What the new subscription includes
+Grok handles chat, voice, images and video. Cursor provides coding tools; Grok Bot lets you delegate work to cloud agents. Eligible Grok model usage shares a weekly pool across these products. Connect a personal X account to activate its benefits.
 
-The [official overview](https://docs.x.ai/x-subscription/overview) describes one workspace and bill for Grok and Cursor, with a shared weekly allowance for Grok model usage. Connecting a personal X account activates the X benefits of your chosen tier.
+New Premium is different from legacy X Premium, and Super is not simply a renamed SuperGrok. The [legacy plan guide](../grok-plan-guide/) explains the older names.
 
-Premium belongs to this unified subscription system. Super should not be assumed to be a rename of SuperGrok. Compare prices, features and usage allowances before choosing.
+## 2. Monthly prices, annual prices and features
 
-## 2. Grok monthly and annual prices
+The following uses [official list prices](https://docs.x.ai/x-subscription/pricing). Annual monthly equivalents are calculated by dividing by 12; annual plans are paid yearly.
 
-These figures come from the [official pricing documentation](https://docs.x.ai/x-subscription/pricing). Monthly equivalents divide annual prices by 12; annual plans are paid yearly.
-
-| Plan | Monthly billing | Annual billing | Monthly equivalent, paid annually | Included usage relative to Plus |
+| Plan | Monthly | Annual | Annual equivalent per month | Usage relative to Plus |
 | --- | --- | --- | --- | --- |
-| Free | $0 | $0 | $0 | Limited access; no multiplier |
-| Plus | $8/month | $80/year | About $6.67 | Base |
-| Premium | $30/month | $300/year | $25 | 4x |
-| Super | $100/month | $1,000/year | About $83.33 | 15x |
-| Ultra | $200/month | $2,000/year | About $166.67 | 50x |
+| Free | $0 | $0 | $0 | Limited |
+| Plus | $8 | $80 | About $6.67 | Base |
+| Premium | $30 | $300 | $25 | 4x |
+| Super | $100 | $1,000 | About $83.33 | 15x |
+| Ultra | $200 | $2,000 | About $166.67 | 50x |
 
-The [pricing page](https://x.ai/pricing) positions Plus for light AI use. Premium adds the latest Grok models, faster chat responses and cloud agents. Super adds priority model access at peak times. Ultra has the largest individual allowance, but usage is still limited.
+Plus suits light AI use and social creators. Premium adds Grok Bot, latest Grok models, faster chat responses and cloud agents; Super adds priority model access at peak times. Ultra has the largest personal allowance, not unlimited usage.
 
-Grok Bot is included on Premium and above. It uses the same weekly allowance, with no separate additional pool. Plus does not include Grok Bot.
+Grok Bot starts at Premium and uses the same weekly pool. Plus provides a checkmark, creator tools and fewer ads on X; Premium and above provide full X Premium+ benefits after connecting a personal X account. Organization-managed X accounts cannot be connected.
 
-With a personal X account connected, Plus offers a checkmark, creator tools and fewer ads. Premium, Super and Ultra provide full X Premium+ benefits. Existing X Premium+ subscribers should choose Premium or higher to retain those features; see the [X benefits guide](https://docs.x.ai/x-subscription/x-premium).
+Teams offer Premium, Super and Ultra at $30, $100 and $200 per seat per month, with mixed seat tiers and centralized administration. Plus is not a team tier.
 
-Teams start at $30 per seat per month, with Premium, Super and Ultra seats that can be mixed. Teams needing centralized billing and administration should budget by seat count.
+## 3. Shared usage and additional charges
 
-## 3. Weekly limits and separately billed usage
+The [usage documentation](https://docs.x.ai/x-subscription/usage-limits) specifies a weekly allowance for eligible first-party usage. A large Cursor task can reduce what remains for Grok chat or Bot work. The multipliers do not promise fixed message, image or video counts.
 
-The [usage guide](https://docs.x.ai/x-subscription/usage-limits) says eligible first-party Grok and Cursor usage draws from the same weekly pool per paid seat. Different activities consume different amounts. Premium's “4x Plus” does not translate into fixed daily counts of prompts, images or videos.
+**Third-party models such as Claude and GPT in Cursor are billed separately from first use.** First-party usage beyond the weekly allowance also needs prepaid credit, or you can wait for the reset. Under the [top-up rules](https://docs.x.ai/x-subscription/extra-usage), automatic top-ups are optional and are not enabled by switching. A spending cap can stop extra usage even when prepaid credit remains.
 
-Large Cursor coding tasks leave less allowance for Grok. If you do not use Cursor, you can concentrate the allowance on Grok. Each product does not receive its own full pool.
+Grok API calls are separately billed at standard model rates and do not draw from the subscription pool. API access does not mean an included API allowance.
 
-**Claude, GPT and other third-party models in Cursor are billed separately from the first use.** Grok model usage beyond the included allowance also requires top-up credits. Budget for both the subscription and extra usage, and check automatic top-ups and spending caps.
+Each self-serve team seat has its own weekly pool; the team shares the prepaid balance for additional usage. Enterprise arrangements follow the contract.
 
-On self-serve Teams plans, each seat has its own weekly pool. Seats share a prepaid balance for extra usage, not their included pools. Enterprise follows its contract.
+Also check Grok 4.7 Fast when estimating Cursor or Grok Build usage. Official pricing describes the same model on faster infrastructure, charged through the product plan at 2x standard token rates for shorter context and 1.5x for long context. It is unavailable on the public API and excluded from Build’s free tier. Faster work does not imply the same consumption per task.
 
-## 4. What existing SuperGrok and Heavy users keep
+## 4. Keeping a legacy plan or combining accounts
 
-### 4.1 Without switching: current plans, prices and features continue
+### 4.1 Keeping SuperGrok or Heavy
 
-The [switching guide](https://docs.x.ai/x-subscription/do-i-have-to-switch) and [overview](https://docs.x.ai/x-subscription/overview) say migration is optional. Current plans, prices and features continue unless you change or cancel your subscription.
+[Switching is optional](https://docs.x.ai/x-subscription/do-i-have-to-switch). Current plans, prices and features continue unless changed or cancelled. Check account-specific discounts and renewal terms. Public documentation does not establish that Heavy and Ultra have identical model access or benefits.
 
-This is general guidance for existing Grok subscriptions. There is no complete public comparison of Heavy and the new plans. Under the current retention policy, continuing an old Heavy subscription should not automatically remove its benefits because of this launch. Check account-specific discounts, bonuses and renewal arrangements against your bill and offer terms.
+### 4.2 Unification is permanent
 
-### 4.2 Future migration: no timetable, with advance notice
+The [unification process](https://docs.x.ai/x-subscription/unify-accounts) combines eligible Grok and Cursor accounts into one account, workspace, plan and bill. Support cannot reverse it. Cancelling the new subscription does not separate accounts or restore legacy subscriptions, as the [cancellation documentation](https://docs.x.ai/x-subscription/cancel) explains.
 
-The [launch FAQ](https://x.ai/news/x-subscription) says remaining users will eventually move to the new plans. There is no timetable, and customers will receive advance notice. Current availability is not a promise to preserve legacy plans forever.
+## 5. Refunds and avoiding duplicate charges
 
-Annual subscribers who do not voluntarily upgrade keep their paid term through its end date. Future changes would apply at renewal, with advance notice.
+Eligible direct-billed plans included in the switch are cancelled with refunds for unused time. Monthly and annual plans qualify. Refunds return separately to the original payment method; the new subscription starts immediately and is charged in full.
 
-### 4.3 Switching: account unification cannot be reversed
-
-The [unification guide](https://docs.x.ai/x-subscription/unify-accounts) says switching combines eligible Grok and Cursor accounts into one account, workspace, plan and bill. **Completed unification is permanent, including for support.**
-
-The [cancellation guide](https://docs.x.ai/x-subscription/cancel) confirms that canceling does not separate unified accounts or restore old Cursor, SuperGrok or X Premium subscriptions. If you need separate accounts or the option to return to your old subscription, do not unify them as a trial.
-
-## 5. Migration refunds and duplicate billing
-
-The [billing and refunds guide](https://docs.x.ai/x-subscription/invoices-and-refunds) says eligible direct-billed subscriptions included in the switch are canceled. Unused time is refunded proportionally on both monthly and annual plans.
-
-The new plan starts immediately and is charged in full. Refunds go separately to the original payment method; they do not reduce the new checkout payment.
-
-| Original purchase channel | What happens when switching |
+| Original channel | What to do |
 | --- | --- |
-| Direct web billing | Eligible subscriptions included in the switch are canceled; subscriptions on accounts outside it remain unchanged |
-| Cursor through Apple | Cancel and request any refund through Apple yourself, or billing may continue |
-| Grok, Grok Bot or X Premium through Apple | Cancellation and a refund request for unused time are handled during switching; Apple decides whether to approve the refund |
-| Grok, Grok Bot or X Premium through Google Play | Check Play subscriptions afterward and cancel there if renewal remains enabled |
+| Direct web billing | Check that the intended old subscriptions were included; unrelated accounts remain unchanged |
+| Cursor through Apple | Cancel through Apple and request any refund there; switching does not stop Apple billing |
+| Grok, Grok Bot or X Premium through Apple | The provider requests cancellation and an unused-time refund; Apple decides the refund |
+| Grok, Grok Bot or X Premium through Google Play | Check Play subscriptions and cancel there if renewal is still enabled |
 
-Record your old plan, actual renewal price, expiry date and extras before switching. Existing paid Cursor users should start at [Cursor's unification page](https://cursor.com/unify). From Grok, use the [xAI unification page](https://accounts.x.ai/unify).
+Record the old price, period and benefits. Existing paid Cursor users should start at [Cursor unification](https://cursor.com/unify); Grok users can use [Grok unification](https://accounts.x.ai/unify). Email addresses need not match, but confirm each exact account. After switching, check both the old purchase channel and the new dashboard.
 
-Emails do not need to match, but select the correct accounts. Check carefully before combining work and personal accounts. Afterward, verify renewal status in the original payment channel and review the new workspace's bill and usage. Access to the new plan does not prove every old subscription has stopped billing.
+## 6. Social media and community reactions
 
-## 6. Which plan to choose, and whether to switch
+**Public discussions checked: 2026-10-15.** These Reddit and Cursor forum examples show specific concerns, not a representative satisfaction survey. Personal usage reports are not official quotas.
 
-These recommendations follow the pricing and benefits rules. They are not official guarantees of task counts.
+### 6.1 Bundle savings appeal, but names cause confusion
 
-### 6.1 New users: start monthly, then upgrade for usage
+A [Grok Bot discussion](https://www.reddit.com/r/GrokBot/comments/1x4n5bu/the_x_subscription_what_grok_cursor_and_x_users/) highlights the $30 bundle versus roughly $90 for the earlier separate benefits, while noting that Bot, chat and coding share usage. That comparison matters most to people already paying for several products; it does not mean all old allowances are added together.
 
-| Your usage | First choice | Decision criterion |
-| --- | --- | --- |
-| Occasional questions; no established paid need | Free | Test it with actual tasks |
-| Light AI use; mainly want X's checkmark and creator tools | Plus | You do not need Grok Bot |
-| Daily Grok use, with coding agent work | Premium | Observe one or two normal working weeks at $30/month |
-| Daily coding or automation repeatedly exhausts lower tiers | Super | You have a demonstrated need for more weekly usage |
-| Sustained heavy work exceeds Super | Ultra | You can identify the need for the $200/month tier |
+In a [plan-renaming thread](https://www.reddit.com/r/grok/comments/1x52age/hi_i_just_noticed_that_the_plan_names_have_changed/), a SuperGrok subscriber asks which tier they now have. Replies map names and prices directly, but those shortcuts do not establish equal benefits, particularly for Heavy and Ultra.
 
-Compare top-up costs for occasional overages. Consider upgrading when you consistently hit the limit, and choose annual billing once your ongoing usage is clear.
+### 6.2 Cursor users focus on third-party model costs
 
-### 6.2 SuperGrok to Premium: useful new benefits at the same price
+A [Cursor help thread](https://www.reddit.com/r/cursor/comments/1x5dp6w/please_explain_what_is_going_on_with_cursor/) contains conflicting explanations about Auto, third-party charges and old plans. In the [Cursor launch forum](https://forum.cursor.com/t/introducing-the-x-subscription/174450), existing Ultra users also ask whether switching preserves Claude and GPT allowances.
 
-The [announcement](https://x.ai/news/x-subscription) describes Premium as including SuperGrok, Cursor Pro and X Premium+ benefits. **If you pay $30/month for SuperGrok, your switching quote is also $30/month, and you need Grok coding in Cursor or X Premium+, consider Premium first.**
+The confirmed rule concerns the new unified plan: third-party usage is separately billed from first use. It does not mean every legacy Cursor account has automatically moved. A lower subscription price can still produce a higher total bill for developers relying on those models.
 
-That recommendation rests on useful additional benefits at the same subscription price. It does not include legacy Cursor Pro's third-party model allowance or guarantee enough usage for heavy work in both Grok and Cursor.
+### 6.3 Heavy users want usable video capacity
 
-If you separately subscribe to SuperGrok and X Premium+, consolidation is worth considering when the new quote is below your combined bills and your required benefits are confirmed. If you also subscribe to Cursor, include post-migration third-party model charges in the calculation.
+In a [Heavy-versus-Ultra thread](https://www.reddit.com/r/GrokAiDiscussion/comments/1x55chn/grok_ultra_sub/), a video-focused subscriber asks how the new allowance translates into Imagine output and worries about losing the old plan permanently. Their reported production volume is not an official quota or a controlled comparison. Compare the same model, duration and resolution before assuming that a cheaper tier meets an existing video workflow.
 
-### 6.3 Who should wait before switching
+## 7. Choosing a tier and deciding whether to move
 
-| Your situation | Recommendation | What to confirm |
-| --- | --- | --- |
-| Grok is sufficient; you do not need Cursor or X Premium+ | Keep your current plan for now | Useful new benefits or a lower price |
-| Your SuperGrok renewal has a lower promotional price | Compare costs first | Actual prices over the same billing period |
-| Work depends on legacy Cursor allowances for Claude or GPT | Calculate costs first | Whether separate model charges exceed subscription savings |
-| You rely on Heavy-specific models, extras or discounts | Keep Heavy until confirmed | Whether the target plan preserves those benefits |
-| You exhaust Grok's allowance and plan substantial Cursor use | Confirm the new allowance first | Whether one pool covers both workloads |
-| You need separate work and personal accounts, or a return to your old plan | Do not unify as a trial | Unification is permanent; cancellation does not restore old plans |
+### 7.1 New customers
 
-**Public information does not establish full Heavy-to-Ultra equivalence or a specific increase in task counts for Grok-only users.** If either is a purchase requirement, get confirmation from official support before switching.
+Start with Free for occasional use or Plus for light AI work and X creator benefits without Grok Bot. Premium is a reasonable monthly starting point for regular Grok and coding use. Consider Super when the lower allowance repeatedly runs out, and Ultra when sustained workloads justify $200/month. These are editorial recommendations, not guaranteed task counts. Observe normal weekly usage before choosing annual billing.
+
+### 7.2 SuperGrok to Premium
+
+If your SuperGrok bill and migration quote are both $30/month, Premium may make sense when you need Cursor’s Grok coding or X Premium+. It does not carry over an included third-party model allowance or guarantee enough capacity for heavy simultaneous use.
+
+### 7.3 Reasons to wait
+
+Keep the existing plan while checking a cheaper legacy discount, needed Heavy-specific benefits, third-party model costs or shared-pool capacity. If work and personal accounts must remain separate, do not merge them merely to try the new plan. Public information cannot establish complete Heavy–Ultra equivalence or how many extra tasks a Grok-only user will get.
 
 ## References
 
-- [xAI: The X Subscription announcement and legacy subscriber FAQ](https://x.ai/news/x-subscription)
-- [xAI: Current plan pricing](https://x.ai/pricing)
-- [Official docs: Monthly, annual and team pricing](https://docs.x.ai/x-subscription/pricing)
-- [Official docs: Subscription overview](https://docs.x.ai/x-subscription/overview)
-- [Official docs: Do I have to switch?](https://docs.x.ai/x-subscription/do-i-have-to-switch)
-- [Official docs: Shared weekly usage and Additional Usage](https://docs.x.ai/x-subscription/usage-limits)
-- [Official docs: X Premium migration and benefits](https://docs.x.ai/x-subscription/x-premium)
-- [Official docs: Account unification](https://docs.x.ai/x-subscription/unify-accounts)
-- [Official docs: Invoices and refunds](https://docs.x.ai/x-subscription/invoices-and-refunds)
-- [Official docs: Canceling the unified subscription](https://docs.x.ai/x-subscription/cancel)
-- [Cursor: Account unification](https://cursor.com/unify)
-- [xAI: Account unification](https://accounts.x.ai/unify)
+- [xAI: Introducing The X Subscription](https://x.ai/news/x-subscription)
+- [xAI: Current pricing and API billing](https://x.ai/pricing)
+- [Documentation: Monthly, annual and team pricing](https://docs.x.ai/x-subscription/pricing)
+- [Documentation: Subscription overview](https://docs.x.ai/x-subscription/overview)
+- [Documentation: Keeping an existing plan](https://docs.x.ai/x-subscription/do-i-have-to-switch)
+- [Documentation: Weekly usage limits](https://docs.x.ai/x-subscription/usage-limits)
+- [Documentation: Extra usage and top-ups](https://docs.x.ai/x-subscription/extra-usage)
+- [Documentation: X benefits](https://docs.x.ai/x-subscription/x-premium)
+- [Documentation: Combining accounts](https://docs.x.ai/x-subscription/unify-accounts)
+- [Documentation: Invoices and refunds](https://docs.x.ai/x-subscription/invoices-and-refunds)
+- [Documentation: Cancellation](https://docs.x.ai/x-subscription/cancel)
+- [Cursor account unification](https://cursor.com/unify)
+- [Grok account unification](https://accounts.x.ai/unify)
+
+- [Reddit r/GrokBot: Bundle pricing and the shared pool](https://www.reddit.com/r/GrokBot/comments/1x4n5bu/the_x_subscription_what_grok_cursor_and_x_users/)
+- [Reddit r/grok: Confusion over renamed plans](https://www.reddit.com/r/grok/comments/1x52age/hi_i_just_noticed_that_the_plan_names_have_changed/)
+- [Reddit r/cursor: Questions about Auto and billing](https://www.reddit.com/r/cursor/comments/1x5dp6w/please_explain_what_is_going_on_with_cursor/)
+- [Cursor community forum: Subscription launch discussion](https://forum.cursor.com/t/introducing-the-x-subscription/174450)
+- [Reddit r/GrokAiDiscussion: Heavy versus Ultra video capacity](https://www.reddit.com/r/GrokAiDiscussion/comments/1x55chn/grok_ultra_sub/)
+
+- [Grok 4.7 Fast / API pricing](https://docs.x.ai/developers/pricing)

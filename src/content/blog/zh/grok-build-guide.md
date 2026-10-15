@@ -1,13 +1,13 @@
 ---
 locale: zh
 translationKey: grok-build-guide
-title: 2026年 Grok Build 发布解读：套餐权限、平台支持、模型与额度指南
+title: Grok Build 最新指南：套餐、模型、安装与用量计费
 headline: Grok Build 实务指南：CLI/TUI 形态、常用命令与套餐选择策略
-description: 基于 xAI 2026-05 官方发布与文档，本文系统梳理 Grok Build 的产品定位、可用套餐、上手流程、平台与模型支持、额度逻辑，以及常用内置命令与核心能力。
+description: "按最新官方文档整理 Grok Build 的统一套餐、Grok 4.7 与 Fast 模型、安装登录、终端模式和常用命令，解释共享周额度、API 单独计费及长上下文价格，帮助开发者评估接入成本。"
 summary: 本文面向需要评估 Grok Build 是否适配既有研发流程的读者，提供可直接执行的购买判断、安装登录与日常使用建议。
 category: AI 开发工具
 pubDate: 2026-05-26
-updatedDate: 2026-08-28
+updatedDate: 2026-10-15
 author: Mark
 service: Grok
 tags:
@@ -24,17 +24,9 @@ relatedTranslationKeys:
 draft: false
 ---
 
-Grok Build 发布后，研发团队通常需要先回答两个问题：它与 Codex CLI、Claude Code、Cursor Agent 的差异在哪里；是否值得纳入既有研发体系。
+Grok Build 适合希望在终端里完成代码阅读、计划、修改和验证的开发者。选择时需要分清三件事：客户端能做什么、账号实际开放哪些模型，以及每次任务从订阅额度还是 API 账单扣费。
 
-如果你已经决定开始使用，希望直接学习安装、Plan 模式、权限和常用命令，可以阅读[Grok Build 新手命令与实战教程](/zh/blog/grok-build-commands-beginner-guide/)。本文继续聚焦产品形态、套餐、模型与额度等选型问题。
-
-本文围绕决策所需的关键变量展开：**Grok Build 的定义、可用用户范围、安装与接入路径、CLI 与图形交互形态、可用模型、额度与计费逻辑、以及高频命令集**。
-
-为避免信息错位，先列出关键时间线：
-
-- `2026-05-14`：xAI 在开发者 Release Notes 里把 Grok Build 标记为 beta 可用。
-- `2026-05-19`：`grok-build-0.1` 作为早期访问编码模型出现在 Release Notes。
-- `2026-05-25`：xAI News 发布《Introducing Grok Build》，面向订阅用户公开早期测试入口。
+**事实与价格核对日期：2026-10-15。美元价格仅供参考，未含适用税费，最终以官方价格页与账户账单为准。** 本文按当前官方文档更新；需要逐步操作示例，可读[Grok Build 新手命令教程](../grok-build-commands-beginner-guide/)。完整套餐比较见[Grok 新套餐与迁移指南](../xai-grok-x-subscription-plan-guide/)。
 
 ## 1. 什么是 Grok Build
 
@@ -46,23 +38,11 @@ Grok Build 发布后，研发团队通常需要先回答两个问题：它与 Co
 
 它并非“在聊天界面外包一层命令执行”，而是将计划制定、代码改动、文件读写、工具调用与并行子代理统一到同一执行链路。
 
-## 2. 哪些套餐可以用 Grok Build
+## 2. 当前套餐与访问资格
 
-按 `2026-05-25` 的官方发布文，**当前早期 beta 明确开放给两类个人订阅用户**：
+新用户应查看 The X Subscription：Free 提供有限访问，Plus 为 $8/月、Premium 为 $30/月、Super 为 $100/月、Ultra 为 $200/月。官网在 Plus 中列出 Grok Build，具体可用模型和余量仍需登录后确认；不能再把旧 SuperGrok 或 X Premium+ 写成唯一购买前提。
 
-- `SuperGrok`
-- `X Premium Plus`
-
-同时，xAI 的定价页和团队管理文档显示，团队/企业线可以通过业务许可证方式分配权限：
-
-- `SuperGrok`（business license）
-- `SuperGrok Heavy`（business license）
-
-对于个人用户，建议按以下顺序判断：
-
-1. 先确认自己是否是 `SuperGrok` 或 `X Premium Plus`。
-2. 再在本机安装 CLI 并登录验证。
-3. 如果组织统一采购，则让管理员在 Grok Business 里分配 license。
+Premium、Super、Ultra 的包含用量分别为 Plus 的 4、15、50 倍，但不是固定任务次数。Grok Bot 从 Premium 起包含。存量用户目前可保留原套餐，不应只为试用 Build 就贸然合并账号。团队使用还需管理员确认席位和组织策略。
 
 ## 3. 如何使用：快速上手流程（约 5 分钟）
 
@@ -93,10 +73,17 @@ export XAI_API_KEY="xai-..."
 grok
 ```
 
+远程环境不能打开浏览器时，可以使用设备码登录；这不是本机浏览器登录后的必做步骤。
+
+```bash
+grok login --device-auth
+```
+
 ### 3.3 立即进入项目
 
 ```bash
 cd your-project
+grok inspect
 grok
 ```
 
@@ -145,74 +132,53 @@ grok agent stdio
 
 需要区分的是：**Grok Build 的核心定位是终端编码代理，不等同于移动端聊天应用。**
 
-## 6. 支持使用哪些模型
+## 6. 模型选择与配置
 
-### 6.1 Grok Build 的核心编码模型
+### 6.1 Grok 4.7、Fast 与旧模型的区别
 
-官方在 Build 文档中直接给出：
+官方 Build 入门页目前介绍 `grok-4.7`，API 价格表也列出 `grok-build-0.1`。后者是旧模型，不能再作为客户端当前唯一模型或默认模型的依据。设置示例中的 `grok-build` 是客户端配置名称，不应与 API 模型 ID 混为一谈。
 
-- `grok-build-0.1`（early access）
+`Grok 4.7 Fast` 是同一 Grok 4.7 模型在更快基础设施上提供的变体，仅在 Cursor 与 Grok Build 内提供，通过所在产品的套餐计费，不在公开 xAI API 中提供，Build 免费档也不包含。更快并不意味着同样任务消耗相同额度。
 
-它也是 xAI API 上可直接调用的模型，适合将 Build 能力嵌入既有 agent loop。
+### 6.2 以账号与实际配置为准
 
-### 6.2 其他可切换模型
+普通终端用 `grok models` 查看可用模型，TUI 中用 `/model <name>` 切换。自定义模型与默认模型放在用户级 `~/.grok/config.toml`；项目 `.grok/config.toml` 的范围主要是 MCP、Plugins 和权限规则，并非所有用户配置都能搬入项目。修改后用 `grok inspect` 确认实际加载来源。
 
-Grok Build 支持在会话内用 `/model <name>` 切换可用模型，也支持在配置里指定默认模型，甚至挂自定义 `base_url` 的模型源。
+## 7. 共享额度、API 与 Fast 计费
 
-这意味着：
+### 7.1 订阅与任务消耗
 
-- CLI 不是只能绑死一个模型。
-- 可见模型范围取决于账号权限与当前配置源。
+统一订阅按付费席位提供合资格第一方用量的共享周额度，支持的 Grok 与 Cursor 入口共同消耗。不同任务的成本不同，不能把倍率写成每天固定提问、编码或视频次数。通过 `/usage` 和账户用量页观察真实工作周。
 
-## 7. Grok Build 的额度如何理解（重点）
+Cursor 中的第三方模型从首次使用起另收费；公开 Grok API 也单独计费，不消耗套餐周额度。自定义 endpoint 的费用应向对应提供商核对。
 
-这一部分最容易产生误读，建议将“订阅额度”与“API 计费”分开处理。
+### 7.2 当前 API 价格与 Fast 成本
 
-### 7.1 订阅侧（SuperGrok / Premium+）
+以下是全球标准 endpoint 的 `grok-4.7` 每百万 token 美元价格。达到长上下文门槛后，该请求的全部 token 按长上下文档计费，不只是超出部分。
 
-官方长期公开口径仍偏“档位描述”，不是完整硬配额表。常见关键词通常是：
+| 输入上下文 | 输入 | 缓存输入 | 输出 |
+| --- | --- | --- | --- |
+| 少于 200k tokens | $2.00 | $0.50 | $6.00 |
+| 200k tokens 及以上 | $4.00 | $1.00 | $12.00 |
 
-- `higher rate limits`
-- `enhanced quotas`
-- `much higher rate limits`（Heavy）
+Fast 在 Cursor/Build 内按更高费率计入所在套餐：普通上下文为标准 token 费率的 2 倍，长上下文为 1.5 倍。工具调用还可能另收费，不能继续用旧文章里所有工具统一 $5/千次的说法估算。**数据日期：2026-10-15，仅供参考；地区 endpoint、模型、工具和实际账单规则可能改变总费用。**
 
-换言之，**官方已确认不同订阅层级存在差异，但尚未将 Grok Build 的每日固定次数公开为稳定配额表**。实践中可按以下方式评估：
+## 8. 日常命令与较长任务
 
-1. 通过 `/usage` 观察当前 session 的 token/credit 消耗。
-2. 用一周真实任务压测，判断是否常撞限制。
-3. 再决定是否从普通档升级到更高档位。
+| 命令 | 用途 |
+| --- | --- |
+| `/model <name>` | 切换模型 |
+| `/plan [description]` | 进入计划模式 |
+| `/view-plan` | 查看当前计划 |
+| `/usage` | 查看额度或账单入口 |
+| `/context`、`/compact` | 检查与压缩上下文 |
+| `/new`、`/resume` | 新开与恢复会话 |
+| `/rewind` | 返回较早对话节点 |
+| `/skills`、`/plugins`、`/mcps` | 打开对应扩展页签 |
 
-### 7.2 API 侧（开发者计费）
+`/goal <objective>` 面向有可验证完成条件的长任务；`/create-workflow` 创建流程，`/workflow <name>` 运行已保存流程，`/workflows` 查看运行看板。`/loop` 用于周期提示，`/tasks` 查看后台任务。需要时再启用这些能力，并留意权限与费用；以本机 `/help` 为准。
 
-若采用 xAI API，按 `2026-05-15` 文档口径：
-
-- `grok-build-0.1`：输入 `$1.00/1M tokens`，缓存输入 `$0.20/1M`，输出 `$2.00/1M`
-- 工具调用另计（例如 `web_search` / `x_search` / `code_execution` 通常是 `$5/1k calls`）
-
-**数据日期：2026-05-26。以上价格仅供参考，最终以官方计费页实时展示为准。**
-
-## 8. Grok Build 常用内置命令（优先记这 12 个）
-
-在日常开发中，以下命令的使用频率较高：
-
-- `/model <name>`：切换模型
-- `/plan`：查看当前计划（适合先审再改）
-- `/usage`：查看 token / credit 使用
-- `/context`：看上下文占用
-- `/new`：新开会话
-- `/resume`：恢复历史会话
-- `/rewind`：回滚到会话早期节点
-- `/compact`：压缩历史上下文，降低冗余
-- `/feedback`：把 bug / 建议直接发给 xAI
-- `/plugins`：打开插件扩展页
-- `/skills`：查看/启用 skills
-- `/mcps`：管理 MCP 工具入口
-
-此外，shell 层面的以下命令也较为常见：
-
-- `/memory`：检索和编辑持久记忆
-- `/imagine`：文生图
-- `/imagine-video`：文生视频
+Plan 的编辑限制与权限模式独立：批准前只允许编辑计划文件，但 bash 和 MCP 仍受其权限规则管理，shell 仍可能写文件，因此 Plan 不等于只读沙箱。
 
 ## 9. Grok 常用功能概览（高频场景）
 
@@ -241,31 +207,23 @@ Grok Build 可读取本地规则与技能目录，并通过插件和 MCP 接入�
 
 在同一产品线下，可联动图像/视频生成与理解能力，适用于文档、演示、创意与内容生产等场景。
 
-## 10. 结论：适配人群与观察人群
+## 10. 如何决定是否接入
 
-更适合立即试用的人群：
+先选一个边界清楚的任务，核对登录账号、模型和计费来源；阅读项目规则后提出计划，改完查看 diff 并执行相关测试或 build。记录实际用量再选择档位，比从旧套餐名推断权限更可靠。
 
-- 以终端作为主要研发界面的开发者或团队
-- 希望将“计划 + 代码改动 + 工具调用”收敛到单一入口的团队
-- 已具备 `SuperGrok` 或 `X Premium Plus` 权益的用户
-
-建议先观察再决定的人群：
-
-- 对“独立桌面 GUI”高度依赖的用户
-- 对固定硬配额透明度要求较高的用户（而非档位描述）
-- 当前工作流已深度绑定其他 agent 平台的团队
-
-核心结论：**Grok Build 已具备进入真实研发流程的可用性，但最佳适配场景仍是“终端优先 + 自动化优先”，而非“桌面 GUI 优先”。**
+需要桌面 GUI 的团队应验证具体集成；已有成熟工具链的团队则先比较同一任务的结果、总费用和迁移成本。客户端能调用工具，并不能替代对交付结果的验收。
 
 ## 官方参考
 
-- [Introducing Grok Build（xAI News, 2026-05-25）](https://x.ai/news/grok-build-cli)
-- [Grok Build Getting Started（xAI Docs）](https://docs.x.ai/build/overview)
-- [Modes and Commands（xAI Docs）](https://docs.x.ai/build/modes-and-commands)
-- [Headless & Scripting（xAI Docs）](https://docs.x.ai/build/cli/headless-scripting)
-- [Skills, Plugins & Marketplaces（xAI Docs）](https://docs.x.ai/build/features/skills-plugins-marketplaces)
-- [Enterprise Deployments（xAI Docs）](https://docs.x.ai/build/enterprise)
-- [xAI Developer Release Notes（May 2026 条目）](https://docs.x.ai/developers/release-notes)
-- [xAI Pricing（Grok plans）](https://x.ai/pricing)
-- [xAI API Pricing（grok-build-0.1 与 tools 计费）](https://docs.x.ai/developers/pricing)
-- [Manage Licenses and Users（Grok Business）](https://docs.x.ai/grok/management)
+- [Grok Build overview](https://docs.x.ai/build/overview)
+- [CLI reference](https://docs.x.ai/build/cli/reference)
+- [Modes and commands](https://docs.x.ai/build/modes-and-commands)
+- [Plan mode](https://docs.x.ai/build/features/plan-mode)
+- [Permissions](https://docs.x.ai/build/features/permissions)
+- [Headless and scripting](https://docs.x.ai/build/cli/headless-scripting)
+- [Settings](https://docs.x.ai/build/settings)
+- [Skills, Plugins and Marketplaces](https://docs.x.ai/build/features/skills-plugins-marketplaces)
+- [API pricing and Grok 4.7 Fast](https://docs.x.ai/developers/pricing)
+- [The X Subscription pricing](https://x.ai/pricing)
+- [Monthly and annual prices](https://docs.x.ai/x-subscription/pricing)
+- [Weekly usage limits](https://docs.x.ai/x-subscription/usage-limits)

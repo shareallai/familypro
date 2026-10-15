@@ -7,7 +7,7 @@ description: 面向第一次使用 Grok Build 的开发者，从安装登录、�
 summary: 本文从一次小型代码修改入手，说明如何安装和启动 Grok Build、怎样审查计划与改动，以及日常会用到的命令、会话和权限设置。
 category: AI 开发工具
 pubDate: 2026-08-28
-updatedDate: 2026-08-28
+updatedDate: 2026-10-15
 author: Mark
 service: Grok
 tags:
@@ -28,7 +28,7 @@ draft: false
 
 对于初次使用者，最稳妥的做法不是先背命令，而是挑一个改动范围清楚、结果容易验证的小问题。例如，修正一处错误提示，或为已有函数补一条测试。先让 Grok Build 阅读项目，再审查它的计划，确认修改结果，最后运行测试。经历过这一轮，`/plan`、`/context` 和 `/resume` 之类的命令便不再是孤立的名词，而是工作进行到某个阶段时自然会用到的工具。
 
-下文就沿着这条路径展开。内容已于 **2026-08-28** 按 xAI 官方文档核对；如果你主要想了解套餐、模型和产品定位，可另阅 [Grok Build 综合指南](/zh/blog/grok-build-guide/)。
+下文就沿着这条路径展开。内容已于 **2026-10-15** 按 xAI 官方文档核对；如果你主要想了解套餐、模型和产品定位，可另阅 [Grok Build 综合指南](../grok-build-guide/)。
 
 ## 1. 先认识日常使用的 Grok Build
 
@@ -36,7 +36,7 @@ Grok Build 是一款终端编码代理。它可以读取和搜索仓库，在获
 
 它还有两种面向集成的用法。`grok -p "..."` 可以在没有交互界面的情况下执行单次任务，适合脚本和自动化；`grok agent stdio` 则通过 Agent Client Protocol（ACP）把 Grok Build 接入其他应用。刚开始使用时不必兼顾这两种形式，先熟悉 TUI 已足以完成多数日常工作。
 
-截至 **2026-08-28**，官方文档将 `grok-4.6` 列为 Grok Build 当前使用的主要模型。客户端仍在更新，本文与本机界面若有差异，应以 `grok --help`、TUI 中的 `/help` 和最新官方文档为准。
+截至 **2026-10-15**，官方 Build 入门页介绍 `grok-4.7`。账号可见模型与客户端默认设置并非仅由文章里的模型名决定，应先运行 `grok models`，再按需用 `/model <name>` 切换。`Grok 4.7 Fast` 是 Cursor/Build 内的高费率变体，不在公开 API 提供，Build 免费档也不包含；价格与长上下文规则见[Grok Build 综合指南](../grok-build-guide/)。本文与本机界面若有差异，以 `grok --help` 和 TUI 内的 `/help` 为准。
 
 ## 2. 安装、登录并进入第一个项目
 
@@ -152,7 +152,7 @@ grok
 /plan 修复搜索框清空后结果仍然保留的问题，并补充回归测试
 ```
 
-Plan 模式会先探索相关代码，再给出一份可审查的修改计划。你可以逐项评论，也可以退回重写；计划获得批准后，Grok Build 才进入正式修改阶段。对于跨文件改动、架构选择或需求仍有歧义的任务，这一步尤其有用。
+`/plan [description]` 用于进入计划模式，`/view-plan` 用于重新查看当前计划。Plan 模式会先探索相关代码，再给出一份可审查的修改计划。你可以逐项评论，也可以退回重写；计划获得批准后，Grok Build 才进入正式修改阶段。对于跨文件改动、架构选择或需求仍有歧义的任务，这一步尤其有用。
 
 不过，Plan 模式并不等同于只读环境。官方文档说明，它主要限制编辑工具；读取、终端和 MCP 工具仍受当前权限设置管理，shell 也可能通过重定向写入文件。因此，即便处于 Plan 模式，仍应留意工具调用和授权提示。
 
@@ -240,6 +240,8 @@ Plan 决定是否先形成一份待审查的修改方案；权限模式决定工
 
 会话保存一段可恢复的工作记录；上下文是模型当前能够读取的信息；Memory 则用于跨会话保留记忆。三者的保存时间和作用范围并不相同。
 
+用户级 `~/.grok/config.toml` 可以放默认模型与个人设置；项目 `.grok/config.toml` 主要承载 MCP、Plugins 与权限规则，不支持照搬全部用户配置。用 `grok inspect` 确认实际加载来源。
+
 项目事实和硬性约束不宜只留在 Memory 中。构建命令、目录边界和安全规则更适合写入受版本控制的 `AGENTS.md`，以便团队成员和新的会话都读取同一份说明。
 
 ### 6.3 AGENTS.md、Skills、Plugins 与 MCP
@@ -253,7 +255,7 @@ Plan 决定是否先形成一份待审查的修改方案；权限模式决定工
 
 ### 6.4 账号登录与 API Key
 
-浏览器或设备码登录适合有人参与的交互式开发，登录凭据可以刷新。API Key 不可刷新，更常用于脚本和 CI。两种方式都能让客户端调用模型，但认证来源、计费方式和团队策略可能不同，不能据此认定它们属于同一套权益。
+浏览器或设备码登录适合有人参与的交互式开发，登录凭据可以刷新。API Key 需要独立管理与轮换，更常用于脚本和 CI。两种方式都能让客户端调用模型，但认证来源、计费方式和团队策略可能不同，不能据此认定它们属于同一套权益。
 
 ### 6.5 TUI、Headless 与 ACP
 
@@ -311,6 +313,12 @@ grok --no-auto-update \
 
 自动化的第一步不宜是带有 `--always-approve` 的写操作。先用它解释代码、检查 TODO 或审查 diff，确认输出格式、失败处理和费用边界以后，再考虑开放修改能力。
 
+### 7.6 长任务、Workflows 与后台检查
+
+当前文档提供 `/goal <objective>`，用于持续推进带有可验证完成条件的任务。例如，要求修复一个具体问题、通过指定测试，并明确不允许改变的接口。它会持续检查目标进展，但仍应审阅最终 diff 与验证证据，不能把“目标完成”当作无需验收。
+
+`/create-workflow [description]` 创建可保存流程，`/workflow <name>` 运行已有流程，`/workflows` 查看运行看板。`/loop [interval] <prompt>` 用于周期提示，`/tasks` 汇总后台任务、子代理与计划任务。流程越长，越需要事先限定目录、允许操作和支出；初学者可先完成一次普通任务，再决定是否需要这些能力。
+
 ## 8. 出现问题时从哪里查起
 
 ### 8.1 `grok` 命令找不到
@@ -356,3 +364,5 @@ Grok Build 的价值不在于一次生成尽可能多的代码，而在于把理
 - [Settings 与配置作用域](https://docs.x.ai/build/settings)
 - [Skills、Plugins 与 Marketplaces](https://docs.x.ai/build/features/skills-plugins-marketplaces)
 - [MCP Servers](https://docs.x.ai/build/features/mcp-servers)
+
+- [xAI 最新 API 与 Fast 计费说明](https://docs.x.ai/developers/pricing)

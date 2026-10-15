@@ -3,11 +3,11 @@ locale: ja
 translationKey: grok-build-guide
 title: "Grok Build 2026実務ガイド：料金プラン、対応環境、モデル、利用上限の整理"
 headline: Grok Build導入ガイド：CLI/TUI運用、主要コマンド、プラン選定
-description: xAIの2026年5月時点の公式発表とドキュメントを基に、Grok Buildの位置づけ、利用可能プラン、導入手順、対応環境、モデル、利用上限と料金、主要コマンドを実務目線で整理します。
+description: "最新の公式文書を基にGrok Buildの統合プラン、Grok 4.7とFast、インストール、CLIとTUI、主要コマンドを整理。週間共有枠とAPIの別料金、長いコンテキストの価格、権限とPlanの違いを説明し、既存の開発環境へ導入する前に確認すべき費用と運用条件をまとめます。"
 summary: 既存の開発運用にGrok Buildを組み込むべきかを判断したいチーム向けに、契約条件、初期導入、日常運用で押さえるべき論点をまとめました。
 category: AI開発ツール
 pubDate: 2026-05-26
-updatedDate: 2026-05-26
+updatedDate: 2026-10-15
 author: Mark
 service: Grok
 tags:
@@ -23,15 +23,9 @@ relatedTranslationKeys:
 draft: false
 ---
 
-Grok Buildの公開後、開発チームが最初に確認すべき論点は明確です。Codex CLI、Claude Code、Cursor Agentと比べて何が違うのか、そして既存の開発フローに今入れるべきかどうかです。
+Grok Buildは、コードの理解、計画、編集、検証をターミナルで進めるためのエージェントです。クライアントの機能、アカウントで使えるモデル、サブスクとAPIのどちらに課金されるかを分けて確認しましょう。
 
-本記事は、判断に必要な実務情報に絞って整理します。**Grok Buildの定義、利用可能な契約、導入手順、CLI/TUIとGUIの関係、利用可能モデル、上限の読み方、実運用で使うコマンド** を順に確認します。
-
-まず、日付の混同を避けるために公開タイムラインを押さえます。
-
-- `2026-05-14`：xAI Developer Release NotesでGrok Buildがbetaとして掲載。
-- `2026-05-19`：`grok-build-0.1` が早期アクセスのコーディングモデルとして掲載。
-- `2026-05-25`：xAI News「Introducing Grok Build」で、対象契約向けに早期betaを公開。
+**事実・価格確認日：2026-10-15。米ドル価格は参考情報で、適用税は含みません。公式料金表と実際の請求条件を優先してください。** 購入と移行については[新Grok料金体系](../xai-grok-x-subscription-plan-guide/)を参照してください。
 
 ## 1. Grok Buildとは何か
 
@@ -43,23 +37,11 @@ xAI公式ドキュメント上でのGrok Buildは、端末環境で動作する�
 
 実体としては、単なるチャット+コマンド実行ではありません。計画、コード変更、ファイル操作、ツール呼び出し、並列サブエージェントを一連の実行系として扱える点が中核です。
 
-## 2. どのプランでGrok Buildを使えるか
+## 2. 現在のプランとアクセス条件
 
-`2026-05-25` の公式発表時点で、早期betaの対象として明示されている個人契約は次の2系統です。
+新規ユーザーはThe X Subscriptionを比較します。Freeは制限付き、Plusは月$8、Premiumは$30、Superは$100、Ultraは$200です。公式料金ページはPlusの機能にGrok Buildを記載しています。ログイン後にモデルと残りの利用枠を確認し、旧SuperGrokやX Premium+だけを購入条件と考えないでください。
 
-- `SuperGrok`
-- `X Premium Plus`
-
-加えて、xAIの料金ページとチーム管理ドキュメントでは、法人運用でのライセンス割当導線も確認できます。
-
-- `SuperGrok`（business license）
-- `SuperGrok Heavy`（business license）
-
-個人利用での確認手順は次の順序が安全です。
-
-1. 契約が `SuperGrok` または `X Premium Plus` に該当するか確認。
-2. CLIをインストールし、ログイン後に利用可否を検証。
-3. 組織契約の場合は、管理者がGrok Businessでライセンスを割り当て。
+Premium・Super・Ultraの枠はPlus比4倍・15倍・50倍ですが、固定の作業回数ではありません。Grok BotはPremium以上。旧契約は現在継続可能で、Buildを試すためだけにアカウントを統合する必要はありません。チームは席の割り当てと組織ポリシーも確認します。
 
 ## 3. 導入手順（約5分）
 
@@ -90,10 +72,17 @@ export XAI_API_KEY="xai-..."
 grok
 ```
 
+リモート環境でブラウザを開けない場合はデバイスコードを使えます。通常のブラウザログイン後に必ず追加実行する手順ではありません。
+
+```bash
+grok login --device-auth
+```
+
 ### 3.3 リポジトリで開始
 
 ```bash
 cd your-project
+grok inspect
 grok
 ```
 
@@ -144,73 +133,44 @@ Getting Startedで明示されている導入環境は次の通りです。
 
 ただし、Grok Buildそのものはあくまで端末向けコーディングエージェントという位置づけです。
 
-## 6. 利用可能モデル
+## 6. モデルと設定の選び方
 
-### 6.1 コアとなるコーディングモデル
+### 6.1 Grok 4.7とFast、旧モデル
 
-Buildドキュメント上で明示されている主モデルは次です。
+現在のBuild入門ページは`grok-4.7`を紹介しています。API料金表には旧`grok-build-0.1`も残りますが、これを唯一または標準のモデルとする根拠にはできません。設定例の`grok-build`はクライアント側の設定名で、APIモデルIDと同一とは限りません。
 
-- `grok-build-0.1`（early access）
+Grok 4.7 Fastは同じモデルを高速な基盤で提供するもので、CursorとBuild内だけで利用し、その製品のプランで課金します。公開xAI APIにはなく、Build無料枠にも含まれません。応答が速くても消費単価は同じではありません。
 
-同モデルはxAI APIからも直接利用できるため、自社エージェントループへの組み込みにも使えます。
+### 6.2 実際のアカウントと設定を確認
 
-### 6.2 モデル切替とカスタム定義
+shellの`grok models`で候補を確認し、TUIの`/model <name>`で切り替えます。独自モデルと標準モデルはユーザー設定`~/.grok/config.toml`に置きます。プロジェクトの`.grok/config.toml`は主にMCP、Plugins、権限ルール用で、ユーザー設定すべてを置けるわけではありません。`grok inspect`で読み込み元を確認してください。
 
-セッション中は `/model <name>` で切替可能です。加えて設定ファイルではデフォルトモデルや `base_url` を使ったカスタムモデル定義も行えます。
+## 7. 共有利用枠とAPI・Fast料金
 
-実運用上は、表示されるモデル範囲がアカウント権限と設定ソースに依存します。
+### 7.1 サブスクの消費
 
-## 7. 利用上限の読み方
+有料席ごとに、対応するGrok・Cursorで使う対象の第一者モデルの週間枠を共有します。作業ごとに消費量が違うため、倍率から一日の質問・コード作業・動画本数を保証できません。`/usage`とアカウントの利用画面で通常週を観察します。
 
-ここは誤解が起きやすいため、サブスク上限とAPI課金を分離して判断する必要があります。
+Cursorの第三者モデルは初回から別料金。公開Grok APIも週間枠とは別請求で、独自endpointはその提供元の請求条件に従います。
 
-### 7.1 サブスク側（SuperGrok / Premium+）
+### 7.2 現在のAPI価格とFast
 
-公開情報は、依然として「固定配分表」より「層別表現」が中心です。代表的には次の文言です。
+以下は標準グローバルendpointの`grok-4.7`、100万tokensあたりの米ドル価格です。長いコンテキストの閾値に達すると、超過分だけでなくリクエスト全体にその価格が適用されます。
 
-- `higher rate limits`
-- `enhanced quotas`
-- `much higher rate limits`（Heavy）
+| 入力コンテキスト | 入力 | キャッシュ入力 | 出力 |
+| --- | --- | --- | --- |
+| 200k tokens未満 | $2.00 | $0.50 | $6.00 |
+| 200k tokens以上 | $4.00 | $1.00 | $12.00 |
 
-つまり、階層差は確認できる一方、Grok Buildの1日固定回数は安定した公開表としては提示されていません。
+FastはCursor/Buildのプラン内で短いコンテキストが標準単価の2倍、長いコンテキストが1.5倍です。ツール料金が追加される場合もあり、旧記事の「すべて千回$5」という概算は使えません。**データ日：2026-10-15、参考情報。地域endpoint、モデル、ツールと請求条件で総額は変わります。**
 
-実務上の評価手順:
+## 8. 日常コマンドと長い作業
 
-1. `/usage` でtoken/credit消費を観測。
-2. 実タスクで1週間程度の負荷試験を実施。
-3. 制限到達頻度が高い場合にのみ上位プランを検討。
+`/model <name>`はモデル変更、`/plan [description]`は計画モードへの移行、`/view-plan`は計画の表示です。`/usage`で利用量、`/context`でコンテキストを確認し、`/compact`で圧縮します。`/new`と`/resume`は開始・再開、`/rewind`は以前の会話への移動。`/skills`、`/plugins`、`/mcps`で拡張画面を開きます。
 
-### 7.2 API側（従量課金）
+`/goal <objective>`は検証可能な完了条件を持つ長期作業向けです。`/create-workflow`で作成、`/workflow <name>`で実行、`/workflows`で実行状況を表示します。`/loop`は周期的な指示、`/tasks`はバックグラウンド作業の一覧です。必要なときに使い、権限と費用を確認し、本機の`/help`を優先してください。
 
-`2026-05-15` 時点のxAIドキュメント口径では次の通りです。
-
-- `grok-build-0.1`: input `$1.00 / 1M tokens`、cached input `$0.20 / 1M`、output `$2.00 / 1M`
-- ツール呼び出しは別課金（例: `web_search`、`x_search`、`code_execution` は通常 `$5 / 1k calls`）
-
-**データ日付：2026-05-26。価格情報は参考値であり、最終判断は常に公式課金ページの最新表示を優先してください。**
-
-## 8. 実運用で使用頻度の高い内蔵コマンド
-
-日常運用で使用頻度が高いのは次のコマンド群です。
-
-- `/model <name>`：モデル切替
-- `/plan`：現在の実行計画を確認
-- `/usage`：token / credit使用量を確認
-- `/context`：コンテキスト消費を確認
-- `/new`：新規セッション開始
-- `/resume`：過去セッション再開
-- `/rewind`：会話状態を巻き戻し
-- `/compact`：履歴を圧縮
-- `/feedback`：セッションからフィードバック送信
-- `/plugins`：プラグイン管理
-- `/skills`：スキル管理
-- `/mcps`：MCP連携管理
-
-あわせて、shell側でよく使うコマンド:
-
-- `/memory`
-- `/imagine`
-- `/imagine-video`
+Planの編集制限と権限モードは別です。承認前に編集できるのは計画ファイルだけですが、bash・MCPはそれぞれの権限に従います。shellの書き込みまで禁止する読み取り専用サンドボックスではありません。
 
 ## 9. Grokの高頻度機能と適合シナリオ
 
@@ -234,31 +194,23 @@ Web検索とX検索を同一回答フローに統合できる点は、鮮度要�
 
 画像・動画の生成/理解系を同一ラインで扱えるため、ドキュメント、デモ、コンテンツ制作系ワークフローとも接続しやすくなっています。
 
-## 10. 結論：今すぐ導入が向くケースと、様子見が妥当なケース
+## 10. 導入を判断する手順
 
-即導入に向くケース:
+アカウント、モデル、課金元を確認して、小さな作業を試します。プロジェクトのルールを読み、計画を確認し、diffとテストまたはbuildで結果を検証してください。旧プラン名から権限を推測するより、実測した利用量でプランを選ぶほうが確実です。
 
-- 端末中心で開発運用している
-- 計画・編集・ツール実行を単一入口に集約したい
-- すでに `SuperGrok` または `X Premium Plus` 権益を保有している
-
-様子見が妥当なケース:
-
-- 独立デスクトップGUIを主軸にしている
-- 固定配分の明示性を重視している
-- 他エージェント基盤への依存度が高く切替コストが大きい
-
-要点を一言でまとめると、**Grok Buildは実務投入可能な水準に達している一方、最適適合は「端末優先・自動化優先」の開発環境です。**
+GUIが必要なら実際の連携を試し、既存環境があるなら同じ作業の結果・総費用・移行負担を比較します。ツールを呼べることと、成果物が合格することは別です。
 
 ## References
 
-- [Introducing Grok Build (xAI News, 2026-05-25)](https://x.ai/news/grok-build-cli)
-- [Grok Build Getting Started (xAI Docs)](https://docs.x.ai/build/overview)
-- [Modes and Commands (xAI Docs)](https://docs.x.ai/build/modes-and-commands)
-- [Headless and Scripting (xAI Docs)](https://docs.x.ai/build/cli/headless-scripting)
-- [Skills, Plugins, and Marketplaces (xAI Docs)](https://docs.x.ai/build/features/skills-plugins-marketplaces)
-- [Enterprise Deployments (xAI Docs)](https://docs.x.ai/build/enterprise)
-- [xAI Developer Release Notes (May 2026 entries)](https://docs.x.ai/developers/release-notes)
-- [xAI Pricing (Grok Plans)](https://x.ai/pricing)
-- [xAI API Pricing](https://docs.x.ai/developers/pricing)
-- [Manage Licenses and Users (Grok Business)](https://docs.x.ai/grok/management)
+- [Grok Build overview](https://docs.x.ai/build/overview)
+- [CLI reference](https://docs.x.ai/build/cli/reference)
+- [Modes and commands](https://docs.x.ai/build/modes-and-commands)
+- [Plan mode](https://docs.x.ai/build/features/plan-mode)
+- [Permissions](https://docs.x.ai/build/features/permissions)
+- [Headless and scripting](https://docs.x.ai/build/cli/headless-scripting)
+- [Settings](https://docs.x.ai/build/settings)
+- [Skills, Plugins and Marketplaces](https://docs.x.ai/build/features/skills-plugins-marketplaces)
+- [API pricing and Grok 4.7 Fast](https://docs.x.ai/developers/pricing)
+- [The X Subscription pricing](https://x.ai/pricing)
+- [Monthly and annual prices](https://docs.x.ai/x-subscription/pricing)
+- [Weekly usage limits](https://docs.x.ai/x-subscription/usage-limits)

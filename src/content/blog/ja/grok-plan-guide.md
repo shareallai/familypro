@@ -1,359 +1,72 @@
 ---
-locale: ja
-translationKey: grok-plan-guide
-title: "Grok料金ガイド2026：X Premium・SuperGrok・Heavyの選び方"
-headline: X Premium・SuperGrok・Heavyの違いを整理して選ぶ
-description: "X Premium、Premium+、SuperGrok Lite、SuperGrok、Heavyを、入口の違い・Grok特典・向く使い方で比較します。"
-summary: X Premium、Premium+、SuperGrok Lite、SuperGrok、SuperGrok Heavyで迷う人向けに、2つの課金ラインを先に分けたうえで、公開価格の読み方、現時点で確定している範囲、どのプランがどんな使い方に合うかを整理しました。
-category: AIサブスク比較
-pubDate: 2026-03-26
-updatedDate: 2026-08-28
-author: Mark
-service: Grok
-tags:
-  - Grok
-  - xAI
-  - X Premium
-  - SuperGrok
-  - AIサブスク
-relatedTranslationKeys:
-  - google-ai-plan-guide
-  - chatgpt-go-plus-pro-codex-api-guide
-  - codex-claude-cursor-instructions-guide
-topOffer:
-  title: "Grokの公式プランと共有プランを比較"
-  subtitle: "料金は地域・プラットフォームで変動 · 決済前に権利内容を確認"
-  buttonText: "Grokプランの選択肢を見る"
-  buttonLink: https://familypro.io/en/products/grok?invite=7Dfd94eb
+locale: "ja"
+translationKey: "grok-plan-guide"
+title: "Grok料金プラン2026：新サブスクと旧SuperGrok・Heavyの違いと移行前の確認点"
+headline: "Grokの料金体系が変更：新規契約と既存ユーザーの選択肢"
+description: "Grokの新しい統合サブスクと旧SuperGrok・Heavyの違いを整理。週間共通枠、追加料金、旧プランの継続条件、返金とアカウント統合の注意点を確認できます。新規契約を検討する人にも、既存の割引や動画生成環境を維持したい人にも、移行前に確認すべき点を説明します。"
+summary: "新規ユーザーはThe X Subscriptionを比較。既存ユーザーは旧プランを続けながら、請求額と必要な機能を基準に移行を判断できます。"
+category: "AIサブスク比較"
+pubDate: "2026-03-26"
+updatedDate: 2026-10-15
+author: "Mark"
+service: "Grok"
+tags: ["Grok", "xAI", "The X Subscription", "SuperGrok", "Cursor"]
+relatedTranslationKeys: ["xai-grok-x-subscription-plan-guide", "grok-build-guide"]
 draft: false
 ---
 
-最近Grokの有料プランを調べると、名前の多さ以上に分かりにくさを感じます。理由は、並んでいる名称がそもそも2つの別ラインにまたがっているからです。
+xAIは**2026年10月12日**に[The X Subscription](https://x.ai/news/x-subscription)を発表しました。Grok、Grok Bot、Cursor、Xの特典が統合されたため、以前のX PremiumとSuperGrokの比較だけでは、新規契約を判断できなくなっています。
 
-`X Premium`、`X Premium+`、`SuperGrok Lite`、`SuperGrok`、`SuperGrok Heavy` は同列に語られがちですが、実際は別物です。Grokの一部機能はXのプラットフォーム課金に含まれ、別の機能は `Grok.com` やモバイルアプリの独立課金に属します。さらに公開説明では `higher limits` や `much higher rate limits` という表現が多く、固定の配分表はまだ見えにくい状態です。
+**情報確認日：2026-10-15。米ドルの公式表示価格は参考情報で、適用される税金は含みません。地域別価格、割引、契約条件は決済画面で確認してください。** 年額料金やコミュニティの反応は[新しいGrok料金体系の解説](../xai-grok-x-subscription-plan-guide/)にまとめています。
 
-まず押さえるべき最新ポイントはこれです。X Helpでは `Premium` と `Premium+` がGrok上限の違いで説明され、最近のxAIニュースでは `SuperGrok` と `X Premium Plus` が Grok Build など新しい利用面の対象サブスクとして扱われています。個人アカウントで実際にどのbundleになるかは、最終決済画面で確認する必要があります。
+## 1. 新規ユーザーが比較するプラン
 
-**2026年7月3日** 時点で、アクセス可能な **xAI公式ページ、xAI Docs、X Help、xAIニュース、米国App Store購入項目** の情報を基準にすると、まず次の2系統で整理するのが実用的です。
+[公式料金表](https://docs.x.ai/x-subscription/pricing)にはFree、Plus（月$8）、Premium（月$30）、Super（月$100）、Ultra（月$200）が掲載されています。GrokとCursorの対象となるGrokモデル利用は、同じ週間枠を消費します。
 
-- **X内サブスク**: `Basic`、`Premium`、`Premium+`
-- **Grok独立サブスク**: 地域依存の無料アクセス、`SuperGrok Lite`、`SuperGrok`、`SuperGrok Heavy`
+個人のXアカウントを接続すると、Plusは認証マーク、クリエイターツール、広告削減を提供。Premium以上ではX Premium+の特典が利用できます。新規契約では「XとGrokのどちらを買うか」より、必要な機能と週間使用量を考えるのが先です。
 
-この記事では次の4点だけを明確にします。
+## 2. 旧プラン名はどう読み替えるか
 
-- いま存在するGrokのプランラインは何か
-- 価格と機能で公開情報として確定している範囲はどこか
-- まだ固定数値で公開されていない上限は何か
-- 自分に合うプランをどう選ぶか
+| 請求書や旧記事の名称 | 旧体系での位置づけ | 注意点 |
+| --- | --- | --- |
+| X Basic、Premium、Premium+ | Xの旧サブスク | 新Premiumとは別の契約 |
+| SuperGrok Lite、SuperGrok | Grokの旧単独サブスク | 現在の更新料金と機能を確認 |
+| SuperGrok Plus | Grokの旧上位プランの一つ | 新Plusとは異なる |
+| SuperGrok Heavy | Grokの旧高額プラン | Ultraとの同等性は未確認 |
+| Free、Plus、Premium、Super、Ultra | The X Subscription | 新しい統合体系 |
 
-価格は **米国市場・USD基準** で記載します。最終価格は地域・プラットフォーム・決済手段で変わるため、必ず最終チェックアウト画面を優先してください。価格情報は参考値です。
+新PremiumはSuperGrok、Cursor Pro、X Premium+の特典を組み合わせると説明されています。ただし、旧プラン三つの利用枠がすべて加算されるわけではありません。
 
-## 1. 先に結論: 「Xを買う」のか「Grokを買う」のかを決める
+## 3. SuperGrokやHeavyはすぐ移行すべきか
 
-- **X内でGrokを使うのが中心** で、青バッジ・広告軽減・投稿機能も必要なら、まず `Premium` と `Premium+` を比較
-- **Grokそのものが主目的** で、`Grok.com` やアプリを主に使うなら、まず `SuperGrok` を比較
-- **`Grok 4 Heavy` と高いレート上限が必要と分かっている** なら `SuperGrok Heavy` を検討
-- **Grok目的だけで `Basic` を選ぶのは非推奨**。X側のGrok強化は主に `Premium` 以上で説明されるため
+**現時点では必須ではありません。** [公式の継続条件](https://docs.x.ai/x-subscription/do-i-have-to-switch)では、変更や解約をしなければ旧契約を続けられます。発表では価格と機能も維持できるとしています。
 
-1行で言うなら次の通りです。
+Grokだけで用が足りる人は、継続したまま検討できます。複数サービスに支払っている人は実際の請求額と比較しましょう。Heavy固有のモデル、機能、割引が必要なら、移行先で使えることを先に確認してください。現在の継続ルールは永久的な価格保証ではありません。
 
-- より安いX会員でX内Grokも強化したい: `Premium`
-- X会員を使いながら `SuperGrok` も含めたい: `Premium+`
-- 独立Grokを低い入口価格で試したい: `SuperGrok Lite` を先に確認（地域・アカウントで表示可否あり）
-- Grok本体を使い込む: `SuperGrok`
-- 高負荷運用で最上位を使う: `SuperGrok Heavy`
+## 4. 週間枠は固定の質問回数ではない
 
-Heavyが必要か迷う段階なら、まずは不要なことが多いです。
+[利用枠の説明](https://docs.x.ai/x-subscription/usage-limits)では、同一有料席の対象利用をGrokとCursorで共有します。作業ごとに消費量が異なるため、Plus比4倍・15倍・50倍を、一日あたりの質問数や動画本数には換算できません。
 
-## 2. Grokは1本の料金表ではない
+Cursorで大きな作業を行うと、同じ週のGrok利用に残る枠は減ります。Premiumから利用できるGrok Botも同じ枠です。Cursorの第三者モデルは初回から別料金。Grok APIも標準モデル料金で別途請求され、週間枠には含まれません。
 
-### 2.1 X内サブスク: まず買っているのはプラットフォーム特典
+## 5. 統合前にアカウントと支払い元を確認する
 
-X Helpでは `X Premium` を3段階で案内しています。
+更新額、期限、購入経路を記録してから[公式の統合手順](https://docs.x.ai/x-subscription/unify-accounts)へ進み、接続するGrok、Cursor、個人Xアカウントを確認します。
 
-| プラン | 米国Web価格 | 主に買っている価値 | Grokに関する公開表現 |
-| --- | --- | --- | --- |
-| Basic | 月3USD / 年32USDから | 投稿編集、長文投稿、長尺動画、返信優先など基礎機能 | Grokは主訴求ではない |
-| Premium | 月8USD / 年84USDから | 青バッジ、広告軽減、収益化資格、Media Studio等 | X Help では `increased usage limits on Grok` |
-| Premium+ | 月40USD / 年395USDから | 返信優先最大化、より強い広告軽減、Radar、Articles等 | X Help では `higher limits on Grok`。xAIの別発表では `X Premium Plus` が Grok Build や一部連携の対象として扱われている |
-
-ここで買い間違いが起きやすい理由はシンプルです。
-
-- まず支払っている対象は **Xプラットフォーム**
-- X Helpでは現在も `Premium+` が `Premium` より高いGrok上限を持つと説明されている。同じヘルプ記事では、Premium Business / Organization とその関連アカウントが `Premium+` と `SuperGrok` アクセスを受けることも明記されている
-- 通常の個人アカウントで `Premium+` と `SuperGrok` の結び付きがどう表示されるかは、地域、ログイン状態、購入画面によって変わり得るため、最終決済画面を確認する必要がある
-- `50% off for 2 months` のような表示はキャンペーンなので、最終的にはその時点の決済画面を優先すべき
-
-XのSNS側機能に価値を感じないなら、`Basic/Premium/Premium+` の比較より先に独立Grokを見た方が判断しやすくなります。
-
-### 2.2 Grok独立サブスク: ここではGrok自体を買う
-
-xAIのFAQと公開ページから、現時点で少なくとも次の2点は確認できます。
-
-- `Grok.com` とモバイルアプリには、地域によって `limited free access` がある
-- 同時に、**Grokのフル機能を解放する有料プラン** がある
-
-公開情報として無理のない整理は次の4層です。
-
-- **無料アクセス**: 地域依存で制限あり。全機能を誰でも使える状態とは別
-- **SuperGrok Lite**: 米国App Storeで確認できる軽量課金層。表示可否・価格・課金周期は地域/プラットフォーム/アカウント依存
-- **SuperGrok**: Web/App向け独立有料プラン。現在のxAI Grokページでは、より高いlimits、priority access、multi-agentを含むプランとして説明され、[Grok 4発表](https://x.ai/news/grok-4) では `SuperGrok` での提供を記載、[Grok 4.1発表](https://x.ai/news/grok-4-1) では全ユーザー提供を記載
-- **SuperGrok Heavy**: `Grok 4 Heavy` と `much higher rate limits` を追加
-
-価格情報は特に扱い方に注意が必要です。
-
-- 米国App Storeでは `SuperGrok Lite USD 10`、`SuperGrok Lite USD 100`、`SuperGrok USD 30`、`SuperGrok USD 300`、`SuperGrok Heavy USD 300` が見える
-- ただし公開ページ上では、各金額と請求周期が1対1で確定表示されていない
-- したがって、これは **公開上の購入額表示** として扱い、月額/年額の確定表とは見なさない方が安全
-- 購入前は必ず `Grok.com` またはアプリ内チェックアウトで最終確認する
-
-Google AIやClaudeのように整然とした比較表と違い、Grokは階層は見える一方で、公開価格と公開クオータの粒度が揃いきっていない点が特徴です。
-
-## 3. プランの価値判断で本当に効く3つの軸
-
-### 3.1 X内Grokを買うのか、独立AIとしてGrokを買うのか
-
-この1問に答えるだけで、迷いの多くは消えます。
-
-利用実態が次に近いなら:
-
-- Xを使う流れで短く質問する
-- 青バッジ、広告軽減、Articlesも使う
-- GrokはX機能の一つとして使う
-
-比較軸は `Premium` と `Premium+` が中心です。
-
-逆に次に近いなら:
-
-- 日常のAIアシスタントとしてGrokを使う
-- `Grok.com` やアプリで長時間使う
-- 調査、文章作成、画像/動画、音声対話を回す
-
-出発点は `SuperGrok` になります。
-
-要点は次の3点です。
-
-- `Premium` は **X会員にGrok利用強化が付く形** に近い
-- `Premium+` は **より高いGrok上限を持つX会員** で、アカウントやcheckoutによって `SuperGrok` レベルのアクセスと重なる場合があります
-- `SuperGrok` は **Grok独立サブスクそのもの**
-
-### 3.2 xAIは「アクセス階層」を先に示し、「厳密上限」はまだ薄い
-
-日次/月次の上限表に慣れている人ほど、Grokの公開情報は数字が少なく感じられます。
-
-**2026年7月3日** 時点で、公開情報として読める点は次の通りです。
-
-- `Premium` は標準より高いGrok利用上限
-- `Premium+` は `Premium` よりさらに高い上限
-- X Helpでは `Premium` が `increased usage limits on Grok`、`Premium+` が `higher limits on Grok` と説明されている
-- [Grok 4発表](https://x.ai/news/grok-4) は `SuperGrok` と `Premium+` に `Grok 4` を明記
-- [Grok 4.1発表](https://x.ai/news/grok-4-1) は `grok.com`、`X`、`iOS/Android` の全ユーザー提供を明記
-- xAI DocsではAPI向けの主要テキストモデルとして `grok-4.3` が掲載されている。ただしこれは開発者APIの情報であり、一般向けサブスクのモデル選択画面を保証するものではない
-- [Grok Build発表](https://x.ai/news/grok-build-cli) では、early beta が `SuperGrok` と `X Premium Plus` の加入者向けとされている
-- `SuperGrok Heavy` は `Grok 4 Heavy` を追加
-- `SuperGrok Heavy` は `much higher rate limits` を追加
-
-つまり、4.xモデルへの到達可否だけでは全プランを綺麗に分けきれません。入口、上限、プラットフォーム特典を同時に見る必要があります。
-
-公開向けページでまだ固定比較表になっていない項目もあります。
-
-- 1日あたり質問回数
-- `Think` / `DeepSearch` の具体枠
-- 画像生成・動画生成の固定回数
-- Voice / Live Cameraの時間・回数上限
-- free / Lite / SuperGrok / Heavy / Premium / Premium+ の統合数値比較
-
-現実的には、次の順で判断するのが安全です。
-
-- **入口（X内か独立か）とモデル層** を先に決める
-- 次に自分が **rate limitに当たる運用か** を見る
-- 公開サイトに完全な配分表がある前提で判断しない
-
-### 3.3 Heavyは「高い通常版」ではなく高負荷向けプラン
-
-`SuperGrok Heavy` は通常有料版の軽い上位互換として考えるとズレます。
-
-xAIの公開表現ベースでの中核価値は次の2点です。
-
-- `Grok 4 Heavy` へのアクセス
-- `much higher rate limits`
-
-`Grok 4 Heavy` の位置付けも、日常チャットの小幅改善というより、次のような高負荷領域に寄っています。
-
-- 長い推論
-- 競合仮説の深い探索
-- 難度の高い調査、コード、分析
-
-日常用途が短文Q&A、要約、ニュース確認、たまの画像/動画生成中心なら、`Heavy` は価格差ほどの価値を感じにくい可能性があります。
-
-一方で次に当てはまるなら、`Heavy` の意味は明確になります。
-
-- 通常有料枠に頻繁に到達する
-- 1タスクあたりの推論時間が足りない
-- 研究/開発ツールとして高頻度運用している
-
-## 4. 機能ごとに見たとき、誰に効くか
-
-宣伝文言ではなく、実際の利用適合で見ます。
-
-### 4.1 Realtime Search / X Search: 時系列情報を追う人向け
-
-Grokの特徴の一つは、**Xのリアルタイム情報** と **Web検索** を同時に取り込める点です。
-
-価値が出やすいのは次のようなケースです。
-
-- 速報ニュース
-- 市場センチメント
-- X上の現在進行の議論
-- 変化が早いトピック
-
-この領域では「文章のうまさ」より「情報の鮮度」が効く場面が多くなります。
-
-### 4.2 Think / DeepSearch: 複雑課題には効くが、全用途ではない
-
-`Think` と `DeepSearch` は、回答前に推論・探索コストをかけたい時に効果が出ます。
-
-向いているのは次のようなタスクです。
-
-- 複数情報源の統合
-- 1往復で答えが決まらない問題
-- 論点比較、選択肢評価、調査系タスク
-
-軽い日常タスクだけなら、体感差は小さいこともあります。
-
-### 4.3 Voice / Live Camera: モバイル高頻度利用で効きやすい
-
-xAIは `Voice Mode` と `Live Camera` を強く打ち出しています。
-
-有効なのは次のような人です。
-
-- スマホで音声対話を多用する
-- 「見せながら聞く」運用が多い
-- ブラウザ専用ではなく携帯アシスタントとして使う
-
-AI作業がほぼデスクトップ固定なら、優先度は下がりやすいです。
-
-### 4.4 画像・動画生成: 継続ワークフローがある人向け
-
-公開ページでは次が明確に打ち出されています。
-
-- 画像生成
-- 画像編集
-- 動画生成
-- 動画理解
-- 最大2K画像と最長15秒動画という公開説明
-- 2026年6月に更新された、より高速な Grok Imagine Video 1.5
-
-ポイントは「使えるか」より「継続利用するか」です。
-
-たまに使う程度なら標準有料層で足りることが多く、上位層は画像/動画を日常ワークフローに組み込んでいる人ほど合理的になります。
-
-### 4.5 Grok Build / 開発ツール連携: コード作業にGrokを入れる人向け
-
-2026年5月以降、Grokのサブスク価値はチャット画面だけでは測りにくくなりました。xAIは `SuperGrok` と `X Premium Plus` を Grok Build や一部の外部開発ツールに接続し始めています。
-
-開発者が見るべき追加ポイントは次の通りです。
-
-- Grok Build のようなターミナル型 coding agent が必要か
-- Warp や Kilo Code などで既存の Grok / X Premium サブスクを使いたいか
-- それらの機能が beta または段階展開中であることを許容できるか
-
-コードツールを使わないなら、この点を購入理由にする必要はありません。逆にAI coding agentを比較しているなら、`SuperGrok` と `Premium+` の価値はチャット、検索、画像生成だけでは判断しにくくなっています。
-
-## 5. 実際にどう買うか
-
-### 5.1 X中心ユーザーで、X内Grokを強化したい
-
-`Premium` か `Premium+` から選ぶのが基本です。
-
-- `Premium`: もともとX会員価値を感じていて、Grok利用強化も欲しい人
-- `Premium+`: X側の上位特典とより高いGrok権利を重視し、自分のcheckoutで `SuperGrok` が含まれるか確認できる人
-
-青バッジ、広告軽減、Articles、Radarが不要なら、`Premium+` を自動選択にしない方が安全です。
-
-### 5.2 ほしいのはSNS会員ではなくAIアシスタント
-
-独立Web/App中心で使い、まず低コストの有料入口を試したいなら、`SuperGrok Lite`（表示される場合）を最初に確認するのが自然です。
-
-- 独立Grokラインの軽量な入門層として捉える
-- 米国App Storeでは現在 `SuperGrok Lite USD 10` と `SuperGrok Lite USD 100` が見える
-- ただし公開App Storeページでは、その金額と課金周期が1対1で確定表示されていない
-
-**2026-07-03** 時点での安全な理解は、`SuperGrok Lite` は「標準 `SuperGrok` にすぐ上がるほどではないが、独立Grokの有料版を試したい人向けの入口枠」というものです。重い制作運用より、軽度・断続的な利用に向いています。
-
-現時点では次のように要約するのが無理のない書き方です。
-
-- 標準 `SuperGrok` より下の有料層である
-- 実際の機能上限、課金周期、価格は地域・プラットフォーム・アカウント状態に左右される
-- 支払う前に、自分の `Grok.com` やアプリ内の決済画面を必ず確認する
-
-Lite契約前に押さえる点は2つです。
-
-- 無料版は引き続き利用できるが、質問回数やマルチモーダル機能の制限はより厳しい
-- 地域によっては X Premium に一部Grokアクセスが含まれるが、`SuperGrok Lite` はあくまで独立Grok課金
-
-### 5.3 Grokを日常的にしっかり使う前提
-
-起点は `SuperGrok` が合理的です。
-
-理由は明確で、設計の中心が次に置かれているからです。
-
-- `Grok.com` とモバイルアプリでの利用
-- X会員バンドルではなく、Grok本体への課金
-
-主な利用入口が独立Web/Appなら、まず比較すべきラインは `SuperGrok` です。
-
-### 5.4 標準有料枠では足りないと分かっている
-
-この段階なら `SuperGrok Heavy` を検討します。
-
-適合しやすいのは次の層です。
-
-- 研究用途の高負荷ユーザー
-- コーディング/分析を高頻度で回すユーザー
-- 画像・動画生成を高頻度で回すユーザー
-- 既に通常有料枠不足を確認しているユーザー
-
-`Heavy` が必要な理由を明確に説明できない段階なら、まず `SuperGrok` から始める方が失敗が少なくなります。
-
-## 6. 最終提案
-
-- **低コストで画像/動画を試したい**: まず `SuperGrok Lite`（表示される場合）
-- **予算を抑えて会話利用が中心**: まず無料版を継続
-- **X内利用が中心**: `Premium` と `Premium+` を比較
-- **Grok.com / アプリ利用が中心**: `SuperGrok` から検討
-- **最高層モデルと高い上限が明確に必要**: `SuperGrok Heavy` を評価
-
-### 6.1 SuperGrokを安く試したいなら、第三者の共有プランも比較対象になる
-
-`SuperGrok` を買う前提なら、第三者の共有アカウント型オプションも比較候補になります。**2026年7月3日** 時点で確認できる FamilyPro の提供文脈では、この種の選択肢の本質は「共有アカウント経由で `SuperGrok` にアクセスすること」です。
-
-- 入口コストを下げやすいのが利点
-- アカウントが完全専有ではなく、共有利用ルールを守る必要があるのが難点
-- 共有プランの有無、期間、価格はその時点の決済画面表示に依存する
-
-自分でパスワードを変えたい、長期の個人プロフィールを持ちたい、完全専有アカウントがほしいという人には、公式の直接契約の方が合いやすいです。  
-購入リンク: <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok購入ページ</a>
-
-多くの人にとって、最終的な意思決定は次の2問に集約できます。
-
-- 買いたいのは **Xのプラットフォーム特典+Grok** か、**Grok本体** か
-- 今不足しているのは **入口とモデル層** か、すでに **rate limits** か
-
-この2点が決まれば、Grokのプラン選択は見た目ほど複雑ではありません。
+**統合はサポートでも取り消せません。** 対象となる旧契約は残期間に応じた返金がありますが、Apple経由のCursorはAppleで別途解約が必要です。Google Play経由の契約も自動更新が残っていないか確認してください。[新プランの移行ガイド](../xai-grok-x-subscription-plan-guide/)を読んでから決めると、必要な機能を失うリスクを減らせます。
 
 ## References
 
-- [xAI Consumer FAQs](https://x.ai/legal/faq)
-- [Grok Plans](https://grok.com/plans)
-- [xAI Grok product page](https://x.ai/grok)
-- [xAI Docs: Models](https://docs.x.ai/docs/models)
-- [xAI News: Introducing Grok 4](https://x.ai/news/grok-4)
-- [xAI News: Introducing Grok 4.1](https://x.ai/news/grok-4-1)
-- [xAI News: Introducing Grok Build](https://x.ai/news/grok-build-cli)
-- [xAI News: Grok Imagine Video 1.5](https://x.ai/news/grok-imagine-video-1-5)
-- [X Premium 申込ページ（要ログイン）](https://x.com/i/premium_sign_up)
-- [X Premium FAQ](https://help.x.com/en/using-x/x-premium-faq)
-- [About X Premium](https://help.x.com/en/using-x/x-premium)
-- [Grok - AI Chat & Video (US App Store)](https://apps.apple.com/us/app/grok-ai-chat-video/id6670324846)
-- <a href="https://familypro.io/en/products/grok?invite=7Dfd94eb" rel="sponsored">FamilyPro Super Grok購入ページ</a>
+- [xAI: Introducing The X Subscription](https://x.ai/news/x-subscription)
+- [xAI: Current pricing and API billing](https://x.ai/pricing)
+- [Documentation: Monthly, annual and team pricing](https://docs.x.ai/x-subscription/pricing)
+- [Documentation: Subscription overview](https://docs.x.ai/x-subscription/overview)
+- [Documentation: Keeping an existing plan](https://docs.x.ai/x-subscription/do-i-have-to-switch)
+- [Documentation: Weekly usage limits](https://docs.x.ai/x-subscription/usage-limits)
+- [Documentation: Extra usage and top-ups](https://docs.x.ai/x-subscription/extra-usage)
+- [Documentation: X benefits](https://docs.x.ai/x-subscription/x-premium)
+- [Documentation: Combining accounts](https://docs.x.ai/x-subscription/unify-accounts)
+- [Documentation: Invoices and refunds](https://docs.x.ai/x-subscription/invoices-and-refunds)
+- [Documentation: Cancellation](https://docs.x.ai/x-subscription/cancel)
+- [Cursor account unification](https://cursor.com/unify)
+- [Grok account unification](https://accounts.x.ai/unify)
